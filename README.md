@@ -1,4 +1,5 @@
-doxdox
-======
+[![](https://david-dm.org/neogeek/doxdox.svg)](https://david-dm.org/neogeek/doxdox/)
 
-HTML and Markdown documentation generator.
+#doxdox
+
+> HTML and Markdown documentation generator.

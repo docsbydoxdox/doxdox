@@ -1,0 +1,27 @@
+{
+    "name": "doxdox",
+    "description": "HTML and Markdown documentation generator.",
+    "version": "0.0.1",
+    "license": "MIT",
+    "dependencies": {
+        "dox": "0.4.6"
+    },
+    "keywords": [
+        "documentation",
+        "html",
+        "bootstrap",
+        "markdown"
+    ],
+    "authors": [
+        {
+            "name": "Scott Doxey",
+            "email": "hello@scottdoxey.com",
+            "homepage": "http://scottdoxey.com/"
+        }
+    ],
+    "homepage": "https://github.com/neogeek/doxdox",
+    "repository": {
+        "type": "git",
+        "url": "git://github.com/neogeek/doxdox.git"
+    }
+}
