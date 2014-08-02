@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="initial-scale=1">
+<title>{{title}}{{#if description}} - {{description}}{{/if}}</title>
+<style>
+
+.method h2 {
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.permalink {
+    position: absolute;
+    margin-left: -25px;
+    font-weight: normal;
+    color: #eee;
+}
+
+.permalink:hover {
+    color: #666;
+    text-decoration: none;
+}
+
+.bs-footer {
+    margin: 50px auto;
+    color: #777;
+    text-align: center;
+}
+
+</style>
+<script>
+
+(function () {
+
+    'use strict';
+
+    var css = document.createElement('link'),
+        protocol = window.location.protocol;
+
+    if (protocol === 'file:') {
+        protocol = 'http:';
+    }
+
+    css.setAttribute('rel', 'stylesheet');
+    css.setAttribute('href', protocol + '//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css');
+
+    document.head.appendChild(css);
+
+}());
+
+</script>
+</head>
+
+<body>
+
+<div class="wrap">
+
+    <div class="container">
+
+        <div class="page-header">
+
+            <h1>{{title}}{{#if description}} <small>{{description}}</small>{{/if}}</h1>
+
+        </div>
+
+        <div class="row">
+
+            <div class="col-md-3 hidden-sm hidden-xs">
+
+                <ul class="nav">
+
+                    {{#each methods}}
+
+                        {{#unless ignore}}
+
+                            {{#if ctx}}
+
+                                <li><a href="#{{formatId ctx.string}}">{{formatName ctx.string}}</a></li>
+
+                            {{/if}}
+
+                        {{/unless}}
+
+                    {{/each}}
+
+                </ul>
+
+            </div>
+
+            <div class="col-md-9">
+
+                {{#each methods}}
+
+                    <div class="method">
+
+                        {{#unless ignore}}
+
+                            {{#if ctx}}
+
+                                <h2 id="{{formatId ctx.string}}">
+                                    <a href="#{{formatId ctx.string}}" class="permalink">#</a> {{formatName ctx.string}}
+                                </h2>
+
+                                {{{description.summary}}}
+
+                                <section class="parameters">
+
+                                    <h3>Parameters</h3>
+
+                                    {{#each tags}}
+
+                                        {{#ifCond type "param"}}
+
+                                            <p>
+                                                <b>{{name}}</b>
+                                                {{#each types}}
+                                                    <code>{{.}}</code>
+                                                {{/each}}
+                                                {{#if optional}}
+                                                    <span class="label label-default">Optional</span>
+                                                {{/if}}
+                                            </p>
+                                            <p>{{{description}}}</p>
+
+                                        {{/ifCond}}
+
+                                    {{/each}}
+
+                                </section>
+
+                                <section class="properties">
+
+                                    <h3>Properties</h3>
+
+                                    {{#each tags}}
+
+                                        {{#ifCond type "property"}}
+
+                                            <p>
+                                                <b>{{name}}</b>
+                                                {{#each types}}
+                                                    <code>{{.}}</code>
+                                                {{/each}}
+                                                {{#if optional}}
+                                                    <span class="label label-default">Optional</span>
+                                                {{/if}}
+                                            </p>
+                                            <p>{{{description}}}</p>
+
+                                        {{/ifCond}}
+
+                                    {{/each}}
+
+                                </section>
+
+                                <section class="examples">
+
+                                    <h3>Examples</h3>
+
+                                    {{{description.body}}}
+
+                                </section>
+
+                                <section class="code">
+
+                                    <h3>Code</h3>
+
+                                    <pre>{{code}}</pre>
+
+                                </section>
+
+                                <h3>Returns</h3>
+
+                                {{#each tags}}
+
+                                    {{#ifCond type "return"}}
+
+                                        <p>{{#each types}}<code>{{.}}</code> {{/each}} {{{description}}}</p>
+
+                                    {{/ifCond}}
+
+                                {{/each}}
+
+                            {{/if}}
+
+                        {{/unless}}
+
+                    </div>
+
+                {{/each}}
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<footer class="bs-footer">
+
+    <div class="container">
+
+        <p>Documentation generated with <a href="https://github.com/neogeek/doxdox">doxdox</a>.</p>
+
+    </div>
+
+</footer>
+
+</body>
+</html>

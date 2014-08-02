@@ -1,0 +1,94 @@
+#!/usr/bin/env node
+
+var pkg = require('../package'),
+    fs = require('fs'),
+    hbs = require('handlebars'),
+    helpers = require('../lib/helpers')(hbs);
+
+var templates = {
+    bootstrap: require('../templates/bootstrap.hbs')
+};
+
+var title = 'Untitled Project',
+    description = '';
+
+var args = process.argv.slice(2),
+    value;
+
+var filename;
+
+while (args.length) {
+
+    value = args.shift();
+
+    switch (value) {
+
+    case '-t':
+    case '--title':
+        title = args.shift();
+        break;
+
+    case '-d':
+    case '--description':
+        description = args.shift();
+        break;
+
+    case '-v':
+    case '--version':
+        process.stdout.write(pkg.version + '\n');
+        break;
+
+    default:
+        filename = value;
+        break;
+
+    }
+
+}
+
+if (filename) {
+
+    fs.readFile(filename, 'utf8', function (error, data) {
+
+        if (!error) {
+
+            data = JSON.parse(data);
+
+            data.forEach(function (methods) {
+
+                if (methods.tags) {
+
+                    methods.tags.forEach(function (tag) {
+
+                        if (tag.types) {
+
+                            tag.types.forEach(function (type, index) {
+
+                                if (type.match(/\?/g)) {
+
+                                    tag.optional = true;
+                                    tag.types[index] = type.replace(/\?/g, '');
+
+                                }
+
+                            });
+
+                        }
+
+                    });
+
+                }
+
+            });
+
+            process.stdout.write(templates.bootstrap({
+                title: title,
+                description: description,
+                methods: data
+            }));
+
+        }
+
+    });
+
+}
