@@ -6,7 +6,8 @@ var pkg = require('../package'),
     helpers = require('../lib/helpers')(hbs);
 
 var templates = {
-    bootstrap: require('../templates/bootstrap.hbs')
+    bootstrap: require('../templates/bootstrap.hbs'),
+    markdown: require('../templates/markdown.hbs')
 };
 
 var title = 'Untitled Project',

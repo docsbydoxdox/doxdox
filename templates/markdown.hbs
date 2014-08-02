@@ -1,0 +1,26 @@
+#{{title}}
+
+>{{description}}
+
+{{#each methods}}{{#unless ignore}}{{#if ctx}}
+##{{formatName ctx.string}}
+{{{description.summary}}}
+
+###Parameters
+
+{{#each tags}}{{#ifCond type "param"}}
+- **{{name}}** {{#each types}}`{{.}}`{{/each}} {{#if optional}}_Optional_{{/if}} {{{description}}}
+{{/ifCond}}{{/each}}
+
+###Properties
+
+{{#each tags}}{{#ifCond type "property"}}
+- **{{name}}** {{#each types}}`{{.}}`{{/each}} {{#if optional}}_Optional_{{/if}} {{{description}}}
+{{/ifCond}}{{/each}}
+
+###Examples
+
+{{{description.body}}}
+{{/if}}{{/unless}}{{/each}}
+
+_Documentation generated with [doxdox](https://github.com/neogeek/doxdox)._
