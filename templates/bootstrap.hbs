@@ -61,6 +61,21 @@
 
         <div class="page-header">
 
+            <div class="pull-right">
+                <div>
+                    <label>
+                        <input type="checkbox" name="toggle-code" class="toggle-code-blocks">
+                        Toggle Code Blocks
+                    </label>
+                </div>
+                <div>
+                    <label>
+                        <input type="checkbox" name="toggle-private" class="toggle-private">
+                        Toggle Private Methods/Function
+                    </label>
+                </div>
+            </div>
+
             <h1>{{title}}{{#if description}} <small>{{description}}</small>{{/if}}</h1>
 
         </div>
@@ -77,7 +92,9 @@
 
                             {{#if ctx}}
 
-                                <li><a href="#{{formatId ctx.string}}">{{formatName ctx.string}}</a></li>
+                                <li class="scope-{{#if isPrivate}}private{{else}}public{{/if}}">
+                                    <a href="#{{formatId ctx.string}}">{{formatName ctx.string}}</a>
+                                </li>
 
                             {{/if}}
 
@@ -93,11 +110,11 @@
 
                 {{#each methods}}
 
-                    <div class="method">
+                    {{#unless ignore}}
 
-                        {{#unless ignore}}
+                        {{#if ctx}}
 
-                            {{#if ctx}}
+                            <div class="method scope-{{#if isPrivate}}private{{else}}public{{/if}}">
 
                                 {{registerContext this}}
 
@@ -201,11 +218,11 @@
 
                                 {{/each}}
 
-                            {{/if}}
+                            </div>
 
-                        {{/unless}}
+                        {{/if}}
 
-                    </div>
+                    {{/unless}}
 
                 {{/each}}
 
@@ -226,6 +243,51 @@
     </div>
 
 </footer>
+
+<script src="http://cdn.jsdelivr.net/jquery/2.1.1/jquery.min.js"></script>
+<script>
+
+(function () {
+
+    var hash = window.location.hash,
+        $hash_elem = $('[id="' + hash.replace(/#/, '') + '"]'),
+        $code_block = $('.code'),
+        $scope_private = $('.scope-private'),
+        $toggle_code_blocks = $('.toggle-code-blocks')
+        $toggle_private = $('.toggle-private');
+
+    $toggle_code_blocks.on('click', function () {
+
+        if ($toggle_code_blocks.is(':checked')) {
+            $code_block.show();
+        } else {
+            $code_block.hide();
+        }
+
+    });
+
+    $toggle_private.on('click', function () {
+
+        if ($toggle_private.is(':checked')) {
+            $scope_private.show();
+        } else {
+            $scope_private.hide();
+        }
+
+    });
+
+    $code_block.hide();
+    $scope_private.hide();
+
+    if ($hash_elem.length && !$hash_elem.is(':visible')) {
+
+        $toggle_private.trigger('click');
+
+    }
+
+}());
+
+</script>
 
 </body>
 </html>
