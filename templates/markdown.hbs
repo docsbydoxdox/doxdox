@@ -3,8 +3,17 @@
 >{{description}}
 
 {{#each methods}}{{#unless ignore}}{{#if ctx}}
+
+{{registerContext this}}
+
 ##{{formatName ctx.string}}
 {{{description.summary}}}
+
+{{#each tags}}{{#ifCond type "param"}}
+{{registerVariable "displayParameters" true}}
+{{/ifCond}}{{/each}}
+
+{{#if displayParameters}}
 
 ###Parameters
 
@@ -12,11 +21,21 @@
 - **{{name}}** {{#each types}}`{{.}}`{{/each}} {{#if optional}}_Optional_{{/if}} {{{description}}}
 {{/ifCond}}{{/each}}
 
+{{/if}}
+
+{{#each tags}}{{#ifCond type "property"}}
+{{registerVariable "displayProperties" true}}
+{{/ifCond}}{{/each}}
+
+{{#if displayProperties}}
+
 ###Properties
 
 {{#each tags}}{{#ifCond type "property"}}
 - **{{name}}** {{#each types}}`{{.}}`{{/each}} {{#if optional}}_Optional_{{/if}} {{{description}}}
 {{/ifCond}}{{/each}}
+
+{{/if}}
 
 ###Examples
 

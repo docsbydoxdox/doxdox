@@ -99,11 +99,19 @@
 
                             {{#if ctx}}
 
+                                {{registerContext this}}
+
                                 <h2 id="{{formatId ctx.string}}">
                                     <a href="#{{formatId ctx.string}}" class="permalink">#</a> {{formatName ctx.string}}
                                 </h2>
 
                                 {{{description.summary}}}
+
+                                {{#each tags}}{{#ifCond type "param"}}
+                                {{registerVariable "displayParameters" true}}
+                                {{/ifCond}}{{/each}}
+
+                                {{#if displayParameters}}
 
                                 <section class="parameters">
 
@@ -130,6 +138,14 @@
 
                                 </section>
 
+                                {{/if}}
+
+                                {{#each tags}}{{#ifCond type "property"}}
+                                {{registerVariable "displayProperties" true}}
+                                {{/ifCond}}{{/each}}
+
+                                {{#if displayProperties}}
+
                                 <section class="properties">
 
                                     <h3>Properties</h3>
@@ -154,6 +170,8 @@
                                     {{/each}}
 
                                 </section>
+
+                                {{/if}}
 
                                 <section class="examples">
 
