@@ -2,8 +2,10 @@
 
 var pkg = require('../package'),
     fs = require('fs'),
+    dox = require('dox'),
     hbs = require('handlebars'),
-    helpers = require('../lib/helpers')(hbs);
+    helpers = require('../lib/helpers')(hbs),
+    utils = require('../lib/utils');
 
 var templates = {
     bootstrap: require('../templates/bootstrap.hbs'),
@@ -11,7 +13,8 @@ var templates = {
 };
 
 var title = 'Untitled Project',
-    description = '';
+    description = '',
+    layout = 'bootstrap';
 
 var args = process.argv.slice(2),
     value;
@@ -34,6 +37,11 @@ while (args.length) {
         description = args.shift();
         break;
 
+    case '-l':
+    case '--layout':
+        layout = args.shift();
+        break;
+
     case '-v':
     case '--version':
         process.stdout.write(pkg.version + '\n');
@@ -47,49 +55,20 @@ while (args.length) {
 
 }
 
-if (filename) {
+fs.exists(filename, function (exists) {
 
-    fs.readFile(filename, 'utf8', function (error, data) {
+    var data;
 
-        if (!error) {
+    if (exists) {
 
-            data = JSON.parse(data);
+        data = dox.parseComments(fs.readFileSync(filename, 'utf8'));
 
-            data.forEach(function (methods) {
+        process.stdout.write(templates[layout]({
+            title: title,
+            description: description,
+            methods: utils.parseData(data)
+        }));
 
-                if (methods.tags) {
+    }
 
-                    methods.tags.forEach(function (tag) {
-
-                        if (tag.types) {
-
-                            tag.types.forEach(function (type, index) {
-
-                                if (type.match(/\?/g)) {
-
-                                    tag.optional = true;
-                                    tag.types[index] = type.replace(/\?/g, '');
-
-                                }
-
-                            });
-
-                        }
-
-                    });
-
-                }
-
-            });
-
-            process.stdout.write(templates.bootstrap({
-                title: title,
-                description: description,
-                methods: data
-            }));
-
-        }
-
-    });
-
-}
+});
