@@ -54,6 +54,7 @@ while (args.length) {
         process.stdout.write(' Usage: doxdox <file> [options]' + '\n\n');
         process.stdout.write(' Options:' + '\n\n');
         process.stdout.write(' -h, --help\t\tDisplay this help message.' + '\n');
+        process.stdout.write(' -v, --version\t\tDisplay the current installed version.' + '\n');
         process.stdout.write(' -t, --title\t\tSets title.' + '\n');
         process.stdout.write(' -d, --description\tSets description.' + '\n');
         process.stdout.write(' -l, --layout\t\tTemplate to render the documentation with.' + '\n');
