@@ -14,12 +14,11 @@ var templates = {
 
 var title = 'Untitled Project',
     description = '',
-    layout = 'bootstrap';
+    layout = 'bootstrap',
+    filename = '';
 
 var args = process.argv.slice(2),
     value;
-
-var filename = '';
 
 while (args.length) {
 
@@ -60,8 +59,8 @@ while (args.length) {
         process.stdout.write(' -l, --layout\t\tTemplate to render the documentation with.' + '\n');
         process.stdout.write('\n');
         process.stdout.write(' Available Layouts:' + '\n\n');
-        process.stdout.write(' - Bootstrap 3 (http://getbootstrap.com/)' + '\n');
-        process.stdout.write(' - Markdown (http://daringfireball.net/projects/markdown/)' + '\n');
+        process.stdout.write(' - Bootstrap 3\t\t(http://getbootstrap.com/)' + '\n');
+        process.stdout.write(' - Markdown\t\t(http://daringfireball.net/projects/markdown/)' + '\n');
         process.stdout.write('\n');
         process.kill();
         break;
@@ -92,13 +91,13 @@ fs.exists(filename, function (exists) {
 
         } else {
 
-            console.log('Invalid layout specified.');
+            process.stdout.write('Invalid layout specified.' + '\n');
 
         }
 
     } else {
 
-        console.log('File not found.');
+        process.stdout.write('File not found.' + '\n');
 
     }
 
