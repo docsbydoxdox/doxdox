@@ -82,11 +82,19 @@ fs.exists(filename, function (exists) {
 
         data = dox.parseComments(fs.readFileSync(filename, 'utf8'));
 
-        process.stdout.write(templates[layout]({
-            title: title,
-            description: description,
-            methods: utils.parseData(data)
-        }));
+        if (templates[layout]) {
+
+            process.stdout.write(templates[layout]({
+                title: title,
+                description: description,
+                methods: utils.parseData(data)
+            }));
+
+        } else {
+
+            console.log('Invalid layout specified.');
+
+        }
 
     } else {
 
