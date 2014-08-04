@@ -45,6 +45,7 @@ while (args.length) {
     case '-v':
     case '--version':
         process.stdout.write(pkg.version + '\n');
+        process.kill();
         break;
 
     case '-h':
@@ -61,6 +62,7 @@ while (args.length) {
         process.stdout.write(' - Bootstrap 3 (http://getbootstrap.com/)' + '\n');
         process.stdout.write(' - Markdown (http://daringfireball.net/projects/markdown/)' + '\n');
         process.stdout.write('\n');
+        process.kill();
         break;
 
     default:
