@@ -12,13 +12,13 @@ var templates = {
     markdown: require('../templates/markdown.hbs')
 };
 
-var args = process.argv.slice(2),
-    value;
-
 var title = 'Untitled Project',
     description = '',
     layout = 'bootstrap',
     filename = '';
+
+var args = process.argv.slice(2),
+    value;
 
 if (args.length) {
 
