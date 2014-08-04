@@ -12,13 +12,19 @@ var templates = {
     markdown: require('../templates/markdown.hbs')
 };
 
+var args = process.argv.slice(2),
+    value;
+
 var title = 'Untitled Project',
     description = '',
     layout = 'bootstrap',
     filename = '';
 
-var args = process.argv.slice(2),
-    value;
+if (args.length) {
+
+    filename = args.shift();
+
+}
 
 while (args.length) {
 
@@ -47,8 +53,7 @@ while (args.length) {
         process.kill();
         break;
 
-    case '-h':
-    case '--help':
+    default:
         process.stdout.write('\n');
         process.stdout.write(' Usage: doxdox <file> [options]' + '\n\n');
         process.stdout.write(' Options:' + '\n\n');
@@ -63,10 +68,6 @@ while (args.length) {
         process.stdout.write(' - Markdown\t\t(http://daringfireball.net/projects/markdown/)' + '\n');
         process.stdout.write('\n');
         process.kill();
-        break;
-
-    default:
-        filename = value;
         break;
 
     }
