@@ -20,7 +20,7 @@ var title = 'Untitled Project',
 var args = process.argv.slice(2),
     value;
 
-if (args.length) {
+if (args.length && !args[0].match(/^\-/)) {
 
     filename = args.shift();
 
