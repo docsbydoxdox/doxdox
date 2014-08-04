@@ -19,7 +19,7 @@ var title = 'Untitled Project',
 var args = process.argv.slice(2),
     value;
 
-var filename;
+var filename = '';
 
 while (args.length) {
 
@@ -47,6 +47,22 @@ while (args.length) {
         process.stdout.write(pkg.version + '\n');
         break;
 
+    case '-h':
+    case '--help':
+        process.stdout.write('\n');
+        process.stdout.write(' Usage: doxdox <file> [options]' + '\n\n');
+        process.stdout.write(' Options:' + '\n\n');
+        process.stdout.write(' -h, --help\t\tDisplay this help message.' + '\n');
+        process.stdout.write(' -t, --title\t\tSets title.' + '\n');
+        process.stdout.write(' -d, --description\tSets description.' + '\n');
+        process.stdout.write(' -l, --layout\t\tTemplate to render the documentation with.' + '\n');
+        process.stdout.write('\n');
+        process.stdout.write(' Available Layouts:' + '\n\n');
+        process.stdout.write(' - Bootstrap 3 (http://getbootstrap.com/)' + '\n');
+        process.stdout.write(' - Markdown (http://daringfireball.net/projects/markdown/)' + '\n');
+        process.stdout.write('\n');
+        break;
+
     default:
         filename = value;
         break;
@@ -68,6 +84,10 @@ fs.exists(filename, function (exists) {
             description: description,
             methods: utils.parseData(data)
         }));
+
+    } else {
+
+        console.log('File not found.');
 
     }
 
