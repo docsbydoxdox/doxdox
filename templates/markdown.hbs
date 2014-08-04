@@ -8,7 +8,7 @@
 
 {{registerContext this}}
 
-##{{formatName ctx.string}}
+##{{formatName ctx.string}} {{#if isPrivate}} <small><i>private method<i></small>{{/if}}
 {{{description.summary}}}
 
 {{#each tags}}{{#ifCond type "param"}}
@@ -20,7 +20,7 @@
 ###Parameters
 
 {{#each tags}}{{#ifCond type "param"}}
-- **{{name}}** {{#each types}}`{{.}}`{{/each}} {{#if optional}}_Optional_{{/if}} {{{description}}}
+- **{{name}}** {{#each types}}`{{.}}` {{/each}} {{#if optional}}_Optional_{{/if}} {{{description}}}
 {{/ifCond}}{{/each}}
 
 {{/if}}
@@ -34,7 +34,7 @@
 ###Properties
 
 {{#each tags}}{{#ifCond type "property"}}
-- **{{name}}** {{#each types}}`{{.}}`{{/each}} {{#if optional}}_Optional_{{/if}} {{{description}}}
+- **{{name}}** {{#each types}}`{{.}}` {{/each}} {{#if optional}}_Optional_{{/if}} {{{description}}}
 {{/ifCond}}{{/each}}
 
 {{/if}}

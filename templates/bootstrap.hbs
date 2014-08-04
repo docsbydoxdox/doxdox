@@ -59,9 +59,10 @@
 
     <div class="container">
 
-        <div class="page-header">
+        <div class="row page-header">
 
-            <div class="pull-right">
+            <div class="pull-right col-md-3">
+
                 <div>
                     <label>
                         <input type="checkbox" name="toggle-code" class="toggle-code-blocks">
@@ -74,9 +75,14 @@
                         Toggle Private Methods/Function
                     </label>
                 </div>
+
             </div>
 
-            <h1>{{title}}{{#if description}} <small>{{description}}</small>{{/if}}</h1>
+            <div class="col-md-9">
+
+                <h1>{{title}}{{#if description}} <small>{{description}}</small>{{/if}}</h1>
+
+            </div>
 
         </div>
 
@@ -120,6 +126,9 @@
 
                                 <h2 id="{{formatId ctx.string}}">
                                     <a href="#{{formatId ctx.string}}" class="permalink">#</a> {{formatName ctx.string}}
+                                    {{#if isPrivate}}
+                                    <small>private method</small>
+                                    {{/if}}
                                 </h2>
 
                                 {{{description.summary}}}
