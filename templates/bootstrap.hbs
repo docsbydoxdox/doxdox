@@ -61,7 +61,13 @@
 
         <div class="row page-header">
 
-            <div class="pull-right col-md-3">
+            <div class="col-md-9">
+
+                <h1>{{title}}{{#if description}} <small>{{description}}</small>{{/if}}</h1>
+
+            </div>
+
+            <div class="col-md-3 hidden-sm hidden-xs">
 
                 <div>
                     <label>
@@ -72,15 +78,9 @@
                 <div>
                     <label>
                         <input type="checkbox" name="toggle-private" class="toggle-private">
-                        Toggle Private Methods/Function
+                        Toggle Private Methods
                     </label>
                 </div>
-
-            </div>
-
-            <div class="col-md-9">
-
-                <h1>{{title}}{{#if description}} <small>{{description}}</small>{{/if}}</h1>
 
             </div>
 
