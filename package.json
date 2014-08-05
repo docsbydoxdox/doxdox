@@ -5,6 +5,7 @@
     "bin": "./bin/doxdox",
     "license": "MIT",
     "dependencies": {
+        "chalk": "0.5.1",
         "dox": "0.4.6",
         "handlebars": "1.3.0"
     },
