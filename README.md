@@ -1,4 +1,4 @@
-[![](https://david-dm.org/neogeek/doxdox.svg)](https://david-dm.org/neogeek/doxdox/)
+[![](https://david-dm.org/neogeek/doxdox.svg)](https://david-dm.org/neogeek/doxdox/) ![](http://img.shields.io/npm/v/doxdox.svg)
 
 #doxdox
 
