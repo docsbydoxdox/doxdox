@@ -2,6 +2,7 @@
 
 var pkg = require('../package'),
     fs = require('fs'),
+    chalk = require('chalk'),
     dox = require('dox'),
     hbs = require('handlebars'),
     helpers = require('../lib/helpers')(hbs),
@@ -15,14 +16,15 @@ var templates = {
 var title = 'Untitled Project',
     description = '',
     layout = 'bootstrap',
-    filename = '';
+    script = '',
+    output = '';
 
 var args = process.argv.slice(2),
     value;
 
 if (args.length && !args[0].match(/^\-/)) {
 
-    filename = args.shift();
+    script = args.shift();
 
 }
 
@@ -47,6 +49,11 @@ while (args.length) {
         layout = args.shift();
         break;
 
+    case '-o':
+    case '--output':
+        output = args.shift();
+        break;
+
     case '-v':
     case '--version':
         process.stdout.write(pkg.version + '\n');
@@ -55,17 +62,19 @@ while (args.length) {
 
     default:
         process.stdout.write('\n');
-        process.stdout.write(' Usage: doxdox <file> [options]' + '\n\n');
+        process.stdout.write(chalk.blue(' Usage:') + ' doxdox <file> [options]' + '\n\n');
         process.stdout.write(' Options:' + '\n\n');
-        process.stdout.write(' -h, --help\t\tDisplay this help message.' + '\n');
-        process.stdout.write(' -v, --version\t\tDisplay the current installed version.' + '\n');
-        process.stdout.write(' -t, --title\t\tSets title.' + '\n');
-        process.stdout.write(' -d, --description\tSets description.' + '\n');
-        process.stdout.write(' -l, --layout\t\tTemplate to render the documentation with.' + '\n');
+        process.stdout.write(chalk.yellow('  -h, --help') + '\t\tDisplay this help message.' + '\n');
+        process.stdout.write(chalk.yellow('  -v, --version') + '\t\tDisplay the current installed version.' + '\n');
+        process.stdout.write(chalk.yellow('  -t, --title') + '\t\tSets title.' + '\n');
+        process.stdout.write(chalk.yellow('  -d, --description') + '\tSets description.' + '\n');
+        process.stdout.write(chalk.yellow('  -l, --layout') + '\t\tTemplate to render the documentation with.' + '\n');
+        process.stdout.write(chalk.yellow('  -l, --layout') + '\t\tTemplate to render the documentation with.' + '\n');
+        process.stdout.write(chalk.yellow('  -o, --output') + '\t\tFile to save documentation to. Default to stdout.' + '\n');
         process.stdout.write('\n');
         process.stdout.write(' Available Layouts:' + '\n\n');
-        process.stdout.write(' - Bootstrap (default)\t\t(http://getbootstrap.com/)' + '\n');
-        process.stdout.write(' - Markdown\t\t\t(http://daringfireball.net/projects/markdown/)' + '\n');
+        process.stdout.write('  - Bootstrap (default)\t  (http://getbootstrap.com/)' + '\n');
+        process.stdout.write('  - Markdown\t\t  (http://daringfireball.net/projects/markdown/)' + '\n');
         process.stdout.write('\n');
         process.kill();
         break;
@@ -74,21 +83,32 @@ while (args.length) {
 
 }
 
-fs.exists(filename, function (exists) {
+fs.exists(script, function (exists) {
 
-    var data;
+    var content,
+        data;
 
     if (exists) {
 
-        data = dox.parseComments(fs.readFileSync(filename, 'utf8'));
+        data = dox.parseComments(fs.readFileSync(script, 'utf8'));
 
         if (templates[layout]) {
 
-            process.stdout.write(templates[layout]({
+            content = templates[layout]({
                 title: title,
                 description: description,
                 methods: utils.parseData(data)
-            }));
+            });
+
+            if (output) {
+
+                fs.writeFileSync(output, content, 'utf8');
+
+            } else {
+
+                process.stdout.write(content);
+
+            }
 
         } else {
 

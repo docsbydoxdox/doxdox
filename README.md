@@ -1,4 +1,4 @@
-[![](https://david-dm.org/neogeek/doxdox.svg)](https://david-dm.org/neogeek/doxdox/)
+[![](https://david-dm.org/neogeek/doxdox.svg)](https://david-dm.org/neogeek/doxdox/) [![](http://img.shields.io/npm/v/doxdox.svg)](https://www.npmjs.org/package/doxdox)
 
 #doxdox
 
@@ -24,6 +24,7 @@ $ npm install doxdox -g
  -t, --title        Sets title.
  -d, --description  Sets description.
  -l, --layout       Template to render the documentation with.
+ -o, --output       File to save documentation to. Default to stdout.
 
  Available Layouts:
 
