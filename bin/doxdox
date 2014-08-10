@@ -10,8 +10,8 @@ var config = {
     layout: 'bootstrap'
 };
 
-var file = '',
-    output = '';
+var file,
+    output;
 
 var args = process.argv.slice(2),
     value;
