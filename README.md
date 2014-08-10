@@ -31,3 +31,7 @@ $ npm install doxdox -g
  - Bootstrap (default)      (http://getbootstrap.com/)
  - Markdown         (http://daringfireball.net/projects/markdown/)
 ```
+
+Examples:
+
+- [Facade.js Documentation](http://docs.facadejs.com/)
