@@ -32,6 +32,6 @@ $ npm install doxdox -g
  - Markdown         (http://daringfireball.net/projects/markdown/)
 ```
 
-Examples:
+##Examples:
 
 - [Facade.js Documentation](http://docs.facadejs.com/)
