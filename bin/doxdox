@@ -1,22 +1,16 @@
 #!/usr/bin/env node
 
 var pkg = require('../package'),
-    fs = require('fs'),
     chalk = require('chalk'),
-    dox = require('dox'),
-    hbs = require('handlebars'),
-    helpers = require('../lib/helpers')(hbs),
-    utils = require('../lib/utils');
+    doxdox = require('..');
 
-var templates = {
-    bootstrap: require('../templates/bootstrap.hbs'),
-    markdown: require('../templates/markdown.hbs')
+var config = {
+    title: 'Untitled Project',
+    description: '',
+    layout: 'bootstrap'
 };
 
-var title = 'Untitled Project',
-    description = '',
-    layout = 'bootstrap',
-    script = '',
+var script = '',
     output = '';
 
 var args = process.argv.slice(2),
@@ -36,17 +30,17 @@ while (args.length) {
 
     case '-t':
     case '--title':
-        title = args.shift();
+        config.title = args.shift();
         break;
 
     case '-d':
     case '--description':
-        description = args.shift();
+        config.description = args.shift();
         break;
 
     case '-l':
     case '--layout':
-        layout = args.shift();
+        config.layout = args.shift();
         break;
 
     case '-o':
@@ -69,7 +63,6 @@ while (args.length) {
         process.stdout.write(chalk.yellow('  -t, --title') + '\t\tSets title.' + '\n');
         process.stdout.write(chalk.yellow('  -d, --description') + '\tSets description.' + '\n');
         process.stdout.write(chalk.yellow('  -l, --layout') + '\t\tTemplate to render the documentation with.' + '\n');
-        process.stdout.write(chalk.yellow('  -l, --layout') + '\t\tTemplate to render the documentation with.' + '\n');
         process.stdout.write(chalk.yellow('  -o, --output') + '\t\tFile to save documentation to. Default to stdout.' + '\n');
         process.stdout.write('\n');
         process.stdout.write(' Available Layouts:' + '\n\n');
@@ -83,43 +76,4 @@ while (args.length) {
 
 }
 
-fs.exists(script, function (exists) {
-
-    var content,
-        data;
-
-    if (exists) {
-
-        data = dox.parseComments(fs.readFileSync(script, 'utf8'));
-
-        if (templates[layout]) {
-
-            content = templates[layout]({
-                title: title,
-                description: description,
-                methods: utils.parseData(data)
-            });
-
-            if (output) {
-
-                fs.writeFileSync(output, content, 'utf8');
-
-            } else {
-
-                process.stdout.write(content);
-
-            }
-
-        } else {
-
-            process.stdout.write('Invalid layout specified.' + '\n');
-
-        }
-
-    } else {
-
-        process.stdout.write('File not found.' + '\n');
-
-    }
-
-});
+doxdox.parseScript(script, output, config);
