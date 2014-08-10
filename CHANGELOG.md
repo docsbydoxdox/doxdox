@@ -1,5 +1,9 @@
 #Changelog
 
+##0.0.4 (August 10, 2014)
+
+- Improved Node.js support with the addition of a new method: parseFile.
+
 ##0.0.3 (August 10, 2014)
 
 - Updated doxdox to be importable through Node.js
