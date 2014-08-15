@@ -10,7 +10,7 @@ var config = {
     layout: 'bootstrap'
 };
 
-var file,
+var input,
     output;
 
 var args = process.argv.slice(2),
@@ -18,7 +18,7 @@ var args = process.argv.slice(2),
 
 if (args.length && !args[0].match(/^\-/)) {
 
-    file = args.shift();
+    input = args.shift();
 
 }
 
@@ -76,4 +76,4 @@ while (args.length) {
 
 }
 
-doxdox.parseFile(file, output, config);
+doxdox.parseInput(input, output, config);

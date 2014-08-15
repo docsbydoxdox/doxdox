@@ -4,7 +4,7 @@
 >{{description}}
 {{/if}}
 
-{{#each methods}}{{#unless ignore}}{{#if ctx}}
+{{#each files}}{{#each methods}}{{#unless ignore}}{{#if ctx}}
 
 {{registerContext this}}
 
@@ -43,6 +43,6 @@
 ###Examples
 
 {{{description.body}}}
-{{/if}}{{/unless}}{{/each}}
+{{/if}}{{/unless}}{{/each}}{{/each}}
 
 _Documentation generated with [doxdox](https://github.com/neogeek/doxdox)._
