@@ -10,7 +10,7 @@ var config = {
     layout: 'bootstrap'
 };
 
-var input,
+var input = __dirname,
     output;
 
 var args = process.argv.slice(2),
