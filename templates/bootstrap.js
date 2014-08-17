@@ -5,12 +5,12 @@
     var protocol = w.location.protocol === 'file:' ? 'http:' : w.location.protocol,
         resource = [
             '//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css',
-            '//cdn.jsdelivr.net/highlight.js/8.0/styles/github.css',
-            '//cdn.jsdelivr.net/highlight.js/8.0/highlight.min.js',
-            '//cdn.jsdelivr.net/jquery/2.1.1/jquery.min.js'
+            '//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.1/styles/github.min.css',
+            '//code.jquery.com/jquery-2.1.1.js',
+            '//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.1/highlight.min.js'
         ];
 
-    resource.forEach(function (url) {
+    function loadResource(url) {
 
         var tag;
 
@@ -29,17 +29,11 @@
 
         tag.addEventListener('load', function () {
 
-            if (this.hasAttribute('src')) {
+            if (resource.length) {
 
-                resource.splice(resource.indexOf(this.getAttribute('src')), 1);
+                loadResource(resource.shift());
 
-            } else if (this.hasAttribute('href')) {
-
-                resource.splice(resource.indexOf(this.getAttribute('href')), 1);
-
-            }
-
-            if (!resource.length) {
+            } else {
 
                 if ($.isReady) {
 
@@ -57,7 +51,9 @@
 
         d.head.appendChild(tag);
 
-    });
+    }
+
+    loadResource(resource.shift());
 
 }(window, document, function () {
 
