@@ -15,8 +15,7 @@ var input = process.cwd(),
     output,
     pkg;
 
-var args = process.argv.slice(2),
-    value;
+var args = process.argv.slice(2);
 
 if (args.length && !args[0].match(/^\-/)) {
 
@@ -26,9 +25,7 @@ if (args.length && !args[0].match(/^\-/)) {
 
 while (args.length) {
 
-    value = args.shift();
-
-    switch (value) {
+    switch (args.shift()) {
 
     case '-t':
     case '--title':
