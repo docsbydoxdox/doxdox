@@ -11,7 +11,7 @@ var config = {
     layout: 'bootstrap'
 };
 
-var input = __dirname,
+var input = process.cwd(),
     output,
     pkg;
 
