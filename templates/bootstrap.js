@@ -62,7 +62,22 @@
         $code_block = $('.code'),
         $scope_private = $('.scope-private'),
         $toggle_code_blocks = $('.toggle-code-blocks')
-        $toggle_private = $('.toggle-private');
+        $toggle_private = $('.toggle-private'),
+        $backToTop = $('.back-to-top');
+
+    function handleScrollEvent() {
+
+        if (window.scrollY > 100 && $backToTop.not(':visible')) {
+
+            $backToTop.fadeIn();
+
+        } else if (window.scrollY < 100 && $backToTop.is(':visible')) {
+
+            $backToTop.fadeOut();
+
+        }
+
+    }
 
     $toggle_code_blocks.on('click', function () {
 
@@ -96,5 +111,9 @@
     $('.examples pre code, .code pre code').each(function() {
         hljs.highlightBlock(this);
     });
+
+    $(window).on('scroll', handleScrollEvent);
+
+    handleScrollEvent();
 
 }));
