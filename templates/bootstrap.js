@@ -1,3 +1,6 @@
+/*jslint browser: true */
+/*globals $, hljs */
+
 (function (w, d, f) {
 
     'use strict';
@@ -57,11 +60,13 @@
 
 }(window, document, function () {
 
+    'use strict';
+
     var hash = window.location.hash,
         $hash_elem = $('[id="' + hash.replace(/#/, '') + '"]'),
         $code_block = $('.code'),
         $scope_private = $('.scope-private'),
-        $toggle_code_blocks = $('.toggle-code-blocks')
+        $toggle_code_blocks = $('.toggle-code-blocks'),
         $toggle_private = $('.toggle-private'),
         $backToTop = $('.back-to-top');
 
@@ -108,7 +113,7 @@
 
     }
 
-    $('.examples pre code, .code pre code').each(function() {
+    $('.examples pre code, .code pre code').each(function () {
         hljs.highlightBlock(this);
     });
 
