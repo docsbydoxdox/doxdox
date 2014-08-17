@@ -41,10 +41,6 @@
     padding: 0;
 }
 
-.menu .file {
-    font-weight: bold;
-}
-
 .menu .scope-private {
     opacity: 0.5;
 }
@@ -123,7 +119,7 @@ pre .hljs {
                     {{#each files}}
 
                     <li>
-                        <a href="#" class="file">{{name}}</a>
+                        <b>{{name}}</b>
                         <ul>
 
                         {{#each methods}}
