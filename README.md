@@ -19,17 +19,18 @@ $ npm install doxdox -g
 
  Options:
 
- -h, --help     Display this help message.
- -v, --version      Display the current installed version.
- -t, --title        Sets title.
- -d, --description  Sets description.
- -l, --layout       Template to render the documentation with.
- -o, --output       File to save documentation to. Default to stdout.
+  -h, --help        Display this help message.
+  -v, --version     Display the current installed version.
+  -t, --title       Sets title.
+  -d, --description Sets description.
+  -p, --package Sets location of package.json file.
+  -l, --layout      Template to render the documentation with.
+  -o, --output      File to save documentation to. Default to stdout.
 
  Available Layouts:
 
- - Bootstrap (default)      (http://getbootstrap.com/)
- - Markdown         (http://daringfireball.net/projects/markdown/)
+  - Bootstrap (default)   (http://getbootstrap.com/)
+  - Markdown          (http://daringfireball.net/projects/markdown/)
 ```
 
 ##Examples:
