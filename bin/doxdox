@@ -1,7 +1,6 @@
 #!/usr/bin/env node
 
-var pkg = require('../package'),
-    chalk = require('chalk'),
+var chalk = require('chalk'),
     doxdox = require('..');
 
 var config = {
@@ -50,7 +49,7 @@ while (args.length) {
 
     case '-v':
     case '--version':
-        process.stdout.write(pkg.version + '\n');
+        process.stdout.write(require('../package').version + '\n');
         process.kill();
         break;
 
