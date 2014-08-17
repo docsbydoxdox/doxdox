@@ -60,15 +60,15 @@ while (args.length) {
 
     default:
         process.stdout.write('\n');
-        process.stdout.write(chalk.blue(' Usage:') + ' doxdox <file> [options]' + '\n\n');
+        process.stdout.write(chalk.blue(' Usage:') + ' doxdox <path> [options]' + '\n\n');
         process.stdout.write(' Options:' + '\n\n');
         process.stdout.write(chalk.yellow('  -h, --help') + '\t\tDisplay this help message.' + '\n');
         process.stdout.write(chalk.yellow('  -v, --version') + '\t\tDisplay the current installed version.' + '\n');
         process.stdout.write(chalk.yellow('  -t, --title') + '\t\tSets title.' + '\n');
         process.stdout.write(chalk.yellow('  -d, --description') + '\tSets description.' + '\n');
-        process.stdout.write(chalk.yellow('  -p, --package') + '\tSets location of package.json file.' + '\n');
         process.stdout.write(chalk.yellow('  -l, --layout') + '\t\tTemplate to render the documentation with.' + '\n');
-        process.stdout.write(chalk.yellow('  -o, --output') + '\t\tFile to save documentation to. Default to stdout.' + '\n');
+        process.stdout.write(chalk.yellow('  -p, --package') + '\tSets location of package.json file.' + '\n');
+        process.stdout.write(chalk.yellow('  -o, --output') + '\t\tFile to save documentation to. Defaults to stdout.' + '\n');
         process.stdout.write('\n');
         process.stdout.write(' Available Layouts:' + '\n\n');
         process.stdout.write('  - Bootstrap (default)\t  (http://getbootstrap.com/)' + '\n');

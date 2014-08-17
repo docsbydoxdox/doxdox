@@ -15,7 +15,7 @@ $ npm install doxdox -g
 ##Usage
 
 ```bash
- Usage: doxdox <file> [options]
+ Usage: doxdox <path> [options]
 
  Options:
 
@@ -23,9 +23,9 @@ $ npm install doxdox -g
   -v, --version     Display the current installed version.
   -t, --title       Sets title.
   -d, --description Sets description.
-  -p, --package Sets location of package.json file.
   -l, --layout      Template to render the documentation with.
-  -o, --output      File to save documentation to. Default to stdout.
+  -p, --package Sets location of package.json file.
+  -o, --output      File to save documentation to. Defaults to stdout.
 
  Available Layouts:
 
