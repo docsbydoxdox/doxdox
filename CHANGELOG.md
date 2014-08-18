@@ -1,5 +1,12 @@
 #Changelog
 
+##0.0.5 (August 17, 2014)
+
+- Added support for crawling directories.
+- Added support for pulling title and description from package.json files.
+- Added "Back to Top" link.
+- Minor visual changes.
+
 ##0.0.4 (August 10, 2014)
 
 - Improved Node.js support with the addition of a new method: parseFile.
