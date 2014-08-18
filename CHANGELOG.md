@@ -1,5 +1,10 @@
 #Changelog
 
+##0.0.6 (August 17, 2014)
+
+- Added support for custom Handlebars templates.
+- Improved built-in template selection (now case insensitive).
+
 ##0.0.5 (August 17, 2014)
 
 - Added support for crawling directories.

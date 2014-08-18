@@ -67,7 +67,7 @@ while (args.length) {
         process.stdout.write(chalk.yellow('  -t, --title') + '\t\tSets title.' + '\n');
         process.stdout.write(chalk.yellow('  -d, --description') + '\tSets description.' + '\n');
         process.stdout.write(chalk.yellow('  -l, --layout') + '\t\tTemplate to render the documentation with.' + '\n');
-        process.stdout.write(chalk.yellow('  -p, --package') + '\tSets location of package.json file.' + '\n');
+        process.stdout.write(chalk.yellow('  -p, --package') + '\t\tSets location of package.json file.' + '\n');
         process.stdout.write(chalk.yellow('  -o, --output') + '\t\tFile to save documentation to. Defaults to stdout.' + '\n');
         process.stdout.write('\n');
         process.stdout.write(' Available Layouts:' + '\n\n');
