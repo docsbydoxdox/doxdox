@@ -14,7 +14,7 @@ $ npm install doxdox -g
 
 ##Usage
 
-```bash
+```
  Usage: doxdox <path> [options]
 
  Options:
