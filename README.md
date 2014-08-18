@@ -24,7 +24,7 @@ $ npm install doxdox -g
   -t, --title       Sets title.
   -d, --description Sets description.
   -l, --layout      Template to render the documentation with.
-  -p, --package Sets location of package.json file.
+  -p, --package     Sets location of package.json file.
   -o, --output      File to save documentation to. Defaults to stdout.
 
  Available Layouts:
