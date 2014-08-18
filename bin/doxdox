@@ -1,32 +1,31 @@
 #!/usr/bin/env node
 
-var pkg = require('../package'),
+var fs = require('fs'),
+    path = require('path'),
     chalk = require('chalk'),
     doxdox = require('..');
 
 var config = {
-    title: 'Untitled Project',
+    title: '',
     description: '',
     layout: 'bootstrap'
 };
 
-var file = '',
-    output = '';
+var input = process.cwd(),
+    output,
+    pkg;
 
-var args = process.argv.slice(2),
-    value;
+var args = process.argv.slice(2);
 
 if (args.length && !args[0].match(/^\-/)) {
 
-    file = args.shift();
+    input = args.shift();
 
 }
 
 while (args.length) {
 
-    value = args.shift();
-
-    switch (value) {
+    switch (args.shift()) {
 
     case '-t':
     case '--title':
@@ -43,6 +42,11 @@ while (args.length) {
         config.layout = args.shift();
         break;
 
+    case '-p':
+    case '--package':
+        pkg = args.shift();
+        break;
+
     case '-o':
     case '--output':
         output = args.shift();
@@ -50,20 +54,21 @@ while (args.length) {
 
     case '-v':
     case '--version':
-        process.stdout.write(pkg.version + '\n');
+        process.stdout.write(require('../package').version + '\n');
         process.kill();
         break;
 
     default:
         process.stdout.write('\n');
-        process.stdout.write(chalk.blue(' Usage:') + ' doxdox <file> [options]' + '\n\n');
+        process.stdout.write(chalk.blue(' Usage:') + ' doxdox <path> [options]' + '\n\n');
         process.stdout.write(' Options:' + '\n\n');
         process.stdout.write(chalk.yellow('  -h, --help') + '\t\tDisplay this help message.' + '\n');
         process.stdout.write(chalk.yellow('  -v, --version') + '\t\tDisplay the current installed version.' + '\n');
         process.stdout.write(chalk.yellow('  -t, --title') + '\t\tSets title.' + '\n');
         process.stdout.write(chalk.yellow('  -d, --description') + '\tSets description.' + '\n');
         process.stdout.write(chalk.yellow('  -l, --layout') + '\t\tTemplate to render the documentation with.' + '\n');
-        process.stdout.write(chalk.yellow('  -o, --output') + '\t\tFile to save documentation to. Default to stdout.' + '\n');
+        process.stdout.write(chalk.yellow('  -p, --package') + '\tSets location of package.json file.' + '\n');
+        process.stdout.write(chalk.yellow('  -o, --output') + '\t\tFile to save documentation to. Defaults to stdout.' + '\n');
         process.stdout.write('\n');
         process.stdout.write(' Available Layouts:' + '\n\n');
         process.stdout.write('  - Bootstrap (default)\t  (http://getbootstrap.com/)' + '\n');
@@ -76,4 +81,46 @@ while (args.length) {
 
 }
 
-doxdox.parseFile(file, output, config);
+var stat;
+
+if (!pkg && fs.existsSync(input)) {
+
+    stat = fs.statSync(input);
+
+    if (stat.isDirectory()) {
+
+        pkg = path.normalize(input + '/package.json');
+
+    } else if (stat.isFile()) {
+
+        pkg = path.normalize(path.dirname(input) + '/package.json');
+
+    }
+
+}
+
+if (fs.existsSync(pkg)) {
+
+    pkg = require(pkg);
+
+    if (pkg.name && !config.title) {
+
+        config.title = pkg.name;
+
+    }
+
+    if (pkg.description && !config.description) {
+
+        config.description = pkg.description;
+
+    }
+
+}
+
+if (!config.title) {
+
+    config.title = 'Untitled Project';
+
+}
+
+doxdox.parseInput(input, output, config);

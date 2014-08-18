@@ -15,23 +15,26 @@ $ npm install doxdox -g
 ##Usage
 
 ```bash
- Usage: doxdox <file> [options]
+ Usage: doxdox <path> [options]
 
  Options:
 
- -h, --help     Display this help message.
- -v, --version      Display the current installed version.
- -t, --title        Sets title.
- -d, --description  Sets description.
- -l, --layout       Template to render the documentation with.
- -o, --output       File to save documentation to. Default to stdout.
+  -h, --help        Display this help message.
+  -v, --version     Display the current installed version.
+  -t, --title       Sets title.
+  -d, --description Sets description.
+  -l, --layout      Template to render the documentation with.
+  -p, --package Sets location of package.json file.
+  -o, --output      File to save documentation to. Defaults to stdout.
 
  Available Layouts:
 
- - Bootstrap (default)      (http://getbootstrap.com/)
- - Markdown         (http://daringfireball.net/projects/markdown/)
+  - Bootstrap (default)   (http://getbootstrap.com/)
+  - Markdown          (http://daringfireball.net/projects/markdown/)
 ```
 
 ##Examples:
 
-- [Facade.js Documentation](http://docs.facadejs.com/)
+- [Facade.js](http://facadejs.com/) - [Documentation](http://docs.facadejs.com/)
+- [plastick.js](https://github.com/syntaxtsb/plastick.js) - [Documentation](http://doxdox.org/syntaxtsb/plastick.js)
+- [CanvasToVideo](https://github.com/neogeek/CanvasToVideo) - [Documentation](http://doxdox.org/neogeek/CanvasToVideo)

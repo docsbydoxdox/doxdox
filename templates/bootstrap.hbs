@@ -3,17 +3,57 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="initial-scale=1">
-<title>{{title}}{{#if description}} - {{description}}{{/if}}</title>
+<title>{{title}}{{#if description}} &#8212; {{description}}{{/if}}</title>
 <style>
 
+.back-to-top {
+    display: none;
+    position: fixed;
+    right: 1em;
+    bottom: 1em;
+    z-index: 999;
+}
+
+.back-to-top a {
+    display: block;
+    padding: .5em .5em .5em 1.3em;
+    line-height: 1em;
+    border-radius: .25em;
+    background: #fff url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxM3B4IiBoZWlnaHQ9IjE0cHgiIHZpZXdCb3g9IjAgMCAxMyAxNCI+CiAgICA8cGF0aCBkPSJNNy4xODc2MTE1NiwxMyBMNy4xODc2MTE1Niw1LjQ5MjQ5NzAzIEwxMC40NTg3ODUzLDUuNDkyNDk3MDMgTDUuMDk5MzE3NjMsMC4xMTM1NTgxMjkgTC0wLjI2MDE1LDUuNDkyNDk3MDMgTDMuMDExMDIzNzEsNS40OTI0OTcwMyBMMy4wMTEwMjM3MSwxMyBMNy4xODc2MTE1NiwxMyBaIiBmaWxsPSIjNDI4YmNhIj48L3BhdGg+Cjwvc3ZnPgo=) no-repeat .25em center;
+}
+
+.menu {
+    margin: 1.5em 0 0 0;
+    padding: 0;
+}
+
+.menu li {
+    list-style: none;
+}
+
+.menu li a {
+    display: block;
+    padding: .25em;
+}
+
+.menu li ul {
+    margin: .25em 0 .25em 1em;
+    padding: 0;
+}
+
+.menu .scope-private {
+    opacity: 0.5;
+}
+
 .method h2 {
+    line-height: 1.3em;
     text-overflow: ellipsis;
     overflow: hidden;
 }
 
 .permalink {
     position: absolute;
-    margin-left: -25px;
+    margin-left: -.75em;
     font-weight: normal;
     color: #eee;
 }
@@ -36,11 +76,13 @@ pre .hljs {
 
 </style>
 <script>
-(function(e,t,i){"use strict";var s=e.location.protocol==="file:"?"http:":e.location.protocol,c=["//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css","//cdn.jsdelivr.net/highlight.js/8.0/styles/github.css","//cdn.jsdelivr.net/highlight.js/8.0/highlight.min.js","//cdn.jsdelivr.net/jquery/2.1.1/jquery.min.js"];c.forEach(function(e){var o;if(e.match(/\.js$/)){o=t.createElement("script");o.setAttribute("src",s+e)}else if(e.match(/\.css$/)){o=t.createElement("link");o.setAttribute("rel","stylesheet");o.setAttribute("href",s+e)}o.addEventListener("load",function(){if(this.hasAttribute("src")){c.splice(c.indexOf(this.getAttribute("src")),1)}else if(this.hasAttribute("href")){c.splice(c.indexOf(this.getAttribute("href")),1)}if(!c.length){if($.isReady){i()}else{$(document).ready(i)}}});t.head.appendChild(o)})})(window,document,function(){var e=window.location.hash,t=$('[id="'+e.replace(/#/,"")+'"]'),i=$(".code"),s=$(".scope-private"),c=$(".toggle-code-blocks");$toggle_private=$(".toggle-private");c.on("click",function(){if(c.is(":checked")){i.show()}else{i.hide()}});$toggle_private.on("click",function(){if($toggle_private.is(":checked")){s.show()}else{s.hide()}});i.hide();s.hide();if(t.length&&!t.is(":visible")){$toggle_private.trigger("click")}$(".examples pre code, .code pre code").each(function(){hljs.highlightBlock(this)})});
+(function(e,i,t){"use strict";var c=e.location.protocol==="file:"?"http:":e.location.protocol,o=["//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css","//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.1/styles/github.min.css","//code.jquery.com/jquery-2.1.1.js","//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.1/highlight.min.js"];function s(e){var l;if(e.match(/\.js$/)){l=i.createElement("script");l.setAttribute("src",c+e)}else if(e.match(/\.css$/)){l=i.createElement("link");l.setAttribute("rel","stylesheet");l.setAttribute("href",c+e)}l.addEventListener("load",function(){if(o.length){s(o.shift())}else{if($.isReady){t()}else{$(document).ready(t)}}});i.head.appendChild(l)}s(o.shift())})(window,document,function(){"use strict";var e=window.location.hash,i=$('[id="'+e.replace(/#/,"")+'"]'),t=$(".code"),c=$(".scope-private"),o=$(".toggle-code-blocks"),s=$(".toggle-private"),l=$(".back-to-top");function n(){if(window.scrollY>100&&l.not(":visible")){l.fadeIn()}else if(window.scrollY<100&&l.is(":visible")){l.fadeOut()}}o.on("click",function(){if(o.is(":checked")){t.show()}else{t.hide()}});s.on("click",function(){if(s.is(":checked")){c.show()}else{c.hide()}});t.hide();c.hide();if(i.length&&!i.is(":visible")){s.trigger("click")}$(".examples pre code, .code pre code").each(function(){hljs.highlightBlock(this)});$(window).on("scroll",n);n()});
 </script>
 </head>
 
 <body>
+
+<div class="back-to-top"><a href="#">Back to Top</a></div>
 
 <div class="wrap">
 
@@ -73,21 +115,33 @@ pre .hljs {
 
             <div class="col-md-3 hidden-sm hidden-xs">
 
-                <ul class="nav">
+                <ul class="menu">
 
-                    {{#each methods}}
+                    {{#each files}}
 
-                        {{#unless ignore}}
+                    <li>
+                        <b>{{name}}</b>
+                        <ul>
 
-                            {{#if ctx}}
+                        {{#each methods}}
 
-                                <li class="scope-{{#if isPrivate}}private{{else}}public{{/if}}">
-                                    <a href="#{{formatId ctx.string}}">{{formatName ctx.string}}</a>
-                                </li>
+                            {{#unless ignore}}
 
-                            {{/if}}
+                                {{#if ctx}}
 
-                        {{/unless}}
+                                    <li class="scope-{{#if isPrivate}}private{{else}}public{{/if}}">
+                                        <a href="#{{ctx.uid}}">{{formatName ctx.string}}</a>
+                                    </li>
+
+                                {{/if}}
+
+                            {{/unless}}
+
+                        {{/each}}
+
+                        </ul>
+
+                    </li>
 
                     {{/each}}
 
@@ -96,6 +150,8 @@ pre .hljs {
             </div>
 
             <div class="col-md-9">
+
+                {{#each files}}
 
                 {{#each methods}}
 
@@ -107,8 +163,8 @@ pre .hljs {
 
                                 {{registerContext this}}
 
-                                <h2 id="{{formatId ctx.string}}">
-                                    <a href="#{{formatId ctx.string}}" class="permalink">#</a> {{formatName ctx.string}}
+                                <h2 id="{{ctx.uid}}">
+                                    <a href="#{{ctx.uid}}" class="permalink">#</a> {{formatName ctx.string}}
                                     {{#if isPrivate}}
                                     <small>private method</small>
                                     {{/if}}
@@ -182,6 +238,8 @@ pre .hljs {
 
                                 {{/if}}
 
+                                {{#if description.body}}
+
                                 <section class="examples">
 
                                     <h3>Examples</h3>
@@ -189,6 +247,8 @@ pre .hljs {
                                     {{{description.body}}}
 
                                 </section>
+
+                                {{/if}}
 
                                 <section class="code">
 
@@ -215,6 +275,8 @@ pre .hljs {
                         {{/if}}
 
                     {{/unless}}
+
+                {{/each}}
 
                 {{/each}}
 
