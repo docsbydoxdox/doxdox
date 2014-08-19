@@ -268,11 +268,11 @@ pre .hljs {
 
                                 {{#each tags}}
 
-                                    {{#ifCond type "return"}}
+                                    {{#ifCondMatch type "return"}}
 
                                         <p>{{#each types}}<code>{{.}}</code> {{/each}} {{{description}}}</p>
 
-                                    {{/ifCond}}
+                                    {{/ifCondMatch}}
 
                                 {{/each}}
 

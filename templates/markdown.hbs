@@ -48,6 +48,12 @@
 {{{string}}}
 ```{{/ifCond}}{{/each}}
 
+###Returns
+
+{{#each tags}}{{#ifCondMatch type "return"}}
+{{#each types}}`{{.}}` {{/each}} {{{description}}}
+{{/ifCondMatch}}{{/each}}
+
 {{/if}}{{/unless}}{{/each}}{{/each}}
 
 _Documentation generated with [doxdox](https://github.com/neogeek/doxdox)._
