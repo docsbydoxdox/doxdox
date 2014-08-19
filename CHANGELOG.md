@@ -1,5 +1,11 @@
 #Changelog
 
+##0.0.7 (August 18, 2014)
+
+- Added support for examples tag.
+- Added support for returns tag.
+- Added both `bower_components` and `gulpfile` to default walk exceptions.
+
 ##0.0.6 (August 17, 2014)
 
 - Added support for custom Handlebars templates.
