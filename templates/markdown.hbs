@@ -40,13 +40,19 @@
 
 {{/if}}
 
-{{#if description.body}}
-
 ###Examples
 
 {{{description.body}}}
 
-{{/if}}
+{{#each tags}}{{#ifCond type "example"}}```
+{{{string}}}
+```{{/ifCond}}{{/each}}
+
+###Returns
+
+{{#each tags}}{{#ifCondMatch type "return"}}
+{{#each types}}`{{.}}` {{/each}} {{{description}}}
+{{/ifCondMatch}}{{/each}}
 
 {{/if}}{{/unless}}{{/each}}{{/each}}
 
