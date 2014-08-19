@@ -40,13 +40,13 @@
 
 {{/if}}
 
-{{#if description.body}}
-
 ###Examples
 
 {{{description.body}}}
 
-{{/if}}
+{{#each tags}}{{#ifCond type "example"}}```
+{{{string}}}
+```{{/ifCond}}{{/each}}
 
 {{/if}}{{/unless}}{{/each}}{{/each}}
 

@@ -238,17 +238,23 @@ pre .hljs {
 
                                 {{/if}}
 
-                                {{#if description.body}}
-
                                 <section class="examples">
 
                                     <h3>Examples</h3>
 
                                     {{{description.body}}}
 
-                                </section>
+                                    {{#each tags}}
 
-                                {{/if}}
+                                        {{#ifCond type "example"}}
+
+                                            <pre><code>{{string}}</code></pre>
+
+                                        {{/ifCond}}
+
+                                    {{/each}}
+
+                                </section>
 
                                 <section class="code">
 
