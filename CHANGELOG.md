@@ -1,5 +1,9 @@
 #Changelog
 
+##0.0.8 (September 5, 2014)
+
+- Updated to latest version of dox.
+
 ##0.0.7 (August 18, 2014)
 
 - Added support for examples tag.
