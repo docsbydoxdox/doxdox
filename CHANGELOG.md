@@ -1,5 +1,10 @@
 #Changelog
 
+##0.0.9 (September 6, 2014)
+
+- Fixed issue with relative source paths.
+- Updated to latest version of dox.
+
 ##0.0.8 (September 5, 2014)
 
 - Updated to latest version of dox.
