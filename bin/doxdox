@@ -93,7 +93,7 @@ if (!pkg && fs.existsSync(input)) {
 
     } else if (stat.isFile()) {
 
-        pkg = path.normalize(path.dirname(input) + '/package.json');
+        pkg = path.normalize(path.resolve(path.dirname(input)) + '/package.json');
 
     }
 
