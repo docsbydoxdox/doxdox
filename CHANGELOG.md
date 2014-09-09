@@ -1,5 +1,9 @@
 #Changelog
 
+##0.0.10 (September 8, 2014)
+
+- Updated to latest version of Handlebars.
+
 ##0.0.9 (September 6, 2014)
 
 - Fixed issue with relative source paths.
