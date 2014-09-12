@@ -1,5 +1,11 @@
 #Changelog
 
+##0.0.11 (September 11, 2014)
+
+- Removed tag made redundant by doxdox 0.5.0 update.
+- Fixed bug related to relative directories.
+- Added findPackage method to utils.
+
 ##0.0.10 (September 8, 2014)
 
 - Updated to latest version of Handlebars.
