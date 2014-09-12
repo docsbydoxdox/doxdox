@@ -3,7 +3,8 @@
 var fs = require('fs'),
     path = require('path'),
     chalk = require('chalk'),
-    doxdox = require('..');
+    doxdox = require('..'),
+    utils = require('../lib/utils');
 
 var config = {
     title: '',
@@ -95,21 +96,9 @@ while (args.length) {
 
 }
 
-var stat;
+if (!pkg) {
 
-if (!pkg && fs.existsSync(input)) {
-
-    stat = fs.statSync(input);
-
-    if (stat.isDirectory()) {
-
-        pkg = path.normalize(path.resolve(input) + '/package.json');
-
-    } else if (stat.isFile()) {
-
-        pkg = path.normalize(path.resolve(path.dirname(input)) + '/package.json');
-
-    }
+    pkg = utils.findPackage(input);
 
 }
 
@@ -117,13 +106,13 @@ if (fs.existsSync(pkg)) {
 
     pkg = require(pkg);
 
-    if (pkg.name && !config.title) {
+    if (!config.title && pkg.name) {
 
         config.title = pkg.name;
 
     }
 
-    if (pkg.description && !config.description) {
+    if (!config.description && pkg.description) {
 
         config.description = pkg.description;
 
