@@ -29,36 +29,49 @@ while (args.length) {
 
     case '-t':
     case '--title':
+
         config.title = args.shift();
+
         break;
 
     case '-d':
     case '--description':
+
         config.description = args.shift();
+
         break;
 
     case '-l':
     case '--layout':
+
         config.layout = args.shift();
+
         break;
 
     case '-p':
     case '--package':
+
         pkg = args.shift();
+
         break;
 
     case '-o':
     case '--output':
+
         output = args.shift();
+
         break;
 
     case '-v':
     case '--version':
+
         process.stdout.write(require('../package').version + '\n');
         process.kill();
+
         break;
 
     default:
+
         process.stdout.write('\n');
         process.stdout.write(chalk.blue(' Usage:') + ' doxdox <path> [options]' + '\n\n');
         process.stdout.write(' Options:' + '\n\n');
@@ -75,6 +88,7 @@ while (args.length) {
         process.stdout.write('  - Markdown\t\t  (http://daringfireball.net/projects/markdown/)' + '\n');
         process.stdout.write('\n');
         process.kill();
+
         break;
 
     }
