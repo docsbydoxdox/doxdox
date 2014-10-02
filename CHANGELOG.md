@@ -1,5 +1,9 @@
 #Changelog
 
+##0.0.12 (October 2, 2014)
+
+- Added text overflow to methods to prevent overlapping body content. 
+
 ##0.0.11 (September 11, 2014)
 
 - Removed tag made redundant by doxdox 0.5.0 update.
