@@ -34,6 +34,8 @@
 .menu li a {
     display: block;
     padding: .25em;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .menu li ul {
@@ -130,7 +132,7 @@ pre .hljs {
                                 {{#if ctx}}
 
                                     <li class="scope-{{#if isPrivate}}private{{else}}public{{/if}}">
-                                        <a href="#{{ctx.uid}}">{{formatName ctx.string}}</a>
+                                        <a href="#{{ctx.uid}}" title="{{formatName ctx.string}}">{{formatName ctx.string}}</a>
                                     </li>
 
                                 {{/if}}
