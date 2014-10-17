@@ -8,9 +8,9 @@
     var protocol = w.location.protocol === 'file:' ? 'http:' : w.location.protocol,
         resource = [
             '//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css',
-            '//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.1/styles/github.min.css',
+            '//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.3/styles/github.min.css',
             '//code.jquery.com/jquery-2.1.1.js',
-            '//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.1/highlight.min.js'
+            '//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.3/highlight.min.js'
         ];
 
     function loadResource(url) {
@@ -113,7 +113,7 @@
 
     }
 
-    $('.examples pre code, .code pre code').each(function () {
+    $('pre code:not(.hljs)').each(function () {
         hljs.highlightBlock(this);
     });
 

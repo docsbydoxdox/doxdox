@@ -6,8 +6,9 @@
     "license": "MIT",
     "dependencies": {
         "chalk": "0.5.1",
-        "dox": "0.5.1",
-        "handlebars": "2.0.0"
+        "dox": "0.5.3",
+        "handlebars": "2.0.0",
+        "highlight.js": "8.3.0"
     },
     "keywords": [
         "documentation",

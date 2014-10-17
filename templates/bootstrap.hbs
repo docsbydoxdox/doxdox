@@ -78,7 +78,7 @@ pre .hljs {
 
 </style>
 <script>
-(function(e,i,t){"use strict";var c=e.location.protocol==="file:"?"http:":e.location.protocol,o=["//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css","//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.1/styles/github.min.css","//code.jquery.com/jquery-2.1.1.js","//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.1/highlight.min.js"];function s(e){var l;if(e.match(/\.js$/)){l=i.createElement("script");l.setAttribute("src",c+e)}else if(e.match(/\.css$/)){l=i.createElement("link");l.setAttribute("rel","stylesheet");l.setAttribute("href",c+e)}l.addEventListener("load",function(){if(o.length){s(o.shift())}else{if($.isReady){t()}else{$(document).ready(t)}}});i.head.appendChild(l)}s(o.shift())})(window,document,function(){"use strict";var e=window.location.hash,i=$('[id="'+e.replace(/#/,"")+'"]'),t=$(".code"),c=$(".scope-private"),o=$(".toggle-code-blocks"),s=$(".toggle-private"),l=$(".back-to-top");function n(){if(window.scrollY>100&&l.not(":visible")){l.fadeIn()}else if(window.scrollY<100&&l.is(":visible")){l.fadeOut()}}o.on("click",function(){if(o.is(":checked")){t.show()}else{t.hide()}});s.on("click",function(){if(s.is(":checked")){c.show()}else{c.hide()}});t.hide();c.hide();if(i.length&&!i.is(":visible")){s.trigger("click")}$(".examples pre code, .code pre code").each(function(){hljs.highlightBlock(this)});$(window).on("scroll",n);n()});
+(function(e,i,t){"use strict";var o=e.location.protocol==="file:"?"http:":e.location.protocol,s=["//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css","//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.3/styles/github.min.css","//code.jquery.com/jquery-2.1.1.js","//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.3/highlight.min.js"];function c(e){var l;if(e.match(/\.js$/)){l=i.createElement("script");l.setAttribute("src",o+e)}else if(e.match(/\.css$/)){l=i.createElement("link");l.setAttribute("rel","stylesheet");l.setAttribute("href",o+e)}l.addEventListener("load",function(){if(s.length){c(s.shift())}else{if($.isReady){t()}else{$(document).ready(t)}}});i.head.appendChild(l)}c(s.shift())})(window,document,function(){"use strict";var e=window.location.hash,i=$('[id="'+e.replace(/#/,"")+'"]'),t=$(".code"),o=$(".scope-private"),s=$(".toggle-code-blocks"),c=$(".toggle-private"),l=$(".back-to-top");function n(){if(window.scrollY>100&&l.not(":visible")){l.fadeIn()}else if(window.scrollY<100&&l.is(":visible")){l.fadeOut()}}s.on("click",function(){if(s.is(":checked")){t.show()}else{t.hide()}});c.on("click",function(){if(c.is(":checked")){o.show()}else{o.hide()}});t.hide();o.hide();if(i.length&&!i.is(":visible")){c.trigger("click")}$("pre code:not(.hljs)").each(function(){hljs.highlightBlock(this)});$(window).on("scroll",n);n()});
 </script>
 </head>
 
@@ -250,7 +250,7 @@ pre .hljs {
 
                                         {{#ifCond type "example"}}
 
-                                            <pre><code>{{string}}</code></pre>
+                                            <pre><code class="hljs">{{{highlightBlock string}}}</code></pre>
 
                                         {{/ifCond}}
 
@@ -262,7 +262,7 @@ pre .hljs {
 
                                     <h3>Code</h3>
 
-                                    <pre><code>{{code}}</code></pre>
+                                    <pre><code class="hljs">{{{highlightBlock code}}}</code></pre>
 
                                 </section>
 
