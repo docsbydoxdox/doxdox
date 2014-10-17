@@ -1,5 +1,10 @@
 #Changelog
 
+##0.0.13 (October 16, 2014)
+
+- Large code blocks are now pre-highlighted.
+- Updated to latest version of dox.
+
 ##0.0.12 (October 2, 2014)
 
 - Added text overflow to methods to prevent overlapping body content. 
