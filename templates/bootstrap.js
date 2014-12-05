@@ -7,10 +7,10 @@
 
     var protocol = w.location.protocol === 'file:' ? 'http:' : w.location.protocol,
         resource = [
-            '//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css',
-            '//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.3/styles/github.min.css',
+            '//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css',
+            '//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/github.min.css',
             '//code.jquery.com/jquery-2.1.1.js',
-            '//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.3/highlight.min.js'
+            '//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js'
         ];
 
     function loadResource(url) {

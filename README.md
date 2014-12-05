@@ -2,9 +2,9 @@
 
 #doxdox
 
-> HTML and Markdown documentation generator.
+> HTML, Markdown and Dash documentation generator.
 
-A documentation generator that takes output from [dox](https://github.com/visionmedia/dox/) and builds a [Bootstrap](http://getbootstrap.com/) or [Markdown](http://daringfireball.net/projects/markdown/) based documentation file.
+A documentation generator that takes output from [dox](https://github.com/tj/dox/) and builds either a [Bootstrap](http://getbootstrap.com/), [Markdown](http://daringfireball.net/projects/markdown/) or [Dash](http://kapeli.com/dash) based documentation file.
 
 ##Installation
 
@@ -29,9 +29,16 @@ $ npm install doxdox -g
 
  Available Layouts:
 
-  - Bootstrap (default)   (http://getbootstrap.com/)
-  - Markdown          (http://daringfireball.net/projects/markdown/)
+  - Bootstrap (default)		(http://getbootstrap.com/)
+  - Markdown				(http://daringfireball.net/projects/markdown/)
+  - Dash					(http://kapeli.com/docsets/)
 ```
+
+##Exporting
+
+###Dash
+
+Exporting to Dash generates a zip file and is only available through the `--output` flag.
 
 ##Examples:
 

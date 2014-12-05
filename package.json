@@ -1,20 +1,24 @@
 {
     "name": "doxdox",
-    "description": "HTML and Markdown documentation generator.",
+    "description": "HTML, Markdown and Dash documentation generator.",
     "version": "0.0.13",
     "bin": "./bin/doxdox",
     "license": "MIT",
     "dependencies": {
         "chalk": "0.5.1",
-        "dox": "0.5.3",
+        "dox": "0.6.1",
         "handlebars": "2.0.0",
-        "highlight.js": "8.3.0"
+        "highlight.js": "8.4.0",
+        "sqlite3": "3.0.4",
+        "adm-zip": "0.4.4",
+        "temp": "0.8.1"
     },
     "keywords": [
         "documentation",
         "html",
         "bootstrap",
-        "markdown"
+        "markdown",
+        "dash"
     ],
     "authors": [
         {

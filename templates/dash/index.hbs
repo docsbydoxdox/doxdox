@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="initial-scale=1">
+<title>{{title}}</title>
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/github.min.css">
+<style>
+
+.wrap {
+    padding: 0 2em 2em 2em;
+}
+
+.method h2 {
+    line-height: 1.3em;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.bs-footer {
+    margin: 50px auto;
+    color: #777;
+    text-align: center;
+}
+
+pre .hljs {
+    padding: 0;
+    background: none;
+}
+
+</style>
+</head>
+
+<body>
+
+    <div class="wrap">
+
+        <h1>{{title}}{{#if description}} <small>{{description}}</small>{{/if}}</h1>
+
+        {{#each files}}
+
+        {{#each methods}}
+
+        {{#unless ignore}}
+
+        {{#if ctx}}
+
+        <div class="method scope-{{#if isPrivate}}private{{else}}public{{/if}}">
+
+            {{registerContext this}}
+
+            <h2 id="{{ctx.uid}}">
+                {{formatName ctx.string}}
+                {{#if isPrivate}}
+                <small>private method</small>
+                {{/if}}
+            </h2>
+
+            {{{description.summary}}}
+
+            {{#each tags}}{{#ifCond type "param"}}
+            {{registerVariable "displayParameters" true}}
+            {{/ifCond}}{{/each}}
+
+            {{#if displayParameters}}
+
+            <section class="parameters">
+
+                <h3>Parameters</h3>
+
+                {{#each tags}}
+
+                {{#ifCond type "param"}}
+
+                <p>
+                    <b>{{name}}</b>
+                    {{#each types}}
+                    <code>{{.}}</code>
+                    {{/each}}
+                    {{#if optional}}
+                    <span class="label label-default">Optional</span>
+                    {{/if}}
+                </p>
+                <p>{{{description}}}</p>
+
+                {{/ifCond}}
+
+                {{/each}}
+
+            </section>
+
+            {{/if}}
+
+            {{#each tags}}{{#ifCond type "property"}}
+            {{registerVariable "displayProperties" true}}
+            {{/ifCond}}{{/each}}
+
+            {{#if displayProperties}}
+
+            <section class="properties">
+
+                <h3>Properties</h3>
+
+                {{#each tags}}
+
+                {{#ifCond type "property"}}
+
+                <p>
+                    <b>{{name}}</b>
+                    {{#each types}}
+                    <code>{{.}}</code>
+                    {{/each}}
+                    {{#if optional}}
+                    <span class="label label-default">Optional</span>
+                    {{/if}}
+                </p>
+                <p>{{{description}}}</p>
+
+                {{/ifCond}}
+
+                {{/each}}
+
+            </section>
+
+            {{/if}}
+
+            <section class="examples">
+
+                <h3>Examples</h3>
+
+                {{{description.body}}}
+
+                {{#each tags}}
+
+                {{#ifCond type "example"}}
+
+                <pre><code class="hljs">{{{highlightBlock string}}}</code></pre>
+
+                {{/ifCond}}
+
+                {{/each}}
+
+            </section>
+
+            <section class="code">
+
+                <h3>Code</h3>
+
+                <pre><code class="hljs">{{{highlightBlock code}}}</code></pre>
+
+            </section>
+
+            <h3>Returns</h3>
+
+            {{#each tags}}
+
+            {{#ifCondMatch type "return"}}
+
+            <p>{{#each types}}<code>{{.}}</code> {{/each}} {{{description}}}</p>
+
+            {{/ifCondMatch}}
+
+            {{/each}}
+
+        </div>
+
+        {{/if}}
+
+        {{/unless}}
+
+        {{/each}}
+
+        {{/each}}
+
+    </div>
+
+<footer class="bs-footer">
+
+    <div class="container">
+
+        <p>Documentation generated with <a href="https://github.com/neogeek/doxdox">doxdox</a>.</p>
+
+    </div>
+
+</footer>
+
+</body>
+</html>
