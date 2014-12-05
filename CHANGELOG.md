@@ -1,5 +1,10 @@
 #Changelog
 
+##0.0.14 (December 5, 2014)
+
+- Added new export to Dash.
+- Updated to latest version of dox.
+
 ##0.0.13 (October 16, 2014)
 
 - Large code blocks are now pre-highlighted.
@@ -7,7 +12,7 @@
 
 ##0.0.12 (October 2, 2014)
 
-- Added text overflow to methods to prevent overlapping body content. 
+- Added text overflow to methods to prevent overlapping body content.
 
 ##0.0.11 (September 11, 2014)
 
