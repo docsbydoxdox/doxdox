@@ -1,5 +1,9 @@
 #Changelog
 
+##0.0.15 (December 5, 2014)
+
+- Added offline support to dash documentation.
+
 ##0.0.14 (December 5, 2014)
 
 - Added new export to Dash.
