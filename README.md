@@ -1,4 +1,4 @@
-[![](https://david-dm.org/neogeek/doxdox.svg)](https://david-dm.org/neogeek/doxdox/) [![](http://img.shields.io/npm/v/doxdox.svg)](https://www.npmjs.org/package/doxdox)
+[![](https://david-dm.org/neogeek/doxdox.svg?style=flat)](https://david-dm.org/neogeek/doxdox/) [![](http://img.shields.io/npm/v/doxdox.svg?style=flat)](https://www.npmjs.org/package/doxdox)
 
 #doxdox
 
@@ -33,12 +33,6 @@ $ npm install doxdox -g
   - Markdown				(http://daringfireball.net/projects/markdown/)
   - Dash					(http://kapeli.com/docsets/)
 ```
-
-##Exporting
-
-###Dash
-
-Exporting to Dash generates a zip file and is only available through the `--output` flag.
 
 ##Examples:
 
