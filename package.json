@@ -9,6 +9,7 @@
         "dox": "0.6.1",
         "handlebars": "2.0.0",
         "highlight.js": "8.4.0",
+        "promise": "6.0.1",
         "sqlite3": "3.0.4",
         "adm-zip": "0.4.4",
         "temp": "0.8.1"

@@ -1,7 +1,6 @@
 #!/usr/bin/env node
 
 var fs = require('fs'),
-    path = require('path'),
     chalk = require('chalk'),
     doxdox = require('..'),
     utils = require('../lib/utils');
@@ -87,6 +86,7 @@ while (args.length) {
         process.stdout.write(' Available Layouts:' + '\n\n');
         process.stdout.write('  - Bootstrap (default)\t  (http://getbootstrap.com/)' + '\n');
         process.stdout.write('  - Markdown\t\t  (http://daringfireball.net/projects/markdown/)' + '\n');
+        process.stdout.write('  - Dash\t\t  (http://kapeli.com/docsets/)' + '\n');
         process.stdout.write('\n');
         process.kill();
 
@@ -126,4 +126,16 @@ if (!config.title) {
 
 }
 
-doxdox.parseInput(input, output, config);
+doxdox.parseInput(input, config).then(function (content) {
+
+    if (output) {
+
+        fs.writeFileSync(output, content, 'utf8');
+
+    } else {
+
+        process.stdout.write(content);
+
+    }
+
+});
