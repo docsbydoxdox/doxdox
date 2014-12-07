@@ -1,5 +1,9 @@
 #Changelog
 
+##0.0.16 (December 6, 2014)
+
+- Added promise to buildDashDocSet method.
+
 ##0.0.15 (December 5, 2014)
 
 - Added offline support to dash documentation.
