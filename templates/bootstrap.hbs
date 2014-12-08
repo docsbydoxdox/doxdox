@@ -197,7 +197,7 @@ pre .hljs {
                                                     <span class="label label-default">Optional</span>
                                                 {{/if}}
                                             </p>
-                                            <p>{{{description}}}</p>
+                                            {{{description}}}
 
                                         {{/ifCond}}
 
@@ -230,7 +230,7 @@ pre .hljs {
                                                     <span class="label label-default">Optional</span>
                                                 {{/if}}
                                             </p>
-                                            <p>{{{description}}}</p>
+                                            {{{description}}}
 
                                         {{/ifCond}}
 
@@ -272,7 +272,8 @@ pre .hljs {
 
                                     {{#ifCondMatch type "return"}}
 
-                                        <p>{{#each types}}<code>{{.}}</code> {{/each}} {{{description}}}</p>
+                                        <p>{{#each types}}<code>{{.}}</code> {{/each}}</p>
+                                        {{{description}}}
 
                                     {{/ifCondMatch}}
 
