@@ -1,5 +1,10 @@
 #Changelog
 
+##0.0.17 (December 7, 2014)
+
+- Removed paragraph tag from descriptions.
+- Forced language on highlight method.
+
 ##0.0.16 (December 6, 2014)
 
 - Added promise to buildDashDocSet method.
