@@ -1,5 +1,10 @@
 #Changelog
 
+##0.0.18 (December 12, 2014)
+
+- Improved Dash docset generation.
+- Removed brackets from around optional tag names.
+
 ##0.0.17 (December 7, 2014)
 
 - Removed paragraph tag from descriptions.
