@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="initial-scale=1">
-<title>{{title}}</title>
+<title>{{formatName ctx.string}}</title>
 <link rel="stylesheet" href="resources/bootstrap/bootstrap.min.css">
 <link rel="stylesheet" href="resources/highlight.js/github.min.css">
 <style>
@@ -36,12 +36,6 @@ pre .hljs {
 
     <div class="wrap">
 
-        <h1>{{title}}{{#if description}} <small>{{description}}</small>{{/if}}</h1>
-
-        {{#each files}}
-
-        {{#each methods}}
-
         {{#unless ignore}}
 
         {{#if ctx}}
@@ -73,6 +67,7 @@ pre .hljs {
 
                 {{#ifCond type "param"}}
 
+                <a name="//apple_ref/cpp/Parameter/{{name}}" class="dashAnchor"></a>
                 <p>
                     <b>{{name}}</b>
                     {{#each types}}
@@ -106,6 +101,7 @@ pre .hljs {
 
                 {{#ifCond type "property"}}
 
+                <a name="//apple_ref/cpp/Property/{{name}}" class="dashAnchor"></a>
                 <p>
                     <b>{{name}}</b>
                     {{#each types}}
@@ -143,14 +139,6 @@ pre .hljs {
 
             </section>
 
-            <section class="code">
-
-                <h3>Code</h3>
-
-                <pre><code class="hljs">{{{highlightBlock code}}}</code></pre>
-
-            </section>
-
             <h3>Returns</h3>
 
             {{#each tags}}
@@ -168,10 +156,6 @@ pre .hljs {
         {{/if}}
 
         {{/unless}}
-
-        {{/each}}
-
-        {{/each}}
 
     </div>
 
