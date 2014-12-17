@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="initial-scale=1">
-<title>{{formatName ctx.string}}</title>
+<title>{{name}}</title>
 <link rel="stylesheet" href="resources/bootstrap/bootstrap.min.css">
 <link rel="stylesheet" href="resources/highlight.js/github.min.css">
 <style>
@@ -36,50 +36,36 @@ pre .hljs {
 
     <div class="wrap">
 
-        {{#unless ignore}}
-
-        {{#if ctx}}
-
         <div class="method scope-{{#if isPrivate}}private{{else}}public{{/if}}">
 
-            {{registerContext this}}
-
-            <h2 id="{{ctx.uid}}">
-                {{formatName ctx.string}}
+            <h2 id="{{uid}}">
+                {{name}}
                 {{#if isPrivate}}
-                <small>private method</small>
+                <small>private {{type}}</small>
                 {{/if}}
             </h2>
 
-            {{{description.summary}}}
+            {{{description}}}
 
-            {{#each tags}}{{#ifCond type "param"}}
-            {{registerVariable "displayParameters" true}}
-            {{/ifCond}}{{/each}}
-
-            {{#if displayParameters}}
+            {{#if tags.param.length}}
 
             <section class="parameters">
 
                 <h3>Parameters</h3>
 
-                {{#each tags}}
+                {{#each tags.param}}
 
-                {{#ifCond type "param"}}
-
-                <a name="//apple_ref/cpp/Parameter/{{name}}" class="dashAnchor"></a>
-                <p>
-                    <b>{{name}}</b>
-                    {{#each types}}
-                    <code>{{.}}</code>
-                    {{/each}}
-                    {{#if optional}}
-                    <span class="label label-default">Optional</span>
-                    {{/if}}
-                </p>
-                <p>{{{description}}}</p>
-
-                {{/ifCond}}
+                    <a name="//apple_ref/cpp/Parameter/{{name}}" class="dashAnchor"></a>
+                    <p>
+                        <b>{{name}}</b>
+                        {{#each types}}
+                            <code>{{.}}</code>
+                        {{/each}}
+                        {{#if isOptional}}
+                            <span class="label label-default">Optional</span>
+                        {{/if}}
+                    </p>
+                    {{{markdown description}}}
 
                 {{/each}}
 
@@ -87,75 +73,91 @@ pre .hljs {
 
             {{/if}}
 
-            {{#each tags}}{{#ifCond type "property"}}
-            {{registerVariable "displayProperties" true}}
-            {{/ifCond}}{{/each}}
+            {{#if tags.property.length}}
 
-            {{#if displayProperties}}
-
-            <section class="properties">
+            <section class="property">
 
                 <h3>Properties</h3>
 
-                {{#each tags}}
+                {{#each tags.property}}
 
-                {{#ifCond type "property"}}
+                    <a name="//apple_ref/cpp/Property/{{name}}" class="dashAnchor"></a>
+                    <p>
+                        <b>{{name}}</b>
+                        {{#each types}}
+                            <code>{{.}}</code>
+                        {{/each}}
+                        {{#if isOptional}}
+                            <span class="label label-default">Optional</span>
+                        {{/if}}
+                    </p>
 
-                <a name="//apple_ref/cpp/Property/{{name}}" class="dashAnchor"></a>
-                <p>
-                    <b>{{name}}</b>
-                    {{#each types}}
-                    <code>{{.}}</code>
-                    {{/each}}
-                    {{#if optional}}
-                    <span class="label label-default">Optional</span>
-                    {{/if}}
-                </p>
-                <p>{{{description}}}</p>
-
-                {{/ifCond}}
+                    {{{markdown description}}}
 
                 {{/each}}
 
             </section>
 
             {{/if}}
+
+            {{#if tags.example.length}}
 
             <section class="examples">
 
                 <h3>Examples</h3>
 
-                {{{description.body}}}
+                {{#each tags.example}}
 
-                {{#each tags}}
-
-                {{#ifCond type "example"}}
-
-                <pre><code class="hljs">{{{highlightBlock string}}}</code></pre>
-
-                {{/ifCond}}
+                    <pre><code class="hljs javascript">{{{highlightBlock .}}}</code></pre>
 
                 {{/each}}
 
             </section>
 
-            <h3>Returns</h3>
+            {{/if}}
 
-            {{#each tags}}
+            {{#if code}}
 
-            {{#ifCondMatch type "return"}}
+            <section class="code">
 
-            <p>{{#each types}}<code>{{.}}</code> {{/each}} {{{description}}}</p>
+                <h3>Code</h3>
 
-            {{/ifCondMatch}}
+                <pre><code class="hljs javascript">{{{highlightBlock code}}}</code></pre>
 
-            {{/each}}
+            </section>
+
+            {{/if}}
+
+            <section class="returns">
+
+                <h3>Returns</h3>
+
+                {{#if tags.return.length}}
+
+                    {{#each tags.return}}
+
+                        <p>
+                            {{#each types}}
+                                <code>{{.}}</code>
+                            {{/each}}
+                            {{#if isOptional}}
+                                <span class="label label-default">Optional</span>
+                            {{/if}}
+                        </p>
+
+                        {{{markdown description}}}
+
+                    {{/each}}
+
+                {{else}}
+
+                <p><code>Void</code></p>
+
+                {{/if}}
+
+            </section>
 
         </div>
-
-        {{/if}}
-
-        {{/unless}}
 
     </div>
 

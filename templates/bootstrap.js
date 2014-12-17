@@ -1,5 +1,5 @@
 /*jslint browser: true */
-/*globals $, hljs */
+/*globals $ */
 
 (function (w, d, f) {
 
@@ -9,8 +9,7 @@
         resource = [
             '//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css',
             '//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/github.min.css',
-            '//code.jquery.com/jquery-2.1.1.js',
-            '//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js'
+            '//code.jquery.com/jquery-2.1.1.js'
         ];
 
     function loadResource(url) {
@@ -112,10 +111,6 @@
         $toggle_private.trigger('click');
 
     }
-
-    $('pre code:not(.hljs)').each(function () {
-        hljs.highlightBlock(this);
-    });
 
     $(window).on('scroll', handleScrollEvent);
 
