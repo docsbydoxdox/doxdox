@@ -48,17 +48,17 @@ while (args.length) {
 
         break;
 
-    case '-p':
-    case '--package':
-
-        pkg = args.shift();
-
-        break;
-
     case '-o':
     case '--output':
 
         output = args.shift();
+
+        break;
+
+    case '-p':
+    case '--package':
+
+        pkg = args.shift();
 
         break;
 
