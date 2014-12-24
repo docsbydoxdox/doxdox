@@ -19,7 +19,7 @@
     padding: .5em .5em .5em 1.5em;
     line-height: 1em;
     border-radius: .25em;
-    background: #fff url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxM3B4IiBoZWlnaHQ9IjE0cHgiIHZpZXdCb3g9IjAgMCAxMyAxNCI+CiAgICA8cGF0aCBkPSJNNy4xODc2MTE1NiwxMyBMNy4xODc2MTE1Niw1LjQ5MjQ5NzAzIEwxMC40NTg3ODUzLDUuNDkyNDk3MDMgTDUuMDk5MzE3NjMsMC4xMTM1NTgxMjkgTC0wLjI2MDE1LDUuNDkyNDk3MDMgTDMuMDExMDIzNzEsNS40OTI0OTcwMyBMMy4wMTEwMjM3MSwxMyBMNy4xODc2MTE1NiwxMyBaIiBmaWxsPSIjNDI4YmNhIj48L3BhdGg+Cjwvc3ZnPgo=) no-repeat .5em center;
+    background: #fff;
 }
 
 .menu {
@@ -78,13 +78,142 @@ pre .hljs {
 
 </style>
 <script>
-(function(e,t,i){"use strict";var o=e.location.protocol==="file:"?"http:":e.location.protocol,s=["//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css","//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/github.min.css","//code.jquery.com/jquery-2.1.1.js"];function c(e){var l;if(e.match(/\.js$/)){l=t.createElement("script");l.setAttribute("src",o+e)}else if(e.match(/\.css$/)){l=t.createElement("link");l.setAttribute("rel","stylesheet");l.setAttribute("href",o+e)}l.addEventListener("load",function(){if(s.length){c(s.shift())}else{if($.isReady){i()}else{$(document).ready(i)}}});t.head.appendChild(l)}c(s.shift())})(window,document,function(){"use strict";var e=window.location.hash,t=$('[id="'+e.replace(/#/,"")+'"]'),i=$(".code"),o=$(".scope-private"),s=$(".toggle-code-blocks"),c=$(".toggle-private"),l=$(".back-to-top");function n(){if(window.scrollY>100&&l.not(":visible")){l.fadeIn()}else if(window.scrollY<100&&l.is(":visible")){l.fadeOut()}}s.on("click",function(){if(s.is(":checked")){i.show()}else{i.hide()}});c.on("click",function(){if(c.is(":checked")){o.show()}else{o.hide()}});i.hide();o.hide();if(t.length&&!t.is(":visible")){c.trigger("click")}$(window).on("scroll",n);n()});
+
+/*jslint browser: true */
+/*globals $, hljs */
+
+(function (w, d, f) {
+
+    'use strict';
+
+    var protocol = w.location.protocol === 'file:' ? 'http:' : w.location.protocol,
+        resource = [
+            '//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css',
+            '//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/github.min.css',
+            '//code.jquery.com/jquery-2.1.1.js',
+            '//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js'
+        ];
+
+    function loadResource(url) {
+
+        var tag;
+
+        if (url.match(/\.js$/)) {
+
+            tag = d.createElement('script');
+            tag.setAttribute('src', protocol + url);
+
+        } else if (url.match(/\.css$/)) {
+
+            tag = d.createElement('link');
+            tag.setAttribute('rel', 'stylesheet');
+            tag.setAttribute('href', protocol + url);
+
+        }
+
+        tag.addEventListener('load', function () {
+
+            if (resource.length) {
+
+                loadResource(resource.shift());
+
+            } else {
+
+                if ($.isReady) {
+
+                    f();
+
+                } else {
+
+                    $(document).ready(f);
+
+                }
+
+            }
+
+        });
+
+        d.head.appendChild(tag);
+
+    }
+
+    loadResource(resource.shift());
+
+}(window, document, function () {
+
+    'use strict';
+
+    var hash = window.location.hash,
+        $hash_elem = $('[id="' + hash.replace(/#/, '') + '"]'),
+        $code_block = $('.code'),
+        $scope_private = $('.scope-private'),
+        $toggle_code_blocks = $('.toggle-code-blocks'),
+        $toggle_private = $('.toggle-private'),
+        $backToTop = $('.back-to-top');
+
+    function handleScrollEvent() {
+
+        if (window.scrollY > 100 && $backToTop.not(':visible')) {
+
+            $backToTop.fadeIn();
+
+        } else if (window.scrollY < 100 && $backToTop.is(':visible')) {
+
+            $backToTop.fadeOut();
+
+        }
+
+    }
+
+    $toggle_code_blocks.on('click', function () {
+
+        if ($toggle_code_blocks.is(':checked')) {
+            $code_block.show();
+        } else {
+            $code_block.hide();
+        }
+
+    });
+
+    $toggle_private.on('click', function () {
+
+        if ($toggle_private.is(':checked')) {
+            $scope_private.show();
+        } else {
+            $scope_private.hide();
+        }
+
+    });
+
+    $code_block.hide();
+    $scope_private.hide();
+
+    if ($hash_elem.length && !$hash_elem.is(':visible')) {
+
+        $toggle_private.trigger('click');
+
+    }
+
+    $('pre code:not(.hljs)').each(function () {
+        hljs.highlightBlock(this);
+    });
+
+    $(window).on('scroll', handleScrollEvent);
+
+    handleScrollEvent();
+
+}));
+
 </script>
 </head>
 
 <body>
 
-<div class="back-to-top"><a href="#">Back to Top</a></div>
+<div class="back-to-top">
+    <a href="#"> <svg xmlns="http://www.w3.org/2000/svg" width="13px" height="14px" viewBox="0 0 13 14">
+    <path d="M7.18761156,13 L7.18761156,5.49249703 L10.4587853,5.49249703 L5.09931763,0.113558129 L-0.26015,5.49249703 L3.01102371,5.49249703 L3.01102371,13 L7.18761156,13 Z" fill="#428bca"></path>
+</svg> Back to Top</a>
+</div>
 
 <div class="wrap">
 
