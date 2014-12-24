@@ -1,4 +1,8 @@
-#{{title}}
+{{#if pkg.homepage}}
+#[{{title}}]({{pkg.homepage}}) {{#if pkg.version}}_{{pkg.version}}_{{/if}}
+{{else}}
+#{{title}} {{#if pkg.version}}_{{pkg.version}}_{{/if}}
+{{/if}}
 
 {{#if description}}
 >{{description}}
@@ -6,7 +10,7 @@
 
 {{#each files}}{{#each methods}}
 
-##{{name}} {{#if isPrivate}} <small><i>private method</i></small>{{/if}}
+##{{name}} {{#if isPrivate}} _private method_{{/if}}
 
 {{{description}}}
 
