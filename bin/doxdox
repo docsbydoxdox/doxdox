@@ -48,17 +48,17 @@ while (args.length) {
 
         break;
 
-    case '-p':
-    case '--package':
-
-        pkg = args.shift();
-
-        break;
-
     case '-o':
     case '--output':
 
         output = args.shift();
+
+        break;
+
+    case '-p':
+    case '--package':
+
+        pkg = args.shift();
 
         break;
 
@@ -98,7 +98,7 @@ while (args.length) {
 
 if (!pkg) {
 
-    pkg = utils.findPackage(input);
+    pkg = utils.findPackagePath(input);
 
 }
 
@@ -126,7 +126,7 @@ if (!config.title) {
 
 }
 
-doxdox.parseInput(input, config).then(function (content) {
+doxdox.parseInput(input, config, pkg).then(function (content) {
 
     if (output) {
 

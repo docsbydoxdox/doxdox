@@ -16,41 +16,14 @@
 
 .back-to-top a {
     display: block;
-    padding: .5em .5em .5em 1.5em;
+    padding: .5em .6em;
     line-height: 1em;
     border-radius: .25em;
-    background: #fff url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxM3B4IiBoZWlnaHQ9IjE0cHgiIHZpZXdCb3g9IjAgMCAxMyAxNCI+CiAgICA8cGF0aCBkPSJNNy4xODc2MTE1NiwxMyBMNy4xODc2MTE1Niw1LjQ5MjQ5NzAzIEwxMC40NTg3ODUzLDUuNDkyNDk3MDMgTDUuMDk5MzE3NjMsMC4xMTM1NTgxMjkgTC0wLjI2MDE1LDUuNDkyNDk3MDMgTDMuMDExMDIzNzEsNS40OTI0OTcwMyBMMy4wMTEwMjM3MSwxMyBMNy4xODc2MTE1NiwxMyBaIiBmaWxsPSIjNDI4YmNhIj48L3BhdGg+Cjwvc3ZnPgo=) no-repeat .5em center;
+    background: #fff;
 }
 
-.menu {
-    margin: 1.5em 0 0 0;
-    padding: 0;
-}
-
-.menu li {
-    list-style: none;
-}
-
-.menu li a {
-    display: block;
-    padding: .25em;
-    overflow: hidden;
-    text-overflow: ellipsis;
-}
-
-.menu li ul {
-    margin: .25em 0 .25em 1em;
-    padding: 0;
-}
-
-.menu .scope-private {
-    opacity: 0.5;
-}
-
-.method h2 {
-    line-height: 1.3em;
-    text-overflow: ellipsis;
-    overflow: hidden;
+.back-to-top a svg {
+    vertical-align: middle;
 }
 
 .permalink {
@@ -61,14 +34,18 @@
 }
 
 .permalink:hover {
-    color: #666;
     text-decoration: none;
 }
 
-.bs-footer {
-    margin: 50px auto;
-    color: #777;
-    text-align: center;
+.method h2 {
+    line-height: 1.3em;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.permalink:hover,
+.doxdox .menu .file {
+    color: #E54D89;
 }
 
 pre .hljs {
@@ -76,42 +53,181 @@ pre .hljs {
     background: none;
 }
 
+.doxdox .wrap {
+    padding: 0 1em;
+}
+
+.doxdox .jumbotron p,
+.doxdox .label-default {
+    -webkit-font-smoothing: antialiased;
+}
+
+.doxdox .jumbotron {
+    margin-bottom: 0;
+    background-color: #2B303E;
+}
+
+.doxdox .jumbotron h1,
+.doxdox .jumbotron h1 a {
+    color: #eee;
+}
+
+.doxdox .jumbotron p {
+    color: #ccc;
+}
+
+.doxdox .menu {
+    margin: 1.5em 0 0 0;
+    padding: 0;
+}
+
+.doxdox .menu li {
+    list-style: none;
+}
+
+.doxdox .menu li ul {
+    padding: 0;
+}
+
+.doxdox .menu li a {
+    display: block;
+    padding: .25em;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.doxdox .menu .scope-private a {
+    color: #8BAAC6;
+}
+
+.doxdox .bs-footer {
+    margin: 3em auto;
+    color: #777;
+    text-align: center;
+}
+
 </style>
 <script>
-(function(e,i,t){"use strict";var o=e.location.protocol==="file:"?"http:":e.location.protocol,s=["//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css","//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.3/styles/github.min.css","//code.jquery.com/jquery-2.1.1.js","//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.3/highlight.min.js"];function c(e){var l;if(e.match(/\.js$/)){l=i.createElement("script");l.setAttribute("src",o+e)}else if(e.match(/\.css$/)){l=i.createElement("link");l.setAttribute("rel","stylesheet");l.setAttribute("href",o+e)}l.addEventListener("load",function(){if(s.length){c(s.shift())}else{if($.isReady){t()}else{$(document).ready(t)}}});i.head.appendChild(l)}c(s.shift())})(window,document,function(){"use strict";var e=window.location.hash,i=$('[id="'+e.replace(/#/,"")+'"]'),t=$(".code"),o=$(".scope-private"),s=$(".toggle-code-blocks"),c=$(".toggle-private"),l=$(".back-to-top");function n(){if(window.scrollY>100&&l.not(":visible")){l.fadeIn()}else if(window.scrollY<100&&l.is(":visible")){l.fadeOut()}}s.on("click",function(){if(s.is(":checked")){t.show()}else{t.hide()}});c.on("click",function(){if(c.is(":checked")){o.show()}else{o.hide()}});t.hide();o.hide();if(i.length&&!i.is(":visible")){c.trigger("click")}$("pre code:not(.hljs)").each(function(){hljs.highlightBlock(this)});$(window).on("scroll",n);n()});
+
+(function (w, d, f) {
+
+    'use strict';
+
+    var protocol = w.location.protocol === 'file:' ? 'http:' : w.location.protocol,
+        resource = [
+            '//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css',
+            '//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/github.min.css',
+            '//code.jquery.com/jquery-2.1.3.js',
+            '//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js'
+        ];
+
+    function loadResource(url) {
+
+        var tag;
+
+        if (url.match(/\.js$/)) {
+
+            tag = d.createElement('script');
+            tag.setAttribute('src', protocol + url);
+
+        } else if (url.match(/\.css$/)) {
+
+            tag = d.createElement('link');
+            tag.setAttribute('rel', 'stylesheet');
+            tag.setAttribute('href', protocol + url);
+
+        }
+
+        tag.addEventListener('load', function () {
+
+            if (resource.length) {
+
+                loadResource(resource.shift());
+
+            } else {
+
+                if ($.isReady) {
+
+                    f();
+
+                } else {
+
+                    $(document).ready(f);
+
+                }
+
+            }
+
+        });
+
+        d.head.appendChild(tag);
+
+    }
+
+    loadResource(resource.shift());
+
+}(window, document, function () {
+
+    'use strict';
+
+    var headerHeight = $('.jumbotron').outerHeight(true),
+        $backToTop = $('.back-to-top');
+
+    function handleScrollEvent() {
+
+        if (window.scrollY > headerHeight && $backToTop.not(':visible')) {
+
+            $backToTop.fadeIn();
+
+        } else if (window.scrollY < headerHeight && $backToTop.is(':visible')) {
+
+            $backToTop.fadeOut();
+
+        }
+
+    }
+
+    $('pre code:not(.hljs)').each(function () {
+        hljs.highlightBlock(this);
+    });
+
+    $(window).on('scroll', handleScrollEvent);
+
+    handleScrollEvent();
+
+}));
+
 </script>
 </head>
 
-<body>
+<body class="doxdox">
 
-<div class="back-to-top"><a href="#">Back to Top</a></div>
+<div class="back-to-top">
+    <a href="#"> <svg xmlns="http://www.w3.org/2000/svg" width="13px" height="14px" viewBox="0 0 13 14"><path d="M7.18761156,13 L7.18761156,5.49249703 L10.4587853,5.49249703 L5.09931763,0.113558129 L-0.26015,5.49249703 L3.01102371,5.49249703 L3.01102371,13 L7.18761156,13 Z" fill="#428bca"></path></svg> Back to Top</a>
+</div>
+
+<div class="jumbotron">
+
+    <div class="container">
+
+        <h1>
+            {{#if pkg.homepage}}
+                <a href="{{pkg.homepage}}">{{title}}</a>
+            {{else}}
+                {{title}}
+            {{/if}}
+            {{#if pkg.version}}<small>{{pkg.version}}</small>{{/if}}
+        </h1>
+
+        {{#if description}}<p>{{description}}</p>{{/if}}
+
+    </div>
+
+</div>
 
 <div class="wrap">
 
     <div class="container">
-
-        <div class="page-header">
-
-            <div class="pull-right hidden-sm hidden-xs">
-
-                <div>
-                    <label>
-                        <input type="checkbox" name="toggle-code" class="toggle-code-blocks">
-                        Toggle Code Blocks
-                    </label>
-                </div>
-                <div>
-                    <label>
-                        <input type="checkbox" name="toggle-private" class="toggle-private">
-                        Toggle Private Methods
-                    </label>
-                </div>
-
-            </div>
-
-            <h1>{{title}}{{#if description}} <small>{{description}}</small>{{/if}}</h1>
-
-        </div>
 
         <div class="row">
 
@@ -122,22 +238,14 @@ pre .hljs {
                     {{#each files}}
 
                     <li>
-                        <b>{{name}}</b>
+                        <a href="#{{name}}" class="file"><b>{{name}}</b></a>
                         <ul>
 
                         {{#each methods}}
 
-                            {{#unless ignore}}
-
-                                {{#if ctx}}
-
-                                    <li class="scope-{{#if isPrivate}}private{{else}}public{{/if}}">
-                                        <a href="#{{ctx.uid}}" title="{{formatName ctx.string}}">{{formatName ctx.string}}</a>
-                                    </li>
-
-                                {{/if}}
-
-                            {{/unless}}
+                        <li class="scope-{{#if isPrivate}}private{{else}}public{{/if}}">
+                            <a href="#{{uid}}" title="{{name}}">{{name}}</a>
+                        </li>
 
                         {{/each}}
 
@@ -155,135 +263,121 @@ pre .hljs {
 
                 {{#each files}}
 
+                <a id="{{name}}" />
+
                 {{#each methods}}
 
-                    {{#unless ignore}}
+                    <div class="method scope-{{#if isPrivate}}private{{else}}public{{/if}}">
 
-                        {{#if ctx}}
+                        <h2 id="{{uid}}">
+                            <a href="#{{uid}}" class="permalink">#</a> {{name}}
+                            {{#if isPrivate}}
+                            <small>private {{type}}</small>
+                            {{/if}}
+                        </h2>
 
-                            <div class="method scope-{{#if isPrivate}}private{{else}}public{{/if}}">
+                        {{{markdown description}}}
 
-                                {{registerContext this}}
+                        {{{markdown body}}}
 
-                                <h2 id="{{ctx.uid}}">
-                                    <a href="#{{ctx.uid}}" class="permalink">#</a> {{formatName ctx.string}}
-                                    {{#if isPrivate}}
-                                    <small>private method</small>
+                        {{#if tags.param.length}}
+
+                        <section class="parameters">
+
+                            <h3>Parameters</h3>
+
+                            {{#each tags.param}}
+
+                                <p>
+                                    <b>{{name}}</b>
+                                    {{#each types}}
+                                        <code>{{.}}</code>
+                                    {{/each}}
+                                    {{#if isOptional}}
+                                        <span class="label label-default">Optional</span>
                                     {{/if}}
-                                </h2>
+                                </p>
 
-                                {{{description.summary}}}
+                                {{{markdown description}}}
 
-                                {{#each tags}}{{#ifCond type "param"}}
-                                {{registerVariable "displayParameters" true}}
-                                {{/ifCond}}{{/each}}
+                            {{/each}}
 
-                                {{#if displayParameters}}
-
-                                <section class="parameters">
-
-                                    <h3>Parameters</h3>
-
-                                    {{#each tags}}
-
-                                        {{#ifCond type "param"}}
-
-                                            <p>
-                                                <b>{{name}}</b>
-                                                {{#each types}}
-                                                    <code>{{.}}</code>
-                                                {{/each}}
-                                                {{#if optional}}
-                                                    <span class="label label-default">Optional</span>
-                                                {{/if}}
-                                            </p>
-                                            {{{description}}}
-
-                                        {{/ifCond}}
-
-                                    {{/each}}
-
-                                </section>
-
-                                {{/if}}
-
-                                {{#each tags}}{{#ifCond type "property"}}
-                                {{registerVariable "displayProperties" true}}
-                                {{/ifCond}}{{/each}}
-
-                                {{#if displayProperties}}
-
-                                <section class="properties">
-
-                                    <h3>Properties</h3>
-
-                                    {{#each tags}}
-
-                                        {{#ifCond type "property"}}
-
-                                            <p>
-                                                <b>{{name}}</b>
-                                                {{#each types}}
-                                                    <code>{{.}}</code>
-                                                {{/each}}
-                                                {{#if optional}}
-                                                    <span class="label label-default">Optional</span>
-                                                {{/if}}
-                                            </p>
-                                            {{{description}}}
-
-                                        {{/ifCond}}
-
-                                    {{/each}}
-
-                                </section>
-
-                                {{/if}}
-
-                                <section class="examples">
-
-                                    <h3>Examples</h3>
-
-                                    {{{description.body}}}
-
-                                    {{#each tags}}
-
-                                        {{#ifCond type "example"}}
-
-                                            <pre><code class="hljs">{{{highlightBlock string}}}</code></pre>
-
-                                        {{/ifCond}}
-
-                                    {{/each}}
-
-                                </section>
-
-                                <section class="code">
-
-                                    <h3>Code</h3>
-
-                                    <pre><code class="hljs">{{{highlightBlock code}}}</code></pre>
-
-                                </section>
-
-                                <h3>Returns</h3>
-
-                                {{#each tags}}
-
-                                    {{#ifCondMatch type "return"}}
-
-                                        <p>{{#each types}}<code>{{.}}</code> {{/each}}</p>
-                                        {{{description}}}
-
-                                    {{/ifCondMatch}}
-
-                                {{/each}}
-
-                            </div>
+                        </section>
 
                         {{/if}}
 
-                    {{/unless}}
+                        {{#if tags.property.length}}
+
+                        <section class="property">
+
+                            <h3>Properties</h3>
+
+                            {{#each tags.property}}
+
+                                <p>
+                                    <b>{{name}}</b>
+                                    {{#each types}}
+                                        <code>{{.}}</code>
+                                    {{/each}}
+                                    {{#if isOptional}}
+                                        <span class="label label-default">Optional</span>
+                                    {{/if}}
+                                </p>
+
+                                {{{markdown description}}}
+
+                            {{/each}}
+
+                        </section>
+
+                        {{/if}}
+
+                        {{#if tags.example.length}}
+
+                        <section class="examples">
+
+                            <h3>Examples</h3>
+
+                            {{#each tags.example}}
+
+                                <pre><code class="hljs javascript">{{{highlightBlock .}}}</code></pre>
+
+                            {{/each}}
+
+                        </section>
+
+                        {{/if}}
+
+                        <section class="returns">
+
+                            <h3>Returns</h3>
+
+                            {{#if tags.return.length}}
+
+                                {{#each tags.return}}
+
+                                    <p>
+                                        {{#each types}}
+                                            <code>{{.}}</code>
+                                        {{/each}}
+                                        {{#if isOptional}}
+                                            <span class="label label-default">Optional</span>
+                                        {{/if}}
+                                    </p>
+
+                                    {{{markdown description}}}
+
+                                {{/each}}
+
+                            {{else}}
+
+                            <p><code>Void</code></p>
+
+                            {{/if}}
+
+                        </section>
+
+                    </div>
 
                 {{/each}}
 

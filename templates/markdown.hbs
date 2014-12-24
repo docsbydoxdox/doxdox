@@ -1,59 +1,67 @@
-#{{title}}
+{{#if pkg.homepage}}
+#[{{title}}]({{pkg.homepage}}) {{#if pkg.version}}_{{pkg.version}}_{{/if}}
+{{else}}
+#{{title}} {{#if pkg.version}}_{{pkg.version}}_{{/if}}
+{{/if}}
 
 {{#if description}}
 >{{description}}
 {{/if}}
 
-{{#each files}}{{#each methods}}{{#unless ignore}}{{#if ctx}}
+{{#each files}}{{#each methods}}
 
-{{registerContext this}}
+##{{name}} {{#if isPrivate}} _private method_{{/if}}
 
-##{{formatName ctx.string}} {{#if isPrivate}} <small><i>private method</i></small>{{/if}}
+{{{description}}}
 
-{{{description.summary}}}
+{{{body}}}
 
-{{#each tags}}{{#ifCond type "param"}}
-{{registerVariable "displayParameters" true}}
-{{/ifCond}}{{/each}}
-
-{{#if displayParameters}}
+{{#if tags.param}}
 
 ###Parameters
 
-{{#each tags}}{{#ifCond type "param"}}
-- **{{name}}** {{#each types}}`{{.}}` {{/each}} {{#if optional}}_Optional_{{/if}} {{{description}}}
-{{/ifCond}}{{/each}}
+{{#each tags.param}}
+- **{{name}}** {{#each types}}`{{.}}` {{/each}} {{#if isOptional}}_Optional_{{/if}} {{{description}}}
+{{/each}}
 
 {{/if}}
 
-{{#each tags}}{{#ifCond type "property"}}
-{{registerVariable "displayProperties" true}}
-{{/ifCond}}{{/each}}
-
-{{#if displayProperties}}
+{{#if tags.property}}
 
 ###Properties
 
-{{#each tags}}{{#ifCond type "property"}}
-- **{{name}}** {{#each types}}`{{.}}` {{/each}} {{#if optional}}_Optional_{{/if}} {{{description}}}
-{{/ifCond}}{{/each}}
+{{#each tags.property}}
+- **{{name}}** {{#each types}}`{{.}}` {{/each}} {{#if isOptional}}_Optional_{{/if}} {{{description}}}
+{{/each}}
 
 {{/if}}
 
+{{#if tags.example}}
+
 ###Examples
 
-{{{description.body}}}
+{{#each tags.example}}
+```javascript
+{{{.}}}
+```
+{{/each}}
 
-{{#each tags}}{{#ifCond type "example"}}```
-{{{string}}}
-```{{/ifCond}}{{/each}}
+{{/if}}
 
 ###Returns
 
-{{#each tags}}{{#ifCondMatch type "return"}}
-{{#each types}}`{{.}}` {{/each}} {{{description}}}
-{{/ifCondMatch}}{{/each}}
+{{#if tags.return}}
 
-{{/if}}{{/unless}}{{/each}}{{/each}}
+{{#each tags.return}}
+- {{#each types}}`{{.}}` {{/each}} {{#if isOptional}}_Optional_{{/if}} {{{description}}}
+{{/each}}
+
+{{else}}
+
+- `Void`
+
+{{/if}}
+
+{{/each}}{{/each}}
 
 _Documentation generated with [doxdox](https://github.com/neogeek/doxdox)._
