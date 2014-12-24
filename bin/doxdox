@@ -98,7 +98,7 @@ while (args.length) {
 
 if (!pkg) {
 
-    pkg = utils.findPackage(input);
+    pkg = utils.findPackagePath(input);
 
 }
 
