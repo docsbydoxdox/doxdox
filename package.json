@@ -3,7 +3,7 @@
     "description": "HTML, Markdown and Dash documentation generator.",
     "version": "0.0.18",
     "bin": "./bin/doxdox",
-    "preferglobal": true,
+    "preferGlobal": true,
     "license": "MIT",
     "dependencies": {
         "chalk": "0.5.1",
