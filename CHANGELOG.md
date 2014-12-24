@@ -1,5 +1,18 @@
 #Changelog
 
+##0.1.0 (December 24, 2014)
+
+- Restructured data returned from `utils.parseData` method.
+- Renamed method `utils.findPackage` to `utils.findPackagePath` to better reflect it's purpose.
+- package.json contents is now passed through to the template as `pkg`.
+- Bootstrap template redesigned.
+- Bootstrap template updated to include homepage link and version number.
+- Bootstrap template now includes deeplinks to individual files.
+- Removed options from Bootstrap template for toggling code blocks and private methods.
+- Consolidated Bootstrap template resources.
+- Markdown template updated to include homepage link and version number.
+- Fixed issue with improperly detecting language through highlight.js handlebars helper.
+
 ##0.0.18 (December 12, 2014)
 
 - Improved Dash docset generation.
