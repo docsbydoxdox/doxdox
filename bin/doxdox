@@ -126,7 +126,7 @@ if (!config.title) {
 
 }
 
-doxdox.parseInput(input, config).then(function (content) {
+doxdox.parseInput(input, config, pkg).then(function (content) {
 
     if (output) {
 
