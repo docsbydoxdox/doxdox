@@ -251,7 +251,7 @@ pre .hljs {
                     {{#each files}}
 
                     <li>
-                        <b>{{name}}</b>
+                        <a href="#{{name}}" class="file"><b>{{name}}</b></a>
                         <ul>
 
                         {{#each methods}}
@@ -275,6 +275,8 @@ pre .hljs {
             <div class="col-md-9">
 
                 {{#each files}}
+
+                <a id="{{name}}" />
 
                 {{#each methods}}
 
