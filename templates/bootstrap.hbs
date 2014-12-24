@@ -16,41 +16,14 @@
 
 .back-to-top a {
     display: block;
-    padding: .5em .5em .5em 1.5em;
+    padding: .5em .6em;
     line-height: 1em;
     border-radius: .25em;
     background: #fff;
 }
 
-.menu {
-    margin: 1.5em 0 0 0;
-    padding: 0;
-}
-
-.menu li {
-    list-style: none;
-}
-
-.menu li a {
-    display: block;
-    padding: .25em;
-    overflow: hidden;
-    text-overflow: ellipsis;
-}
-
-.menu li ul {
-    margin: .25em 0 .25em 1em;
-    padding: 0;
-}
-
-.menu .scope-private {
-    opacity: 0.5;
-}
-
-.method h2 {
-    line-height: 1.3em;
-    text-overflow: ellipsis;
-    overflow: hidden;
+.back-to-top a svg {
+    vertical-align: middle;
 }
 
 .permalink {
@@ -61,19 +34,75 @@
 }
 
 .permalink:hover {
-    color: #666;
     text-decoration: none;
 }
 
-.bs-footer {
-    margin: 50px auto;
-    color: #777;
-    text-align: center;
+.method h2 {
+    line-height: 1.3em;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.permalink:hover,
+.doxdox .menu .file {
+    color: #E54D89;
 }
 
 pre .hljs {
     padding: 0;
     background: none;
+}
+
+.doxdox .wrap {
+    padding: 0 1em;
+}
+
+.doxdox .jumbotron p,
+.doxdox .label-default {
+    -webkit-font-smoothing: antialiased;
+}
+
+.doxdox .jumbotron {
+    margin-bottom: 0;
+    background-color: #2B303E;
+}
+
+.doxdox .jumbotron h1 a {
+    color: #eee;
+}
+
+.doxdox .jumbotron p {
+    color: #ccc;
+}
+
+.doxdox .menu {
+    margin: 1.5em 0 0 0;
+    padding: 0;
+}
+
+.doxdox .menu li {
+    list-style: none;
+}
+
+.doxdox .menu li ul {
+    padding: 0;
+}
+
+.doxdox .menu li a {
+    display: block;
+    padding: .25em;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.doxdox .menu .scope-private {
+    opacity: 0.5;
+}
+
+.doxdox .bs-footer {
+    margin: 50px auto;
+    color: #777;
+    text-align: center;
 }
 
 </style>
@@ -90,7 +119,7 @@ pre .hljs {
         resource = [
             '//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css',
             '//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/github.min.css',
-            '//code.jquery.com/jquery-2.1.1.js',
+            '//code.jquery.com/jquery-2.1.3.js',
             '//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js'
         ];
 
@@ -143,54 +172,20 @@ pre .hljs {
 
     'use strict';
 
-    var hash = window.location.hash,
-        $hash_elem = $('[id="' + hash.replace(/#/, '') + '"]'),
-        $code_block = $('.code'),
-        $scope_private = $('.scope-private'),
-        $toggle_code_blocks = $('.toggle-code-blocks'),
-        $toggle_private = $('.toggle-private'),
+    var headerHeight = $('.jumbotron').outerHeight(true),
         $backToTop = $('.back-to-top');
 
     function handleScrollEvent() {
 
-        if (window.scrollY > 100 && $backToTop.not(':visible')) {
+        if (window.scrollY > headerHeight && $backToTop.not(':visible')) {
 
             $backToTop.fadeIn();
 
-        } else if (window.scrollY < 100 && $backToTop.is(':visible')) {
+        } else if (window.scrollY < headerHeight && $backToTop.is(':visible')) {
 
             $backToTop.fadeOut();
 
         }
-
-    }
-
-    $toggle_code_blocks.on('click', function () {
-
-        if ($toggle_code_blocks.is(':checked')) {
-            $code_block.show();
-        } else {
-            $code_block.hide();
-        }
-
-    });
-
-    $toggle_private.on('click', function () {
-
-        if ($toggle_private.is(':checked')) {
-            $scope_private.show();
-        } else {
-            $scope_private.hide();
-        }
-
-    });
-
-    $code_block.hide();
-    $scope_private.hide();
-
-    if ($hash_elem.length && !$hash_elem.is(':visible')) {
-
-        $toggle_private.trigger('click');
 
     }
 
@@ -202,12 +197,13 @@ pre .hljs {
 
     handleScrollEvent();
 
+
 }));
 
 </script>
 </head>
 
-<body>
+<body class="doxdox">
 
 <div class="back-to-top">
     <a href="#"> <svg xmlns="http://www.w3.org/2000/svg" width="13px" height="14px" viewBox="0 0 13 14">
@@ -215,32 +211,28 @@ pre .hljs {
 </svg> Back to Top</a>
 </div>
 
-<div class="wrap">
+<div class="jumbotron">
 
     <div class="container">
 
-        <div class="page-header">
+        <h1>
+            {{#if pkg.homepage}}
+                <a href="{{pkg.homepage}}">{{title}}</a>
+            {{else}}
+                {{title}}
+            {{/if}}
+            {{#if pkg.version}}<small>{{pkg.version}}</small>{{/if}}
+        </h1>
 
-            <div class="pull-right hidden-sm hidden-xs">
+        {{#if description}}<p>{{description}}</p>{{/if}}
 
-                <div>
-                    <label>
-                        <input type="checkbox" name="toggle-code" class="toggle-code-blocks">
-                        Toggle Code Blocks
-                    </label>
-                </div>
-                <div>
-                    <label>
-                        <input type="checkbox" name="toggle-private" class="toggle-private">
-                        Toggle Private Methods
-                    </label>
-                </div>
+    </div>
 
-            </div>
+</div>
 
-            <h1>{{title}}{{#if description}} <small>{{description}}</small>{{/if}}</h1>
+<div class="wrap">
 
-        </div>
+    <div class="container">
 
         <div class="row">
 
