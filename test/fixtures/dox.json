@@ -1,0 +1,34 @@
+[
+    {
+        "uid": "dox.js-exports.escape",
+        "isPrivate": false,
+        "type": "method",
+        "name": "exports.escape()",
+        "description": "Escape the given `html`.\n",
+        "body": "",
+        "tags": {
+            "example": [
+                "    utils.escape('<script></script>')\n    // => '&lt;script&gt;&lt;/script&gt;'\n"
+            ],
+            "param": [
+                {
+                    "name": "html",
+                    "isOptional": false,
+                    "types": [
+                        "String"
+                    ],
+                    "description": "string to be escaped"
+                }
+            ],
+            "return": [
+                {
+                    "types": [
+                        "String"
+                    ],
+                    "description": "escaped html"
+                }
+            ],
+            "api": []
+        }
+    }
+]
