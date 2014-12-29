@@ -3,7 +3,7 @@
         "uid": "facade.js-facade.polygon",
         "isPrivate": false,
         "type": "method",
-        "name": "Facade.Polygon()",
+        "name": "Facade.Polygon",
         "description": "Create a polygon object. Inherits all methods from <b>Facade.Entity</b>.",
         "body": "    var polygon = new Facade.Polygon({\n        x: 0,\n        y: 0,\n        points: [ [100, 0], [200, 100], [100, 200], [0, 100] ],\n        lineWidth: 10,\n        strokeStyle: '#333E4B',\n        fillStyle: '#1C73A8',\n        anchor: 'top/left'\n    });\n",
         "tags": {
@@ -131,13 +131,14 @@
                 }
             ],
             "public": []
-        }
+        },
+        "params": "[options]"
     },
     {
         "uid": "facade.js-facade.polygon.prototype._defaultoptions",
         "isPrivate": true,
         "type": "method",
-        "name": "Facade.Polygon._defaultOptions()",
+        "name": "Facade.Polygon._defaultOptions",
         "description": "Returns a default set of options common to all Facade.js polygon entities.\n",
         "body": "",
         "tags": {
@@ -163,6 +164,7 @@
                 }
             ],
             "private": []
-        }
+        },
+        "params": "updated"
     }
 ]

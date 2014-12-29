@@ -3,7 +3,7 @@
         "uid": "dox.js-exports.escape",
         "isPrivate": false,
         "type": "method",
-        "name": "exports.escape()",
+        "name": "exports.escape",
         "description": "Escape the given `html`.\n",
         "body": "",
         "tags": {
@@ -29,6 +29,7 @@
                 }
             ],
             "api": []
-        }
+        },
+        "params": "html"
     }
 ]

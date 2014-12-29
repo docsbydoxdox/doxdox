@@ -36,7 +36,7 @@ describe('doxdox util methods', function () {
 
     it('formatStringForName', function () {
 
-        assert.equal(utils.formatStringForName('Class.prototype.method()'), 'Class.method()');
+        assert.equal(utils.formatStringForName('Class.prototype.method()'), 'Class.method');
 
     });
 
