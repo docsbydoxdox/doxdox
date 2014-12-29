@@ -1,4 +1,4 @@
-[![](https://david-dm.org/neogeek/doxdox.svg?style=flat)](https://david-dm.org/neogeek/doxdox/) [![](http://img.shields.io/npm/v/doxdox.svg?style=flat)](https://www.npmjs.org/package/doxdox)
+[![](https://api.travis-ci.org/neogeek/doxdox.svg)](https://travis-ci.org/neogeek/doxdox) [![](https://david-dm.org/neogeek/doxdox.svg?style=flat)](https://david-dm.org/neogeek/doxdox) [![](http://img.shields.io/npm/v/doxdox.svg?style=flat)](https://www.npmjs.org/package/doxdox)
 
 #doxdox
 
