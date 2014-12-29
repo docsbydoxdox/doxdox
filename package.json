@@ -16,6 +16,12 @@
         "temp": "0.8.1",
         "marked": "0.3.2"
     },
+    "devDependencies": {
+        "mocha": "2.1.0"
+    },
+    "scripts": {
+        "test": "make test"
+    },
     "keywords": [
         "documentation",
         "html",
