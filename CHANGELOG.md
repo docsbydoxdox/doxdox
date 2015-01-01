@@ -1,5 +1,13 @@
 #Changelog
 
+##0.1.1 (January 1, 2015)
+
+- Added tests.
+- Bootstrap template now includes parameters after each function name with optional brackets.
+- Markdown template now includes parameters after each function name with optional brackets.
+- Dash template now includes parameters after each function name with optional brackets.
+- Added parameters and properties to dash export.
+
 ##0.1.0 (December 24, 2014)
 
 - Restructured data returned from `utils.parseData` method.
