@@ -1,5 +1,12 @@
 #Changelog
 
+##0.1.2 (January 13, 2015)
+
+- Removed parameters from Dash search index. ([@Kapeli](https://github.com/Kapeli))
+- Use FQN when adding properties to Dash search index. ([@Kapeli](https://github.com/Kapeli))
+- Optimized Dash tooltips. ([@Kapeli](https://github.com/Kapeli))
+- Fixed a bug where a missing property would cause app to crash.
+
 ##0.1.1 (January 1, 2015)
 
 - Added tests.
