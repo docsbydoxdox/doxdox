@@ -1,0 +1,51 @@
+#{{name}}({{params}}) {{#if isPrivate}} _private method_{{/if}}
+
+{{{description}}}
+
+{{{body}}}
+
+{{#if tags.param}}
+
+##Parameters
+
+{{#each tags.param}}
+- **{{name}}** {{#each types}}`{{.}}` {{/each}} {{#if isOptional}}_Optional_{{/if}} {{{description}}}
+{{/each}}
+
+{{/if}}
+
+{{#if tags.property}}
+
+##Properties
+
+{{#each tags.property}}
+- **{{name}}** {{#each types}}`{{.}}` {{/each}} {{#if isOptional}}_Optional_{{/if}} {{{description}}}
+{{/each}}
+
+{{/if}}
+
+{{#if tags.example}}
+
+##Examples
+
+{{#each tags.example}}
+```javascript
+{{{.}}}
+```
+{{/each}}
+
+{{/if}}
+
+##Returns
+
+{{#if tags.return}}
+
+{{#each tags.return}}
+- {{#each types}}`{{.}}` {{/each}} {{#if isOptional}}_Optional_{{/if}} {{{description}}}
+{{/each}}
+
+{{else}}
+
+- `Void`
+
+{{/if}}
