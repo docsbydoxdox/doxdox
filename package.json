@@ -1,44 +1,44 @@
 {
-    "name": "doxdox",
-    "description": "HTML, Markdown and Dash documentation generator.",
-    "version": "0.1.2",
-    "bin": "./bin/doxdox",
-    "preferGlobal": true,
-    "license": "MIT",
-    "dependencies": {
-        "chalk": "0.5.1",
-        "dox": "0.6.1",
-        "handlebars": "2.0.0",
-        "highlight.js": "8.4.0",
-        "promise": "6.1.0",
-        "sqlite3": "3.0.4",
-        "adm-zip": "0.4.4",
-        "temp": "0.8.1",
-        "marked": "0.3.2"
-    },
-    "devDependencies": {
-        "mocha": "2.1.0"
-    },
-    "scripts": {
-        "test": "make test"
-    },
-    "keywords": [
-        "documentation",
-        "html",
-        "bootstrap",
-        "markdown",
-        "dash"
-    ],
-    "authors": [
-        {
-            "name": "Scott Doxey",
-            "email": "hello@scottdoxey.com",
-            "homepage": "http://scottdoxey.com/"
-        }
-    ],
-    "homepage": "https://github.com/neogeek/doxdox",
-    "repository": {
-        "type": "git",
-        "url": "git://github.com/neogeek/doxdox.git"
+  "name": "doxdox",
+  "description": "HTML, Markdown and Dash documentation generator.",
+  "version": "0.1.2",
+  "bin": "./bin/doxdox",
+  "preferGlobal": true,
+  "license": "MIT",
+  "dependencies": {
+    "adm-zip": "0.4.4",
+    "chalk": "0.5.1",
+    "dox": "0.6.1",
+    "handlebars": "2.0.0",
+    "highlight.js": "8.4.0",
+    "marked": "0.3.3",
+    "promise": "6.1.0",
+    "sqlite3": "3.0.4",
+    "temp": "0.8.1"
+  },
+  "devDependencies": {
+    "mocha": "2.1.0"
+  },
+  "scripts": {
+    "test": "make test"
+  },
+  "keywords": [
+    "documentation",
+    "html",
+    "bootstrap",
+    "markdown",
+    "dash"
+  ],
+  "authors": [
+    {
+      "name": "Scott Doxey",
+      "email": "hello@scottdoxey.com",
+      "homepage": "http://scottdoxey.com/"
     }
+  ],
+  "homepage": "https://github.com/neogeek/doxdox",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/neogeek/doxdox.git"
+  }
 }
