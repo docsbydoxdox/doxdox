@@ -1,5 +1,10 @@
 #Changelog
 
+##0.1.3 (January 26, 2015)
+
+- Added highlight.js support to markdown content.
+- Updated `promise` and `marked` packages.
+
 ##0.1.2 (January 13, 2015)
 
 - Removed parameters from Dash search index. ([@Kapeli](https://github.com/Kapeli))
