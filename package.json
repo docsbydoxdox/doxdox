@@ -11,7 +11,7 @@
     "dox": "0.6.1",
     "handlebars": "2.0.0",
     "highlight.js": "8.4.0",
-    "marked": "0.3.3",
+    "markdown-it": "3.0.4",
     "promise": "6.1.0",
     "sqlite3": "3.0.4",
     "temp": "0.8.1"
@@ -27,7 +27,8 @@
     "html",
     "bootstrap",
     "markdown",
-    "dash"
+    "dash",
+    "dox"
   ],
   "authors": [
     {
