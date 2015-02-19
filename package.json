@@ -6,14 +6,14 @@
   "preferGlobal": true,
   "license": "MIT",
   "dependencies": {
-    "adm-zip": "0.4.4",
+    "adm-zip": "0.4.7",
     "chalk": "0.5.1",
     "dox": "0.6.1",
-    "handlebars": "2.0.0",
+    "handlebars": "3.0.0",
     "highlight.js": "8.4.0",
-    "markdown-it": "3.0.4",
+    "markdown-it": "3.0.6",
     "promise": "6.1.0",
-    "sqlite3": "3.0.4",
+    "sqlite3": "3.0.5",
     "temp": "0.8.1"
   },
   "devDependencies": {
