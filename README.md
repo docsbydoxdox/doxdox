@@ -1,20 +1,20 @@
 [![](https://api.travis-ci.org/neogeek/doxdox.svg)](https://travis-ci.org/neogeek/doxdox)
-[![](https://david-dm.org/neogeek/doxdox.svg?style=flat)](https://david-dm.org/neogeek/doxdox) 
+[![](https://david-dm.org/neogeek/doxdox.svg?style=flat)](https://david-dm.org/neogeek/doxdox)
 [![](http://img.shields.io/npm/v/doxdox.svg?style=flat)](https://www.npmjs.org/package/doxdox)
 
-#doxdox
+# doxdox
 
 > HTML, Markdown and Dash documentation generator.
 
 A documentation generator that takes output from [dox](https://github.com/tj/dox/) and builds either a [Bootstrap](http://getbootstrap.com/), [Markdown](http://daringfireball.net/projects/markdown/) or [Dash](http://kapeli.com/dash) based documentation file.
 
-##Installation
+## Installation
 
 ```bash
 $ npm install doxdox -g
 ```
 
-##Usage
+## Usage
 
 ```
  Usage: doxdox <path> [options]
@@ -36,7 +36,7 @@ $ npm install doxdox -g
   - Dash					(http://kapeli.com/docsets/)
 ```
 
-##Examples:
+## Examples:
 
 - [Facade.js](http://facadejs.com/) - [Documentation](http://docs.facadejs.com/)
 - [plastick.js](https://github.com/syntaxtsb/plastick.js) - [Documentation](http://doxdox.org/syntaxtsb/plastick.js)
