@@ -1,5 +1,10 @@
 #Changelog
 
+##0.1.4 (February 19, 2015)
+
+- Added export to wiki.
+- Updated packages.
+
 ##0.1.3 (January 26, 2015)
 
 - Added highlight.js support to markdown content.
