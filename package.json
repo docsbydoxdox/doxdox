@@ -1,7 +1,7 @@
 {
   "name": "doxdox",
   "description": "HTML, Markdown and Dash documentation generator.",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "bin": "./bin/doxdox",
   "preferGlobal": true,
   "license": "MIT",

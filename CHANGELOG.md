@@ -1,5 +1,11 @@
 #Changelog
 
+##0.1.5 (April 5, 2015)
+
+- Updated packages.
+- Added support for node 0.12.x.
+- Updated tests.
+
 ##0.1.4 (February 19, 2015)
 
 - Added export to wiki.
