@@ -8,9 +8,9 @@
   "dependencies": {
     "adm-zip": "0.4.7",
     "chalk": "1.0.0",
-    "dox": "0.7.0",
+    "dox": "0.7.1",
     "handlebars": "3.0.1",
-    "highlight.js": "8.4.0",
+    "highlight.js": "8.5.0",
     "markdown-it": "4.1.0",
     "promise": "6.1.0",
     "sqlite3": "3.0.5",
