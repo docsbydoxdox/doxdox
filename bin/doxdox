@@ -66,7 +66,7 @@ while (args.length) {
     case '--version':
 
         process.stdout.write(require('../package').version + '\n');
-        process.kill();
+        process.exit();
 
         break;
 
@@ -89,7 +89,7 @@ while (args.length) {
         process.stdout.write('  - Dash\t\t\t(http://kapeli.com/docsets/)' + '\n');
         process.stdout.write('  - Wiki\t\t\t(https://help.github.com/articles/about-github-wikis/)' + '\n');
         process.stdout.write('\n');
-        process.kill();
+        process.exit();
 
         break;
 

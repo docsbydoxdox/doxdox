@@ -1,15 +1,17 @@
 /**
  * Create a polygon object. Inherits all methods from <b>Facade.Entity</b>.
  *
- *     var polygon = new Facade.Polygon({
- *         x: 0,
- *         y: 0,
- *         points: [ [100, 0], [200, 100], [100, 200], [0, 100] ],
- *         lineWidth: 10,
- *         strokeStyle: '#333E4B',
- *         fillStyle: '#1C73A8',
- *         anchor: 'top/left'
- *     });
+ * ```
+ * var polygon = new Facade.Polygon({
+ *     x: 0,
+ *     y: 0,
+ *     points: [ [100, 0], [200, 100], [100, 200], [0, 100] ],
+ *     lineWidth: 10,
+ *     strokeStyle: '#333E4B',
+ *     fillStyle: '#1C73A8',
+ *     anchor: 'top/left'
+ * });
+ * ```
  *
  * @param {Object} [options] Options to create the polygon with.
  * @param {String} [options.anchor] Position to anchor the polygon. <i>Default:</i> "top/left"<br><ul><li>top/left</li><li>top/center</li><li>top/right</li><li>center/left</li><li>center</li><li>center/right</li><li>bottom/left</li><li>bottom/center</li><li>bottom/right</li></ul>
@@ -91,5 +93,72 @@ Facade.Polygon.prototype._defaultOptions = function (updated) {
     }
 
     return options;
+
+};
+
+/**
+ * Renders a polygon entity to a canvas.
+ *
+ * @example polygon._draw(facade, options, metrics);
+ * @param {Object} facade Facade.js object.
+ * @param {Object} options Options used to render the polygon.
+ * @param {Object} metrics Metrics used to render the polygon.
+ * @return {Void}
+ * @private
+ */
+
+Facade.Polygon.prototype._draw = function (facade, options, metrics) {
+
+    var context = facade.context,
+        i,
+        length;
+
+    this._applyTransforms(context, options, metrics);
+
+    if (options.points.length) {
+
+        context.beginPath();
+
+        for (i = 0, length = options.points.length; i < length; i += 1) {
+
+            if (options.points[i].length === 6) {
+
+                context.bezierCurveTo.apply(context, options.points[i]);
+
+            } else if (options.points[i].length === 5) {
+
+                context.arc.apply(context, options.points[i]);
+
+            } else if (options.points[i].length === 2) {
+
+                context.lineTo.apply(context, options.points[i]);
+
+            }
+
+        }
+
+        if (options.closePath) {
+
+            context.closePath();
+
+        } else {
+
+            context.moveTo.apply(context, options.points[length - 1]);
+
+        }
+
+        if (options.fillStyle) {
+
+            context.fill();
+
+        }
+
+        if (options.lineWidth > 0) {
+
+            context.stroke();
+
+        }
+
+    }
 
 };

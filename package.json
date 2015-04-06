@@ -7,17 +7,17 @@
   "license": "MIT",
   "dependencies": {
     "adm-zip": "0.4.7",
-    "chalk": "0.5.1",
-    "dox": "0.6.1",
-    "handlebars": "3.0.0",
-    "highlight.js": "8.4.0",
-    "markdown-it": "3.0.6",
+    "chalk": "1.0.0",
+    "dox": "0.7.1",
+    "handlebars": "3.0.1",
+    "highlight.js": "8.5.0",
+    "markdown-it": "4.1.0",
     "promise": "6.1.0",
     "sqlite3": "3.0.5",
     "temp": "0.8.1"
   },
   "devDependencies": {
-    "mocha": "2.1.0"
+    "mocha": "2.2.1"
   },
   "scripts": {
     "test": "make test"

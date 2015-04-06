@@ -28,7 +28,9 @@
                     "description": "escaped html"
                 }
             ],
-            "api": []
+            "api": [
+                "public"
+            ]
         },
         "params": "html"
     }
