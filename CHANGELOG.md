@@ -1,5 +1,11 @@
 #Changelog
 
+##0.1.6 (April 12, 2015)
+
+- Updated packages.
+- Fixed Markdown issue with underscores in method names.
+- Fixed Markdown issue with headers on npmjs.com
+
 ##0.1.5 (April 5, 2015)
 
 - Updated packages.
