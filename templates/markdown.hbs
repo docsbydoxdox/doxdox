@@ -1,7 +1,7 @@
 {{#if pkg.homepage}}
-#[{{title}}]({{pkg.homepage}}) {{#if pkg.version}}_{{pkg.version}}_{{/if}}
+# [{{title}}]({{pkg.homepage}}) {{#if pkg.version}}*{{pkg.version}}*{{/if}}
 {{else}}
-#{{title}} {{#if pkg.version}}_{{pkg.version}}_{{/if}}
+# {{title}} {{#if pkg.version}}*{{pkg.version}}*{{/if}}
 {{/if}}
 
 {{#if description}}
@@ -10,7 +10,7 @@
 
 {{#each files}}{{#each methods}}
 
-##{{name}}({{params}}) {{#if isPrivate}} _private method_{{/if}}
+## {{name}}({{params}}) {{#if isPrivate}} *private method*{{/if}}
 
 {{{description}}}
 
@@ -18,27 +18,27 @@
 
 {{#if tags.param}}
 
-###Parameters
+### Parameters
 
 {{#each tags.param}}
-- **{{name}}** {{#each types}}`{{.}}` {{/each}} {{#if isOptional}}_Optional_{{/if}} {{{description}}}
+- **{{name}}** {{#each types}}`{{.}}` {{/each}} {{#if isOptional}}*Optional*{{/if}} {{{description}}}
 {{/each}}
 
 {{/if}}
 
 {{#if tags.property}}
 
-###Properties
+### Properties
 
 {{#each tags.property}}
-- **{{name}}** {{#each types}}`{{.}}` {{/each}} {{#if isOptional}}_Optional_{{/if}} {{{description}}}
+- **{{name}}** {{#each types}}`{{.}}` {{/each}} {{#if isOptional}}*Optional*{{/if}} {{{description}}}
 {{/each}}
 
 {{/if}}
 
 {{#if tags.example}}
 
-###Examples
+### Examples
 
 {{#each tags.example}}
 ```javascript
@@ -48,12 +48,12 @@
 
 {{/if}}
 
-###Returns
+### Returns
 
 {{#if tags.return}}
 
 {{#each tags.return}}
-- {{#each types}}`{{.}}` {{/each}} {{#if isOptional}}_Optional_{{/if}} {{{description}}}
+- {{#each types}}`{{.}}` {{/each}} {{#if isOptional}}*Optional*{{/if}} {{{description}}}
 {{/each}}
 
 {{else}}
@@ -64,4 +64,4 @@
 
 {{/each}}{{/each}}
 
-_Documentation generated with [doxdox](https://github.com/neogeek/doxdox)._
+*Documentation generated with [doxdox](https://github.com/neogeek/doxdox).*
