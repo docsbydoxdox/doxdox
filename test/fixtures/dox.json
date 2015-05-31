@@ -4,11 +4,11 @@
         "isPrivate": false,
         "type": "method",
         "name": "exports.escape",
-        "description": "Escape the given `html`.\n",
+        "description": "Escape the given `html`.",
         "body": "",
         "tags": {
             "example": [
-                "    utils.escape('<script></script>')\n    // => '&lt;script&gt;&lt;/script&gt;'\n"
+                "    utils.escape('<script></script>')\n    // => '&lt;script&gt;&lt;/script&gt;'"
             ],
             "param": [
                 {
