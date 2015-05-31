@@ -1,5 +1,9 @@
 #Changelog
 
+##0.1.7 (May 31, 2015)
+
+- Updated packages.
+
 ##0.1.6 (April 12, 2015)
 
 - Updated packages.
