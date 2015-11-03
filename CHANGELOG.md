@@ -1,5 +1,10 @@
 #Changelog
 
+##0.1.9 (November 2, 2015)
+
+- Support for Node.js 0.12, 4.0, 5.0
+- Updated packages.
+
 ##0.1.8 (August 3, 2015)
 
 - Updated packages.

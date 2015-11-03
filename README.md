@@ -39,6 +39,6 @@ $ npm install doxdox -g
 
 ## Examples:
 
-- [Facade.js](http://facadejs.com/) - [Documentation](http://docs.facadejs.com/)
+- [Facade.js](http://facadejs.com/) - [Documentation](http://doxdox.org/facadejs/Facade.js)
 - [plastick.js](https://github.com/syntaxtsb/plastick.js) - [Documentation](http://doxdox.org/syntaxtsb/plastick.js)
 - [CanvasToVideo](https://github.com/neogeek/CanvasToVideo) - [Documentation](http://doxdox.org/neogeek/CanvasToVideo)
