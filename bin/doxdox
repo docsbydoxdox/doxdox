@@ -139,4 +139,8 @@ doxdox.parseInput(input, config, pkg).then(function (content) {
 
     }
 
+}).catch(function (err) {
+
+    console.error(err);
+
 });
