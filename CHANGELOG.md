@@ -1,5 +1,9 @@
 #Changelog
 
+##0.1.10 (November 13, 2015)
+
+- Fixed regression with output generated via non-promise logic.
+
 ##0.1.9 (November 2, 2015)
 
 - Support for Node.js 0.12, 4.0, 5.0
