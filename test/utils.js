@@ -13,6 +13,8 @@ describe('doxdox util methods', function () {
 
             fs.readFile(__dirname + '/fixtures/' + file + '.js', 'utf8', function (err, data) {
 
+                if (err) { throw err; }
+
                 var methods = utils.parseData(
                     dox.parseComments(data, { raw: true }),
                     file + '.js'
@@ -21,6 +23,8 @@ describe('doxdox util methods', function () {
                 // fs.writeFileSync(__dirname + '/fixtures/' + file + '.json', JSON.stringify(methods, true, 4));
 
                 fs.readFile(__dirname + '/fixtures/' + file + '.json', 'utf8', function (err, data) {
+
+                    if (err) { throw err; }
 
                     assert.deepEqual(methods, JSON.parse(data));
 
