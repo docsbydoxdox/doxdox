@@ -1,5 +1,9 @@
 #Changelog
 
+##0.1.11 (March 25, 2016)
+
+- Updated packages.
+
 ##0.1.10 (November 13, 2015)
 
 - Fixed regression with output generated via non-promise logic.
