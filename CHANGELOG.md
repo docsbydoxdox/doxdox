@@ -1,5 +1,10 @@
 #Changelog
 
+##0.1.12 (April 3, 2016)
+
+- Fixed issue locating package.json file.
+- Updated packages.
+
 ##0.1.11 (March 25, 2016)
 
 - Updated packages.
