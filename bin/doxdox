@@ -11,15 +11,23 @@ var config = {
     layout: 'bootstrap'
 };
 
-var input = process.cwd(),
+var input = [],
     output,
     pkg;
 
 var args = process.argv.slice(2);
 
-if (args.length && !args[0].match(/^\-/)) {
+if (args.length) {
 
-    input = args.shift();
+    while (args.length && !args[0].match(/^\-/)) {
+
+        input.push(args.shift());
+
+    }
+
+} else {
+
+    input = process.cwd();
 
 }
 
