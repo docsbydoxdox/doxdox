@@ -1,5 +1,11 @@
 #Changelog
 
+##0.1.13 (May 4, 2016)
+
+- Improved regular expression for matching excluded directories and files.
+- Added support for multiple inputs.
+- Updated packages.
+
 ##0.1.12 (April 3, 2016)
 
 - Fixed issue locating package.json file.
