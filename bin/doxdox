@@ -103,13 +103,19 @@ while (args.length) {
 
 }
 
+if (!input.length) {
+
+    input = process.cwd();
+
+}
+
 if (pkg) {
 
-    pkg = utils.findPackagePath(pkg);
+    pkg = utils.findPackageFileInPath(pkg);
 
 } else {
 
-    pkg = utils.findPackagePath(input);
+    pkg = utils.findPackageFileInPath(input);
 
 }
 
@@ -134,12 +140,6 @@ if (fs.existsSync(pkg)) {
 if (!config.title) {
 
     config.title = 'Untitled Project';
-
-}
-
-if (!input.length) {
-
-    input = process.cwd();
 
 }
 
