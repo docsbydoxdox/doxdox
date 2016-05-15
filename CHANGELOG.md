@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.1.14 (May 15, 2016)
+
+- Updated packages.
+
 ## 0.1.13 (May 4, 2016)
 
 - Improved regular expression for matching excluded directories and files.
