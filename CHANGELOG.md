@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.1.15 (August 21, 2016)
+
+- Updated packages.
+
 ## 0.1.14 (May 15, 2016)
 
 - Updated packages.
