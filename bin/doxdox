@@ -3,6 +3,8 @@
 const fs = require('fs');
 const chalk = require('chalk');
 
+const doxdox = require('../lib/doxdox');
+
 const findPackageFileInPath = require('../lib/utils/cmd').findPackageFileInPath;
 
 const args = require('parse-cmd-args')(null, {
@@ -58,9 +60,23 @@ ${chalk.yellow('  -t, --title')}            Sets title.
 
     const output = args.flags['--output'] || args.flags['-o'] || null;
 
-    console.log(args);
-    console.log(config);
-    console.log(pkg);
-    console.log(output);
+    doxdox.parseInput(args.inputs, config).then(content => {
+
+        if (output) {
+
+            fs.writeFileSync(output, `${content.toString()}\n`, 'utf8');
+
+        } else {
+
+            process.stdout.write(`${content.toString()}\n`);
+
+        }
+
+    })
+    .catch(err => {
+
+        process.stderr.write(`${err.toString()}\n`);
+
+    });
 
 }
