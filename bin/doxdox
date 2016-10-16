@@ -5,7 +5,10 @@ const chalk = require('chalk');
 
 const findPackageFileInPath = require('../lib/utils/cmd').findPackageFileInPath;
 
-const args = require('parse-cmd-args')();
+const args = require('parse-cmd-args')(null, {
+    'allowMultipleInputs': true,
+    'requireUserInput': true
+});
 
 if (args.flags['--version'] || args.flags['-v']) {
 
