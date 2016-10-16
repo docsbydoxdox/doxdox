@@ -33,8 +33,6 @@ ${chalk.yellow('  -t, --title')}            Sets title.
 
   - Bootstrap (default)     (http://getbootstrap.com/)
   - Markdown                (http://daringfireball.net/projects/markdown/)
-  - Dash                    (http://kapeli.com/docsets/)
-  - Wiki                    (https://help.github.com/articles/about-github-wikis/)
 `);
     process.exit();
 
