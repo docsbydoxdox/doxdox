@@ -60,7 +60,7 @@ ${chalk.yellow('  -t, --title')}            Sets title.
 
     const output = args.flags['--output'] || args.flags['-o'] || null;
 
-    doxdox.parseInputs(args.inputs, config).then(content => {
+    doxdox.parseInputs(args.inputs, Object.assign({}, {pkg}, config)).then(content => {
 
         if (output) {
 
