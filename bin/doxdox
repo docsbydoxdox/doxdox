@@ -55,6 +55,7 @@ ${chalk.yellow('  -t, --title')}            Sets title.
     const config = {
         'description': args.flags['--description'] || args.flags['-d'] || pkg.description || '',
         'layout': (args.flags['--layout'] || args.flags['-l'] || 'markdown').toLowerCase(),
+        'parser': args.flags['--parser'] || args.flags['-r'] || 'dox',
         'title': args.flags['--title'] || args.flags['-t'] || pkg.name || 'Untitled Project'
     };
 
