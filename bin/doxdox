@@ -31,7 +31,7 @@ ${chalk.yellow('  -o, --output')}           File to save documentation to. Defau
 ${chalk.yellow('  -p, --package')}          Sets location of package.json file.
 ${chalk.yellow('  -t, --title')}            Sets title.
 
- Available Layouts:
+ Included Layouts:
 
   - Markdown (default)    (http://daringfireball.net/projects/markdown/)
   - Bootstrap             (http://getbootstrap.com/)
