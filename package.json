@@ -10,6 +10,7 @@
     "doxdox-parser-dox": "1.0.1",
     "doxdox-plugin-bootstrap": "1.0.1",
     "doxdox-plugin-markdown": "1.0.0",
+    "globby": "6.0.0",
     "parse-cmd-args": "1.0.2",
     "shell-quote": "1.6.1"
   },
