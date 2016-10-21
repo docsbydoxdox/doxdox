@@ -22,7 +22,8 @@ if (args.flags['--version'] || args.flags['-v']) {
     process.stdout.write(`
 ${chalk.blue(' Usage:')} doxdox <path> [options]
 
- Options:\n\n
+ Options:
+
 ${chalk.yellow('  -h, --help')}             Display this help message.
 ${chalk.yellow('  -v, --version')}          Display the current installed version.
 ${chalk.yellow('  -d, --description')}      Sets description.
