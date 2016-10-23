@@ -1,6 +1,6 @@
 # [doxdox](https://github.com/neogeek/doxdox) *1.0.0*
 
-> HTML, Markdown, Wiki and Dash documentation generator.
+> JSDoc to Bootstrap and Markdown documentation generator.
 
 
 ### lib/doxdox.js

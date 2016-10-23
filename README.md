@@ -1,6 +1,6 @@
 # doxdox
 
-> HTML, Markdown, Wiki and Dash documentation generator.
+> JSDoc to Bootstrap and Markdown documentation generator.
 
 [![Build Status](https://travis-ci.org/neogeek/doxdox.svg?branch=master)](https://travis-ci.org/neogeek/doxdox)
 [![codecov](https://img.shields.io/codecov/c/github/neogeek/doxdox/master.svg)](https://codecov.io/gh/neogeek/doxdox)

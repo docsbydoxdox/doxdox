@@ -1,6 +1,6 @@
 {
   "name": "doxdox",
-  "description": "HTML, Markdown, Wiki and Dash documentation generator.",
+  "description": "JSDoc to Bootstrap and Markdown documentation generator.",
   "version": "1.0.0",
   "bin": "./bin/doxdox",
   "preferGlobal": true,
