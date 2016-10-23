@@ -17,7 +17,7 @@ if (args.flags['--version'] || args.flags['-v']) {
     process.stdout.write(`${require('../package').version}\n`);
     process.exit();
 
-} else if (args.flags['--help'] || args.flags['-h']) {
+} else if (!args.inputs.length || args.flags['--help'] || args.flags['-h']) {
 
     process.stdout.write(`
 ${chalk.blue(' Usage:')} doxdox <path> [options]
