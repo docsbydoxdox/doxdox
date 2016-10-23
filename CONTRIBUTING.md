@@ -23,6 +23,7 @@ Before submitting a pull request, be sure that the following requirements are me
 - Soft indent with 4 spaces.
 - Always use camelCase.
 - Prefer `'` over `"`.
+- `'use strict';`
 - Prefer strict equals `===` unless type coercion is needed.
 - No trailing whitespace.
 - Maintain newline at EOF.
