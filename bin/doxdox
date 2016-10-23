@@ -68,11 +68,11 @@ ${chalk.yellow('  -t, --title')}            Sets title.
 
         if (output) {
 
-            fs.writeFileSync(output, `${content.toString()}\n`, 'utf8');
+            fs.writeFileSync(output, `${content}\n`, 'utf8');
 
         } else {
 
-            process.stdout.write(`${content.toString()}\n`);
+            process.stdout.write(`${content}\n`);
 
         }
 
