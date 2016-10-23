@@ -21,6 +21,10 @@ $ npm install doxdox -g
 
 For more information on NPM run scripts visit <https://docs.npmjs.com/cli/run-script>.
 
+```bash
+$ npm install doxdox --save-dev
+```
+
 ```json
 {
   "devDependencies": {
