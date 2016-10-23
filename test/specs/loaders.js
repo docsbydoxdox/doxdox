@@ -1,12 +1,12 @@
-const doxdox = require('../../lib/doxdox');
+const loaders = require('../../lib/loaders');
 
-describe('doxdox', () => {
+describe('loaders', () => {
 
     describe('loadParser', () => {
 
         it('loads dox parser', done => {
 
-            doxdox.loadParser({'parser': 'dox'}).then(() => {
+            loaders.loadParser({'parser': 'dox'}).then(() => {
 
                 done();
 
@@ -16,7 +16,7 @@ describe('doxdox', () => {
 
         it('fails on invalid parser', done => {
 
-            doxdox.loadParser({'parser': 'invalid'}).catch(() => {
+            loaders.loadParser({'parser': 'invalid'}).catch(() => {
 
                 done();
 
@@ -30,7 +30,7 @@ describe('doxdox', () => {
 
         it('loads markdown plugin', done => {
 
-            doxdox.loadPlugin({'layout': 'markdown'}).then(() => {
+            loaders.loadPlugin({'layout': 'markdown'}).then(() => {
 
                 done();
 
@@ -40,7 +40,7 @@ describe('doxdox', () => {
 
         it('loads custom handlebars plugin when file is specified', done => {
 
-            doxdox.loadPlugin({'layout': './test/fixtures/template.hbs'}).then(() => {
+            loaders.loadPlugin({'layout': './test/fixtures/template.hbs'}).then(() => {
 
                 done();
 
@@ -50,7 +50,7 @@ describe('doxdox', () => {
 
         it('fails on invalid plugin', done => {
 
-            doxdox.loadPlugin({'layout': 'invalid'}).catch(() => {
+            loaders.loadPlugin({'layout': 'invalid'}).catch(() => {
 
                 done();
 
@@ -60,7 +60,7 @@ describe('doxdox', () => {
 
         it('fails on invalid custom template', done => {
 
-            doxdox.loadPlugin({'layout': './test/fixtures/template.html'}).catch(() => {
+            loaders.loadPlugin({'layout': './test/fixtures/template.html'}).catch(() => {
 
                 done();
 
