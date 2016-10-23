@@ -24,6 +24,12 @@ describe('doxdox util cmd', () => {
 
         });
 
+        it('find package with input non package.json file', () => {
+
+            assert.deepEqual(utils.findPackageFileInPath('./index.js'), `${process.cwd()}/package.json`);
+
+        });
+
         it('fail to find package with invalid directory', () => {
 
             assert.deepEqual(utils.findPackageFileInPath('./testing'), null);
