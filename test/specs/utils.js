@@ -2,7 +2,7 @@ const assert = require('assert');
 
 const utils = require('../../lib/utils');
 
-describe('doxdox util cmd', () => {
+describe('doxdox utils', () => {
 
     describe('findPackageFileInPath', () => {
 
