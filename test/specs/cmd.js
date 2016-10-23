@@ -1,6 +1,6 @@
 const assert = require('assert');
 
-const findPackageFileInPath = require('../../lib/utils/cmd').findPackageFileInPath;
+const findPackageFileInPath = require('../../lib/utils').findPackageFileInPath;
 
 describe('doxdox util cmd', () => {
 

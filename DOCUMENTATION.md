@@ -107,7 +107,7 @@ Parse array of directory globs and/or inputs, and then render the parsed data th
 
 
 
-### lib/utils/cmd.js
+### lib/utils.js
 
 
 #### findPackageFileInPath([input]) 
