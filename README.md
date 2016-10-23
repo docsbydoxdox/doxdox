@@ -17,11 +17,30 @@ $ npm install doxdox -g
 
 ## Usage
 
+## NPM Run Scripts
+
+For more information on NPM run scripts visit <https://docs.npmjs.com/cli/run-script>.
+
+```json
+{
+  "devDependencies": {
+    "doxdox": "1.0.0"
+  },
+  "scripts": {
+    "docs": "doxdox 'src/**/*.js' --layout markdown --output DOCUMENTATION.md"
+  }
+}
+```
+
+```bash
+$ npm run docs
+```
+
 ### CLI
 
 #### Layouts
 
-**Markdown**
+_Markdown_
 
 For more information on Markdown visit <http://daringfireball.net/projects/markdown/>.
 
@@ -29,7 +48,7 @@ For more information on Markdown visit <http://daringfireball.net/projects/markd
 $ doxdox 'src/**/*.js' --layout markdown --output DOCUMENTATION.md
 ```
 
-**Bootstrap**
+_Bootstrap_
 
 Form more information on Bootstrap visit <https://v4-alpha.getbootstrap.com/>.
 
@@ -37,7 +56,7 @@ Form more information on Bootstrap visit <https://v4-alpha.getbootstrap.com/>.
 $ doxdox 'src/**/*.js' --layout bootstrap --output docs/index.html
 ```
 
-**Custom Handlebars Template**
+_Custom Handlebars Template_
 
 For more information on writing Handlebars templates visit <http://handlebarsjs.com/>.
 
