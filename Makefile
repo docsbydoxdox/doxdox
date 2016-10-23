@@ -12,6 +12,6 @@ coverage:
 	$(BIN)/istanbul cover $(BIN)/_mocha test/specs && $(BIN)/codecov
 
 docs:
-	doxdox lib/ -p package.json -l Markdown -o DOCUMENTATION.md
+	bin/doxdox 'lib/**/*.js' -p package.json -l markdown -o DOCUMENTATION.md
 
 .PHONY: test coverage
