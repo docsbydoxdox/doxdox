@@ -17,9 +17,35 @@ $ npm install doxdox -g
 
 ## Usage
 
+### CLI
+
+#### Layouts
+
+**Markdown**
+
+For more information on Markdown visit <http://daringfireball.net/projects/markdown/>.
+
 ```
 $ doxdox 'src/**/*.js' --layout markdown --output DOCUMENTATION.md
 ```
+
+**Bootstrap**
+
+Form more information on Bootstrap visit <https://v4-alpha.getbootstrap.com/>.
+
+```
+$ doxdox 'src/**/*.js' --layout bootstrap --output docs/index.html
+```
+
+**Custom Handlebars Template**
+
+For more information on writing Handlebars templates visit <http://handlebarsjs.com/>.
+
+```
+$ doxdox 'src/**/*.js' --layout templates/README.hbs --output README.md
+```
+
+#### Help
 
 ```
 Usage: doxdox <path> [options]
@@ -40,6 +66,23 @@ Included Layouts:
  - Bootstrap             (http://getbootstrap.com/)
  - Handlebars            (http://handlebarsjs.com/)
 ```
+
+### API
+
+```javascript
+const doxdox = require('doxdox');
+
+parseInputs(['src/**/*.js'], {
+    'parser': 'dox',
+    'layout': 'markdown'
+}).then(content => {
+
+    console.log(`${content}\n`);
+
+})
+```
+
+See [documentation](DOCUMENTATION.md) for more information on [`parseInputs`](DOCUMENTATION.md#parseinputsinputs-config).
 
 ## Packages
 
