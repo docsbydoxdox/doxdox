@@ -2,6 +2,38 @@
 
 > HTML, Markdown, Wiki and Dash documentation generator.
 
+## Installation
+
+```bash
+$ npm install doxdox -g
+```
+
+## Usage
+
+```
+$ doxdox 'src/**/*.js' --layout markdown --output DOCUMENTATION.md
+```
+
+```
+Usage: doxdox <path> [options]
+
+Options:
+
+ -h, --help             Display this help message.
+ -v, --version          Display the current installed version.
+ -d, --description      Sets description.
+ -l, --layout           Template to render the documentation with.
+ -o, --output           File to save documentation to. Defaults to stdout.
+ -p, --package          Sets location of package.json file.
+ -t, --title            Sets title.
+
+Included Layouts:
+
+ - Markdown (default)    (http://daringfireball.net/projects/markdown/)
+ - Bootstrap             (http://getbootstrap.com/)
+ - Handlebars            (http://handlebarsjs.com/)
+```
+
 ## Packages
 
 ### Core Packages

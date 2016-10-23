@@ -36,6 +36,8 @@ ${chalk.yellow('  -t, --title')}            Sets title.
 
   - Markdown (default)    (http://daringfireball.net/projects/markdown/)
   - Bootstrap             (http://getbootstrap.com/)
+  - Handlebars            (http://handlebarsjs.com/)
+
 `);
     process.exit();
 
