@@ -1,6 +1,7 @@
 BIN=node_modules/.bin
 
 test:
+	make lint
 	$(BIN)/mocha test/specs/
 
 lint:
