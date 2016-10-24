@@ -12,8 +12,7 @@
     "doxdox-plugin-handlebars": "1.0.0",
     "doxdox-plugin-markdown": "1.0.0",
     "globby": "6.0.0",
-    "parse-cmd-args": "1.0.2",
-    "shell-quote": "1.6.1"
+    "parse-cmd-args": "1.0.2"
   },
   "devDependencies": {
     "@neogeek/eslint-config-standards": "1.6.3",
