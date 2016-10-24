@@ -1,0 +1,19 @@
+{
+  "ignore": [
+    "**/test/**"
+  ],
+  "test": [
+    "**/test/**"
+  ],
+  "dependencies": {
+    "unused-ignores": [
+      "chalk",
+      "doxdox-parser-dox",
+      "doxdox-plugin-bootstrap",
+      "doxdox-plugin-handlebars",
+      "doxdox-plugin-markdown",
+      "globby",
+      "parse-cmd-args"
+    ]
+  }
+}
