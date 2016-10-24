@@ -1,6 +1,8 @@
 const assert = require('assert');
 const fs = require('fs');
 
+const mock = require('mock-fs');
+
 const doxdox = require('../../lib/doxdox');
 
 describe('doxdox', () => {
@@ -14,6 +16,32 @@ describe('doxdox', () => {
                 done();
 
             });
+
+        });
+
+    });
+
+    describe('parseInput', () => {
+
+        before(() => {
+
+            mock();
+
+        });
+
+        it('fails to parse input from invalid file', done => {
+
+            doxdox.parseInput('', {'parser': 'dox'}).catch(err => {
+
+                done();
+
+            });
+
+        });
+
+        after(() => {
+
+            mock.restore();
 
         });
 
