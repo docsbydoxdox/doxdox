@@ -17,7 +17,7 @@ $ npm install doxdox -g
 
 ## Usage
 
-## NPM Run Scripts
+### NPM Run Scripts
 
 For more information on NPM run scripts visit <https://docs.npmjs.com/cli/run-script>.
 
