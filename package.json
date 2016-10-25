@@ -30,6 +30,7 @@
     "jsdoc",
     "bootstrap",
     "markdown",
+    "handlebars",
     "dox"
   ],
   "authors": [
