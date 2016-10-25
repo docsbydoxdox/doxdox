@@ -68,6 +68,16 @@ For more information on writing Handlebars templates visit <http://handlebarsjs.
 $ doxdox 'src/**/*.js' --layout templates/README.hbs --output README.md
 ```
 
+#### Ignore
+
+The ignore flag allows you to ignore both directories (with glob syntax) and files.
+
+```bash
+$ doxdox './**/*.js' --ignore './coverage/**/*.js'
+```
+
+See <https://github.com/isaacs/minimatch#usage> for more information on how to use globs.
+
 #### Help
 
 ```
