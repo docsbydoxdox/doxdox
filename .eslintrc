@@ -1,0 +1,11 @@
+{
+  "extends": [
+    "@neogeek/eslint-config-standards"
+  ],
+  "rules": {
+    "global-require": 0,
+    "no-catch-shadow": 0,
+    "no-param-reassign": 0,
+    "no-sync": 0
+  }
+}

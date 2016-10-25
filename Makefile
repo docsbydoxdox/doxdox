@@ -1,4 +1,22 @@
-test:
-	./node_modules/.bin/mocha
+BIN=node_modules/.bin
 
-.PHONY: test
+test:
+	make lint
+	$(BIN)/mocha test/specs/
+
+lint:
+	$(BIN)/eslint bin/doxdox
+	$(BIN)/eslint lib/
+	$(BIN)/eslint index.js
+	$(BIN)/eslint 'test/specs/**/*.js'
+
+coverage:
+	$(BIN)/istanbul cover $(BIN)/_mocha test/specs && $(BIN)/codecov
+
+fixtures:
+	bin/doxdox lib/doxdox.js --output test/fixtures/doxdox.md --package lib/
+
+docs:
+	bin/doxdox 'lib/**/*.js' -p package.json -l markdown -o DOCUMENTATION.md
+
+.PHONY: test coverage

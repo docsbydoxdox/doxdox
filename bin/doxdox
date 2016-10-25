@@ -1,162 +1,88 @@
 #!/usr/bin/env node
 
-var fs = require('fs'),
-    chalk = require('chalk'),
-    doxdox = require('..'),
-    utils = require('../lib/utils');
+'use strict';
 
-var config = {
-    title: '',
-    description: '',
-    layout: 'bootstrap'
-};
+const fs = require('fs');
+const chalk = require('chalk');
 
-var input = [],
-    output,
-    pkg;
+const doxdox = require('../lib/doxdox');
 
-var args = process.argv.slice(2);
+const findPackageFileInPath = require('../lib/utils').findPackageFileInPath;
 
-var currentArg;
+const args = require('parse-cmd-args')(null, {
+    'allowMultipleInputs': true,
+    'requireUserInput': true
+});
 
-while (args.length) {
+if (args.flags['--version'] || args.flags['-v']) {
 
-    currentArg = args.shift();
+    process.stdout.write(`${require('../package').version}\n`);
+    process.exit();
 
-    if (/^(?!\-).*/.test(currentArg)) {
+} else if (!args.inputs.length || args.flags['--help'] || args.flags['-h']) {
 
-        input.push(currentArg);
+    process.stdout.write(`
+${chalk.blue(' Usage:')} doxdox <path> [options]
 
-    } else {
+ Options:
 
-        switch (currentArg) {
+${chalk.yellow('  -h, --help')}             Display this help message.
+${chalk.yellow('  -v, --version')}          Display the current installed version.
+${chalk.yellow('  -d, --description')}      Sets description.
+${chalk.yellow('  -l, --layout')}           Template to render the documentation with.
+${chalk.yellow('  -o, --output')}           File to save documentation to. Defaults to stdout.
+${chalk.yellow('  -p, --package')}          Sets location of package.json file.
+${chalk.yellow('  -t, --title')}            Sets title.
 
-        case '-t':
-        case '--title':
+ Included Layouts:
 
-            config.title = args.shift();
+  - Markdown (default)    (http://daringfireball.net/projects/markdown/)
+  - Bootstrap             (http://getbootstrap.com/)
+  - Handlebars            (http://handlebarsjs.com/)
 
-            break;
-
-        case '-d':
-        case '--description':
-
-            config.description = args.shift();
-
-            break;
-
-        case '-l':
-        case '--layout':
-
-            config.layout = args.shift();
-
-            break;
-
-        case '-o':
-        case '--output':
-
-            output = args.shift();
-
-            break;
-
-        case '-p':
-        case '--package':
-
-            pkg = args.shift();
-
-            break;
-
-        case '-v':
-        case '--version':
-
-            process.stdout.write(require('../package').version + '\n');
-            process.exit();
-
-            break;
-
-        default:
-
-            process.stdout.write('\n');
-            process.stdout.write(chalk.blue(' Usage:') + ' doxdox <path> [options]' + '\n\n');
-            process.stdout.write(' Options:' + '\n\n');
-            process.stdout.write(chalk.yellow('  -h, --help') + '\t\t\tDisplay this help message.' + '\n');
-            process.stdout.write(chalk.yellow('  -v, --version') + '\t\t\tDisplay the current installed version.' + '\n');
-            process.stdout.write(chalk.yellow('  -t, --title') + '\t\t\tSets title.' + '\n');
-            process.stdout.write(chalk.yellow('  -d, --description') + '\t\tSets description.' + '\n');
-            process.stdout.write(chalk.yellow('  -l, --layout') + '\t\t\tTemplate to render the documentation with.' + '\n');
-            process.stdout.write(chalk.yellow('  -p, --package') + '\t\t\tSets location of package.json file.' + '\n');
-            process.stdout.write(chalk.yellow('  -o, --output') + '\t\t\tFile to save documentation to. Defaults to stdout.' + '\n');
-            process.stdout.write('\n');
-            process.stdout.write(' Available Layouts:' + '\n\n');
-            process.stdout.write('  - Bootstrap (default)\t\t(http://getbootstrap.com/)' + '\n');
-            process.stdout.write('  - Markdown\t\t\t(http://daringfireball.net/projects/markdown/)' + '\n');
-            process.stdout.write('  - Dash\t\t\t(http://kapeli.com/docsets/)' + '\n');
-            process.stdout.write('  - Wiki\t\t\t(https://help.github.com/articles/about-github-wikis/)' + '\n');
-            process.stdout.write('\n');
-            process.exit();
-
-            break;
-
-        }
-
-    }
-
-}
-
-if (!input.length) {
-
-    input = process.cwd();
-
-}
-
-if (pkg) {
-
-    pkg = utils.findPackageFileInPath(pkg);
+`);
+    process.exit();
 
 } else {
 
-    pkg = utils.findPackageFileInPath(input);
+    let pkg = findPackageFileInPath(args.flags['--package'] || args.flags['-p']);
 
-}
+    if (fs.existsSync(pkg)) {
 
-if (fs.existsSync(pkg)) {
-
-    pkg = require(pkg);
-
-    if (!config.title && pkg.name) {
-
-        config.title = pkg.name;
-
-    }
-
-    if (!config.description && pkg.description) {
-
-        config.description = pkg.description;
-
-    }
-
-}
-
-if (!config.title) {
-
-    config.title = 'Untitled Project';
-
-}
-
-doxdox.parseInput(input, config, pkg).then(function (content) {
-
-    if (output) {
-
-        fs.writeFileSync(output, content, 'utf8');
+        pkg = require(pkg);
 
     } else {
 
-        process.stdout.write(content);
+        pkg = {};
 
     }
 
-}).catch(function (err) {
+    const config = {
+        'description': args.flags['--description'] || args.flags['-d'] || pkg.description || '',
+        'layout': (args.flags['--layout'] || args.flags['-l'] || 'markdown').toLowerCase(),
+        'parser': (args.flags['--parser'] || args.flags['-r'] || 'dox').toLowerCase(),
+        'title': args.flags['--title'] || args.flags['-t'] || pkg.name || 'Untitled Project'
+    };
 
-    console.error(err);
+    const output = args.flags['--output'] || args.flags['-o'] || null;
 
-});
+    doxdox.parseInputs(args.inputs, Object.assign({pkg}, config)).then(content => {
+
+        if (output) {
+
+            fs.writeFileSync(output, content, 'utf8');
+
+        } else {
+
+            process.stdout.write(content);
+
+        }
+
+    })
+    .catch(err => {
+
+        process.stderr.write(`${err.toString()}\n`);
+
+    });
+
+}
