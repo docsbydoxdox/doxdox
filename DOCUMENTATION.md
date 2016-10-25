@@ -1,4 +1,4 @@
-# [doxdox](https://github.com/neogeek/doxdox) *1.0.0*
+# [doxdox](https://github.com/neogeek/doxdox) *1.0.1*
 
 > JSDoc to Bootstrap and Markdown documentation generator.
 
@@ -136,6 +136,29 @@ Finds package.json file from either the directory the script was called from or 
 
 
 - `String`   Path to package.json file.
+
+
+
+#### formatPathsArrayToIgnore(paths) 
+
+Format an array of directories and/or files to be ignored by globby by adding a "!" at the beginning of each path.
+
+    console.log(formatPathsArrayToIgnore([]));
+
+
+
+
+##### Parameters
+
+- **paths** `Array`   Array of directories and/or files.
+
+
+
+
+##### Returns
+
+
+- `Array`   Modified array of directories and/or files.
 
 
 
