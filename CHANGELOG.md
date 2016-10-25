@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.0.0 (October 24, 2016)
+
+- Rewrite to support custom parsers and plugins.
+
 ## 0.1.15 (August 21, 2016)
 
 - Updated packages.

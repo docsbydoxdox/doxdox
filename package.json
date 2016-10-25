@@ -44,6 +44,5 @@
   "repository": {
     "type": "git",
     "url": "git://github.com/neogeek/doxdox.git"
-  },
-  "private": true
+  }
 }
