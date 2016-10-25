@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.0.1 (October 24, 2016)
+
+- Fixed issue with pattern matching.
+
 ## 1.0.0 (October 24, 2016)
 
 - Rewrite to support custom parsers and plugins.
