@@ -8,6 +8,7 @@ lint:
 	$(BIN)/eslint bin/doxdox
 	$(BIN)/eslint lib/
 	$(BIN)/eslint index.js
+	$(BIN)/eslint 'test/specs/**/*.js'
 
 coverage:
 	$(BIN)/istanbul cover $(BIN)/_mocha test/specs && $(BIN)/codecov
