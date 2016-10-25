@@ -1,6 +1,9 @@
 coverage/
 test/
 
+.bithoundrc
 .eslintrc
 
 .travis.yml
+
+Makefile
