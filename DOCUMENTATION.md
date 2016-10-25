@@ -10,7 +10,7 @@
 
 Parse an input file with parser.
 
-    parseInput('src/main.js', {'parser': 'dox'}).then();
+    parseInput('src/main.js', {'parser': 'dox'}).then(files => {});
 
 
 
@@ -33,9 +33,9 @@ Parse an input file with parser.
 
 #### parseInputs(inputs, config) 
 
-Parse array of directory globs and/or inputs, and then render the parsed data through the defined layout plugin.
+Parse array of directory globs and/or files, and then render the parsed data through the defined layout plugin.
 
-    console.log(parseInputs(['src/main.js'], {'parser': 'dox', 'layout': 'markdown'}));
+    parseInputs(['src/main.js'], {'parser': 'dox', 'layout': 'markdown'}).then(content => {});
 
 
 
@@ -90,7 +90,7 @@ Load parser based on user defined choice.
 Load layout plugin based on user defined choice.
 
     loadPlugin({'layout': 'markdown'}).then(plugin => {});
-    loadPlugin({'layout': 'templates/README.md'}).then(plugin => {});
+    loadPlugin({'layout': 'templates/README.hbs'}).then(plugin => {});
 
 
 
