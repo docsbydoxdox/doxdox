@@ -9,19 +9,12 @@ describe('doxdox', () => {
 
     describe('parseInput', () => {
 
-        it('parses input from file', done => {
-
-            doxdox.parseInput('./lib/doxdox.js', {'parser': 'dox'}).then(() => {
-
-                done();
-
-            });
-
-        });
+        it('parses input from file', () =>
+            doxdox.parseInput('./lib/doxdox.js', {'parser': 'dox'}));
 
     });
 
-    describe('parseInput', () => {
+    describe('parseInput (with mock-fs)', () => {
 
         before(() => {
 
@@ -29,15 +22,16 @@ describe('doxdox', () => {
 
         });
 
-        it('fails to parse input from invalid file', done => {
-
+        it('fails to parse input from invalid file', () =>
             doxdox.parseInput('', {'parser': 'dox'}).catch(err => {
 
-                done();
+                if (err) {
 
-            });
+                    console.log(err);
 
-        });
+                }
+
+            }));
 
         after(() => {
 
@@ -49,8 +43,7 @@ describe('doxdox', () => {
 
     describe('parseInputs', () => {
 
-        it('parses multiple input from array', done => {
-
+        it('parses multiple input from array', () =>
             doxdox.parseInputs(['./lib/doxdox.js'], {
                 'description': '',
                 'layout': 'markdown',
@@ -60,11 +53,7 @@ describe('doxdox', () => {
 
                 assert.equal(content, fs.readFileSync('./test/fixtures/doxdox.md', 'utf8'));
 
-                done();
-
-            });
-
-        });
+            }));
 
     });
 

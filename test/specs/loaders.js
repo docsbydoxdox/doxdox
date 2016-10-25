@@ -4,69 +4,49 @@ describe('loaders', () => {
 
     describe('loadParser', () => {
 
-        it('loads dox parser', done => {
+        it('loads dox parser', () => loaders.loadParser({'parser': 'dox'}));
 
-            loaders.loadParser({'parser': 'dox'}).then(() => {
+        it('fails on invalid parser', () =>
+            loaders.loadParser({'parser': 'invalid'}).catch(err => {
 
-                done();
+                if (err) {
 
-            });
+                    console.log(err);
 
-        });
+                }
 
-        it('fails on invalid parser', done => {
-
-            loaders.loadParser({'parser': 'invalid'}).catch(() => {
-
-                done();
-
-            });
-
-        });
+            }));
 
     });
 
     describe('loadPlugin', () => {
 
-        it('loads markdown plugin', done => {
+        it('loads markdown plugin', () => loaders.loadPlugin({'layout': 'markdown'}));
 
-            loaders.loadPlugin({'layout': 'markdown'}).then(() => {
+        it('loads custom handlebars plugin when file is specified', () =>
+            loaders.loadPlugin({'layout': './test/fixtures/template.hbs'}));
 
-                done();
+        it('fails on invalid plugin', () =>
+            loaders.loadPlugin({'layout': 'invalid'}).catch(err => {
 
-            });
+                if (err) {
 
-        });
+                    console.log(err);
 
-        it('loads custom handlebars plugin when file is specified', done => {
+                }
 
-            loaders.loadPlugin({'layout': './test/fixtures/template.hbs'}).then(() => {
+            }));
 
-                done();
+        it('fails on invalid custom template', () =>
+            loaders.loadPlugin({'layout': './test/fixtures/template.html'}).catch(err => {
 
-            });
+                if (err) {
 
-        });
+                    console.log(err);
 
-        it('fails on invalid plugin', done => {
+                }
 
-            loaders.loadPlugin({'layout': 'invalid'}).catch(() => {
-
-                done();
-
-            });
-
-        });
-
-        it('fails on invalid custom template', done => {
-
-            loaders.loadPlugin({'layout': './test/fixtures/template.html'}).catch(() => {
-
-                done();
-
-            });
-
-        });
+            }));
 
     });
 
