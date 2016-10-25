@@ -29,6 +29,7 @@ ${chalk.blue(' Usage:')} doxdox <path> [options]
 ${chalk.yellow('  -h, --help')}             Display this help message.
 ${chalk.yellow('  -v, --version')}          Display the current installed version.
 ${chalk.yellow('  -d, --description')}      Sets description.
+${chalk.yellow('  -i, --ignore')}           Comma separated list of paths to ignore.
 ${chalk.yellow('  -l, --layout')}           Template to render the documentation with.
 ${chalk.yellow('  -o, --output')}           File to save documentation to. Defaults to stdout.
 ${chalk.yellow('  -p, --package')}          Sets location of package.json file.
@@ -59,6 +60,7 @@ ${chalk.yellow('  -t, --title')}            Sets title.
 
     const config = {
         'description': args.flags['--description'] || args.flags['-d'] || pkg.description || '',
+        'ignore': (args.flags['--ignore'] || args.flags['-i'] || '').split(/\s*,\s*/),
         'layout': (args.flags['--layout'] || args.flags['-l'] || 'markdown').toLowerCase(),
         'parser': (args.flags['--parser'] || args.flags['-r'] || 'dox').toLowerCase(),
         'title': args.flags['--title'] || args.flags['-t'] || pkg.name || 'Untitled Project'

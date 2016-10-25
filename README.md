@@ -78,6 +78,7 @@ Options:
  -h, --help             Display this help message.
  -v, --version          Display the current installed version.
  -d, --description      Sets description.
+ -i, --ignore           Comma separated list of paths to ignore.
  -l, --layout           Template to render the documentation with.
  -o, --output           File to save documentation to. Defaults to stdout.
  -p, --package          Sets location of package.json file.
