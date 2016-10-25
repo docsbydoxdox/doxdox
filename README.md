@@ -100,7 +100,7 @@ parseInputs(['src/**/*.js'], {
     'layout': 'markdown'
 }).then(content => {
 
-    console.log(`${content}\n`);
+    process.stdout.write(content);
 
 })
 ```
