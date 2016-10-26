@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.1.0 (October 25, 2016)
+
+- Added ignore flag.
+- Added "tests" to default ignored folder names.
+
 ## 1.0.1 (October 24, 2016)
 
 - Fixed issue with pattern matching.
