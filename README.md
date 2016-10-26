@@ -70,7 +70,7 @@ $ doxdox 'src/**/*.js' --layout templates/README.hbs --output README.md
 
 #### Ignore
 
-The ignore flag allows you to ignore both directories (with glob syntax) and files.
+The ignore flag allows you to ignore both directories (with glob syntax) and files. Comma separated value.
 
 ```bash
 $ doxdox './**/*.js' --ignore './coverage/**/*.js'
