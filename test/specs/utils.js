@@ -38,4 +38,20 @@ describe('doxdox utils', () => {
 
     });
 
+    describe('formatPathsArrayToIgnore', () => {
+
+        it('convert values in array', () => {
+
+            assert.deepEqual(utils.formatPathsArrayToIgnore(['./src']), ['!./src']);
+
+        });
+
+        it('do nothing with empty array', () => {
+
+            assert.deepEqual(utils.formatPathsArrayToIgnore([]), []);
+
+        });
+
+    });
+
 });

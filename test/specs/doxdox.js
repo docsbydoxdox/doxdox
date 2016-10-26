@@ -46,6 +46,7 @@ describe('doxdox', () => {
         it('parses multiple input from array', () =>
             doxdox.parseInputs(['./lib/doxdox.js'], {
                 'description': '',
+                'ignore': [],
                 'layout': 'markdown',
                 'parser': 'dox',
                 'title': 'Untitled Project'
