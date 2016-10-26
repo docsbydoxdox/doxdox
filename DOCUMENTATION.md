@@ -143,7 +143,7 @@ Finds package.json file from either the directory the script was called from or 
 
 Format an array of directories and/or files to be ignored by globby by adding a "!" at the beginning of each path.
 
-    console.log(formatPathsArrayToIgnore([]));
+    console.log(formatPathsArrayToIgnore(['./src']));
 
 
 
