@@ -15,7 +15,7 @@
     "parse-cmd-args": "2.0.0"
   },
   "devDependencies": {
-    "@neogeek/eslint-config-standards": "1.6.3",
+    "@neogeek/eslint-config-standards": "1.6.4",
     "codecov": "1.0.1",
     "eslint": "3.8.1",
     "istanbul": "0.4.5",
