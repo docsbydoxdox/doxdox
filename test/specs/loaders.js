@@ -1,3 +1,5 @@
+const assert = require('assert');
+
 const loaders = require('../../lib/loaders');
 
 describe('loaders', () => {
@@ -7,11 +9,25 @@ describe('loaders', () => {
         it('find package', () =>
             loaders.findPackagePath('doxdox-parser-dox'));
 
-        it('error finding package', () =>
-            loaders.findPackagePath('doxdox-parser-jsdoc'));
+        it('fail to find package', () =>
 
-        it('error finding package when file is passed', () =>
-            loaders.findPackagePath('.bin/dox'));
+            loaders.findPackagePath('doxdox-parser-jsdoc').then(parser => {
+
+                assert.deepEqual(parser, []);
+
+            })
+
+        );
+
+        it('fail to find package when file is passed', () =>
+
+            loaders.findPackagePath('.bin/dox').then(parser => {
+
+                assert.deepEqual(parser, []);
+
+            })
+
+        );
 
     });
 
