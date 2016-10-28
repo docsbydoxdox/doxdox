@@ -7,10 +7,10 @@ describe('loaders', () => {
         it('find package', () =>
             loaders.findPackagePath('doxdox-parser-dox'));
 
-        it('doesn\'t find package', () =>
+        it('error finding package', () =>
             loaders.findPackagePath('doxdox-parser-jsdoc'));
 
-        it('doesn\'t find package when file is passed', () =>
+        it('error finding package when file is passed', () =>
             loaders.findPackagePath('.bin/dox'));
 
     });
