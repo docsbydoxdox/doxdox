@@ -2,6 +2,19 @@ const loaders = require('../../lib/loaders');
 
 describe('loaders', () => {
 
+    describe('findPackagePath', () => {
+
+        it('find package', () =>
+            loaders.findPackagePath('doxdox-parser-dox'));
+
+        it('doesn\'t find package', () =>
+            loaders.findPackagePath('doxdox-parser-jsdoc'));
+
+        it('doesn\'t find package when file is passed', () =>
+            loaders.findPackagePath('.bin/dox'));
+
+    });
+
     describe('loadParser', () => {
 
         it('loads dox parser', () => loaders.loadParser({'parser': 'dox'}));

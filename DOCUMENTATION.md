@@ -61,6 +61,30 @@ Parse array of directory globs and/or files, and then render the parsed data thr
 ### lib/loaders.js
 
 
+#### findPackagePath(pkg)  *private method*
+
+Find which node_modules directory to load package from.
+
+    findPackagePath('doxdox-parser-dox').then(parser => {});
+    findPackagePath('doxdox-plugin-bootstrap').then(plugin => {});
+
+
+
+
+##### Parameters
+
+- **pkg** `String`   Package name as string.
+
+
+
+
+##### Returns
+
+
+- `Object`   Promise
+
+
+
 #### loadParser(config)  *private method*
 
 Load parser based on user defined choice.
