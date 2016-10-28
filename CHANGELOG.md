@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.1.1 (October 28, 2016)
+
+- Fixed issue with loading custom parsers and plugins.
+
 ## 1.1.0 (October 25, 2016)
 
 - Added ignore flag.
