@@ -48,11 +48,21 @@ ${chalk.yellow('  -t, --title')}            Sets title.
 
     let pkg = findPackageFileInPath(args.flags['--package'] || args.flags['-p']);
 
-    if (fs.existsSync(pkg)) {
+    try {
 
-        pkg = require(pkg);
+        const pkgStats = fs.statSync(pkg);
 
-    } else {
+        if (pkgStats.isFile()) {
+
+            pkg = require(pkg);
+
+        } else {
+
+            pkg = {};
+
+        }
+
+    } catch (err) {
 
         pkg = {};
 
