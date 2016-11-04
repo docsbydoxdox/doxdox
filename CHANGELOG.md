@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.1.2 (November 4, 2016)
+
+- Added local plugin resolution.
+- Updated packages.
+
 ## 1.1.1 (October 28, 2016)
 
 - Fixed issue with loading custom parsers and plugins.
