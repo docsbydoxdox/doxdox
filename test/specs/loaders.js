@@ -77,6 +77,9 @@ describe('loaders', () => {
 
             }));
 
+        it('load custom plugin via JavaScript file', () =>
+            loaders.loadPlugin({'layout': './test/fixtures/plugin.js'}));
+
     });
 
 });
