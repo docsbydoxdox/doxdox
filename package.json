@@ -16,7 +16,7 @@
     "doxdox-plugin-bootstrap": "^1.0.x",
     "doxdox-plugin-handlebars": "^1.0.x",
     "doxdox-plugin-markdown": "^1.0.x",
-    "globby": "6.0.0",
+    "globby": "6.1.0",
     "parse-cmd-args": "2.0.0"
   },
   "devDependencies": {
