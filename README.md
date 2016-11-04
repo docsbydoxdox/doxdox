@@ -113,7 +113,7 @@ parseInputs(['src/**/*.js'], {
 
     process.stdout.write(content);
 
-})
+});
 ```
 
 See [documentation](DOCUMENTATION.md) for more information on [`parseInputs`](DOCUMENTATION.md#parseinputsinputs-config).
