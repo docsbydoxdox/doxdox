@@ -4,6 +4,7 @@
 
 const fs = require('fs');
 const chalk = require('chalk');
+const updateNotifier = require('update-notifier');
 
 const doxdox = require('../lib/doxdox');
 
@@ -15,6 +16,8 @@ const args = require('parse-cmd-args')(null, {
     'allowMultipleInputs': true,
     'requireUserInput': true
 });
+
+updateNotifier({pkg}).notify();
 
 if (args.flags['--version'] || args.flags['-v']) {
 
