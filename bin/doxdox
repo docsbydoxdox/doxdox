@@ -9,6 +9,8 @@ const doxdox = require('../lib/doxdox');
 
 const findPackageFileInPath = require('../lib/utils').findPackageFileInPath;
 
+const pkg = require('../package');
+
 const args = require('parse-cmd-args')(null, {
     'allowMultipleInputs': true,
     'requireUserInput': true
@@ -16,7 +18,7 @@ const args = require('parse-cmd-args')(null, {
 
 if (args.flags['--version'] || args.flags['-v']) {
 
-    process.stdout.write(`${require('../package').version}\n`);
+    process.stdout.write(`${pkg.version}\n`);
     process.exit();
 
 } else if (!args.inputs.length || args.flags['--help'] || args.flags['-h']) {
@@ -46,39 +48,37 @@ ${chalk.yellow('  -t, --title')}            Sets title.
 
 } else {
 
-    let pkg = findPackageFileInPath(args.flags['--package'] || args.flags['-p']);
+    const projectPkgPath = findPackageFileInPath(args.flags['--package'] || args.flags['-p']);
+
+    let projectPkg = {};
 
     try {
 
-        const pkgStats = fs.statSync(pkg);
+        const projectPkgStats = fs.statSync(projectPkgPath);
 
-        if (pkgStats.isFile()) {
+        if (projectPkgStats.isFile()) {
 
-            pkg = require(pkg);
-
-        } else {
-
-            pkg = {};
+            projectPkg = require(projectPkgPath);
 
         }
 
     } catch (err) {
 
-        pkg = {};
+        process.stderr.write(`${err.toString()}\n`);
 
     }
 
     const config = {
-        'description': args.flags['--description'] || args.flags['-d'] || pkg.description || '',
+        'description': args.flags['--description'] || args.flags['-d'] || projectPkg.description || '',
         'ignore': (args.flags['--ignore'] || args.flags['-i'] || '').split(/\s*,\s*/),
         'layout': (args.flags['--layout'] || args.flags['-l'] || 'markdown').toLowerCase(),
         'parser': (args.flags['--parser'] || args.flags['-r'] || 'dox').toLowerCase(),
-        'title': args.flags['--title'] || args.flags['-t'] || pkg.name || 'Untitled Project'
+        'title': args.flags['--title'] || args.flags['-t'] || projectPkg.name || 'Untitled Project'
     };
 
     const output = args.flags['--output'] || args.flags['-o'] || null;
 
-    doxdox.parseInputs(args.inputs, Object.assign({pkg}, config)).then(content => {
+    doxdox.parseInputs(args.inputs, Object.assign({projectPkg}, config)).then(content => {
 
         if (output) {
 
