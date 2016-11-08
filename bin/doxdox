@@ -81,7 +81,9 @@ ${chalk.yellow('  -t, --title')}            Sets title.
 
     const output = args.flags['--output'] || args.flags['-o'] || null;
 
-    doxdox.parseInputs(args.inputs, Object.assign({projectPkg}, config)).then(content => {
+    doxdox.parseInputs(args.inputs, Object.assign({
+        'pkg': projectPkg
+    }, config)).then(content => {
 
         if (output) {
 
