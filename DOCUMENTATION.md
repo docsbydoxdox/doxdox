@@ -1,4 +1,4 @@
-# [doxdox](https://github.com/neogeek/doxdox) *1.1.1*
+# [doxdox](https://github.com/neogeek/doxdox) *1.1.3*
 
 > JSDoc to Bootstrap and Markdown documentation generator.
 
@@ -115,6 +115,7 @@ Load layout plugin based on user defined choice.
 
     loadPlugin({'layout': 'markdown'}).then(plugin => {});
     loadPlugin({'layout': 'templates/README.hbs'}).then(plugin => {});
+    loadPlugin({'layout': 'plugin.js'}).then(plugin => {});
 
 
 

@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.1.3 (November 7, 2016)
+
+- Added update-notifier.
+
 ## 1.1.2 (November 4, 2016)
 
 - Added local plugin resolution.
