@@ -54,4 +54,40 @@ describe('doxdox utils', () => {
 
     });
 
+    describe('setConfigDefaults', () => {
+
+        it('set defaults on empty object', () => {
+
+            assert.deepEqual(utils.setConfigDefaults({}), {
+                'ignore': [],
+                'parser': 'dox',
+                'plugin': 'markdown'
+            });
+
+        });
+
+        it('set defaults with no object', () => {
+
+            assert.deepEqual(utils.setConfigDefaults(), {
+                'ignore': [],
+                'parser': 'dox',
+                'plugin': 'markdown'
+            });
+
+        });
+
+        it('set defaults on object with custom values', () => {
+
+            assert.deepEqual(utils.setConfigDefaults({
+                'plugin': 'bootstrap'
+            }), {
+                'ignore': [],
+                'parser': 'dox',
+                'plugin': 'bootstrap'
+            });
+
+        });
+
+    });
+
 });
