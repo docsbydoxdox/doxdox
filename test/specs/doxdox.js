@@ -8,20 +8,37 @@ describe('doxdox', () => {
     describe('parseInput', () => {
 
         it('parses input from file', () =>
-            doxdox.parseInput('./lib/doxdox.js', {'parser': 'dox'}));
+            doxdox.parseFile('./lib/doxdox.js', {'parser': 'dox'}));
 
     });
 
     describe('fail to parseInput on missing file', () => {
 
         it('fails to parse input from invalid file', () =>
-            doxdox.parseInput('test.js', {'parser': 'dox'}).catch(err => {
+            doxdox.parseFile('test.js', {'parser': 'dox'}).catch(err => {
 
                 if (err) {
 
                     console.log(err);
 
                 }
+
+            }));
+
+    });
+
+    describe('parseFiles', () => {
+
+        it('parses multiple input from array', () =>
+            doxdox.parseFiles(['./lib/doxdox.js'], {
+                'description': '',
+                'ignore': [],
+                'layout': 'markdown',
+                'parser': 'dox',
+                'title': 'Untitled Project'
+            }).then(content => {
+
+                assert.equal(content, fs.readFileSync('./test/fixtures/doxdox.md', 'utf8'));
 
             }));
 
