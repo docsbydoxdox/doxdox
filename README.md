@@ -8,6 +8,7 @@
 [![Known Vulnerabilities](https://snyk.io/test/npm/doxdox/badge.svg)](https://snyk.io/test/npm/doxdox)
 [![bitHound Overall Score](https://www.bithound.io/github/neogeek/doxdox/badges/score.svg)](https://www.bithound.io/github/neogeek/doxdox)
 [![NPM Version](http://img.shields.io/npm/v/doxdox.svg?style=flat)](https://www.npmjs.org/package/doxdox)
+[![Latest Documentation](https://doxdox.org/images/badge-flat.svg)](https://doxdox.org/neogeek/doxdox)
 
 ## Installation
 
@@ -122,19 +123,27 @@ See [documentation](DOCUMENTATION.md) for more information on [`parseInputs`](DO
 
 ### Core Packages
 
-| Package | Version | Dependencies |
-| ------- | ------- | ------------ |
-| [`doxdox-parser-dox`](https://github.com/neogeek/doxdox-parser-dox) | [![NPM Version](http://img.shields.io/npm/v/doxdox-parser-dox.svg?style=flat)](https://www.npmjs.org/package/doxdox-parser-dox) | [![dependencies Status](https://david-dm.org/neogeek/doxdox-parser-dox/status.svg)](https://david-dm.org/neogeek/doxdox-parser-dox) |
-| [`doxdox-plugin-markdown`](https://github.com/neogeek/doxdox-plugin-markdown) | [![NPM Version](http://img.shields.io/npm/v/doxdox-plugin-markdown.svg?style=flat)](https://www.npmjs.org/package/doxdox-plugin-markdown) | [![dependencies Status](https://david-dm.org/neogeek/doxdox-plugin-markdown/status.svg)](https://david-dm.org/neogeek/doxdox-plugin-markdown) |
-| [`doxdox-plugin-bootstrap`](https://github.com/neogeek/doxdox-plugin-bootstrap) | [![NPM Version](http://img.shields.io/npm/v/doxdox-plugin-bootstrap.svg?style=flat)](https://www.npmjs.org/package/doxdox-plugin-bootstrap) | [![dependencies Status](https://david-dm.org/neogeek/doxdox-plugin-bootstrap/status.svg)](https://david-dm.org/neogeek/doxdox-plugin-bootstrap) |
-| [`doxdox-plugin-handlebars`](https://github.com/neogeek/doxdox-plugin-handlebars) | [![NPM Version](http://img.shields.io/npm/v/doxdox-plugin-handlebars.svg?style=flat)](https://www.npmjs.org/package/doxdox-plugin-handlebars) | [![dependencies Status](https://david-dm.org/neogeek/doxdox-plugin-handlebars/status.svg)](https://david-dm.org/neogeek/doxdox-plugin-handlebars) |
+| Package | Version | Dependencies | Documentation |
+| ------- | ------- | ------------ | ------------- |
+| [`doxdox-parser-dox`](https://github.com/neogeek/doxdox-parser-dox) | [![NPM Version](http://img.shields.io/npm/v/doxdox-parser-dox.svg?style=flat)](https://www.npmjs.org/package/doxdox-parser-dox) | [![dependencies Status](https://david-dm.org/neogeek/doxdox-parser-dox/status.svg)](https://david-dm.org/neogeek/doxdox-parser-dox) | [![Latest Documentation](https://doxdox.org/images/badge-flat.svg)](https://doxdox.org/neogeek/doxdox-parser-dox) |
+| [`doxdox-plugin-markdown`](https://github.com/neogeek/doxdox-plugin-markdown) | [![NPM Version](http://img.shields.io/npm/v/doxdox-plugin-markdown.svg?style=flat)](https://www.npmjs.org/package/doxdox-plugin-markdown) | [![dependencies Status](https://david-dm.org/neogeek/doxdox-plugin-markdown/status.svg)](https://david-dm.org/neogeek/doxdox-plugin-markdown) | [![Latest Documentation](https://doxdox.org/images/badge-flat.svg)](https://doxdox.org/neogeek/doxdox-plugin-markdown) |
+| [`doxdox-plugin-bootstrap`](https://github.com/neogeek/doxdox-plugin-bootstrap) | [![NPM Version](http://img.shields.io/npm/v/doxdox-plugin-bootstrap.svg?style=flat)](https://www.npmjs.org/package/doxdox-plugin-bootstrap) | [![dependencies Status](https://david-dm.org/neogeek/doxdox-plugin-bootstrap/status.svg)](https://david-dm.org/neogeek/doxdox-plugin-bootstrap) | [![Latest Documentation](https://doxdox.org/images/badge-flat.svg)](https://doxdox.org/neogeek/doxdox-plugin-bootstrap) |
+| [`doxdox-plugin-handlebars`](https://github.com/neogeek/doxdox-plugin-handlebars) | [![NPM Version](http://img.shields.io/npm/v/doxdox-plugin-handlebars.svg?style=flat)](https://www.npmjs.org/package/doxdox-plugin-handlebars) | [![dependencies Status](https://david-dm.org/neogeek/doxdox-plugin-handlebars/status.svg)](https://david-dm.org/neogeek/doxdox-plugin-handlebars) | [![Latest Documentation](https://doxdox.org/images/badge-flat.svg)](https://doxdox.org/neogeek/doxdox-plugin-handlebars) |
+
+- [`doxdox-parser-dox`](https://github.com/neogeek/doxdox-parser-dox) - 🔌 Dox parser plugin for doxdox.
+- [`doxdox-plugin-markdown`](https://github.com/neogeek/doxdox-plugin-markdown) - 🔌 Markdown template plugin for doxdox.
+- [`doxdox-plugin-bootstrap`](https://github.com/neogeek/doxdox-plugin-bootstrap) - 🔌 Bootstrap template plugin for doxdox.
+- [`doxdox-plugin-handlebars`](https://github.com/neogeek/doxdox-plugin-handlebars) - 🔌 Custom Handlebars template plugin for doxdox.
 
 ### Other Packages
 
-| Package | Version | Dependencies |
-| ------- | ------- | ------------ |
-| [`doxdox-plugin-github-wiki`](https://github.com/neogeek/doxdox-plugin-github-wiki) | [![NPM Version](http://img.shields.io/npm/v/doxdox-plugin-github-wiki.svg?style=flat)](https://www.npmjs.org/package/doxdox-plugin-github-wiki) | [![dependencies Status](https://david-dm.org/neogeek/doxdox-plugin-github-wiki/status.svg)](https://david-dm.org/neogeek/doxdox-plugin-github-wiki) |
-| [`grunt-doxdox`](https://github.com/neogeek/grunt-doxdox) | [![NPM Version](http://img.shields.io/npm/v/grunt-doxdox.svg?style=flat)](https://www.npmjs.org/package/grunt-doxdox) | [![dependencies Status](https://david-dm.org/neogeek/grunt-doxdox/status.svg)](https://david-dm.org/neogeek/grunt-doxdox) |
+| Package | Version | Dependencies | Documentation |
+| ------- | ------- | ------------ | ------------- |
+| [`doxdox-plugin-github-wiki`](https://github.com/neogeek/doxdox-plugin-github-wiki) | [![NPM Version](http://img.shields.io/npm/v/doxdox-plugin-github-wiki.svg?style=flat)](https://www.npmjs.org/package/doxdox-plugin-github-wiki) | [![dependencies Status](https://david-dm.org/neogeek/doxdox-plugin-github-wiki/status.svg)](https://david-dm.org/neogeek/doxdox-plugin-github-wiki) | [![Latest Documentation](https://doxdox.org/images/badge-flat.svg)](https://doxdox.org/neogeek/doxdox-plugin-github-wiki) |
+| [`grunt-doxdox`](https://github.com/neogeek/grunt-doxdox) | [![NPM Version](http://img.shields.io/npm/v/grunt-doxdox.svg?style=flat)](https://www.npmjs.org/package/grunt-doxdox) | [![dependencies Status](https://david-dm.org/neogeek/grunt-doxdox/status.svg)](https://david-dm.org/neogeek/grunt-doxdox) | |
+
+- [`doxdox-plugin-github-wiki`](https://github.com/neogeek/doxdox-plugin-github-wiki) - 🔌 GitHub wiki export plugin for doxdox.
+- [`grunt-doxdox`](https://github.com/neogeek/grunt-doxdox) - Grunt plugin for doxdox.
 
 ## License
 
