@@ -118,6 +118,7 @@ Find which node_modules directory to load package from.
 Load parser based on user defined choice.
 
     loadParser({'parser': 'dox'}).then(parser => {});
+    loadParser({'parser': 'parser.js'}).then(parser => {});
 
 
 
