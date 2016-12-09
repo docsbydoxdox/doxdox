@@ -17,9 +17,11 @@ Parse a file with custom parser.
 
 ##### Parameters
 
-- **input** `String`   File to parse.
-- **config** `Object`   Configuration object.
-- **config.parser** `String`   String representing the parser to be used.
+| Name | Type | Description |  |
+| ---- | ---- | ----------- | -------- |
+| input | `String`  | File to parse. | &nbsp; |
+| config | `Object`  | Configuration object. | &nbsp; |
+| config.parser | `String`  | String representing the parser to be used. | &nbsp; |
 
 
 
@@ -27,7 +29,7 @@ Parse a file with custom parser.
 ##### Returns
 
 
-- `Object`   Promise
+- `Object`  Promise
 
 
 
@@ -42,11 +44,13 @@ Parse array of files, and then render the parsed data through the defined layout
 
 ##### Parameters
 
-- **inputs** `Array`   Array of directory globs and/or files.
-- **config** `Object`   Configuration object.
-- **config.ignore** `String`   Array of paths to ignore.
-- **config.parser** `String`   String representing the parser to be used.
-- **config.layout** `String`   String representing the layout plugin to be used.
+| Name | Type | Description |  |
+| ---- | ---- | ----------- | -------- |
+| inputs | `Array`  | Array of directory globs and/or files. | &nbsp; |
+| config | `Object`  | Configuration object. | &nbsp; |
+| config.ignore | `String`  | Array of paths to ignore. | &nbsp; |
+| config.parser | `String`  | String representing the parser to be used. | &nbsp; |
+| config.layout | `String`  | String representing the layout plugin to be used. | &nbsp; |
 
 
 
@@ -54,7 +58,7 @@ Parse array of files, and then render the parsed data through the defined layout
 ##### Returns
 
 
-- `Object`   Promise
+- `Object`  Promise
 
 
 
@@ -69,11 +73,13 @@ Parse array of directory globs and/or files, and then render the parsed data thr
 
 ##### Parameters
 
-- **inputs** `Array`   Array of directory globs and/or files.
-- **config** `Object`   Configuration object.
-- **config.ignore** `String`   Array of paths to ignore.
-- **config.parser** `String`   String representing the parser to be used.
-- **config.layout** `String`   String representing the layout plugin to be used.
+| Name | Type | Description |  |
+| ---- | ---- | ----------- | -------- |
+| inputs | `Array`  | Array of directory globs and/or files. | &nbsp; |
+| config | `Object`  | Configuration object. | &nbsp; |
+| config.ignore | `String`  | Array of paths to ignore. | &nbsp; |
+| config.parser | `String`  | String representing the parser to be used. | &nbsp; |
+| config.layout | `String`  | String representing the layout plugin to be used. | &nbsp; |
 
 
 
@@ -81,7 +87,7 @@ Parse array of directory globs and/or files, and then render the parsed data thr
 ##### Returns
 
 
-- `Object`   Promise
+- `Object`  Promise
 
 
 
@@ -101,7 +107,9 @@ Find which node_modules directory to load package from.
 
 ##### Parameters
 
-- **pkg** `String`   Package name as string.
+| Name | Type | Description |  |
+| ---- | ---- | ----------- | -------- |
+| pkg | `String`  | Package name as string. | &nbsp; |
 
 
 
@@ -109,7 +117,7 @@ Find which node_modules directory to load package from.
 ##### Returns
 
 
-- `Object`   Promise
+- `Object`  Promise
 
 
 
@@ -124,8 +132,10 @@ Load parser based on user defined choice.
 
 ##### Parameters
 
-- **config** `Object`   Configuration object.
-- **config.parser** `String`   String representing the parser to be loaded.
+| Name | Type | Description |  |
+| ---- | ---- | ----------- | -------- |
+| config | `Object`  | Configuration object. | &nbsp; |
+| config.parser | `String`  | String representing the parser to be loaded. | &nbsp; |
 
 
 
@@ -133,7 +143,7 @@ Load parser based on user defined choice.
 ##### Returns
 
 
-- `Object`   Promise
+- `Object`  Promise
 
 
 
@@ -150,8 +160,10 @@ Load layout plugin based on user defined choice.
 
 ##### Parameters
 
-- **config** `Object`   Configuration object.
-- **config.layout** `String`   String representing the layout plugin to be loaded.
+| Name | Type | Description |  |
+| ---- | ---- | ----------- | -------- |
+| config | `Object`  | Configuration object. | &nbsp; |
+| config.layout | `String`  | String representing the layout plugin to be loaded. | &nbsp; |
 
 
 
@@ -159,7 +171,7 @@ Load layout plugin based on user defined choice.
 ##### Returns
 
 
-- `Object`   Promise
+- `Object`  Promise
 
 
 
@@ -180,7 +192,9 @@ Finds package.json file from either the directory the script was called from or 
 
 ##### Parameters
 
-- **input** `String`  *Optional* Directory or file.
+| Name | Type | Description |  |
+| ---- | ---- | ----------- | -------- |
+| input | `String`  | Directory or file. | *Optional* |
 
 
 
@@ -188,7 +202,7 @@ Finds package.json file from either the directory the script was called from or 
 ##### Returns
 
 
-- `String`   Path to package.json file.
+- `String`  Path to package.json file.
 
 
 
@@ -203,7 +217,9 @@ Format an array of directories and/or files to be ignored by globby by adding a 
 
 ##### Parameters
 
-- **paths** `Array`   Array of directories and/or files.
+| Name | Type | Description |  |
+| ---- | ---- | ----------- | -------- |
+| paths | `Array`  | Array of directories and/or files. | &nbsp; |
 
 
 
@@ -211,7 +227,7 @@ Format an array of directories and/or files to be ignored by globby by adding a 
 ##### Returns
 
 
-- `Array`   Modified array of directories and/or files.
+- `Array`  Modified array of directories and/or files.
 
 
 
@@ -226,7 +242,9 @@ Sets default configuration values.
 
 ##### Parameters
 
-- **config** `Object`   Custom configuration object.
+| Name | Type | Description |  |
+| ---- | ---- | ----------- | -------- |
+| config | `Object`  | Custom configuration object. | &nbsp; |
 
 
 
@@ -234,7 +252,7 @@ Sets default configuration values.
 ##### Returns
 
 
-- `Object`   Modified configuration object.
+- `Object`  Modified configuration object.
 
 
 
