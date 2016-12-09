@@ -3,7 +3,7 @@ BIN=node_modules/.bin
 test:
 	make lint
 	$(BIN)/mocha test/specs
-	doxdox 'lib/**/*.js' --layout markdown | diff DOCUMENTATION.md -
+	bin/doxdox 'lib/**/*.js' -p package.json -l markdown | diff DOCUMENTATION.md -
 
 lint:
 	$(BIN)/eslint bin/doxdox
