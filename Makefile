@@ -3,7 +3,7 @@ BIN=node_modules/.bin
 test:
 	make lint
 	$(BIN)/mocha test/specs
-	make docs && git diff master:DOCUMENTATION.md DOCUMENTATION.md
+	bin/doxdox 'lib/**/*.js' -p package.json -l markdown | diff DOCUMENTATION.md -
 
 lint:
 	$(BIN)/eslint bin/doxdox
