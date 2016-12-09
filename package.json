@@ -13,7 +13,7 @@
   "dependencies": {
     "chalk": "1.1.3",
     "doxdox-parser-dox": "~1.0.4",
-    "doxdox-plugin-bootstrap": "~1.0.3",
+    "doxdox-plugin-bootstrap": "~1.0.4",
     "doxdox-plugin-handlebars": "~1.0.3",
     "doxdox-plugin-markdown": "~1.0.3",
     "globby": "6.1.0",
