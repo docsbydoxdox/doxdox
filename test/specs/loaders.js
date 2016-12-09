@@ -49,6 +49,17 @@ describe('loaders', () => {
 
             }));
 
+        it('fails on invalid custom parser', () =>
+            loaders.loadParser({'parser': './test/fixtures/template.html'}).catch(err => {
+
+                if (err) {
+
+                    console.log(err);
+
+                }
+
+            }));
+
     });
 
     describe('loadPlugin', () => {
