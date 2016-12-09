@@ -55,6 +55,9 @@ describe('loaders', () => {
         it('loads custom handlebars plugin when file is specified', () =>
             loaders.loadPlugin({'layout': './test/fixtures/template.hbs'}));
 
+        it('load custom plugin via JavaScript file', () =>
+            loaders.loadPlugin({'layout': './test/fixtures/plugin.js'}));
+
         it('fails on invalid plugin', () =>
             loaders.loadPlugin({'layout': 'invalid'}).catch(err => {
 
@@ -76,9 +79,6 @@ describe('loaders', () => {
                 }
 
             }));
-
-        it('load custom plugin via JavaScript file', () =>
-            loaders.loadPlugin({'layout': './test/fixtures/plugin.js'}));
 
     });
 
