@@ -1,4 +1,4 @@
-# [doxdox](https://github.com/neogeek/doxdox) *1.1.3*
+# [doxdox](https://github.com/neogeek/doxdox) *2.0.0*
 
 > JSDoc to Bootstrap and Markdown documentation generator.
 

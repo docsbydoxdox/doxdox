@@ -1,5 +1,13 @@
 # Changelog
 
+## 2.0.0 (December 8, 2016)
+
+- Changed `parseInput` to `parseFile`
+- Added `setConfigDefaults` method.
+- Added ability to load custom parsers.
+- Filter out files with no methods.
+- Updated packages.
+
 ## 1.1.3 (November 7, 2016)
 
 - Added update-notifier.
