@@ -35,6 +35,9 @@ describe('loaders', () => {
 
         it('loads dox parser', () => loaders.loadParser({'parser': 'dox'}));
 
+        it('loads custom parser when file is specified', () =>
+            loaders.loadParser({'parser': './test/fixtures/parser.js'}));
+
         it('fails on invalid parser', () =>
             loaders.loadParser({'parser': 'invalid'}).catch(err => {
 
