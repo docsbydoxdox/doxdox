@@ -1,5 +1,10 @@
 # Changelog
 
+## 2.0.1 (December 15, 2016)
+
+- Prevent update notification from displaying when piping output.
+- Updated packages.
+
 ## 2.0.0 (December 8, 2016)
 
 - Changed `parseInput` to `parseFile`
