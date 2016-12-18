@@ -29,7 +29,7 @@ $ npm install doxdox --save-dev
 ```json
 {
   "devDependencies": {
-    "doxdox": "1.0.0"
+    "doxdox": "2.0.1"
   },
   "scripts": {
     "docs": "doxdox 'src/**/*.js' --layout markdown --output DOCUMENTATION.md"
