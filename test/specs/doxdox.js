@@ -5,14 +5,10 @@ const doxdox = require('../../lib/doxdox');
 
 describe('doxdox', () => {
 
-    describe('parseInput', () => {
+    describe('parseFile', () => {
 
         it('parses input from file', () =>
             doxdox.parseFile('./lib/doxdox.js', {'parser': 'dox'}));
-
-    });
-
-    describe('fail to parseInput on missing file', () => {
 
         it('fails to parse input from invalid file', () =>
             doxdox.parseFile('test.js', {'parser': 'dox'}).catch(err => {
