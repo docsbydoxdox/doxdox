@@ -139,9 +139,11 @@ See [documentation](DOCUMENTATION.md) for more information on [`parseInputs`](DO
 
 | Package | Version | Dependencies | Documentation |
 | ------- | ------- | ------------ | ------------- |
+| [`doxdox-plugin-dash`](https://github.com/neogeek/doxdox-plugin-dash) | [![NPM Version](http://img.shields.io/npm/v/doxdox-plugin-dash.svg?style=flat)](https://www.npmjs.org/package/doxdox-plugin-dash) | [![dependencies Status](https://david-dm.org/neogeek/doxdox-plugin-dash/status.svg)](https://david-dm.org/neogeek/doxdox-plugin-dash) | [![Latest Documentation](https://doxdox.org/images/badge-flat.svg)](https://doxdox.org/neogeek/doxdox-plugin-dash) |
 | [`doxdox-plugin-github-wiki`](https://github.com/neogeek/doxdox-plugin-github-wiki) | [![NPM Version](http://img.shields.io/npm/v/doxdox-plugin-github-wiki.svg?style=flat)](https://www.npmjs.org/package/doxdox-plugin-github-wiki) | [![dependencies Status](https://david-dm.org/neogeek/doxdox-plugin-github-wiki/status.svg)](https://david-dm.org/neogeek/doxdox-plugin-github-wiki) | [![Latest Documentation](https://doxdox.org/images/badge-flat.svg)](https://doxdox.org/neogeek/doxdox-plugin-github-wiki) |
 | [`grunt-doxdox`](https://github.com/neogeek/grunt-doxdox) | [![NPM Version](http://img.shields.io/npm/v/grunt-doxdox.svg?style=flat)](https://www.npmjs.org/package/grunt-doxdox) | [![dependencies Status](https://david-dm.org/neogeek/grunt-doxdox/status.svg)](https://david-dm.org/neogeek/grunt-doxdox) | |
 
+- [`doxdox-plugin-dash`](https://github.com/neogeek/doxdox-plugin-dash) - 🔌 Dash export plugin for doxdox.
 - [`doxdox-plugin-github-wiki`](https://github.com/neogeek/doxdox-plugin-github-wiki) - 🔌 GitHub wiki export plugin for doxdox.
 - [`grunt-doxdox`](https://github.com/neogeek/grunt-doxdox) - Grunt plugin for doxdox.
 
