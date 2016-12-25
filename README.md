@@ -1,4 +1,4 @@
-# doxdox
+# [doxdox](https://doxdox.org/)
 
 > JSDoc to Markdown, Bootstrap, and custom Handlebars template documentation generator.
 
