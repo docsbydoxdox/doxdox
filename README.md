@@ -10,7 +10,7 @@
 [![NPM Version](http://img.shields.io/npm/v/doxdox.svg?style=flat)](https://www.npmjs.org/package/doxdox)
 [![Latest Documentation](https://doxdox.org/images/badge-flat.svg)](https://doxdox.org/neogeek/doxdox)
 
-doxdox is a simple to use documentation generator that takes JSDoc comment blocks and generates different documentation formats; Markdown, Bootstrap, and custom Handlebars templates.
+doxdox is a simple to use documentation generator that takes JSDoc comment blocks and generates different documentation formats; [Markdown](http://daringfireball.net/projects/markdown/), [Bootstrap](https://v4-alpha.getbootstrap.com/), and custom [Handlebars](http://handlebarsjs.com/>) templates.
 
 doxdox also features support for extendability via custom plugins for both parsing and generating documentation.
 
@@ -34,9 +34,9 @@ doxdox also features support for extendability via custom plugins for both parsi
 
 **Out**
 
-![screenshot](screenshot.png)
+![screenshot](screenshot.jpg)
 
-_Bootstrap template plugin_
+_Bootstrap template plugin_ <https://github.com/neogeek/doxdox-plugin-bootstrap>
 
 ## Getting Started
 
@@ -48,9 +48,9 @@ First install <b>doxdox</b> globally with NPM.
 $ npm install doxdox -g
 ```
 
-Then, once you have doxdox installed globally (or local to your project, see below), you can start generating documentation. For this example, we will be generating a Markdown file and storing it within the project.
+Then, once you have doxdox installed globally (or local to your project, see below), you can start generating documentation. For this example, we will be generating a [Markdown](http://daringfireball.net/projects/markdown/) file and storing it within the project.
 
-With a directory structure similar to the example shown below, run the following command to generate a Markdown file and output the generated contents to a new file named `DOCUMENTATION.md`.
+With a directory structure similar to the example shown below, run the following command to generate a [Markdown](http://daringfireball.net/projects/markdown/) file and output the generated contents to a new file named [`DOCUMENTATION.md`](DOCUMENTATION.md).
 
 ```bash
 $ doxdox 'lib/**/*.js' --layout markdown --output DOCUMENTATION.md
@@ -209,6 +209,14 @@ See [documentation](DOCUMENTATION.md) for more information on [`parseInputs`](DO
 - [`doxdox-plugin-dash`](https://github.com/neogeek/doxdox-plugin-dash) - 🔌 Dash export plugin for doxdox.
 - [`doxdox-plugin-github-wiki`](https://github.com/neogeek/doxdox-plugin-github-wiki) - 🔌 GitHub wiki export plugin for doxdox.
 - [`grunt-doxdox`](https://github.com/neogeek/grunt-doxdox) - Grunt plugin for doxdox.
+
+## Questions
+
+If you have any questions regarding the use of doxdox, please use either the [Gitter](https://gitter.im/neogeek/doxdox) chat room or [Stack Overflow](http://stackoverflow.com/questions/ask?tags=doxdox). The issue tracker is to be used for bug reports and feature requests only.
+
+## Contributing
+
+Be sure to review the [Contributing Guidelines](CONTRIBUTING.md) before logging an issue or making a pull request.
 
 ## License
 
