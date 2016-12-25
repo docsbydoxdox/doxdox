@@ -7,3 +7,5 @@ test/
 .travis.yml
 
 Makefile
+
+screenshot.png
