@@ -42,7 +42,7 @@ _Bootstrap template plugin_ <https://github.com/neogeek/doxdox-plugin-bootstrap>
 
 The following instructions assume you have already setup JSDoc comment blocks in your codebase. If you have not and would like to learn more about how to use JSDoc, visit <http://usejsdoc.org/>.
 
-First install <b>doxdox</b> globally with NPM.
+First install doxdox globally with [NPM](http://npmjs.com/).
 
 ```bash
 $ npm install doxdox -g
@@ -69,7 +69,7 @@ $ doxdox 'lib/**/*.js' --layout markdown --output DOCUMENTATION.md
 
 ## Installation
 
-doxdox can be installed via either NPM or Yarn.
+doxdox can be installed via either [NPM](http://npmjs.com/) or [Yarn](https://yarnpkg.com/).
 
 ```bash
 $ npm install doxdox -g
