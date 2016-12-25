@@ -10,9 +10,9 @@
 [![NPM Version](http://img.shields.io/npm/v/doxdox.svg?style=flat)](https://www.npmjs.org/package/doxdox)
 [![Latest Documentation](https://doxdox.org/images/badge-flat.svg)](https://doxdox.org/neogeek/doxdox)
 
-**doxdox** is a simple to use documentation generator that takes JSDoc comment blocks and generates different documentation formats; Markdown, Bootstrap, and custom Handlebars templates.
+doxdox is a simple to use documentation generator that takes JSDoc comment blocks and generates different documentation formats; Markdown, Bootstrap, and custom Handlebars templates.
 
-**doxdox** also features support for extendability via custom plugins for both parsing and generating documentation.
+doxdox also features support for extendability via custom plugins for both parsing and generating documentation.
 
 **In**
 
@@ -48,7 +48,7 @@ First install <b>doxdox</b> globally with NPM.
 $ npm install doxdox -g
 ```
 
-Then, once you have **doxdox** installed globally (or local to your project, see below), you can start generating documentation. For this example, we will be generating a Markdown file and storing it within the project.
+Then, once you have doxdox installed globally (or local to your project, see below), you can start generating documentation. For this example, we will be generating a Markdown file and storing it within the project.
 
 With a directory structure similar to the example shown below, run the following command to generate a Markdown file and output the generated contents to a new file named `DOCUMENTATION.md`.
 
@@ -69,7 +69,7 @@ $ doxdox 'lib/**/*.js' --layout markdown --output DOCUMENTATION.md
 
 ## Installation
 
-**doxdox** can be installed via either NPM or Yarn.
+doxdox can be installed via either NPM or Yarn.
 
 ```bash
 $ npm install doxdox -g
