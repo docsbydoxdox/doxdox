@@ -36,7 +36,7 @@ doxdox also features support for extendability via custom plugins for both parsi
 
 ![screenshot](screenshot.jpg)
 
-_Bootstrap template plugin_ <https://github.com/neogeek/doxdox-plugin-bootstrap>
+_Bootstrap template plugin, included with doxdox_ <https://github.com/neogeek/doxdox-plugin-bootstrap>
 
 ## Getting Started
 
@@ -62,9 +62,14 @@ $ doxdox 'lib/**/*.js' --layout markdown --output DOCUMENTATION.md
 ├─ lib/
 │   ├─ doxdox.js
 │   ├─ loaders.js
-│   ├─ utils.js
+│   └─ utils.js
 ├─ node_modules/
 └─ test/
+     ├─ fixtures/
+     └─ specs/
+          ├─ doxdox.js
+          ├─ loaders.js
+          └─ utils.js
 ```
 
 ## Installation
