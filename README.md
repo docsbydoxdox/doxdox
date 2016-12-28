@@ -127,7 +127,7 @@ See <https://github.com/isaacs/minimatch#usage> for more information on how to u
 #### Help
 
 ```
-Usage: doxdox <path> [options]
+Usage: doxdox <path> ... [options]
 
 Options:
 

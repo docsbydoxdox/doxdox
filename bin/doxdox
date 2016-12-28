@@ -30,7 +30,7 @@ if (args.flags['--version'] || args.flags['-v']) {
 } else if (!args.inputs.length || args.flags['--help'] || args.flags['-h']) {
 
     process.stdout.write(`
-${chalk.blue(' Usage:')} doxdox <path> [options]
+${chalk.blue(' Usage:')} doxdox <path> ... [options]
 
  Options:
 
