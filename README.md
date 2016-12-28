@@ -213,7 +213,7 @@ Non-core packages must be installed separately from doxdox.
 $ npm install doxdox doxdox-plugin-dash --save-dev
 ```
 
-The, via the `--layout` flag, you specify the plugin name minus the `doxdox-plugin-`
+The, via the `--layout` flag, you specify the plugin name minus `doxdox-plugin-`.
 
 | Package | Version | Dependencies | Documentation |
 | ------- | ------- | ------------ | ------------- |
