@@ -1,6 +1,6 @@
 # [doxdox](https://github.com/neogeek/doxdox) *2.0.1*
 
-> JSDoc to Bootstrap and Markdown documentation generator.
+> JSDoc to Markdown, Bootstrap, and custom Handlebars template documentation generator.
 
 
 ### lib/doxdox.js
