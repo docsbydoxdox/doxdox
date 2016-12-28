@@ -95,7 +95,7 @@ _Markdown_
 For more information on Markdown visit <http://daringfireball.net/projects/markdown/>.
 
 ```bash
-$ doxdox 'src/**/*.js' --layout markdown --output DOCUMENTATION.md
+$ doxdox 'lib/**/*.js' --layout markdown --output DOCUMENTATION.md
 ```
 
 _Bootstrap_
@@ -103,7 +103,7 @@ _Bootstrap_
 Form more information on Bootstrap visit <https://v4-alpha.getbootstrap.com/>.
 
 ```bash
-$ doxdox 'src/**/*.js' --layout bootstrap --output docs/index.html
+$ doxdox 'lib/**/*.js' --layout bootstrap --output docs/index.html
 ```
 
 _Custom Handlebars Template_
@@ -111,12 +111,12 @@ _Custom Handlebars Template_
 For more information on writing Handlebars templates visit <http://handlebarsjs.com/>.
 
 ```bash
-$ doxdox 'src/**/*.js' --layout templates/README.hbs --output README.md
+$ doxdox 'lib/**/*.js' --layout templates/README.hbs --output README.md
 ```
 
 #### Ignore
 
-The ignore flag allows you to ignore both directories (with glob syntax) and files. Comma separated value.
+The ignore flag allows you to ignore both directories (with glob syntax) and files. Comma separated values.
 
 ```bash
 $ doxdox './**/*.js' --ignore './coverage/**/*.js'
@@ -161,7 +161,7 @@ $ npm install doxdox --save-dev
     "doxdox": "2.0.1"
   },
   "scripts": {
-    "docs": "doxdox 'src/**/*.js' --layout markdown --output DOCUMENTATION.md"
+    "docs": "doxdox 'lib/**/*.js' --layout markdown --output DOCUMENTATION.md"
   }
 }
 ```
@@ -175,7 +175,7 @@ $ npm run docs
 ```javascript
 const doxdox = require('doxdox');
 
-parseInputs(['src/**/*.js'], {
+parseInputs(['lib/**/*.js'], {
     'parser': 'dox',
     'layout': 'markdown'
 }).then(content => {
@@ -191,6 +191,8 @@ See [documentation](DOCUMENTATION.md) for more information on [`parseInputs`](DO
 
 ### Core Packages
 
+All core packages come pre-installed with doxdox.
+
 | Package | Version | Dependencies | Documentation |
 | ------- | ------- | ------------ | ------------- |
 | [`doxdox-parser-dox`](https://github.com/neogeek/doxdox-parser-dox) | [![NPM Version](http://img.shields.io/npm/v/doxdox-parser-dox.svg?style=flat)](https://www.npmjs.org/package/doxdox-parser-dox) | [![dependencies Status](https://david-dm.org/neogeek/doxdox-parser-dox/status.svg)](https://david-dm.org/neogeek/doxdox-parser-dox) | [![Latest Documentation](https://doxdox.org/images/badge-flat.svg)](https://doxdox.org/neogeek/doxdox-parser-dox) |
@@ -204,6 +206,14 @@ See [documentation](DOCUMENTATION.md) for more information on [`parseInputs`](DO
 - [`doxdox-plugin-markdown`](https://github.com/neogeek/doxdox-plugin-markdown) - 🔌 Markdown template plugin for doxdox.
 
 ### Other Packages
+
+Non-core packages must be installed separately from doxdox.
+
+```bash
+$ npm install doxdox doxdox-plugin-dash --save-dev
+```
+
+The, via the `--layout` flag, you specify the plugin name minus the `doxdox-plugin-`
 
 | Package | Version | Dependencies | Documentation |
 | ------- | ------- | ------------ | ------------- |
