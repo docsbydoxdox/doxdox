@@ -21,9 +21,9 @@
     "update-notifier": "1.0.3"
   },
   "devDependencies": {
-    "@neogeek/eslint-config-standards": "1.11.0",
+    "@neogeek/eslint-config-standards": "1.12.0",
     "codecov": "1.0.1",
-    "eslint": "3.13.1",
+    "eslint": "3.14.0",
     "istanbul": "0.4.5",
     "mocha": "3.2.0"
   },
