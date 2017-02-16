@@ -1,5 +1,12 @@
 # Changelog
 
+## 2.0.2 (February 15, 2017)
+
+- Set the rejection reason to an Error object.
+- Updated documentation.
+- Updated packages.
+- Added yarn support.
+
 ## 2.0.1 (December 15, 2016)
 
 - Prevent update notification from displaying when piping output.
