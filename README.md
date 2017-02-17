@@ -1,5 +1,7 @@
 # [doxdox](https://doxdox.org/)
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/neogeek/doxdox.svg)](https://greenkeeper.io/)
+
 > JSDoc to Markdown, Bootstrap, and custom Handlebars template documentation generator.
 
 [![Build Status](https://travis-ci.org/neogeek/doxdox.svg?branch=master)](https://travis-ci.org/neogeek/doxdox)
