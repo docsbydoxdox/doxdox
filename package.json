@@ -22,7 +22,7 @@
   },
   "devDependencies": {
     "@neogeek/eslint-config-standards": "1.14.0",
-    "codecov": "2.0.2",
+    "codecov": "2.1.0",
     "eslint": "3.17.1",
     "istanbul": "0.4.5",
     "mocha": "3.2.0"
