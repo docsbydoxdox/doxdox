@@ -21,11 +21,11 @@
     "update-notifier": "2.1.0"
   },
   "devDependencies": {
-    "@neogeek/eslint-config-standards": "1.15.0",
-    "codecov": "2.1.0",
-    "eslint": "3.19.0",
-    "istanbul": "0.4.5",
-    "mocha": "3.2.0"
+    "@neogeek/eslint-config-standards": "^1.15.0",
+    "codecov": "^2.1.0",
+    "eslint": "^3.19.0",
+    "istanbul": "^0.4.5",
+    "mocha": "^3.2.0"
   },
   "scripts": {
     "test": "make lint && make coverage"
