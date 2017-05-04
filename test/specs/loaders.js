@@ -45,7 +45,7 @@ describe('loaders', () => {
             loaders.loadParser({'parser': PARSER_PATH})
                 .then(parser => assert.equal(typeof parser, 'function')));
 
-        it.skip('loads custom parser when file (absolute path) is specified', () =>
+        it('loads custom parser when file (absolute path) is specified', () =>
             loaders.loadParser({'parser': PARSER_PATH_ABSOLUTE})
                 .then(parser => assert.equal(typeof parser, 'function')));
 
@@ -89,7 +89,7 @@ describe('loaders', () => {
             loaders.loadPlugin({'layout': TEMPLATE_PATH})
                 .then(plugin => assert.equal(typeof plugin, 'function')));
 
-        it.skip('loads custom handlebars plugin when file (absolute path) is specified', () =>
+        it('loads custom handlebars plugin when file (absolute path) is specified', () =>
             loaders.loadPlugin({'layout': TEMPLATE_PATH_ABSOLUTE})
                 .then(plugin => assert.equal(typeof plugin, 'function')));
 
@@ -97,7 +97,7 @@ describe('loaders', () => {
             loaders.loadPlugin({'layout': PLUGIN_PATH})
                 .then(plugin => assert.equal(typeof plugin, 'function')));
 
-        it.skip('load custom plugin via JavaScript file (absolute path)', () =>
+        it('load custom plugin via JavaScript file (absolute path)', () =>
             loaders.loadPlugin({'layout': PLUGIN_PATH_ABSOLUTE})
                 .then(plugin => assert.equal(typeof plugin, 'function')));
 
