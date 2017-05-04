@@ -1,5 +1,5 @@
 const assert = require('assert');
-const {resolve} = require('path');
+const path = require('path');
 
 const loaders = require('../../lib/loaders');
 
@@ -35,7 +35,7 @@ describe('loaders', () => {
     describe('loadParser', () => {
 
         const PARSER_PATH = './test/fixtures/parser.js';
-        const PARSER_PATH_ABSOLUTE = resolve(PARSER_PATH);
+        const PARSER_PATH_ABSOLUTE = path.resolve(PARSER_PATH);
 
         it('loads dox parser', () =>
             loaders.loadParser({'parser': 'dox'})
@@ -76,10 +76,10 @@ describe('loaders', () => {
     describe('loadPlugin', () => {
 
         const TEMPLATE_PATH = './test/fixtures/template.hbs';
-        const TEMPLATE_PATH_ABSOLUTE = resolve(TEMPLATE_PATH);
+        const TEMPLATE_PATH_ABSOLUTE = path.resolve(TEMPLATE_PATH);
 
         const PLUGIN_PATH = './test/fixtures/plugin.js';
-        const PLUGIN_PATH_ABSOLUTE = resolve(PLUGIN_PATH);
+        const PLUGIN_PATH_ABSOLUTE = path.resolve(PLUGIN_PATH);
 
         it('loads markdown plugin', () =>
             loaders.loadPlugin({'layout': 'markdown'})
