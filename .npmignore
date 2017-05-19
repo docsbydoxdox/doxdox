@@ -2,6 +2,7 @@ coverage/
 test/
 
 .bithoundrc
+.eslintignore
 .eslintrc
 
 .travis.yml

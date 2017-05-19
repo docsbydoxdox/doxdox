@@ -28,7 +28,13 @@
     "mocha": "^3.3.0"
   },
   "scripts": {
-    "test": "make lint && make coverage"
+    "test": "npm run lint && mocha test/specs/ && npm run test:flags && npm run test:markdown",
+    "test:flags": "bin/doxdox 'lib/**/*.js' --description Description --title Title --package test/fixtures/ --ignore 'lib/**/*.js' | diff test/fixtures/flags.md -",
+    "test:markdown": "bin/doxdox 'lib/**/*.js' -p package.json -l markdown | diff DOCUMENTATION.md -",
+    "lint": "eslint .",
+    "coverage": "istanbul cover _mocha test/specs/ && codecov",
+    "fixtures": "bin/doxdox lib/doxdox.js --output test/fixtures/doxdox.md --package test/fixtures/",
+    "docs": "bin/doxdox 'lib/**/*.js' -p package.json -l markdown -o DOCUMENTATION.md"
   },
   "keywords": [
     "documentation",
