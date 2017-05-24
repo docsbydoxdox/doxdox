@@ -327,15 +327,9 @@ dashdash@^1.12.0:
   dependencies:
     assert-plus "^1.0.0"
 
-debug@2.6.0:
+debug@2.6.0, debug@^2.1.1:
   version "2.6.0"
   resolved "https://registry.yarnpkg.com/debug/-/debug-2.6.0.tgz#bc596bcabe7617f11d9fa15361eded5608b8499b"
-  dependencies:
-    ms "0.7.2"
-
-debug@^2.1.1:
-  version "2.6.3"
-  resolved "https://registry.yarnpkg.com/debug/-/debug-2.6.3.tgz#0f7eb8c30965ec08c72accfa0130c8b79984141d"
   dependencies:
     ms "0.7.2"
 
@@ -392,33 +386,33 @@ dox@0.9.0:
     jsdoctypeparser "^1.2.0"
     markdown-it "~7.0.0"
 
-doxdox-parser-dox@~1.1.0:
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/doxdox-parser-dox/-/doxdox-parser-dox-1.1.0.tgz#83f11b6752febea59e8d9af61be7ebc91bf6b81b"
+doxdox-parser-dox@~1.1.1:
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/doxdox-parser-dox/-/doxdox-parser-dox-1.1.1.tgz#978bdc3aa994d3d01132ce1036bf704aa076411b"
   dependencies:
     dox "0.9.0"
 
-doxdox-plugin-bootstrap@~1.1.5:
-  version "1.1.5"
-  resolved "https://registry.yarnpkg.com/doxdox-plugin-bootstrap/-/doxdox-plugin-bootstrap-1.1.5.tgz#a6acef865aea8f2e4b1d514b187e669677888292"
+doxdox-plugin-bootstrap@~1.1.6:
+  version "1.1.6"
+  resolved "https://registry.yarnpkg.com/doxdox-plugin-bootstrap/-/doxdox-plugin-bootstrap-1.1.6.tgz#63ae0ff7b91de15fe10996c9579ba4091bd811af"
   dependencies:
-    handlebars "4.0.6"
-    highlight.js "9.10.0"
+    handlebars "4.0.8"
+    highlight.js "9.11.0"
     markdown-it "8.3.1"
 
-doxdox-plugin-handlebars@~1.1.3:
-  version "1.1.3"
-  resolved "https://registry.yarnpkg.com/doxdox-plugin-handlebars/-/doxdox-plugin-handlebars-1.1.3.tgz#55df5168bc0a709138cd4af793650af59d49a45f"
+doxdox-plugin-handlebars@~1.1.4:
+  version "1.1.4"
+  resolved "https://registry.yarnpkg.com/doxdox-plugin-handlebars/-/doxdox-plugin-handlebars-1.1.4.tgz#25861ba0884c24e597e5a3b4fbaaa777d6a12036"
   dependencies:
-    handlebars "4.0.6"
-    highlight.js "9.10.0"
+    handlebars "4.0.8"
+    highlight.js "9.11.0"
     markdown-it "8.3.1"
 
-doxdox-plugin-markdown@~1.1.1:
-  version "1.1.1"
-  resolved "https://registry.yarnpkg.com/doxdox-plugin-markdown/-/doxdox-plugin-markdown-1.1.1.tgz#4e2b62bf889ff7b698593222bb4dc2a1030993c2"
+doxdox-plugin-markdown@~1.1.2:
+  version "1.1.2"
+  resolved "https://registry.yarnpkg.com/doxdox-plugin-markdown/-/doxdox-plugin-markdown-1.1.2.tgz#a52a4f38905e9b8f8f51eb6c62285d8cbbc84833"
   dependencies:
-    handlebars "4.0.6"
+    handlebars "4.0.8"
 
 duplexer3@^0.1.4:
   version "0.1.4"
@@ -510,7 +504,7 @@ escope@^3.6.0:
     esrecurse "^4.1.0"
     estraverse "^4.1.1"
 
-eslint@^3.18.0:
+eslint@^3.19.0:
   version "3.19.0"
   resolved "https://registry.yarnpkg.com/eslint/-/eslint-3.19.0.tgz#c8fc6201c7f40dd08941b87c085767386a679acc"
   dependencies:
@@ -761,7 +755,17 @@ growl@1.9.2:
   version "1.9.2"
   resolved "https://registry.yarnpkg.com/growl/-/growl-1.9.2.tgz#0ea7743715db8d8de2c5ede1775e1b45ac85c02f"
 
-handlebars@4.0.6, handlebars@^4.0.1:
+handlebars@4.0.8:
+  version "4.0.8"
+  resolved "https://registry.yarnpkg.com/handlebars/-/handlebars-4.0.8.tgz#22b875cd3f0e6cbea30314f144e82bc7a72ff420"
+  dependencies:
+    async "^1.4.0"
+    optimist "^0.6.1"
+    source-map "^0.4.4"
+  optionalDependencies:
+    uglify-js "^2.6"
+
+handlebars@^4.0.1:
   version "4.0.6"
   resolved "https://registry.yarnpkg.com/handlebars/-/handlebars-4.0.6.tgz#2ce4484850537f9c97a8026d5399b935c4ed4ed7"
   dependencies:
@@ -799,9 +803,9 @@ hawk@~3.1.3:
     hoek "2.x.x"
     sntp "1.x.x"
 
-highlight.js@9.10.0:
-  version "9.10.0"
-  resolved "https://registry.yarnpkg.com/highlight.js/-/highlight.js-9.10.0.tgz#f9f0b14c0be00f0e4fb1e577b749fed9e6f52f55"
+highlight.js@9.11.0:
+  version "9.11.0"
+  resolved "https://registry.yarnpkg.com/highlight.js/-/highlight.js-9.11.0.tgz#47f98c7399918700db2caf230ded12cec41a84ae"
 
 hoek@2.x.x:
   version "2.16.3"
@@ -1183,9 +1187,9 @@ mkdirp@0.5.1, mkdirp@0.5.x, mkdirp@^0.5.0, mkdirp@^0.5.1:
   dependencies:
     minimist "0.0.8"
 
-mocha@^3.3.0:
-  version "3.3.0"
-  resolved "https://registry.yarnpkg.com/mocha/-/mocha-3.3.0.tgz#d29b7428d3f52c82e2e65df1ecb7064e1aabbfb5"
+mocha@^3.4.2:
+  version "3.4.2"
+  resolved "https://registry.yarnpkg.com/mocha/-/mocha-3.4.2.tgz#d0ef4d332126dbf18d0d640c9b382dd48be97594"
   dependencies:
     browser-stdout "1.3.0"
     commander "2.9.0"
