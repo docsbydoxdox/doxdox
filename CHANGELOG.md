@@ -1,5 +1,11 @@
 # Changelog
 
+## 2.0.3 (May 30, 2017)
+
+- Fixed issue with loading plugins via absolute paths.
+- Updated packages.
+- Updated tests.
+
 ## 2.0.2 (February 15, 2017)
 
 - Set the rejection reason to an Error object.
