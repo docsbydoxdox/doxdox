@@ -28,7 +28,7 @@
     "mocha": "^3.4.2"
   },
   "scripts": {
-    "test": "npm run lint && mocha test/specs/ && npm run test:flags && npm run test:docs",
+    "test": "npm run lint && mocha test/specs/",
     "test:flags": "node bin/doxdox 'lib/**/*.js' --description Description --title Title --package test/fixtures/ --ignore 'lib/**/*.js' | diff test/fixtures/flags.md -",
     "test:docs": "node bin/doxdox 'lib/**/*.js' -p package.json -l markdown | diff DOCUMENTATION.md -",
     "lint": "eslint .",
