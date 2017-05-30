@@ -3,6 +3,7 @@
 > JSDoc to Markdown, Bootstrap, and custom Handlebars template documentation generator.
 
 [![Build Status](https://travis-ci.org/neogeek/doxdox.svg?branch=master)](https://travis-ci.org/neogeek/doxdox)
+[![AppVeyor branch](https://img.shields.io/appveyor/ci/neogeek/doxdox/master.svg)](https://ci.appveyor.com/project/neogeek/doxdox)
 [![codecov](https://img.shields.io/codecov/c/github/neogeek/doxdox/master.svg)](https://codecov.io/gh/neogeek/doxdox)
 [![Dependency Status](https://david-dm.org/neogeek/doxdox.svg)](https://david-dm.org/neogeek/doxdox)
 [![Known Vulnerabilities](https://snyk.io/test/npm/doxdox/badge.svg)](https://snyk.io/test/npm/doxdox)
