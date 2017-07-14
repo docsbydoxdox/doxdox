@@ -11,19 +11,19 @@
   },
   "license": "MIT",
   "dependencies": {
-    "chalk": "1.1.3",
+    "chalk": "2.0.1",
     "doxdox-parser-dox": "~1.1.2",
     "doxdox-plugin-bootstrap": "~1.1.7",
     "doxdox-plugin-handlebars": "~1.1.5",
     "doxdox-plugin-markdown": "~1.1.3",
     "globby": "6.1.0",
     "parse-cmd-args": "2.0.0",
-    "update-notifier": "2.1.0"
+    "update-notifier": "2.2.0"
   },
   "devDependencies": {
-    "@neogeek/eslint-config-standards": "^1.15.0",
+    "@neogeek/eslint-config-standards": "^2.0.0",
     "codecov": "^2.2.0",
-    "eslint": "^3.19.0",
+    "eslint": "^4.2.0",
     "istanbul": "^0.4.5",
     "mocha": "^3.4.2"
   },
