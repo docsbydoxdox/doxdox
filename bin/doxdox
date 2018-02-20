@@ -86,23 +86,24 @@ ${chalk.yellow('  -t, --title')}            Sets title.
 
     doxdox.parseInputs(args.inputs, Object.assign({
         'pkg': projectPkg
-    }, config)).then(content => {
+    }, config))
+        .then(content => {
 
-        if (output) {
+            if (output) {
 
-            fs.writeFileSync(output, content, 'utf8');
+                fs.writeFileSync(output, content, 'utf8');
 
-        } else {
+            } else {
 
-            process.stdout.write(content);
+                process.stdout.write(content);
 
-        }
+            }
 
-    })
-    .catch(err => {
+        })
+        .catch(err => {
 
-        process.stderr.write(`${err.toString()}\n`);
+            process.stderr.write(`${err.toString()}\n`);
 
-    });
+        });
 
 }
