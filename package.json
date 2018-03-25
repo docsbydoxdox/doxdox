@@ -18,7 +18,7 @@
     "doxdox-plugin-markdown": "~1.1.4",
     "globby": "8.0.1",
     "parse-cmd-args": "2.0.0",
-    "update-notifier": "2.3.0"
+    "update-notifier": "2.4.0"
   },
   "devDependencies": {
     "@neogeek/eslint-config-standards": "^2.0.0",
