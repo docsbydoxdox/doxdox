@@ -21,7 +21,7 @@
     "update-notifier": "2.3.0"
   },
   "devDependencies": {
-    "@neogeek/eslint-config-standards": "^2.0.0",
+    "@neogeek/eslint-config-standards": "^3.0.0",
     "codecov": "^3.0.0",
     "eslint": "^4.17.0",
     "istanbul": "^0.4.5",
