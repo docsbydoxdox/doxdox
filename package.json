@@ -18,7 +18,8 @@
     "doxdox-plugin-markdown": "~1.1.4",
     "globby": "8.0.1",
     "parse-cmd-args": "2.0.0",
-    "update-notifier": "2.3.0"
+    "update-notifier": "2.3.0",
+    "snyk": "^1.88.1"
   },
   "devDependencies": {
     "@neogeek/eslint-config-standards": "^2.0.0",
@@ -34,7 +35,9 @@
     "lint": "eslint .",
     "coverage": "istanbul cover _mocha test/specs/ && codecov",
     "fixtures": "node bin/doxdox lib/doxdox.js --output test/fixtures/doxdox.md --package test/fixtures/",
-    "docs": "node bin/doxdox 'lib/**/*.js' -p package.json -l markdown -o DOCUMENTATION.md"
+    "docs": "node bin/doxdox 'lib/**/*.js' -p package.json -l markdown -o DOCUMENTATION.md",
+    "snyk-protect": "snyk protect",
+    "prepare": "npm run snyk-protect"
   },
   "keywords": [
     "documentation",
@@ -55,5 +58,6 @@
   "repository": {
     "type": "git",
     "url": "git://github.com/neogeek/doxdox.git"
-  }
+  },
+  "snyk": true
 }
