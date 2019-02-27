@@ -7,28 +7,21 @@ describe('loaders', () => {
 
     describe('findPackagePath', () => {
 
-        it('find package', () =>
-            loaders.findPackagePath('doxdox-parser-dox'));
+        it('find package', () => loaders.findPackagePath('doxdox-parser-dox'));
 
         it('fail to find package', () =>
-
             loaders.findPackagePath('doxdox-parser-jsdoc').then(parser => {
 
                 assert.deepEqual(parser, []);
 
-            })
-
-        );
+            }));
 
         it('fail to find package when file is passed', () =>
-
             loaders.findPackagePath('.bin/dox').then(parser => {
 
                 assert.deepEqual(parser, []);
 
-            })
-
-        );
+            }));
 
     });
 
@@ -38,15 +31,18 @@ describe('loaders', () => {
         const PARSER_PATH_ABSOLUTE = path.resolve(PARSER_PATH);
 
         it('loads dox parser', () =>
-            loaders.loadParser({'parser': 'dox'})
+            loaders
+                .loadParser({'parser': 'dox'})
                 .then(parser => assert.equal(typeof parser, 'function')));
 
         it('loads custom parser when file is specified', () =>
-            loaders.loadParser({'parser': PARSER_PATH})
+            loaders
+                .loadParser({'parser': PARSER_PATH})
                 .then(parser => assert.equal(typeof parser, 'function')));
 
         it('loads custom parser when file (absolute path) is specified', () =>
-            loaders.loadParser({'parser': PARSER_PATH_ABSOLUTE})
+            loaders
+                .loadParser({'parser': PARSER_PATH_ABSOLUTE})
                 .then(parser => assert.equal(typeof parser, 'function')));
 
         it('fails on invalid parser', () =>
@@ -61,15 +57,17 @@ describe('loaders', () => {
             }));
 
         it('fails on invalid custom parser', () =>
-            loaders.loadParser({'parser': './test/fixtures/template.html'}).catch(err => {
+            loaders
+                .loadParser({'parser': './test/fixtures/template.html'})
+                .catch(err => {
 
-                if (err) {
+                    if (err) {
 
-                    console.log(err);
+                        console.log(err);
 
-                }
+                    }
 
-            }));
+                }));
 
     });
 
@@ -82,23 +80,28 @@ describe('loaders', () => {
         const PLUGIN_PATH_ABSOLUTE = path.resolve(PLUGIN_PATH);
 
         it('loads markdown plugin', () =>
-            loaders.loadPlugin({'layout': 'markdown'})
+            loaders
+                .loadPlugin({'layout': 'markdown'})
                 .then(plugin => assert.equal(typeof plugin, 'function')));
 
         it('loads custom handlebars plugin when file is specified', () =>
-            loaders.loadPlugin({'layout': TEMPLATE_PATH})
+            loaders
+                .loadPlugin({'layout': TEMPLATE_PATH})
                 .then(plugin => assert.equal(typeof plugin, 'function')));
 
         it('loads custom handlebars plugin when file (absolute path) is specified', () =>
-            loaders.loadPlugin({'layout': TEMPLATE_PATH_ABSOLUTE})
+            loaders
+                .loadPlugin({'layout': TEMPLATE_PATH_ABSOLUTE})
                 .then(plugin => assert.equal(typeof plugin, 'function')));
 
         it('load custom plugin via JavaScript file', () =>
-            loaders.loadPlugin({'layout': PLUGIN_PATH})
+            loaders
+                .loadPlugin({'layout': PLUGIN_PATH})
                 .then(plugin => assert.equal(typeof plugin, 'function')));
 
         it('load custom plugin via JavaScript file (absolute path)', () =>
-            loaders.loadPlugin({'layout': PLUGIN_PATH_ABSOLUTE})
+            loaders
+                .loadPlugin({'layout': PLUGIN_PATH_ABSOLUTE})
                 .then(plugin => assert.equal(typeof plugin, 'function')));
 
         it('fails on invalid plugin', () =>
@@ -113,15 +116,17 @@ describe('loaders', () => {
             }));
 
         it('fails on invalid custom template', () =>
-            loaders.loadPlugin({'layout': './test/fixtures/template.html'}).catch(err => {
+            loaders
+                .loadPlugin({'layout': './test/fixtures/template.html'})
+                .catch(err => {
 
-                if (err) {
+                    if (err) {
 
-                    console.log(err);
+                        console.log(err);
 
-                }
+                    }
 
-            }));
+                }));
 
     });
 

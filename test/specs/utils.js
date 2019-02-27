@@ -9,25 +9,37 @@ describe('doxdox utils', () => {
 
         it('find package without input', () => {
 
-            assert.equal(utils.findPackageFileInPath(), path.join(process.cwd(), 'package.json'));
+            assert.equal(
+                utils.findPackageFileInPath(),
+                path.join(process.cwd(), 'package.json')
+            );
 
         });
 
         it('find package with input directory', () => {
 
-            assert.equal(utils.findPackageFileInPath('./'), path.join(process.cwd(), 'package.json'));
+            assert.equal(
+                utils.findPackageFileInPath('./'),
+                path.join(process.cwd(), 'package.json')
+            );
 
         });
 
         it('find package with input file', () => {
 
-            assert.equal(utils.findPackageFileInPath('./package.json'), path.join(process.cwd(), 'package.json'));
+            assert.equal(
+                utils.findPackageFileInPath('./package.json'),
+                path.join(process.cwd(), 'package.json')
+            );
 
         });
 
         it('find package with input non package.json file', () => {
 
-            assert.equal(utils.findPackageFileInPath('./index.js'), path.join(process.cwd(), 'package.json'));
+            assert.equal(
+                utils.findPackageFileInPath('./index.js'),
+                path.join(process.cwd(), 'package.json')
+            );
 
         });
 
@@ -79,13 +91,16 @@ describe('doxdox utils', () => {
 
         it('set defaults on object with custom values', () => {
 
-            assert.deepEqual(utils.setConfigDefaults({
-                'plugin': 'bootstrap'
-            }), {
-                'ignore': [],
-                'parser': 'dox',
-                'plugin': 'bootstrap'
-            });
+            assert.deepEqual(
+                utils.setConfigDefaults({
+                    'plugin': 'bootstrap'
+                }),
+                {
+                    'ignore': [],
+                    'parser': 'dox',
+                    'plugin': 'bootstrap'
+                }
+            );
 
         });
 

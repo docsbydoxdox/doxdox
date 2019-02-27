@@ -26,34 +26,44 @@ describe('doxdox', () => {
     describe('parseFiles', () => {
 
         it('parses multiple input from array', () =>
-            doxdox.parseFiles(['./lib/doxdox.js'], {
-                'description': '',
-                'ignore': [],
-                'layout': 'markdown',
-                'parser': 'dox',
-                'title': 'Untitled Project'
-            }).then(content => {
+            doxdox
+                .parseFiles(['./lib/doxdox.js'], {
+                    'description': '',
+                    'ignore': [],
+                    'layout': 'markdown',
+                    'parser': 'dox',
+                    'title': 'Untitled Project'
+                })
+                .then(content => {
 
-                assert.equal(content, fs.readFileSync('./test/fixtures/doxdox.md', 'utf8'));
+                    assert.equal(
+                        content,
+                        fs.readFileSync('./test/fixtures/doxdox.md', 'utf8')
+                    );
 
-            }));
+                }));
 
     });
 
     describe('parseInputs', () => {
 
         it('parses multiple input from array', () =>
-            doxdox.parseInputs(['./lib/doxdox.js'], {
-                'description': '',
-                'ignore': [],
-                'layout': 'markdown',
-                'parser': 'dox',
-                'title': 'Untitled Project'
-            }).then(content => {
+            doxdox
+                .parseInputs(['./lib/doxdox.js'], {
+                    'description': '',
+                    'ignore': [],
+                    'layout': 'markdown',
+                    'parser': 'dox',
+                    'title': 'Untitled Project'
+                })
+                .then(content => {
 
-                assert.equal(content, fs.readFileSync('./test/fixtures/doxdox.md', 'utf8'));
+                    assert.equal(
+                        content,
+                        fs.readFileSync('./test/fixtures/doxdox.md', 'utf8')
+                    );
 
-            }));
+                }));
 
     });
 
