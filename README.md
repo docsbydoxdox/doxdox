@@ -11,7 +11,7 @@
 [![Greenkeeper badge](https://badges.greenkeeper.io/neogeek/doxdox.svg)](https://greenkeeper.io/)
 [![Latest Documentation](https://doxdox.org/images/badge-flat.svg)](https://doxdox.org/neogeek/doxdox)
 
-doxdox is a simple to use documentation generator that takes JSDoc comment blocks and generates different documentation formats; [Markdown](http://daringfireball.net/projects/markdown/), [Bootstrap](https://v4-alpha.getbootstrap.com/), and custom [Handlebars](http://handlebarsjs.com/>) templates.
+doxdox is a simple to use documentation generator that takes JSDoc comment blocks and generates different documentation formats; [Markdown](http://daringfireball.net/projects/markdown/), [Bootstrap](https://getbootstrap.com/), and custom [Handlebars](http://handlebarsjs.com/>) templates.
 
 doxdox also features support for extendability via custom plugins for both parsing and generating documentation.
 
@@ -101,7 +101,7 @@ $ doxdox 'lib/**/*.js' --layout markdown --output DOCUMENTATION.md
 
 _Bootstrap_
 
-Form more information on Bootstrap visit <https://v4-alpha.getbootstrap.com/>.
+Form more information on Bootstrap visit <https://getbootstrap.com/>.
 
 ```bash
 $ doxdox 'lib/**/*.js' --layout bootstrap --output docs/index.html
