@@ -12,7 +12,7 @@
   "license": "MIT",
   "dependencies": {
     "chalk": "2.3.1",
-    "doxdox-parser-dox": "~1.1.3",
+    "doxdox-parser-dox": "~2.0.0",
     "doxdox-plugin-bootstrap": "~1.1.8",
     "doxdox-plugin-handlebars": "~1.1.6",
     "doxdox-plugin-markdown": "~1.1.4",
