@@ -11,21 +11,22 @@
   },
   "license": "MIT",
   "dependencies": {
-    "chalk": "2.3.1",
-    "doxdox-parser-dox": "~1.1.3",
-    "doxdox-plugin-bootstrap": "~1.1.8",
-    "doxdox-plugin-handlebars": "~1.1.6",
-    "doxdox-plugin-markdown": "~1.1.4",
-    "globby": "8.0.1",
+    "chalk": "2.4.2",
+    "doxdox-parser-dox": "~2.0.0",
+    "doxdox-plugin-bootstrap": "~2.0.0",
+    "doxdox-plugin-handlebars": "~2.0.0",
+    "doxdox-plugin-markdown": "~2.0.0",
+    "globby": "9.0.0",
     "parse-cmd-args": "2.0.0",
-    "update-notifier": "2.3.0"
+    "update-notifier": "2.5.0"
   },
   "devDependencies": {
-    "@neogeek/eslint-config-standards": "^2.0.0",
-    "codecov": "^3.0.0",
-    "eslint": "^4.17.0",
-    "istanbul": "^0.4.5",
-    "mocha": "^5.0.0"
+    "@neogeek/eslint-config-standards": "4.1.0",
+    "babel-eslint": "10.0.1",
+    "codecov": "3.2.0",
+    "eslint": "5.14.1",
+    "istanbul": "0.4.5",
+    "mocha": "6.0.2"
   },
   "scripts": {
     "test": "npm run lint && mocha test/specs/",
