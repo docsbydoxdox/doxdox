@@ -7,7 +7,7 @@
   },
   "preferGlobal": true,
   "engines": {
-    "node": ">=4.0"
+    "node": ">=8.0"
   },
   "license": "MIT",
   "dependencies": {
