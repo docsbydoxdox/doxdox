@@ -1,7 +1,6 @@
 coverage/
 test/
 
-.bithoundrc
 .eslintignore
 .eslintrc
 

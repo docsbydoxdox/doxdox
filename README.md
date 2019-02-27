@@ -7,7 +7,6 @@
 [![codecov](https://img.shields.io/codecov/c/github/neogeek/doxdox/master.svg)](https://codecov.io/gh/neogeek/doxdox)
 [![Dependency Status](https://david-dm.org/neogeek/doxdox.svg)](https://david-dm.org/neogeek/doxdox)
 [![Known Vulnerabilities](https://snyk.io/test/npm/doxdox/badge.svg)](https://snyk.io/test/npm/doxdox)
-[![bitHound Overall Score](https://www.bithound.io/github/neogeek/doxdox/badges/score.svg)](https://www.bithound.io/github/neogeek/doxdox)
 [![NPM Version](http://img.shields.io/npm/v/doxdox.svg?style=flat)](https://www.npmjs.org/package/doxdox)
 [![Greenkeeper badge](https://badges.greenkeeper.io/neogeek/doxdox.svg)](https://greenkeeper.io/)
 [![Latest Documentation](https://doxdox.org/images/badge-flat.svg)](https://doxdox.org/neogeek/doxdox)
