@@ -93,6 +93,10 @@ ${chalk.yellow('  -t, --title')}            Sets title.
 
                 fs.writeFileSync(output, content, 'utf8');
 
+                process.stdout.write(`
+                    ${chalk.green('File successfully generated and saved in')}: ${output}
+                `)
+
             } else {
 
                 process.stdout.write(content);
