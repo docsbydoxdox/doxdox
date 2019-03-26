@@ -1,5 +1,6 @@
 const assert = require('assert');
 const fs = require('fs');
+const os = require('os');
 
 const doxdox = require('../../lib/doxdox');
 
@@ -36,9 +37,11 @@ describe('doxdox', () => {
                 })
                 .then(content => {
 
-                    assert.equal(
+                    assert.strictEqual(
                         content,
                         fs.readFileSync('./test/fixtures/doxdox.md', 'utf8')
+                            .split(os.EOL)
+                            .join('\n')
                     );
 
                 }));
@@ -58,9 +61,11 @@ describe('doxdox', () => {
                 })
                 .then(content => {
 
-                    assert.equal(
+                    assert.strictEqual(
                         content,
                         fs.readFileSync('./test/fixtures/doxdox.md', 'utf8')
+                            .split(os.EOL)
+                            .join('\n')
                     );
 
                 }));
