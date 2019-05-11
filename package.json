@@ -21,7 +21,7 @@
     "update-notifier": "2.5.0"
   },
   "devDependencies": {
-    "@neogeek/eslint-config-standards": "4.1.0",
+    "@neogeek/eslint-config-standards": "4.2.0",
     "babel-eslint": "10.0.1",
     "codecov": "3.2.0",
     "eslint": "5.14.1",
