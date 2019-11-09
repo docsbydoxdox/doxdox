@@ -11,7 +11,7 @@
   },
   "license": "MIT",
   "dependencies": {
-    "chalk": "2.4.2",
+    "chalk": "3.0.0",
     "doxdox-parser-dox": "~2.0.0",
     "doxdox-plugin-bootstrap": "~2.0.0",
     "doxdox-plugin-handlebars": "~2.0.0",
