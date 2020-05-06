@@ -1,0 +1,12 @@
+# Snyk (https://snyk.io) policy file, patches or ignores known vulnerabilities.
+version: v1.14.1
+ignore: {}
+# patches apply the minimum changes required to fix a vulnerability
+patch:
+  SNYK-JS-LODASH-567746:
+    - doxdox-plugin-bootstrap > handlebars > async > lodash:
+        patched: '2020-05-06T00:11:19.557Z'
+    - doxdox-plugin-handlebars > handlebars > async > lodash:
+        patched: '2020-05-06T00:11:19.557Z'
+    - doxdox-plugin-markdown > handlebars > async > lodash:
+        patched: '2020-05-06T00:11:19.557Z'
