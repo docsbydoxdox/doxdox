@@ -16,7 +16,7 @@
     "doxdox-plugin-bootstrap": "~2.0.0",
     "doxdox-plugin-handlebars": "~2.0.0",
     "doxdox-plugin-markdown": "~2.0.0",
-    "globby": "9.0.0",
+    "globby": "10.0.0",
     "parse-cmd-args": "2.0.0",
     "update-notifier": "2.5.0"
   },
