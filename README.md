@@ -1,129 +1,133 @@
-# [doxdox](https://doxdox.org/)
+> ⚠️ Notice: This repository is undergoing a massive rewrite. Things will be missing, broken, or incomplete as development continues.
 
-> JSDoc to Markdown, Bootstrap, and custom Handlebars template documentation generator.
+![doxdox](cover.png)
 
-[![Build Status](https://travis-ci.org/neogeek/doxdox.svg?branch=master)](https://travis-ci.org/neogeek/doxdox)
-[![AppVeyor branch](https://img.shields.io/appveyor/ci/neogeek/doxdox/master.svg)](https://ci.appveyor.com/project/neogeek/doxdox)
-[![codecov](https://img.shields.io/codecov/c/github/neogeek/doxdox/master.svg)](https://codecov.io/gh/neogeek/doxdox)
-[![Dependency Status](https://david-dm.org/neogeek/doxdox.svg)](https://david-dm.org/neogeek/doxdox)
-[![Known Vulnerabilities](https://snyk.io/test/npm/doxdox/badge.svg)](https://snyk.io/test/npm/doxdox)
-[![NPM Version](http://img.shields.io/npm/v/doxdox.svg?style=flat)](https://www.npmjs.org/package/doxdox)
-[![Greenkeeper badge](https://badges.greenkeeper.io/neogeek/doxdox.svg)](https://greenkeeper.io/)
-[![Latest Documentation](https://doxdox.org/images/badge-flat.svg)](https://doxdox.org/neogeek/doxdox)
+[![NPM version](https://img.shields.io/npm/v/doxdox?style=flat-square)](https://www.npmjs.org/package/doxdox)
+[![NPM downloads per month](https://img.shields.io/npm/dm/doxdox?style=flat-square)](https://www.npmjs.org/package/doxdox)
+[![doxdox documentation](https://img.shields.io/badge/doxdox-documentation-%23E85E95?style=flat-square)](https://doxdox.org)
+[![Join the chat at https://discord.gg/nNtFsfd](https://img.shields.io/badge/discord-join%20chat-7289DA.svg)](https://discord.gg/nNtFsfd)
 
-doxdox is a simple to use documentation generator that takes JSDoc comment blocks and generates different documentation formats; [Markdown](http://daringfireball.net/projects/markdown/), [Bootstrap](https://getbootstrap.com/), and custom [Handlebars](http://handlebarsjs.com/>) templates.
+> Documentation, simple.
 
-doxdox also features support for extendability via custom plugins for both parsing and generating documentation.
+doxdox is a simple to use documentation generator that takes [JSDoc](https://jsdoc.app/) comment blocks and generates different documentation formats; [Markdown](https://daringfireball.net/projects/markdown), [Bootstrap](https://getbootstrap.com/), [GitHub Wiki](https://docs.github.com/en/communities/documenting-your-project-with-wikis/about-wikis), and other custom plugins.
 
-**In**
+doxdox also features support for extendibility via custom plugins for both parsing and generating documentation.
 
-```javascript
+## Example
+
+### In
+
+```javacript
 /**
- * Parse array of directory globs and/or files, and then render the parsed data through the defined layout plugin.
+ * Finds package.json from either the directory the script was called from or a supplied path.
  *
- *     parseInputs(['src/*.js'], {'ignore': [], 'parser': 'dox', 'layout': 'markdown'}).then(content => {});
+ *     console.log(await findFileInPath('./'));
+ *     console.log(await findFileInPath('./package.json'));
+ *     console.log(await findFileInPath('~/git/github/doxdox/'));
  *
- * @param {Array} inputs Array of directory globs and/or files.
- * @param {Object} config Configuration object.
- * @param {String} config.ignore Array of paths to ignore.
- * @param {String} config.parser String representing the parser to be used.
- * @param {String} config.layout String representing the layout plugin to be used.
- * @return {Object} Promise
+ * @param {string} [input] Directory to check for file.
+ * @param {string?} [fileName = 'package.json'] File name to check for.
+ * @return {Promise<string | null>} Path to package.json file.
  * @public
  */
 ```
 
-**Out**
+### Out
 
-![screenshot](screenshot.jpg)
+![](screenshot.png)
 
-_Bootstrap template plugin, included with doxdox_ <https://github.com/neogeek/doxdox-plugin-bootstrap>
+## Install
 
-## Getting Started
-
-The following instructions assume you have already setup JSDoc comment blocks in your codebase. If you have not and would like to learn more about how to use JSDoc, visit <http://usejsdoc.org/>.
-
-First install doxdox globally with [NPM](http://npmjs.com/).
+### Globally
 
 ```bash
-$ npm install doxdox -g
+$ npm install doxdox-cli@v4.0.0-preview.1 -g
 ```
 
-Then, once you have doxdox installed globally (or local to your project, see below), you can start generating documentation. For this example, we will be generating a [Markdown](http://daringfireball.net/projects/markdown/) file and storing it within the project.
-
-With a directory structure similar to the example shown below, run the following command to generate a [Markdown](http://daringfireball.net/projects/markdown/) file and output the generated contents to a new file named [`DOCUMENTATION.md`](DOCUMENTATION.md).
+### Locally
 
 ```bash
-$ doxdox 'lib/**/*.js' --layout markdown --output DOCUMENTATION.md
-```
-
-```
-├─ bin/
-├─ coverage/
-├─ lib/
-│   ├─ doxdox.js
-│   ├─ loaders.js
-│   └─ utils.js
-├─ node_modules/
-└─ test/
-     ├─ fixtures/
-     └─ specs/
-          ├─ doxdox.js
-          ├─ loaders.js
-          └─ utils.js
-```
-
-## Installation
-
-doxdox can be installed via either [NPM](http://npmjs.com/) or [Yarn](https://yarnpkg.com/).
-
-```bash
-$ npm install doxdox -g
-```
-
-```bash
-$ yarn global add doxdox
+$ npm install doxdox@v4.0.0-preview.1 --save-dev
 ```
 
 ## Usage
 
 ### CLI
 
-#### Layouts
-
-_Markdown_
-
-For more information on Markdown visit <http://daringfireball.net/projects/markdown/>.
-
 ```bash
-$ doxdox 'lib/**/*.js' --layout markdown --output DOCUMENTATION.md
+$ doxdox '**/*.js'
 ```
 
-_Bootstrap_
+#### Custom Meta Information
 
-Form more information on Bootstrap visit <https://getbootstrap.com/>.
+##### Name
 
 ```bash
-$ doxdox 'lib/**/*.js' --layout bootstrap --output docs/index.html
+$ doxdox '**/*.js' --name "doxdox-next"
 ```
 
-_Custom Handlebars Template_
-
-For more information on writing Handlebars templates visit <http://handlebarsjs.com/>.
+##### Description
 
 ```bash
-$ doxdox 'lib/**/*.js' --layout templates/README.hbs --output README.md
+$ doxdox '**/*.js' --description "Preview release of the doxdox package"
 ```
 
 #### Ignore
 
-The ignore flag allows you to ignore both directories (with glob syntax) and files. Comma separated values.
+Files can be ignored via the command line.
 
 ```bash
-$ doxdox './**/*.js' --ignore './coverage/**/*.js'
+$ doxdox '**/*.js' --ignore tests/**/*.js
 ```
 
-See <https://github.com/isaacs/minimatch#usage> for more information on how to use globs.
+```bash
+$ doxdox '**/*.js' --ignore **/*.test.js
+```
+
+They can also be ignored via a `.doxdoxignore` file. This file is similar in format to `.gitignore` and `.npmignore`.
+
+```
+tests/**/*.js
+**/*.test.js
+```
+
+#### Output
+
+##### File
+
+```bash
+$ doxdox '**/*.js' --output docs.md
+```
+
+##### Stdout
+
+```bash
+$ doxdox '**/*.js' > docs.md
+```
+
+#### Renderers
+
+##### Markdown
+
+For more information on Markdown visit <https://daringfireball.net/projects/markdown>.
+
+```bash
+$ doxdox '**/*.js' --renderer markdown --output docs.md
+```
+
+##### Bootstrap
+
+For more information on Bootstrap visit <https://getbootstrap.com>.
+
+```bash
+$ doxdox '**/*.js' --renderer bootstrap --output docs.html
+```
+
+#### JSON
+
+```bash
+$ doxdox '**/*.js' --renderer json --output docs.json
+```
 
 #### Help
 
@@ -134,35 +138,35 @@ Options:
 
  -h, --help             Display this help message.
  -v, --version          Display the current installed version.
- -d, --description      Sets description.
+ -n, --name             Sets name of project.
+ -d, --description      Sets description of project.
  -i, --ignore           Comma separated list of paths to ignore.
- -l, --layout           Template to render the documentation with.
+ -r, --renderer         Renderer to generate the documentation with. Defaults to Markdown.
  -o, --output           File to save documentation to. Defaults to stdout.
  -p, --package          Sets location of package.json file.
- -t, --title            Sets title.
 
 Included Layouts:
 
- - Markdown (default)    (http://daringfireball.net/projects/markdown/)
- - Bootstrap             (http://getbootstrap.com/)
- - Handlebars            (http://handlebarsjs.com/)
+ - Markdown (default)    (https://daringfireball.net/projects/markdown)
+ - Bootstrap             (https://getbootstrap.com)
+ - JSON
 ```
 
 ### NPM Run Scripts
 
-For more information on NPM run scripts visit <https://docs.npmjs.com/cli/run-script>.
+For more information on NPM run scripts visit <https://docs.npmjs.com/cli/v8/commands/npm-run-script>.
 
 ```bash
-$ npm install doxdox --save-dev
+$ npm install doxdox@v4.0.0-preview.1 --save-dev
 ```
 
 ```json
 {
   "devDependencies": {
-    "doxdox": "3.0.0"
+    "doxdox": "4.0.0-preview.1"
   },
   "scripts": {
-    "docs": "doxdox 'lib/**/*.js' --layout markdown --output DOCUMENTATION.md"
+    "docs": "doxdox 'lib/**/*.js' --renderer markdown --output DOCUMENTATION.md"
   }
 }
 ```
@@ -171,69 +175,125 @@ $ npm install doxdox --save-dev
 $ npm run docs
 ```
 
-### Via JavaScript
+### JavaScript
+
+> Note: To use doxdox in this way you must add `"type": "module"` to your `package.json` file.
 
 ```javascript
-const doxdox = require('doxdox');
+import doxdox from 'doxdox';
 
-parseInputs(['lib/**/*.js'], {
-    'parser': 'dox',
-    'layout': 'markdown'
-}).then(content => {
+import parser from 'doxdox-parser-jsdoc';
 
-    process.stdout.write(content);
+import renderer from 'doxdox-renderer-markdown';
 
+doxdox(
+  process.cwd(),
+  ['lib/index.js', 'lib/loaders.js', 'lib/utils.js'],
+  parser,
+  renderer,
+  {
+    name: 'doxdox-example',
+    description: 'Description of doxdox example.'
+  }
+).then(output => {
+  process.stdout.write(output);
 });
 ```
 
-See [documentation](DOCUMENTATION.md) for more information on [`parseInputs`](DOCUMENTATION.md#parseinputsinputs-config).
+### Next.js
 
-## Packages
+> Note: To use doxdox in this way you must add `"type": "module"` to your `package.json` file.
 
-### Core Packages
+```typescript
+import type { NextPage } from 'next';
 
-All core packages come pre-installed with doxdox.
+import doxdox from 'doxdox';
 
-| Package | Version | Dependencies | Documentation |
-| ------- | ------- | ------------ | ------------- |
-| [`doxdox-parser-dox`](https://github.com/neogeek/doxdox-parser-dox) | [![NPM Version](http://img.shields.io/npm/v/doxdox-parser-dox.svg?style=flat)](https://www.npmjs.org/package/doxdox-parser-dox) | [![dependencies Status](https://david-dm.org/neogeek/doxdox-parser-dox/status.svg)](https://david-dm.org/neogeek/doxdox-parser-dox) | [![Latest Documentation](https://doxdox.org/images/badge-flat.svg)](https://doxdox.org/neogeek/doxdox-parser-dox) |
-| [`doxdox-plugin-bootstrap`](https://github.com/neogeek/doxdox-plugin-bootstrap) | [![NPM Version](http://img.shields.io/npm/v/doxdox-plugin-bootstrap.svg?style=flat)](https://www.npmjs.org/package/doxdox-plugin-bootstrap) | [![dependencies Status](https://david-dm.org/neogeek/doxdox-plugin-bootstrap/status.svg)](https://david-dm.org/neogeek/doxdox-plugin-bootstrap) | [![Latest Documentation](https://doxdox.org/images/badge-flat.svg)](https://doxdox.org/neogeek/doxdox-plugin-bootstrap) |
-| [`doxdox-plugin-handlebars`](https://github.com/neogeek/doxdox-plugin-handlebars) | [![NPM Version](http://img.shields.io/npm/v/doxdox-plugin-handlebars.svg?style=flat)](https://www.npmjs.org/package/doxdox-plugin-handlebars) | [![dependencies Status](https://david-dm.org/neogeek/doxdox-plugin-handlebars/status.svg)](https://david-dm.org/neogeek/doxdox-plugin-handlebars) | [![Latest Documentation](https://doxdox.org/images/badge-flat.svg)](https://doxdox.org/neogeek/doxdox-plugin-handlebars) |
-| [`doxdox-plugin-markdown`](https://github.com/neogeek/doxdox-plugin-markdown) | [![NPM Version](http://img.shields.io/npm/v/doxdox-plugin-markdown.svg?style=flat)](https://www.npmjs.org/package/doxdox-plugin-markdown) | [![dependencies Status](https://david-dm.org/neogeek/doxdox-plugin-markdown/status.svg)](https://david-dm.org/neogeek/doxdox-plugin-markdown) | [![Latest Documentation](https://doxdox.org/images/badge-flat.svg)](https://doxdox.org/neogeek/doxdox-plugin-markdown) |
+import parser from 'doxdox-parser-jsdoc';
 
-- [`doxdox-parser-dox`](https://github.com/neogeek/doxdox-parser-dox) - 🔌 Dox parser plugin for doxdox.
-- [`doxdox-plugin-bootstrap`](https://github.com/neogeek/doxdox-plugin-bootstrap) - 🔌 Bootstrap template plugin for doxdox.
-- [`doxdox-plugin-handlebars`](https://github.com/neogeek/doxdox-plugin-handlebars) - 🔌 Custom Handlebars template plugin for doxdox.
-- [`doxdox-plugin-markdown`](https://github.com/neogeek/doxdox-plugin-markdown) - 🔌 Markdown template plugin for doxdox.
+import renderer from 'doxdox-renderer-bootstrap';
 
-### Other Packages
+export const getServerSideProps = async () => {
+  const docs = await doxdox(
+    process.cwd(),
+    ['lib/index.js', 'lib/loaders.js', 'lib/utils.js'],
+    parser,
+    renderer,
+    {
+      name: 'doxdox-example',
+      description: 'Description of doxdox example.'
+    }
+  );
 
-Non-core packages must be installed separately from doxdox.
+  return { props: { docs } };
+};
 
-```bash
-$ npm install doxdox doxdox-plugin-dash --save-dev
+const Docs: NextPage<{
+  docs: string;
+}> = ({ docs }) => {
+  return <div dangerouslySetInnerHTML={{ __html: docs }}></div>;
+};
+
+export default Docs;
 ```
 
-The, via the `--layout` flag, you specify the plugin name minus `doxdox-plugin-`.
+### Custom Renderer
 
-| Package | Version | Dependencies | Documentation |
-| ------- | ------- | ------------ | ------------- |
-| [`doxdox-plugin-dash`](https://github.com/neogeek/doxdox-plugin-dash) | [![NPM Version](http://img.shields.io/npm/v/doxdox-plugin-dash.svg?style=flat)](https://www.npmjs.org/package/doxdox-plugin-dash) | [![dependencies Status](https://david-dm.org/neogeek/doxdox-plugin-dash/status.svg)](https://david-dm.org/neogeek/doxdox-plugin-dash) | [![Latest Documentation](https://doxdox.org/images/badge-flat.svg)](https://doxdox.org/neogeek/doxdox-plugin-dash) |
-| [`doxdox-plugin-github-wiki`](https://github.com/neogeek/doxdox-plugin-github-wiki) | [![NPM Version](http://img.shields.io/npm/v/doxdox-plugin-github-wiki.svg?style=flat)](https://www.npmjs.org/package/doxdox-plugin-github-wiki) | [![dependencies Status](https://david-dm.org/neogeek/doxdox-plugin-github-wiki/status.svg)](https://david-dm.org/neogeek/doxdox-plugin-github-wiki) | [![Latest Documentation](https://doxdox.org/images/badge-flat.svg)](https://doxdox.org/neogeek/doxdox-plugin-github-wiki) |
-| [`grunt-doxdox`](https://github.com/neogeek/grunt-doxdox) | [![NPM Version](http://img.shields.io/npm/v/grunt-doxdox.svg?style=flat)](https://www.npmjs.org/package/grunt-doxdox) | [![dependencies Status](https://david-dm.org/neogeek/grunt-doxdox/status.svg)](https://david-dm.org/neogeek/grunt-doxdox) | |
+> Note: To use doxdox in this way you must add `"type": "module"` to your `package.json` file.
 
-- [`doxdox-plugin-dash`](https://github.com/neogeek/doxdox-plugin-dash) - 🔌 Dash export plugin for doxdox.
-- [`doxdox-plugin-github-wiki`](https://github.com/neogeek/doxdox-plugin-github-wiki) - 🔌 GitHub wiki export plugin for doxdox.
-- [`grunt-doxdox`](https://github.com/neogeek/grunt-doxdox) - Grunt plugin for doxdox.
+```javascript
+export default async doc => JSON.stringify(doc);
+```
+
+```bash
+doxdox -r renderer.js
+```
+
+## Plugins
+
+### Parsers
+
+#### Default Parsers
+
+> The following parsers are bundled with `doxdox`.
+
+| Name                                                   | Description              | Version                                                                                                                                 |
+| ------------------------------------------------------ | ------------------------ | --------------------------------------------------------------------------------------------------------------------------------------- |
+| [doxdox-parser-jsdoc](./packages/doxdox-parser-jsdoc/) | JSDoc parser for doxdox. | [![NPM version](https://img.shields.io/npm/v/doxdox-parser-jsdoc?style=flat-square)](https://www.npmjs.org/package/doxdox-parser-jsdoc) |
+
+A template for creating your own parser [doxdox-parser-template](./packages/doxdox-parser-template/).
+
+### Renderers
+
+#### Default Renderers
+
+> The following renderers are bundled with `doxdox`.
+
+| Name                                                               | Description                    | Version                                                                                                                                             |
+| ------------------------------------------------------------------ | ------------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [doxdox-renderer-bootstrap](./packages/doxdox-renderer-bootstrap/) | Bootstrap renderer for doxdox. | [![NPM version](https://img.shields.io/npm/v/doxdox-renderer-bootstrap?style=flat-square)](https://www.npmjs.org/package/doxdox-renderer-bootstrap) |
+| [doxdox-renderer-json](./packages/doxdox-renderer-json/)           | JSON renderer for doxdox.      | [![NPM version](https://img.shields.io/npm/v/doxdox-renderer-json?style=flat-square)](https://www.npmjs.org/package/doxdox-renderer-json)           |
+| [doxdox-renderer-markdown](./packages/doxdox-renderer-markdown/)   | Markdown renderer for doxdox.  | [![NPM version](https://img.shields.io/npm/v/doxdox-renderer-markdown?style=flat-square)](https://www.npmjs.org/package/doxdox-renderer-markdown)   |
+
+A template for creating your own renderer [doxdox-renderer-template](./packages/doxdox-renderer-template/).
+
+#### Optional Renderers
+
+> The following renderers are not bundled with `doxdox` and must be installed separately.
+
+| Name                                                                   | Description                      | Version                                                                                                                                                 |
+| ---------------------------------------------------------------------- | -------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [doxdox-renderer-dash](./packages/doxdox-renderer-dash/)               | Dash renderer for doxdox.        | [![NPM version](https://img.shields.io/npm/v/doxdox-renderer-dash?style=flat-square)](https://www.npmjs.org/package/doxdox-renderer-dash)               |
+| [doxdox-renderer-github-wiki](./packages/doxdox-renderer-github-wiki/) | GitHub Wiki renderer for doxdox. | [![NPM version](https://img.shields.io/npm/v/doxdox-renderer-github-wiki?style=flat-square)](https://www.npmjs.org/package/doxdox-renderer-github-wiki) |
 
 ## Questions
 
-If you have any questions regarding the use of doxdox, please use either the [Gitter](https://gitter.im/neogeek/doxdox) chat room or [Stack Overflow](http://stackoverflow.com/questions/ask?tags=doxdox). The issue tracker is to be used for bug reports and feature requests only.
+If you have any questions regarding the use of doxdox, please use either [GitHub Discussions](https://github.com/docsbydoxdox/doxdox/discussions/) or [Stack Overflow](https://stackoverflow.com/questions/ask?tags=doxdox). The issue tracker is to be used for bug reports and feature requests only.
 
 ## Contributing
 
-Be sure to review the [Contributing Guidelines](CONTRIBUTING.md) before logging an issue or making a pull request.
+Be sure to review the [Contributing Guidelines](./CONTRIBUTING.md) before logging an issue or making a pull request.
 
 ## License
 
-[MIT](LICENSE)
+[MIT](./LICENSE)
