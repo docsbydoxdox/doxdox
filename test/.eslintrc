@@ -1,5 +1,0 @@
-{
-  "extends": [
-    "@neogeek/eslint-config-standards/.eslintrc-tests"
-  ]
-}

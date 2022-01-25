@@ -1,0 +1,44 @@
+name: Tests
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    types: [opened, synchronize, reopened, ready_for_review]
+    branches:
+      - main
+
+jobs:
+  tests:
+    runs-on: ${{ matrix.os }}
+    if: github.event.pull_request.draft == false
+
+    strategy:
+      matrix:
+        os: [ubuntu-latest]
+        node: [12.20.0, 14.13.1, 16.0.0]
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v2
+
+      - uses: actions/setup-node@v2
+        with:
+          node-version: ${{ matrix.node }}
+
+      - name: Update NPM to latest
+        run: npm install npm@latest -g
+
+      - name: Print Node.js and NPM version
+        run: |
+          node -v
+          npm -v
+
+      - name: Install dependencies for all packages
+        run: npm install
+
+      - name: Run tests on all packages
+        timeout-minutes: 5
+        run: |
+          npm run build
+          npm test

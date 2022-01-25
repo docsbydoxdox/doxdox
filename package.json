@@ -1,60 +1,32 @@
 {
-  "name": "doxdox",
-  "description": "JSDoc to Markdown, Bootstrap, and custom Handlebars template documentation generator.",
-  "version": "3.0.0",
-  "bin": {
-    "doxdox": "./bin/doxdox"
-  },
-  "preferGlobal": true,
-  "engines": {
-    "node": ">=8.0"
-  },
-  "license": "MIT",
-  "dependencies": {
-    "chalk": "2.4.2",
-    "doxdox-parser-dox": "~2.0.0",
-    "doxdox-plugin-bootstrap": "~2.0.0",
-    "doxdox-plugin-handlebars": "~2.0.0",
-    "doxdox-plugin-markdown": "~2.0.0",
-    "globby": "9.0.0",
-    "parse-cmd-args": "2.0.0",
-    "update-notifier": "2.5.0"
-  },
-  "devDependencies": {
-    "@neogeek/eslint-config-standards": "4.1.0",
-    "babel-eslint": "10.0.1",
-    "codecov": "3.2.0",
-    "eslint": "5.14.1",
-    "istanbul": "0.4.5",
-    "mocha": "6.0.2"
-  },
+  "name": "doxdox-workspace",
+  "version": "4.0.0-preview.1",
+  "workspaces": [
+    "./packages/doxdox-core",
+    "./packages/doxdox-parser-jsdoc",
+    "./packages/doxdox-parser-template",
+    "./packages/doxdox-renderer-bootstrap",
+    "./packages/doxdox-renderer-dash",
+    "./packages/doxdox-renderer-github-wiki",
+    "./packages/doxdox-renderer-json",
+    "./packages/doxdox-renderer-markdown",
+    "./packages/doxdox-renderer-template",
+    "./packages/doxdox-cli",
+    "./packages/doxdox"
+  ],
   "scripts": {
-    "test": "npm run lint && mocha test/specs/",
-    "test:flags": "node bin/doxdox 'lib/**/*.js' --description Description --title Title --package test/fixtures/ --ignore 'lib/**/*.js' | diff test/fixtures/flags.md -",
-    "test:docs": "node bin/doxdox 'lib/**/*.js' -p package.json -l markdown | diff DOCUMENTATION.md -",
-    "lint": "eslint .",
-    "coverage": "istanbul cover _mocha test/specs/ && codecov",
-    "fixtures": "node bin/doxdox lib/doxdox.js --output test/fixtures/doxdox.md --package test/fixtures/",
-    "docs": "node bin/doxdox 'lib/**/*.js' -p package.json -l markdown -o DOCUMENTATION.md"
+    "test": "npm run test --workspaces --if-present",
+    "build": "npm run build --workspaces --if-present",
+    "prettier-check": "npx prettier@2 --check \"packages/**/*.ts\"",
+    "prettier-fix": "npx prettier@2 --write \"packages/**/*.ts\"",
+    "ncu": "npm exec --workspaces -- npx npm-check-updates@12",
+    "ncu-upgrade": "npm exec --workspaces -- npx npm-check-updates@12 -u",
+    "publish-prerelease": "npm version prerelease --workspaces --no-git-tag-version --include-workspace-root --preid preview",
+    "publish-patch": "npm version patch --workspaces --no-git-tag-version --include-workspace-root",
+    "publish-minor": "npm version minor --workspaces --no-git-tag-version --include-workspace-root",
+    "publish-major": "npm version major --workspaces --no-git-tag-version --include-workspace-root",
+    "publish-preview": "npm publish --dry-run --workspaces",
+    "debug-link": "npm run link --workspaces --if-present"
   },
-  "keywords": [
-    "documentation",
-    "jsdoc",
-    "bootstrap",
-    "markdown",
-    "handlebars",
-    "dox"
-  ],
-  "authors": [
-    {
-      "name": "Scott Doxey",
-      "email": "hello@scottdoxey.com",
-      "homepage": "http://scottdoxey.com/"
-    }
-  ],
-  "homepage": "https://github.com/neogeek/doxdox",
-  "repository": {
-    "type": "git",
-    "url": "git://github.com/neogeek/doxdox.git"
-  }
+  "private": true
 }

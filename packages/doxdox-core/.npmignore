@@ -1,0 +1,10 @@
+coverage/
+
+src/
+
+.doxdoxignore
+
+.prettierignore
+.prettierrc
+
+tsconfig.json

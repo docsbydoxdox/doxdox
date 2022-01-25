@@ -1,0 +1,8 @@
+coverage/
+
+src/
+
+.prettierignore
+.prettierrc
+
+tsconfig.json

@@ -1,0 +1,60 @@
+{
+  "name": "doxdox-renderer-github-wiki",
+  "description": "GitHub Wiki renderer for doxdox.",
+  "version": "4.0.0-preview.1",
+  "exports": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "type": "module",
+  "engines": {
+    "node": "^12.20.0 || ^14.13.1 || >=16.0.0"
+  },
+  "dependencies": {
+    "adm-zip": "0.5.9",
+    "markdown-table": "3.0.2"
+  },
+  "peerDependencies": {
+    "doxdox-core": "4.0.0-preview.1"
+  },
+  "peerDependenciesMeta": {
+    "doxdox-core": {
+      "optional": false
+    }
+  },
+  "devDependencies": {
+    "@types/adm-zip": "0.4.34",
+    "@types/jest": "27.4.0",
+    "@types/node": "17.0.11",
+    "jest": "27.4.7",
+    "ts-jest": "27.1.3",
+    "typescript": "4.5.5"
+  },
+  "scripts": {
+    "test": "NODE_OPTIONS=--experimental-vm-modules jest --runInBand --passWithNoTests",
+    "build": "rm -rf dist/ && tsc"
+  },
+  "keywords": [
+    "doxdox",
+    "documentation",
+    "github",
+    "wiki"
+  ],
+  "jest": {
+    "collectCoverage": true,
+    "extensionsToTreatAsEsm": [
+      ".ts"
+    ],
+    "globals": {
+      "ts-jest": {
+        "useESM": true
+      }
+    },
+    "transform": {
+      "^.+\\.ts$": "ts-jest"
+    }
+  },
+  "homepage": "https://github.com/docsbydoxdox/doxdox",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/docsbydoxdox/doxdox.git"
+  }
+}
