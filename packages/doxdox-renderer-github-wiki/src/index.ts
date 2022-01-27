@@ -1,3 +1,5 @@
+import { join } from 'path';
+
 import admzip from 'adm-zip';
 
 import { markdownTable } from 'markdown-table';
@@ -39,7 +41,7 @@ export default async (doc: Doc): Promise<string | Buffer> => {
             Promise.all(
                 file.methods.map(async method =>
                     zip.addFile(
-                        `${file.path}/${method.name}.md`,
+                        join(file.path, `${method.name}.md`),
                         Buffer.from(renderMethod(method), 'utf-8')
                     )
                 )
