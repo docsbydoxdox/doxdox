@@ -61,13 +61,13 @@ export const findParentNodeModules = async (
 ): Promise<string | null> => {
     if (maxDepth > 0) {
         try {
-            const nodeModulesPath = resolve(currentDirectory, './node_modules');
+            const nodeModulesPath = resolve(currentDirectory, 'node_modules');
 
             if (await fs.stat(nodeModulesPath)) {
                 return nodeModulesPath;
             }
         } catch (_) {
-            const parentDirectory = resolve(currentDirectory, '../');
+            const parentDirectory = resolve(currentDirectory, '..');
 
             return await findParentNodeModules(parentDirectory, --maxDepth);
         }
