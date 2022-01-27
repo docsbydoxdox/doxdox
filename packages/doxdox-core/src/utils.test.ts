@@ -67,6 +67,30 @@ describe('utils', () => {
         });
     });
 
+    describe('getProjectPackage', () => {
+        it('gets contents from project package', async () => {
+            const { name, description, version, exports } = JSON.parse(
+                await fs.readFile('./package.json', 'utf8')
+            );
+
+            assert.deepEqual(await getProjectPackage('./'), {
+                name,
+                description,
+                version,
+                exports
+            });
+        });
+        it('file to get contents from folder without package file', async () => {
+            assert.deepEqual(await getProjectPackage('./src/'), {});
+        });
+    });
+
+    describe('getRootDirPath', () => {
+        it('get dir path', () => {
+            assert.equal(getRootDirPath(), join(process.cwd(), './src'));
+        });
+    });
+
     describe('parseIgnoreConfig', () => {
         it('parse ignore config', () => {
             assert.deepEqual(
@@ -101,33 +125,9 @@ describe('utils', () => {
         });
     });
 
-    describe('getRootDirPath', () => {
-        it('get dir path', () => {
-            assert.equal(getRootDirPath(), join(process.cwd(), './src'));
-        });
-    });
-
     describe('slugify', () => {
         it('slugify path', () => {
             assert.equal(slugify('./src/utils.ts'), 'src-utils-ts');
-        });
-    });
-
-    describe('getProjectPackage', () => {
-        it('gets contents from project package', async () => {
-            const { name, description, version, exports } = JSON.parse(
-                await fs.readFile('./package.json', 'utf8')
-            );
-
-            assert.deepEqual(await getProjectPackage('./'), {
-                name,
-                description,
-                version,
-                exports
-            });
-        });
-        it('file to get contents from folder without package file', async () => {
-            assert.deepEqual(await getProjectPackage('./src/'), {});
         });
     });
 });
