@@ -1,6 +1,7 @@
 {
   "name": "doxdox-workspace",
   "version": "4.0.0-preview.1",
+  "type": "module",
   "workspaces": [
     "./packages/doxdox-core",
     "./packages/doxdox-parser-jsdoc",
