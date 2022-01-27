@@ -49,25 +49,25 @@ export const findFileInPath = async (
 /**
  * Finds the closest node_module folder in the parent directories.
  *
- * @param {string} [curentDirectory] Current directory.
+ * @param {string} [currentDirectory] Current directory.
  * @param {number} [maxDepth] Optional max depth.
  * @return {Promise<string | null>} Path to node_modules directory.
  * @public
  */
 
 export const findParentNodeModules = async (
-    curentDirectory: string,
+    currentDirectory: string,
     maxDepth: number = 5
 ): Promise<string | null> => {
     if (maxDepth > 0) {
         try {
-            const nodeModulesPath = resolve(curentDirectory, './node_modules');
+            const nodeModulesPath = resolve(currentDirectory, './node_modules');
 
             if (await fs.stat(nodeModulesPath)) {
                 return nodeModulesPath;
             }
         } catch (_) {
-            const parentDirectory = resolve(curentDirectory, '../');
+            const parentDirectory = resolve(currentDirectory, '../');
 
             return await findParentNodeModules(parentDirectory, --maxDepth);
         }
