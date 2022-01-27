@@ -9,11 +9,11 @@ import { fileURLToPath } from 'url';
 import { Package } from './types';
 
 /**
- * Finds package.json from either the directory the script was called from or a supplied path.
+ * Finds file in path.
  *
- *     console.log(await findFileInPath('./'));
- *     console.log(await findFileInPath('./package.json'));
- *     console.log(await findFileInPath('~/git/github/doxdox/'));
+ *     console.log(await findFileInPath('./', 'package.json'));
+ *     console.log(await findFileInPath('../', 'package.json'));
+ *     console.log(await findFileInPath('~/git/github/doxdox/', '.package.json'));
  *
  * @param {string} [input] Directory to check for file.
  * @param {string?} [fileName = 'package.json'] File name to check for.
