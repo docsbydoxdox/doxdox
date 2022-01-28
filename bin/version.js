@@ -47,5 +47,31 @@ const loadAndParsePackageFile = async path => {
         )
     ).reduce((all, workspace) => ({ ...all, [workspace.name]: workspace }), {});
 
+    await Promise.all(
+        workspaces.map(async workspace => {
+            const pkg = await loadAndParsePackageFile(
+                join(workspace, './package.json')
+            );
+
+            ['dependencies', 'peerDependencies', 'devDependencies'].map(
+                type => {
+                    if (pkg[type]) {
+                        Object.keys(pkg[type]).map(dependency => {
+                            if (Object.keys(versions).includes(dependency)) {
+                                pkg[type][dependency] =
+                                    versions[dependency].version;
+                            }
+                        });
+                    }
+                }
+            );
+
+            await writeFile(
+                join(workspace, './package.json'),
+                `${JSON.stringify({ ...pkg }, null, 2)}\n`
+            );
+        })
+    );
+
     console.log(versions);
 })();
