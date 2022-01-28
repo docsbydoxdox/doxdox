@@ -1,6 +1,7 @@
 {
   "name": "doxdox-workspace",
   "version": "4.0.0-preview.1",
+  "type": "module",
   "workspaces": [
     "./packages/doxdox-core",
     "./packages/doxdox-parser-jsdoc",
@@ -21,10 +22,10 @@
     "prettier-fix": "npx prettier@2 --write \"packages/**/*.ts\"",
     "ncu": "npm exec --workspaces -- npx npm-check-updates@12",
     "ncu-upgrade": "npm exec --workspaces -- npx npm-check-updates@12 -u",
-    "publish-prerelease": "npm version prerelease --workspaces --no-git-tag-version --include-workspace-root --preid preview",
-    "publish-patch": "npm version patch --workspaces --no-git-tag-version --include-workspace-root",
-    "publish-minor": "npm version minor --workspaces --no-git-tag-version --include-workspace-root",
-    "publish-major": "npm version major --workspaces --no-git-tag-version --include-workspace-root",
+    "publish-prerelease": "npm version prerelease",
+    "publish-patch": "./bin/version.js patch",
+    "publish-minor": "./bin/version.js minor",
+    "publish-major": "./bin/version.js major",
     "publish-preview": "npm publish --dry-run --workspaces",
     "debug-link": "npm run link --workspaces --if-present"
   },
