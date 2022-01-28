@@ -6,11 +6,15 @@ import { join } from 'path';
 
 import {
     findFileInPath,
-    getRootDirPath,
+    findParentNodeModules,
     getIgnoreConfigInPath,
+    getProjectPackage,
+    getRootDirPath,
+    isDirectory,
+    isFile,
     parseIgnoreConfig,
-    slugify,
-    getProjectPackage
+    sanitizePath,
+    slugify
 } from './utils';
 
 describe('utils', () => {
@@ -35,6 +39,21 @@ describe('utils', () => {
 
         it('fail to find package with invalid directory', async () => {
             assert.equal(await findFileInPath('../testing'), null);
+        });
+    });
+
+    describe('findParentNodeModules', () => {
+        it('find node_modules with input directory', async () => {
+            assert.equal(
+                await findParentNodeModules('./'),
+                join(process.cwd(), '../../node_modules')
+            );
+        });
+        it('fail to find node_modules with input directory with depth of 1', async () => {
+            assert.notEqual(
+                await findParentNodeModules('./', 1),
+                join(process.cwd(), '../../node_modules')
+            );
         });
     });
 
@@ -64,6 +83,54 @@ describe('utils', () => {
 
         it('fail to find ignore config with invalid directory', async () => {
             assert.deepEqual(await getIgnoreConfigInPath('../testing'), []);
+        });
+    });
+
+    describe('getProjectPackage', () => {
+        it('gets contents from project package', async () => {
+            const { name, description, version, exports } = JSON.parse(
+                await fs.readFile('./package.json', 'utf8')
+            );
+
+            assert.deepEqual(await getProjectPackage('./'), {
+                name,
+                description,
+                version,
+                exports
+            });
+        });
+        it('file to get contents from folder without package file', async () => {
+            assert.deepEqual(await getProjectPackage('./src/'), {});
+        });
+    });
+
+    describe('getRootDirPath', () => {
+        it('get dir path', () => {
+            assert.equal(getRootDirPath(), join(process.cwd(), './src'));
+        });
+    });
+
+    describe('isDirectory', () => {
+        it('return true with directory input', async () => {
+            assert.equal(await isDirectory('./'), true);
+        });
+        it('return false with file input', async () => {
+            assert.equal(await isDirectory('./package.json'), false);
+        });
+        it('return false with invalid input', async () => {
+            assert.equal(await isDirectory('./invalid.txt'), false);
+        });
+    });
+
+    describe('isFile', () => {
+        it('return true with file input', async () => {
+            assert.equal(await isFile('./package.json'), true);
+        });
+        it('return false with directory input', async () => {
+            assert.equal(await isFile('./'), false);
+        });
+        it('return false with invalid input', async () => {
+            assert.equal(await isFile('./invalid.txt'), false);
         });
     });
 
@@ -101,33 +168,20 @@ describe('utils', () => {
         });
     });
 
-    describe('getRootDirPath', () => {
-        it('get dir path', () => {
-            assert.equal(getRootDirPath(), join(process.cwd(), './src'));
+    describe('sanitizePath', () => {
+        it('sanitize path', () => {
+            assert.equal(
+                sanitizePath(
+                    'file:///Users/scottdoxey/git/github/doxdox/packages/doxdox-cli/dist/src/index.js'
+                ),
+                '/Users/scottdoxey/git/github/doxdox/packages/doxdox-cli/dist/src/index.js'
+            );
         });
     });
 
     describe('slugify', () => {
         it('slugify path', () => {
             assert.equal(slugify('./src/utils.ts'), 'src-utils-ts');
-        });
-    });
-
-    describe('getProjectPackage', () => {
-        it('gets contents from project package', async () => {
-            const { name, description, version, exports } = JSON.parse(
-                await fs.readFile('./package.json', 'utf8')
-            );
-
-            assert.deepEqual(await getProjectPackage('./'), {
-                name,
-                description,
-                version,
-                exports
-            });
-        });
-        it('file to get contents from folder without package file', async () => {
-            assert.deepEqual(await getProjectPackage('./src/'), {});
         });
     });
 });
