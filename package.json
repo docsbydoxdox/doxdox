@@ -11,6 +11,7 @@
     "./packages/doxdox-renderer-github-wiki",
     "./packages/doxdox-renderer-json",
     "./packages/doxdox-renderer-markdown",
+    "./packages/doxdox-renderer-pdf",
     "./packages/doxdox-renderer-template",
     "./packages/doxdox-cli",
     "./packages/doxdox"

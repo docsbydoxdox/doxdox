@@ -285,6 +285,7 @@ A template for creating your own renderer [doxdox-renderer-template](./packages/
 | ---------------------------------------------------------------------- | -------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | [doxdox-renderer-dash](./packages/doxdox-renderer-dash/)               | Dash renderer for doxdox.        | [![NPM version](https://img.shields.io/npm/v/doxdox-renderer-dash?style=flat-square)](https://www.npmjs.org/package/doxdox-renderer-dash)               |
 | [doxdox-renderer-github-wiki](./packages/doxdox-renderer-github-wiki/) | GitHub Wiki renderer for doxdox. | [![NPM version](https://img.shields.io/npm/v/doxdox-renderer-github-wiki?style=flat-square)](https://www.npmjs.org/package/doxdox-renderer-github-wiki) |
+| [doxdox-renderer-pdf](./packages/doxdox-renderer-pdf/)                 | PDF renderer for doxdox.         | [![NPM version](https://img.shields.io/npm/v/doxdox-renderer-pdf?style=flat-square)](https://www.npmjs.org/package/doxdox-renderer-pdf)                 |
 
 ## Questions
 
