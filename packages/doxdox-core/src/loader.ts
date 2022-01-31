@@ -1,5 +1,7 @@
 import { join, resolve } from 'path';
 
+import { pathToFileURL } from 'url';
+
 import { getProjectPackage, isDirectory, isFile } from './utils.js';
 
 /**
@@ -46,7 +48,7 @@ export const loadPluginFromFile = async <T>(
     path: string
 ): Promise<T | null> => {
     try {
-        return (await import(resolve(path))).default;
+        return (await import(pathToFileURL(resolve(path)).href)).default;
     } catch (err: any) {
         if (process.env.DEBUG) {
             console.error(err);

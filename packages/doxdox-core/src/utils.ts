@@ -2,7 +2,7 @@ import { EOL } from 'os';
 
 import { promises as fs } from 'fs';
 
-import { resolve, join, dirname } from 'path';
+import { resolve, dirname } from 'path';
 
 import { fileURLToPath } from 'url';
 
@@ -30,7 +30,7 @@ export const findFileInPath = async (
             ? dirname(input)
             : input;
 
-        const filePath = resolve(join(inputDirectory, fileName));
+        const filePath = resolve(inputDirectory, fileName);
 
         const fileStat = await fs.stat(filePath);
 
@@ -61,13 +61,13 @@ export const findParentNodeModules = async (
 ): Promise<string | null> => {
     if (maxDepth > 0) {
         try {
-            const nodeModulesPath = resolve(currentDirectory, './node_modules');
+            const nodeModulesPath = resolve(currentDirectory, 'node_modules');
 
             if (await fs.stat(nodeModulesPath)) {
                 return nodeModulesPath;
             }
         } catch (_) {
-            const parentDirectory = resolve(currentDirectory, '../');
+            const parentDirectory = resolve(currentDirectory, '..');
 
             return await findParentNodeModules(parentDirectory, --maxDepth);
         }
