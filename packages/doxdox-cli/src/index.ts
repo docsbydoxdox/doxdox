@@ -137,6 +137,8 @@ const overridePackage = args.flags['-p'] || args.flags['--package'];
     });
 
     if (overrideOutput) {
+        await fs.mkdir(dirname(overrideOutput), { recursive: true });
+
         await fs.writeFile(overrideOutput, output);
     } else {
         process.stdout.write(output);
