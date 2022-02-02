@@ -15,19 +15,16 @@ import parseCmdArgs from 'parse-cmd-args';
 import doxdox, {
     findFileInPath,
     findParentNodeModules,
-    getIgnoreConfigInPath,
+    getProjectPackage,
     getRootDirPath,
-    parseIgnoreConfig,
     loadPlugin,
-    sanitizePath,
-    getProjectPackage
+    parseIgnoreConfig,
+    sanitizePath
 } from 'doxdox-core';
 
 import { Doc, File } from 'doxdox-core';
 
 const defaultPaths = ['**/*.js'];
-
-const defaultIgnorePatterns = ['!node_modules/'];
 
 const helpDocs = `Usage: doxdox <path> ... [options]
 
@@ -92,13 +89,13 @@ const overridePackage = args.flags['-p'] || args.flags['--package'];
     }
 
     const paths = await globby(
-        (args.input ? [args.input] : defaultPaths).concat([
-            ...defaultIgnorePatterns,
-            ...parseIgnoreConfig(overrideIgnore.split(',').join(EOL)),
-            ...(await getIgnoreConfigInPath(cwd))
-        ]),
+        (args.input ? [args.input] : defaultPaths).concat(
+            parseIgnoreConfig(overrideIgnore.split(',').join(EOL))
+        ),
         {
-            cwd
+            cwd,
+            ignoreFiles: ['.doxdoxignore'],
+            gitignore: true
         }
     );
 
