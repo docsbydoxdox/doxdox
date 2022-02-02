@@ -7,7 +7,6 @@ import { join } from 'path';
 import {
     findFileInPath,
     findParentNodeModules,
-    getIgnoreConfigInPath,
     getProjectPackage,
     getRootDirPath,
     isDirectory,
@@ -54,35 +53,6 @@ describe('utils', () => {
                 await findParentNodeModules('./', 1),
                 join(process.cwd(), '../../node_modules')
             );
-        });
-    });
-
-    describe('getIgnoreConfigInPath', () => {
-        it('find ignore config with input directory', async () => {
-            assert.deepEqual(await getIgnoreConfigInPath('./'), [
-                '!**/*.test.*',
-                '!./coverage/',
-                '!./dist/'
-            ]);
-        });
-
-        it('find ignore config with input file', async () => {
-            assert.deepEqual(await getIgnoreConfigInPath('./.doxdoxignore'), [
-                '!**/*.test.*',
-                '!./coverage/',
-                '!./dist/'
-            ]);
-        });
-
-        it('fail to find ignore config with input non .doxdoxignore file', async () => {
-            assert.deepEqual(
-                await getIgnoreConfigInPath('./jest.config.js'),
-                []
-            );
-        });
-
-        it('fail to find ignore config with invalid directory', async () => {
-            assert.deepEqual(await getIgnoreConfigInPath('../testing'), []);
         });
     });
 

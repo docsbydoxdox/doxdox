@@ -77,32 +77,6 @@ export const findParentNodeModules = async (
 };
 
 /**
- * Return list of ignored paths and files.
- *
- *     console.log(await getIgnoreConfigInPath('./'));
- *     console.log(await getIgnoreConfigInPath('./.doxdoxignore'));
- *     console.log(await getIgnoreConfigInPath('~/git/github/doxdox/'));
- *
- * @param {string} [input] Directory to check for ignore config file.
- * @return {Promise<string[]>} List of ignored paths and files.
- * @public
- */
-
-export const getIgnoreConfigInPath = async (
-    input: string
-): Promise<string[]> => {
-    const ignorePath = await findFileInPath(input, '.doxdoxignore');
-
-    if (ignorePath) {
-        const ignoreContents = await fs.readFile(ignorePath, 'utf8');
-
-        return parseIgnoreConfig(ignoreContents);
-    }
-
-    return [];
-};
-
-/**
  * Returns basic information from a projects package file.
  *
  * @return {Promise<Package>} Basic information from a package file.
@@ -169,9 +143,7 @@ export const isFile = async (path: string): Promise<boolean> => {
 /**
  * Parse contents of ignore file.
  *
- *     console.log(await parseIgnoreConfig('./'));
- *     console.log(await getIgnoreConfigInPath('./.doxdoxignore'));
- *     console.log(await getIgnoreConfigInPath('~/git/github/doxdox/'));
+ *     console.log(await parseIgnoreConfig('node_modules/'));
  *
  * @param {string} [contents] Contents of ignore file.
  * @return {string[]} List of ignored paths and files.
