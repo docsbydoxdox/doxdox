@@ -61,6 +61,15 @@ export default async (cwd: string, path: string): Promise<File> => {
                     returns,
                     private: jsdoc.access === 'private'
                 };
+            })
+            .sort((a, b) => {
+                if (a.name.toLocaleLowerCase() < b.name.toLocaleLowerCase()) {
+                    return -1;
+                }
+                if (a.name.toLocaleLowerCase() > b.name.toLocaleLowerCase()) {
+                    return 1;
+                }
+                return 0;
             });
 
         return { path, methods };
