@@ -5,6 +5,7 @@ export interface Jsdoc {
     params: JsdocParam[];
     returns: JsdocParam[];
     access: string;
+    undocumented?: boolean;
 }
 
 export interface JsdocParam {

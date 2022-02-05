@@ -31,7 +31,10 @@ export default async (cwd: string, path: string): Promise<File> => {
         const docs = JSON.parse(output) as Jsdoc[];
 
         const methods = docs
-            .filter((jsdoc: Jsdoc) => jsdoc.kind === 'function')
+            .filter(
+                (jsdoc: Jsdoc) =>
+                    jsdoc.kind === 'function' && !jsdoc.undocumented
+            )
             .map((jsdoc: Jsdoc) => {
                 const params = (jsdoc.params || []).map(
                     ({ name, description, type }) => ({
