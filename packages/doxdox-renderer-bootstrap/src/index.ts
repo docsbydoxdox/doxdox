@@ -62,7 +62,7 @@ ${method.returns.map(
 `;
 
 const renderFileNav = (file: File) => `<p><b>${file.path}</b></p>
-<ul class="list-unstyled">
+<ul class="list-unstyled ml-0">
 ${file.methods
     .map(method => `<li><a href="#${method.slug}">${method.name}</a></li>`)
     .join('')}
