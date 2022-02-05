@@ -6,7 +6,9 @@ const renderMethod = (method: Method) => `## ${method.fullName}
 
 ${method.description}
 
-### Parameters
+${
+    method.params.length
+        ? `### Parameters
 
 ${markdownTable([
     ['Name', 'Types', 'Description'],
@@ -15,14 +17,20 @@ ${markdownTable([
         types.join(', '),
         description
     ])
-])}
+])}`
+        : ''
+}
 
-### Returns
+${
+    method.returns.length
+        ? `### Returns
 
 ${method.returns.map(
     param => `${param.types.join(', ')}
 ${param.description}`
-)}
+)}`
+        : ''
+}
 
 `;
 

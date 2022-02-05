@@ -30,7 +30,9 @@ const renderMethod = (method: Method) => `<div class="mb-5"><a name="${
 
 ${method.description ? md.render(method.description) : ''}
 
-<h3>Parameters</h3>
+${
+    method.params.length
+        ? `<h3>Parameters</h3>
 
 <div class="table-responsive">
 ${md
@@ -45,15 +47,21 @@ ${md
         ])
     )
     .replace('<table>', '<table class="table">')}
-</div>
+</div>`
+        : ''
+}
 
-<h3>Returns</h3>
+${
+    method.returns.length
+        ? `<h3>Returns</h3>
 
 ${method.returns.map(
     param => `<p><code>${param.types.join('</code>, <code>')}</code></p>
 
 <p>${param.description}</p>`
-)}
+)}`
+        : ''
+}
 
 </div>
 `;
