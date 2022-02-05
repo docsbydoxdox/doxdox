@@ -37,7 +37,7 @@ export default async (cwd: string, path: string): Promise<File> => {
             )
             .map((jsdoc: Jsdoc) => {
                 const params = (jsdoc.params || []).map(
-                    ({ name, description, type }) => ({
+                    ({ name, description = '', type }) => ({
                         name,
                         description,
                         types: type.names
@@ -45,7 +45,7 @@ export default async (cwd: string, path: string): Promise<File> => {
                 );
 
                 const returns = (jsdoc.returns || []).map(
-                    ({ name, description, type }) => ({
+                    ({ name, description = '', type }) => ({
                         name,
                         description,
                         types: type.names
@@ -59,7 +59,7 @@ export default async (cwd: string, path: string): Promise<File> => {
                         .map(param => param.name)
                         .filter(name => !name?.match(/\./))
                         .join(', ')})`,
-                    description: jsdoc.description,
+                    description: jsdoc.description || '',
                     params,
                     returns,
                     private: jsdoc.access === 'private'
