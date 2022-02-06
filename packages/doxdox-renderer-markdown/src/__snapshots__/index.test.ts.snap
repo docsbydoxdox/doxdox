@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`markdown render 1`] = `
+"# doxdox-example
+
+> doxdox example description
+
+## methodName(param)
+
+Method description
+
+### Parameters
+
+| Name  | Types  | Description       |
+| ----- | ------ | ----------------- |
+| param | string | Param description |
+
+### Returns
+
+void
+Return description
+
+Documentation generated with [doxdox](https://github.com/docsbydoxdox/doxdox)
+
+Generated on Mock Date Mock Time
+"
+`;
