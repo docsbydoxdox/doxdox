@@ -19,7 +19,7 @@
     "doxdox-renderer-markdown": "4.0.0-preview.2",
     "globby": "13.1.1",
     "import-from": "4.0.0",
-    "parse-cmd-args": "3.0.0",
+    "parse-cmd-args": "4.0.0",
     "update-notifier": "5.1.0"
   },
   "devDependencies": {

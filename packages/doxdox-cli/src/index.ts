@@ -45,11 +45,9 @@ Included Layouts:
  - Bootstrap             (https://getbootstrap.com)
  - JSON`;
 
-const args: { flags: { [key in string]: string }; inputs: string[] } =
-    parseCmdArgs(null, {
-        requireUserInput: true,
-        allowMultipleInputs: true
-    });
+const args = parseCmdArgs(null, {
+    requireUserInput: true
+});
 
 const cwd = process.cwd();
 
@@ -91,7 +89,7 @@ const overridePackage = args.flags['-p'] || args.flags['--package'];
 
     const paths = await globby(
         (args.inputs?.length ? args.inputs : defaultPaths).concat(
-            parseIgnoreConfig(overrideIgnore.split(',').join(EOL))
+            parseIgnoreConfig(String(overrideIgnore).split(',').join(EOL))
         ),
         {
             cwd,
@@ -115,7 +113,7 @@ const overridePackage = args.flags['-p'] || args.flags['--package'];
     const loadedRenderer = await loadPlugin<(doc: Doc) => Promise<string>>(
         nodeModulesDir,
         'doxdox-renderer-',
-        overrideRenderer.toLowerCase()
+        String(overrideRenderer).toLowerCase()
     );
 
     if (!loadedParser) {
@@ -126,18 +124,18 @@ const overridePackage = args.flags['-p'] || args.flags['--package'];
         throw new Error('Renderer missing!');
     }
 
-    const pkg = await getProjectPackage(overridePackage || cwd);
+    const pkg = await getProjectPackage(String(overridePackage) || cwd);
 
     const output = await doxdox(cwd, paths, loadedParser, loadedRenderer, {
-        name: overrideName || pkg.name || 'Untitled Project',
-        description: overrideDescription || pkg.description || '',
+        name: String(overrideName) || pkg.name || 'Untitled Project',
+        description: String(overrideDescription) || pkg.description || '',
         version: pkg.version
     });
 
     if (overrideOutput) {
-        await fs.mkdir(dirname(overrideOutput), { recursive: true });
+        await fs.mkdir(dirname(String(overrideOutput)), { recursive: true });
 
-        await fs.writeFile(overrideOutput, output);
+        await fs.writeFile(String(overrideOutput), output);
     } else {
         process.stdout.write(output);
     }
