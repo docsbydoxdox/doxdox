@@ -8,7 +8,7 @@ import { inc, parse } from 'semver';
 
 import parseCmdArgs from 'parse-cmd-args';
 
-const { input } = parseCmdArgs(null, {
+const { inputs } = parseCmdArgs(null, {
     requireUserInput: true
 });
 
@@ -28,7 +28,7 @@ const loadAndParsePackageFile = async path => {
 
                 const { prerelease } = parse(pkg.version);
 
-                const nextVersion = inc(pkg.version, input, prerelease[0]);
+                const nextVersion = inc(pkg.version, inputs[0], prerelease[0]);
 
                 await writeFile(
                     join(workspace, './package.json'),
