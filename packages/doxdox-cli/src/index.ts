@@ -51,16 +51,23 @@ const args = parseCmdArgs(null, {
 
 const cwd = process.cwd();
 
-const showHelp = args.flags['-h'] || args.flags['--help'];
-const showVersion = args.flags['-v'] || args.flags['--version'];
+const showHelp = Boolean(args.flags['-h'] || args.flags['--help'] || false);
+const showVersion = Boolean(
+    args.flags['-v'] || args.flags['--version'] || false
+);
 
-const overrideName = args.flags['-n'] || args.flags['--name'];
-const overrideDescription = args.flags['-d'] || args.flags['--description'];
-const overrideIgnore = args.flags['-i'] || args.flags['--ignore'] || '';
-const overrideRenderer =
-    args.flags['-r'] || args.flags['--renderer'] || 'markdown';
-const overrideOutput = args.flags['-o'] || args.flags['--output'] || false;
-const overridePackage = args.flags['-p'] || args.flags['--package'];
+const overrideName = String(args.flags['-n'] || args.flags['--name'] || '');
+const overrideDescription = String(
+    args.flags['-d'] || args.flags['--description'] || ''
+);
+const overrideIgnore = String(args.flags['-i'] || args.flags['--ignore'] || '');
+const overrideRenderer = String(
+    args.flags['-r'] || args.flags['--renderer'] || 'markdown'
+);
+const overrideOutput = String(args.flags['-o'] || args.flags['--output'] || '');
+const overridePackage = String(
+    args.flags['-p'] || args.flags['--package'] || ''
+);
 
 (async () => {
     const pkgPath = await findFileInPath(
@@ -89,7 +96,7 @@ const overridePackage = args.flags['-p'] || args.flags['--package'];
 
     const paths = await globby(
         (args.inputs?.length ? args.inputs : defaultPaths).concat(
-            parseIgnoreConfig(String(overrideIgnore).split(',').join(EOL))
+            parseIgnoreConfig(overrideIgnore.split(',').join(EOL))
         ),
         {
             cwd,
@@ -113,7 +120,7 @@ const overridePackage = args.flags['-p'] || args.flags['--package'];
     const loadedRenderer = await loadPlugin<(doc: Doc) => Promise<string>>(
         nodeModulesDir,
         'doxdox-renderer-',
-        String(overrideRenderer).toLowerCase()
+        overrideRenderer.toLowerCase()
     );
 
     if (!loadedParser) {
@@ -124,18 +131,18 @@ const overridePackage = args.flags['-p'] || args.flags['--package'];
         throw new Error('Renderer missing!');
     }
 
-    const pkg = await getProjectPackage(String(overridePackage) || cwd);
+    const pkg = await getProjectPackage(overridePackage || cwd);
 
     const output = await doxdox(cwd, paths, loadedParser, loadedRenderer, {
-        name: String(overrideName) || pkg.name || 'Untitled Project',
-        description: String(overrideDescription) || pkg.description || '',
+        name: overrideName || pkg.name || 'Untitled Project',
+        description: overrideDescription || pkg.description || '',
         version: pkg.version
     });
 
     if (overrideOutput) {
-        await fs.mkdir(dirname(String(overrideOutput)), { recursive: true });
+        await fs.mkdir(dirname(overrideOutput), { recursive: true });
 
-        await fs.writeFile(String(overrideOutput), output);
+        await fs.writeFile(overrideOutput, output);
     } else {
         process.stdout.write(output);
     }
