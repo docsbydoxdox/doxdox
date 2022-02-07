@@ -45,9 +45,10 @@ Included Layouts:
  - Bootstrap             (https://getbootstrap.com)
  - JSON`;
 
-const args: { flags: { [key in string]: string }; input?: string } =
+const args: { flags: { [key in string]: string }; inputs: string[] } =
     parseCmdArgs(null, {
-        requireUserInput: true
+        requireUserInput: true,
+        allowMultipleInputs: true
     });
 
 const cwd = process.cwd();
@@ -89,7 +90,7 @@ const overridePackage = args.flags['-p'] || args.flags['--package'];
     }
 
     const paths = await globby(
-        (args.input ? [args.input] : defaultPaths).concat(
+        (args.inputs?.length ? args.inputs : defaultPaths).concat(
             parseIgnoreConfig(overrideIgnore.split(',').join(EOL))
         ),
         {
