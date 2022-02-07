@@ -90,7 +90,7 @@ const overridePackage = args.flags['-p'] || args.flags['--package'];
     }
 
     const paths = await globby(
-        (args.inputs?.length ? [...args.inputs] : defaultPaths).concat(
+        (args.inputs?.length ? args.inputs : defaultPaths).concat(
             parseIgnoreConfig(overrideIgnore.split(',').join(EOL))
         ),
         {
