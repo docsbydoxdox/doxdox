@@ -21,15 +21,10 @@ import { Doc, Method } from 'doxdox-core';
 const md = new MarkdownIt({
     html: true,
     linkify: true,
-    highlight: function (str, lang) {
-        if (lang && hljs.getLanguage(lang)) {
-            try {
-                return hljs.highlight(str, { language: lang }).value;
-            } catch (_) {}
-        }
-
-        return '';
-    }
+    highlight: str =>
+        `<div class="bg-light p-3">${
+            hljs.highlight(str, { language: 'javascript' }).value
+        }</div>`
 });
 
 const renderMethod = (doc: Doc, method: Method) => `<!DOCTYPE html>
