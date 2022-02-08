@@ -35,6 +35,12 @@ const renderMethod = (doc: Doc, method: Method) => `<!DOCTYPE html>
 <title>${doc.name}${doc.description ? ` - ${doc.description}` : ''}</title>
 <link rel="stylesheet" href="resources/bootstrap.min.css">
 <link rel="stylesheet" href="resources/github.min.css">
+<style>
+.method-scope {
+  font-size: 1.5rem;
+  color: #999;
+}
+</style>
 </head>
 
 <body>
@@ -44,6 +50,7 @@ const renderMethod = (doc: Doc, method: Method) => `<!DOCTYPE html>
 <h2 class="method-name">
   ${method.fullName}
 </h2>
+${method.private ? `<p class="method-scope">private method</p>` : ''}
 
 ${method.description ? md.render(method.description) : ''}
 

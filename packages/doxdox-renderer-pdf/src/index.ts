@@ -22,6 +22,7 @@ const renderMethod = (method: Method) => `<div class="mb-5"><a name="${
 }" />
 
 <h2 class="method-name">${method.fullName}</h2>
+${method.private ? `<p class="method-scope">private method</p>` : ''}
 
 ${method.description ? md.render(method.description) : ''}
 
@@ -100,6 +101,11 @@ export default async (doc: Doc): Promise<Buffer> => {
 
               .method-name {
                 position: relative;
+              }
+
+              .method-scope {
+                font-size: 1.5rem;
+                color: #999;
               }
             </style>
           </head>

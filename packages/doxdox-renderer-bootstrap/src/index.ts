@@ -25,6 +25,7 @@ const renderMethod = (method: Method) => `<div class="mb-5"><a name="${
   }" class="method-permalink" aria-label="Permalink">#</a>
   ${method.fullName}
 </h2>
+${method.private ? `<p class="method-scope">private method</p>` : ''}
 
 ${method.description ? md.render(method.description) : ''}
 
@@ -105,6 +106,11 @@ export default async (doc: Doc): Promise<string> => `<!DOCTYPE html>
 
       .method-name {
         position: relative;
+      }
+
+      .method-scope {
+        font-size: 1.5rem;
+        color: #999;
       }
 
       .method-permalink {
