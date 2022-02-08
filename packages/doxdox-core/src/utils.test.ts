@@ -143,7 +143,7 @@ describe('utils', () => {
             );
         });
         it('parse ignore config with empty contents', () => {
-            expect(parseIgnoreConfig('')).toEqual(expect.arrayContaining([]));
+            expect(parseIgnoreConfig('')).toEqual([]);
         });
     });
 
