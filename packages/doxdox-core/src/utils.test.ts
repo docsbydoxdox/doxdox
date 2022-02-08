@@ -1,5 +1,3 @@
-import assert from 'assert';
-
 import { promises as fs } from 'fs';
 
 import { join } from 'path';
@@ -19,40 +17,34 @@ import {
 describe('utils', () => {
     describe('findFileInPath', () => {
         it('find package with input directory', async () => {
-            assert.equal(
-                await findFileInPath('./'),
+            expect(await findFileInPath('./')).toEqual(
                 join(process.cwd(), './package.json')
             );
         });
 
         it('find package with input file', async () => {
-            assert.equal(
-                await findFileInPath('./package.json'),
+            expect(await findFileInPath('./package.json')).toEqual(
                 join(process.cwd(), './package.json')
             );
         });
 
         it('fail to find package with input non package.json file', async () => {
-            assert.equal(await findFileInPath('./jest.config.js'), null);
+            expect(await findFileInPath('./jest.config.js')).toBeNull();
         });
 
         it('fail to find package with invalid directory', async () => {
-            assert.equal(await findFileInPath('../testing'), null);
+            expect(await findFileInPath('../testing')).toBeNull();
         });
     });
 
     describe('findParentNodeModules', () => {
         it('find node_modules with input directory', async () => {
-            assert.equal(
-                await findParentNodeModules('./'),
+            expect(await findParentNodeModules('./')).toEqual(
                 join(process.cwd(), '../../node_modules')
             );
         });
         it('fail to find node_modules with input directory with depth of 1', async () => {
-            assert.notEqual(
-                await findParentNodeModules('./', 1),
-                join(process.cwd(), '../../node_modules')
-            );
+            expect(await findParentNodeModules('./', 1)).toBeNull();
         });
     });
 
@@ -62,88 +54,106 @@ describe('utils', () => {
                 await fs.readFile('./package.json', 'utf8')
             );
 
-            assert.deepEqual(await getProjectPackage('./'), {
-                name,
-                description,
-                version,
-                exports
-            });
+            expect(await getProjectPackage('./')).toEqual(
+                expect.objectContaining({
+                    name,
+                    description,
+                    version,
+                    exports
+                })
+            );
         });
         it('file to get contents from folder without package file', async () => {
-            assert.deepEqual(await getProjectPackage('./src/'), {});
+            expect(await getProjectPackage('./src/')).toEqual({});
         });
     });
 
     describe('getRootDirPath', () => {
         it('get dir path', () => {
-            assert.equal(getRootDirPath(), join(process.cwd(), './src'));
+            expect(getRootDirPath()).toEqual(join(process.cwd(), './src'));
         });
     });
 
     describe('isDirectory', () => {
         it('return true with directory input', async () => {
-            assert.equal(await isDirectory('./'), true);
+            expect(await isDirectory('./')).toBeTruthy();
         });
         it('return false with file input', async () => {
-            assert.equal(await isDirectory('./package.json'), false);
+            expect(await isDirectory('./package.json')).toBeFalsy();
         });
         it('return false with invalid input', async () => {
-            assert.equal(await isDirectory('./invalid.txt'), false);
+            expect(await isDirectory('./invalid.txt')).toBeFalsy();
         });
     });
 
     describe('isFile', () => {
         it('return true with file input', async () => {
-            assert.equal(await isFile('./package.json'), true);
+            expect(await isFile('./package.json')).toBeTruthy();
         });
         it('return false with directory input', async () => {
-            assert.equal(await isFile('./'), false);
+            expect(await isFile('./')).toBeFalsy();
         });
         it('return false with invalid input', async () => {
-            assert.equal(await isFile('./invalid.txt'), false);
+            expect(await isFile('./invalid.txt')).toBeFalsy();
         });
     });
 
     describe('parseIgnoreConfig', () => {
         it('parse ignore config', () => {
-            assert.deepEqual(
+            expect(
                 parseIgnoreConfig(`**/*.test.*
             ./coverage/
-            ./dist/`),
-                ['!**/*.test.*', '!./coverage/', '!./dist/']
+            ./dist/`)
+            ).toEqual(
+                expect.arrayContaining([
+                    '!**/*.test.*',
+                    '!./coverage/',
+                    '!./dist/'
+                ])
             );
         });
         it('parse ignore config with empty lines', () => {
-            assert.deepEqual(
+            expect(
                 parseIgnoreConfig(`**/*.test.*
 
             ./coverage/
 
-            ./dist/`),
-                ['!**/*.test.*', '!./coverage/', '!./dist/']
+            ./dist/`)
+            ).toEqual(
+                expect.arrayContaining([
+                    '!**/*.test.*',
+                    '!./coverage/',
+                    '!./dist/'
+                ])
             );
         });
         it('parse ignore config with ! leading characters', () => {
-            assert.deepEqual(
+            expect(
                 parseIgnoreConfig(`!**/*.test.*
 
             !./coverage/
 
-            !./dist/`),
-                ['!**/*.test.*', '!./coverage/', '!./dist/']
+            !./dist/`)
+            ).toEqual(
+                expect.arrayContaining([
+                    '!**/*.test.*',
+                    '!./coverage/',
+                    '!./dist/'
+                ])
             );
         });
         it('parse ignore config with empty contents', () => {
-            assert.deepEqual(parseIgnoreConfig(''), []);
+            expect(parseIgnoreConfig('')).toEqual(expect.arrayContaining([]));
         });
     });
 
     describe('sanitizePath', () => {
         it('sanitize path', () => {
-            assert.equal(
+            expect(
                 sanitizePath(
                     'file:///Users/scottdoxey/git/github/doxdox/packages/doxdox-cli/dist/src/index.js'
-                ),
+                )
+            ).toEqual(
                 '/Users/scottdoxey/git/github/doxdox/packages/doxdox-cli/dist/src/index.js'
             );
         });
@@ -151,7 +161,7 @@ describe('utils', () => {
 
     describe('slugify', () => {
         it('slugify path', () => {
-            assert.equal(slugify('./src/utils.ts'), 'src-utils-ts');
+            expect(slugify('./src/utils.ts')).toEqual('src-utils-ts');
         });
     });
 });
