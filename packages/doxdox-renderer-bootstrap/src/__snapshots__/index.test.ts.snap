@@ -34,6 +34,11 @@ exports[`bootstrap render 1`] = `
         position: relative;
       }
 
+      .method-scope {
+        font-size: 1.5rem;
+        color: #999;
+      }
+
       .method-permalink {
         position: absolute;
         margin-left: -1em;
@@ -57,7 +62,7 @@ exports[`bootstrap render 1`] = `
         <div class=\\"p-5 col-md-3\\">
           <p><b>directory/index.js</b></p>
 <ul class=\\"list-unstyled ml-0\\">
-<li><a href=\\"#index-js-methodname\\">methodName</a></li>
+<li><a href=\\"#index-js-methodname\\" class=\\"\\">methodName</a></li>
 </ul>
         </div>
 
@@ -68,6 +73,7 @@ exports[`bootstrap render 1`] = `
   <a href=\\"#index-js-methodname\\" class=\\"method-permalink\\" aria-label=\\"Permalink\\">#</a>
   methodName(param)
 </h2>
+
 
 <p>Method description</p>
 
