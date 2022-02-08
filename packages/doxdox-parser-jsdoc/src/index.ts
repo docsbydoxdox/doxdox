@@ -57,7 +57,7 @@ export default async (cwd: string, path: string): Promise<File> => {
                     name: jsdoc.name,
                     fullName: `${jsdoc.name}(${params
                         .map(param => param.name)
-                        .filter(name => !name?.match(/\./))
+                        .filter(name => name && !name.match(/\./))
                         .join(', ')})`,
                     description: jsdoc.description || '',
                     params,
