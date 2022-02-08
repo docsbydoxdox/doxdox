@@ -14,7 +14,7 @@ describe('cli', () => {
 
         expect(stdout.trim()).toBe(pkg.version);
     });
-    it('get version (full flag)', async () => {
+    it('get version (long flag)', async () => {
         const pkg = JSON.parse(await fs.readFile('./package.json', 'utf8'));
 
         const { stdout } = await execAsync(`./dist/src/index.js --version`);
