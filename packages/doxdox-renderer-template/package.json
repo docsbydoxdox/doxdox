@@ -1,7 +1,7 @@
 {
   "name": "doxdox-renderer-template",
   "description": "Example renderer for doxdox.",
-  "version": "4.0.0-preview.3",
+  "version": "4.0.0-preview.4",
   "exports": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "type": "module",
@@ -9,7 +9,7 @@
     "node": "^12.20.0 || ^14.13.1 || >=16.0.0"
   },
   "peerDependencies": {
-    "doxdox-core": "4.0.0-preview.3"
+    "doxdox-core": "4.0.0-preview.4"
   },
   "peerDependenciesMeta": {
     "doxdox-core": {
