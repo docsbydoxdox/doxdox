@@ -25,6 +25,7 @@ const renderMethod = (method: Method) => `<div class="mb-5"><a name="${
   }" class="method-permalink" aria-label="Permalink">#</a>
   ${method.fullName}
 </h2>
+${method.private ? `<p class="method-scope">private method</p>` : ''}
 
 ${method.description ? md.render(method.description) : ''}
 
@@ -67,7 +68,12 @@ ${method.returns.map(
 const renderFileNav = (file: File) => `<p><b>${file.path}</b></p>
 <ul class="list-unstyled ml-0">
 ${file.methods
-    .map(method => `<li><a href="#${method.slug}">${method.name}</a></li>`)
+    .map(
+        method =>
+            `<li><a href="#${method.slug}" class="${
+                method.private ? 'text-muted' : ''
+            }">${method.name}</a></li>`
+    )
     .join('')}
 </ul>`;
 
@@ -105,6 +111,11 @@ export default async (doc: Doc): Promise<string> => `<!DOCTYPE html>
 
       .method-name {
         position: relative;
+      }
+
+      .method-scope {
+        font-size: 1.5rem;
+        color: #999;
       }
 
       .method-permalink {
