@@ -35,6 +35,7 @@ Options:
  -n, --name             Sets name of project.
  -d, --description      Sets description of project.
  -i, --ignore           Comma separated list of paths to ignore.
+ -l, --parser           Parser used to parse the source files with. Defaults to jsdoc.
  -r, --renderer         Renderer to generate the documentation with. Defaults to Markdown.
  -o, --output           File to save documentation to. Defaults to stdout.
  -p, --package          Sets location of package.json file.
@@ -61,6 +62,9 @@ const overrideDescription = String(
     args.flags['-d'] || args.flags['--description'] || ''
 );
 const overrideIgnore = String(args.flags['-i'] || args.flags['--ignore'] || '');
+const overrideParser = String(
+    args.flags['-l'] || args.flags['--parser'] || 'jsdoc'
+);
 const overrideRenderer = String(
     args.flags['-r'] || args.flags['--renderer'] || 'markdown'
 );
@@ -115,7 +119,7 @@ const overridePackage = String(
 
     const loadedParser = await loadPlugin<
         (cwd: string, path: string) => Promise<File>
-    >(nodeModulesDir, 'doxdox-parser-', 'jsdoc');
+    >(nodeModulesDir, 'doxdox-parser-', overrideParser.toLowerCase());
 
     const loadedRenderer = await loadPlugin<(doc: Doc) => Promise<string>>(
         nodeModulesDir,

@@ -141,6 +141,7 @@ Options:
  -n, --name             Sets name of project.
  -d, --description      Sets description of project.
  -i, --ignore           Comma separated list of paths to ignore.
+ -l, --parser           Parser used to parse the source files with. Defaults to jsdoc.
  -r, --renderer         Renderer to generate the documentation with. Defaults to Markdown.
  -o, --output           File to save documentation to. Defaults to stdout.
  -p, --package          Sets location of package.json file.
