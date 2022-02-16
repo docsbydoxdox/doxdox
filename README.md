@@ -2,6 +2,8 @@
 
 ![doxdox](cover.png)
 
+[![Tests](https://github.com/docsbydoxdox/doxdox/actions/workflows/test.workflow.yml/badge.svg)](https://github.com/docsbydoxdox/doxdox/actions/workflows/test.workflow.yml)
+[![Language grade: JavaScript](https://img.shields.io/lgtm/grade/javascript/g/docsbydoxdox/doxdox.svg?logo=lgtm&logoWidth=18&style=flat-square)](https://lgtm.com/projects/g/docsbydoxdox/doxdox/context:javascript)
 [![NPM version](https://img.shields.io/npm/v/doxdox?style=flat-square)](https://www.npmjs.org/package/doxdox)
 [![NPM downloads per month](https://img.shields.io/npm/dm/doxdox?style=flat-square)](https://www.npmjs.org/package/doxdox)
 [![doxdox documentation](https://img.shields.io/badge/doxdox-documentation-%23E85E95?style=flat-square)](https://doxdox.org)
