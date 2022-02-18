@@ -1,6 +1,5 @@
 {
   "name": "doxdox-workspace",
-  "version": "4.0.0-preview.2",
   "type": "module",
   "workspaces": [
     "./packages/doxdox-core",
