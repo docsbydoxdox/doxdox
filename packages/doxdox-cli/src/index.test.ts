@@ -36,14 +36,14 @@ describe('cli', () => {
             `./dist/src/index.js -n "testing the project name"`
         );
 
-        expect(stdout).toContain('# testing the project name');
+        expect(stdout).toContain('# [testing the project name]');
     });
     it('set name (long flag)', async () => {
         const { stdout } = await execAsync(
             `./dist/src/index.js --name "testing the project name"`
         );
 
-        expect(stdout).toContain('# testing the project name');
+        expect(stdout).toContain('# [testing the project name]');
     });
     it('set description (short flag)', async () => {
         const { stdout } = await execAsync(
@@ -74,17 +74,17 @@ describe('cli', () => {
     it('set output (no flag)', async () => {
         const { stdout } = await execAsync(`./dist/src/index.js`);
 
-        expect(stdout).toContain('# doxdox-cli');
+        expect(stdout).toContain('# [doxdox-cli]');
     });
     it('set output (no directory)', async () => {
         const { stdout } = await execAsync(`./dist/src/index.js -o temp.md`);
 
         await fs.stat('./temp.md');
 
-        expect(stdout).not.toContain('# doxdox-cli');
+        expect(stdout).not.toContain('# [doxdox-cli]');
 
         expect(await fs.readFile('./temp.md', 'utf8')).toContain(
-            '# doxdox-cli'
+            '# [doxdox-cli]'
         );
 
         await fs.unlink('./temp.md');
@@ -96,10 +96,10 @@ describe('cli', () => {
 
         await fs.stat('./src/temp.md');
 
-        expect(stdout).not.toContain('# doxdox-cli');
+        expect(stdout).not.toContain('# [doxdox-cli]');
 
         expect(await fs.readFile('./src/temp.md', 'utf8')).toContain(
-            '# doxdox-cli'
+            '# [doxdox-cli]'
         );
 
         await fs.unlink('./src/temp.md');
@@ -111,10 +111,10 @@ describe('cli', () => {
 
         await fs.stat('./temp/temp.md');
 
-        expect(stdout).not.toContain('# doxdox-cli');
+        expect(stdout).not.toContain('# [doxdox-cli]');
 
         expect(await fs.readFile('./temp/temp.md', 'utf8')).toContain(
-            '# doxdox-cli'
+            '# [doxdox-cli]'
         );
 
         await fs.unlink('./temp/temp.md');
@@ -124,10 +124,10 @@ describe('cli', () => {
 
         await fs.stat('./temp.md');
 
-        expect(stdout).not.toContain('# doxdox-cli');
+        expect(stdout).not.toContain('# [doxdox-cli]');
 
         expect(await fs.readFile('./temp.md', 'utf8')).toContain(
-            '# doxdox-cli'
+            '# [doxdox-cli]'
         );
 
         await fs.unlink('./temp.md');
@@ -139,10 +139,10 @@ describe('cli', () => {
 
         await fs.stat('./temp.md');
 
-        expect(stdout).not.toContain('# doxdox-cli');
+        expect(stdout).not.toContain('# [doxdox-cli]');
 
         expect(await fs.readFile('./temp.md', 'utf8')).toContain(
-            '# doxdox-cli'
+            '# [doxdox-cli]'
         );
 
         await fs.unlink('./temp.md');
@@ -150,7 +150,7 @@ describe('cli', () => {
     it('set package location (no flag)', async () => {
         const { stdout } = await execAsync(`./dist/src/index.js`);
 
-        expect(stdout).toContain('# doxdox-cli');
+        expect(stdout).toContain('# [doxdox-cli]');
     });
     it('set package location (short flag)', async () => {
         const { stdout } = await execAsync(

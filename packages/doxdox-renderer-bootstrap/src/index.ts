@@ -130,7 +130,11 @@ export default async (doc: Doc): Promise<string> => `<!DOCTYPE html>
   <body>
     <div class="bg-dark text-white">
       <div class="container p-5">
-        <h1 class="pkg-name">${doc.name}</h1>
+        ${
+            doc.homepage
+                ? `<h1 class="pkg-name"><a href="${doc.homepage}">${doc.name}</a></h1>`
+                : `<h1 class="pkg-name">${doc.name}</h1>`
+        }
 
         ${
             doc.description
