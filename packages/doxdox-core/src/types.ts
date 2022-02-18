@@ -1,7 +1,11 @@
-export interface Doc {
+export interface Options {
     name?: string;
     description?: string;
     version?: string;
+    homepage?: string;
+}
+
+export interface Doc extends Options {
     files: File[];
 }
 
@@ -20,10 +24,7 @@ export interface Method {
     private: boolean;
 }
 
-export interface Package {
-    name?: string;
-    description?: string;
-    version?: string;
+export interface Package extends Options {
     exports?: string;
 }
 

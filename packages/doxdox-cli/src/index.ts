@@ -140,7 +140,8 @@ const overridePackage = String(
     const output = await doxdox(cwd, paths, loadedParser, loadedRenderer, {
         name: overrideName || pkg.name || 'Untitled Project',
         description: overrideDescription || pkg.description || '',
-        version: pkg.version
+        version: pkg.version,
+        homepage: pkg.homepage
     });
 
     if (overrideOutput) {

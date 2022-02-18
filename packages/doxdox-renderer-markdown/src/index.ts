@@ -37,7 +37,9 @@ ${param.description}`
 const renderFile = (file: File) =>
     `${file.methods.map(method => renderMethod(method)).join('')}`;
 
-export default async (doc: Doc): Promise<string> => `# ${doc.name}
+export default async (doc: Doc): Promise<string> => `# ${
+    doc.homepage ? `[${doc.name}](${doc.homepage})` : doc.name
+}
 
 ${doc.description ? `> ${doc.description}` : ''}
 

@@ -87,11 +87,11 @@ export const getProjectPackage = async (cwd: string): Promise<Package> => {
     const projectPackagePath = await findFileInPath(cwd);
 
     if (projectPackagePath) {
-        const { name, description, version, exports } = JSON.parse(
+        const { name, description, version, exports, homepage } = JSON.parse(
             await fs.readFile(projectPackagePath, 'utf8')
         );
 
-        return { name, description, version, exports };
+        return { name, description, version, exports, homepage };
     }
 
     return {};
