@@ -23,6 +23,20 @@
   "scripts": {
     "build": "rm -rf dist/ && tsc"
   },
+  "jest": {
+    "collectCoverage": true,
+    "extensionsToTreatAsEsm": [
+      ".ts"
+    ],
+    "globals": {
+      "ts-jest": {
+        "useESM": true
+      }
+    },
+    "transform": {
+      "^.+\\.ts$": "ts-jest"
+    }
+  },
   "keywords": [
     "doxdox",
     "documentation",
@@ -32,14 +46,14 @@
     "markdown",
     "json"
   ],
-  "jest": {
-    "extensionsToTreatAsEsm": [
-      ".ts"
-    ],
-    "transform": {
-      "^.+\\.ts$": "ts-jest"
+  "authors": [
+    {
+      "name": "Scott Doxey",
+      "email": "hello@scottdoxey.com",
+      "homepage": "http://scottdoxey.com/"
     }
-  },
+  ],
+  "license": "MIT",
   "homepage": "https://github.com/docsbydoxdox/doxdox",
   "repository": {
     "type": "git",

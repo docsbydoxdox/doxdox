@@ -36,11 +36,6 @@
     "build": "rm -rf dist/ && tsc && chmod +x ./dist/src/index.js",
     "link": "npm run build && npm link"
   },
-  "keywords": [
-    "doxdox",
-    "documentation",
-    "cli"
-  ],
   "jest": {
     "collectCoverage": true,
     "extensionsToTreatAsEsm": [
@@ -55,6 +50,19 @@
       "^.+\\.ts$": "ts-jest"
     }
   },
+  "keywords": [
+    "doxdox",
+    "documentation",
+    "cli"
+  ],
+  "authors": [
+    {
+      "name": "Scott Doxey",
+      "email": "hello@scottdoxey.com",
+      "homepage": "http://scottdoxey.com/"
+    }
+  ],
+  "license": "MIT",
   "homepage": "https://github.com/docsbydoxdox/doxdox",
   "repository": {
     "type": "git",

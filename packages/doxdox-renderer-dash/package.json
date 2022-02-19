@@ -38,11 +38,6 @@
     "test": "NODE_OPTIONS=--experimental-vm-modules jest --runInBand --passWithNoTests",
     "build": "rm -rf dist/ && tsc && cp -r src/resources dist/resources"
   },
-  "keywords": [
-    "doxdox",
-    "documentation",
-    "bootstrap"
-  ],
   "jest": {
     "collectCoverage": true,
     "extensionsToTreatAsEsm": [
@@ -57,6 +52,19 @@
       "^.+\\.ts$": "ts-jest"
     }
   },
+  "keywords": [
+    "doxdox",
+    "documentation",
+    "dash"
+  ],
+  "authors": [
+    {
+      "name": "Scott Doxey",
+      "email": "hello@scottdoxey.com",
+      "homepage": "http://scottdoxey.com/"
+    }
+  ],
+  "license": "MIT",
   "homepage": "https://github.com/docsbydoxdox/doxdox",
   "repository": {
     "type": "git",
