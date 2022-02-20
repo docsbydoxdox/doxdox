@@ -72,7 +72,7 @@ const renderFileNav = (file: File) => `<p><a href="#${
 ${file.methods
     .map(
         method =>
-            `<li><a href="#${method.slug}" class="${
+            `<li class="method-name"><a href="#${method.slug}" class="${
                 method.private ? 'text-muted' : ''
             }">${method.name}</a></li>`
     )
@@ -107,25 +107,33 @@ export default async (doc: Doc): Promise<string> => `<!DOCTYPE html>
         font-size: 3.5rem;
       }
 
+      .pkg-name a {
+        text-decoration: none;
+      }
+
       .pkg-description {
         font-size: 1.5rem;
         font-weight: 200;
       }
 
-      .file-name {
+      nav .file-name {
         color: #E54D89;
       }
 
-      .method-name {
+      nav .method-name {
+        margin: 0.25rem 0;
+      }
+
+      main .method-name {
         position: relative;
       }
 
-      .method-scope {
+      main .method-scope {
         font-size: 1.5rem;
         color: #999;
       }
 
-      .method-permalink {
+      main .method-permalink {
         position: absolute;
         margin-left: -1em;
         font-weight: normal;
@@ -153,19 +161,19 @@ export default async (doc: Doc): Promise<string> => `<!DOCTYPE html>
 
     <div class="container">
       <div class="row">
-        <div class="p-5 col-md-3">
+        <nav class="p-5 col-md-3">
           ${doc.files
               .filter(file => file.methods.length)
               .map(file => renderFileNav(file))
               .join('')}
-        </div>
+        </nav>
 
-        <div class="p-5 col-md-9">
+        <main class="p-5 col-md-9">
           ${doc.files
               .filter(file => file.methods.length)
               .map(file => renderFile(file))
               .join('')}
-        </div>
+        </main>
       </div>
     </div>
 
