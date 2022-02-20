@@ -65,12 +65,14 @@ ${method.returns.map(
 </div>
 `;
 
-const renderFileNav = (file: File) => `<p><b>${file.path}</b></p>
+const renderFileNav = (file: File) => `<p><a href="#${
+    file.path
+}" class="file-name"><b>${file.path}</b></a></p>
 <ul class="list-unstyled ml-0">
 ${file.methods
     .map(
         method =>
-            `<li><a href="#${method.slug}" class="${
+            `<li class="method-name"><a href="#${method.slug}" class="${
                 method.private ? 'text-muted' : ''
             }">${method.name}</a></li>`
     )
@@ -78,7 +80,8 @@ ${file.methods
 </ul>`;
 
 const renderFile = (file: File) =>
-    `${file.methods.map(method => renderMethod(method)).join('')}`;
+    `<a name="${file.path}" />
+${file.methods.map(method => renderMethod(method)).join('')}`;
 
 export default async (doc: Doc): Promise<string> => `<!DOCTYPE html>
 <html>
@@ -104,21 +107,33 @@ export default async (doc: Doc): Promise<string> => `<!DOCTYPE html>
         font-size: 3.5rem;
       }
 
+      .pkg-name a {
+        text-decoration: none;
+      }
+
       .pkg-description {
         font-size: 1.5rem;
         font-weight: 200;
       }
 
-      .method-name {
+      nav .file-name {
+        color: #E54D89;
+      }
+
+      nav .method-name {
+        margin: 0.25rem 0;
+      }
+
+      main .method-name {
         position: relative;
       }
 
-      .method-scope {
+      main .method-scope {
         font-size: 1.5rem;
         color: #999;
       }
 
-      .method-permalink {
+      main .method-permalink {
         position: absolute;
         margin-left: -1em;
         font-weight: normal;
@@ -146,19 +161,19 @@ export default async (doc: Doc): Promise<string> => `<!DOCTYPE html>
 
     <div class="container">
       <div class="row">
-        <div class="p-5 col-md-3">
+        <nav class="p-5 col-md-3">
           ${doc.files
               .filter(file => file.methods.length)
               .map(file => renderFileNav(file))
               .join('')}
-        </div>
+        </nav>
 
-        <div class="p-5 col-md-9">
+        <main class="p-5 col-md-9">
           ${doc.files
               .filter(file => file.methods.length)
               .map(file => renderFile(file))
               .join('')}
-        </div>
+        </main>
       </div>
     </div>
 
