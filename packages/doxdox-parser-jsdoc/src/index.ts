@@ -58,7 +58,8 @@ export default async (cwd: string, path: string): Promise<File> => {
                         jsdoc.tags.findIndex(
                             tag =>
                                 tag.title === 'api' && tag.value === 'private'
-                        )) !== -1;
+                        ) !== -1) ||
+                    false;
 
                 return {
                     slug: `${slugify(path)}-${slugify(jsdoc.name)}`,
