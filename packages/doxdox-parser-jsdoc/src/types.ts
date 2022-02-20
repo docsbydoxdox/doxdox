@@ -17,7 +17,7 @@ export interface JsdocTag {
 export interface JsdocParam {
     name?: string;
     description: string;
-    type: {
+    type?: {
         names: string[];
     };
 }
