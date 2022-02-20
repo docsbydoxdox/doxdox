@@ -27,7 +27,7 @@
     "publish-minor": "./bin/version.js minor",
     "publish-major": "./bin/version.js major",
     "publish-preview": "npm publish --dry-run --workspaces",
-    "debug-link": "npm run link --workspaces --if-present"
+    "debug-link": "npm link --workspaces"
   },
   "private": true
 }
