@@ -37,18 +37,18 @@ export default async (cwd: string, path: string): Promise<File> => {
             )
             .map((jsdoc: Jsdoc) => {
                 const params = (jsdoc.params || []).map(
-                    ({ name, description = '', type }) => ({
+                    ({ name, description = '', type = {} }) => ({
                         name,
                         description,
-                        types: type.names
+                        types: type.names || []
                     })
                 );
 
                 const returns = (jsdoc.returns || []).map(
-                    ({ name, description = '', type }) => ({
+                    ({ name, description = '', type = {} }) => ({
                         name,
                         description,
-                        types: type.names
+                        types: type.names || []
                     })
                 );
 
