@@ -65,7 +65,9 @@ ${method.returns.map(
 </div>
 `;
 
-const renderFileNav = (file: File) => `<p><b>${file.path}</b></p>
+const renderFileNav = (file: File) => `<p><a href="#${
+    file.path
+}" class="file-name"><b>${file.path}</b></a></p>
 <ul class="list-unstyled ml-0">
 ${file.methods
     .map(
@@ -78,7 +80,8 @@ ${file.methods
 </ul>`;
 
 const renderFile = (file: File) =>
-    `${file.methods.map(method => renderMethod(method)).join('')}`;
+    `<a name="${file.path}" />
+${file.methods.map(method => renderMethod(method)).join('')}`;
 
 export default async (doc: Doc): Promise<string> => `<!DOCTYPE html>
 <html>
@@ -107,6 +110,10 @@ export default async (doc: Doc): Promise<string> => `<!DOCTYPE html>
       .pkg-description {
         font-size: 1.5rem;
         font-weight: 200;
+      }
+
+      .file-name {
+        color: #E54D89;
       }
 
       .method-name {
