@@ -4,9 +4,9 @@ import { dirname, join } from 'path';
 
 import spawn from 'spawn-please';
 
-import { File, sanitizePath } from 'doxdox-core';
+import { findParentNodeModules, sanitizePath, slugify } from 'doxdox-core';
 
-import { findParentNodeModules, slugify } from 'doxdox-core';
+import { File } from 'doxdox-core';
 
 import { Jsdoc } from './types';
 
