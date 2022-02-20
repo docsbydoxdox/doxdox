@@ -25,21 +25,33 @@ exports[`bootstrap render 1`] = `
         font-size: 3.5rem;
       }
 
+      .pkg-name a {
+        text-decoration: none;
+      }
+
       .pkg-description {
         font-size: 1.5rem;
         font-weight: 200;
       }
 
-      .method-name {
+      nav .file-name {
+        color: #E54D89;
+      }
+
+      nav .method-name {
+        margin: 0.25rem 0;
+      }
+
+      main .method-name {
         position: relative;
       }
 
-      .method-scope {
+      main .method-scope {
         font-size: 1.5rem;
         color: #999;
       }
 
-      .method-permalink {
+      main .method-permalink {
         position: absolute;
         margin-left: -1em;
         font-weight: normal;
@@ -59,15 +71,16 @@ exports[`bootstrap render 1`] = `
 
     <div class=\\"container\\">
       <div class=\\"row\\">
-        <div class=\\"p-5 col-md-3\\">
-          <p><b>directory/index.js</b></p>
+        <nav class=\\"p-5 col-md-3\\">
+          <p><a href=\\"#directory/index.js\\" class=\\"file-name\\"><b>directory/index.js</b></a></p>
 <ul class=\\"list-unstyled ml-0\\">
-<li><a href=\\"#index-js-methodname\\" class=\\"\\">methodName</a></li>
+<li class=\\"method-name\\"><a href=\\"#index-js-methodname\\" class=\\"\\">methodName</a></li>
 </ul>
-        </div>
+        </nav>
 
-        <div class=\\"p-5 col-md-9\\">
-          <div class=\\"mb-5\\"><a name=\\"index-js-methodname\\" />
+        <main class=\\"p-5 col-md-9\\">
+          <a name=\\"directory/index.js\\" />
+<div class=\\"mb-5\\"><a name=\\"index-js-methodname\\" />
 
 <h2 class=\\"method-name\\">
   <a href=\\"#index-js-methodname\\" class=\\"method-permalink\\" aria-label=\\"Permalink\\">#</a>
@@ -108,7 +121,7 @@ exports[`bootstrap render 1`] = `
 
 </div>
 
-        </div>
+        </main>
       </div>
     </div>
 
