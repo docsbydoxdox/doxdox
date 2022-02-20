@@ -52,6 +52,14 @@ export default async (cwd: string, path: string): Promise<File> => {
                     })
                 );
 
+                const isPrivate =
+                    jsdoc.access === 'private' ||
+                    (jsdoc.tags &&
+                        jsdoc.tags.findIndex(
+                            tag =>
+                                tag.title === 'api' && tag.value === 'private'
+                        )) !== -1;
+
                 return {
                     slug: `${slugify(path)}-${slugify(jsdoc.name)}`,
                     name: jsdoc.name,
@@ -62,7 +70,7 @@ export default async (cwd: string, path: string): Promise<File> => {
                     description: jsdoc.description || '',
                     params,
                     returns,
-                    private: jsdoc.access === 'private'
+                    private: isPrivate
                 };
             })
             .sort((a, b) => {
