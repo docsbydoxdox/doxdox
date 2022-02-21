@@ -24,7 +24,7 @@
   },
   "devDependencies": {
     "@types/jest": "27.4.0",
-    "@types/node": "17.0.18",
+    "@types/node": "17.0.19",
     "@types/update-notifier": "5.1.0",
     "jest": "27.5.1",
     "nodemon": "2.0.15",
