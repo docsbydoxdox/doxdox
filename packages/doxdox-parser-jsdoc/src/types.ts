@@ -1,4 +1,5 @@
 export interface Jsdoc {
+    meta: JsdocMeta;
     kind: string;
     name: string;
     description: string;
@@ -7,6 +8,11 @@ export interface Jsdoc {
     returns: JsdocParam[];
     access: string;
     undocumented?: boolean;
+}
+
+export interface JsdocMeta {
+    filename: string;
+    path: string;
 }
 
 export interface JsdocTag {
