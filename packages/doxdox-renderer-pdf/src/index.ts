@@ -90,6 +90,10 @@ export default async (doc: Doc): Promise<Buffer> => {
               referrerpolicy="no-referrer"
             />
             <style>
+              body {
+                zoom: 0.65;
+              }
+
               .pkg-name {
                 font-size: 3.5rem;
               }
