@@ -205,7 +205,7 @@ export default async (doc: Doc): Promise<string> => `<!DOCTYPE html>
     <script>
     const params = new URLSearchParams(window.location.search);
 
-    const q = params.get('q');
+    const q = params.get('q') || '';
 
     const filterInput = document.querySelector('#filter-methods');
 
