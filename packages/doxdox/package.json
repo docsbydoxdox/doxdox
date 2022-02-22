@@ -1,7 +1,7 @@
 {
   "name": "doxdox",
   "description": "Main package for doxdox.",
-  "version": "4.0.0-preview.6",
+  "version": "4.0.0-preview.7",
   "exports": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "type": "module",
@@ -9,12 +9,12 @@
     "node": "^12.20.0 || ^14.13.1 || >=16.0.0"
   },
   "dependencies": {
-    "doxdox-cli": "4.0.0-preview.6",
-    "doxdox-core": "4.0.0-preview.6",
-    "doxdox-parser-jsdoc": "4.0.0-preview.6",
-    "doxdox-renderer-bootstrap": "4.0.0-preview.6",
-    "doxdox-renderer-json": "4.0.0-preview.6",
-    "doxdox-renderer-markdown": "4.0.0-preview.6"
+    "doxdox-cli": "4.0.0-preview.7",
+    "doxdox-core": "4.0.0-preview.7",
+    "doxdox-parser-jsdoc": "4.0.0-preview.7",
+    "doxdox-renderer-bootstrap": "4.0.0-preview.7",
+    "doxdox-renderer-json": "4.0.0-preview.7",
+    "doxdox-renderer-markdown": "4.0.0-preview.7"
   },
   "devDependencies": {
     "@types/node": "17.0.19",
