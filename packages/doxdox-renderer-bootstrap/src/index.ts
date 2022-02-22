@@ -15,9 +15,9 @@ const md = new MarkdownIt({
         }</div>`
 });
 
-const renderMethod = (method: Method) => `<div class="mb-5"><a name="${
-    method.slug
-}" />
+const renderMethod = (method: Method) => `<div class="mb-5" data-method-name="${
+    method.name
+}"><a name="${method.slug}" />
 
 <h2 class="method-name">
   <a href="#${
@@ -72,7 +72,9 @@ const renderFileNav = (file: File) => `<p><a href="#${
 ${file.methods
     .map(
         method =>
-            `<li class="method-name"><a href="#${method.slug}" class="${
+            `<li class="method-name" data-method-name="${
+                method.name
+            }"><a href="#${method.slug}" class="${
                 method.private ? 'text-muted' : ''
             }">${method.name}</a></li>`
     )
@@ -140,6 +142,10 @@ export default async (doc: Doc): Promise<string> => `<!DOCTYPE html>
         color: #eee;
         text-decoration: none;
       }
+
+      .hidden {
+        display: none;
+      }
     </style>
   </head>
   <body>
@@ -162,6 +168,13 @@ export default async (doc: Doc): Promise<string> => `<!DOCTYPE html>
     <div class="container">
       <div class="row">
         <nav class="p-5 col-md-3">
+          <form>
+            <div class="form-group mb-3">
+              <input type="search" class="form-control" id="filter-methods" name="q" placeholder="Filter methods..."
+              autocomplete="off">
+            </div>
+          </form>
+
           ${doc.files
               .filter(file => file.methods.length)
               .map(file => renderFileNav(file))
@@ -189,6 +202,32 @@ export default async (doc: Doc): Promise<string> => `<!DOCTYPE html>
         </p>
       </div>
     </footer>
+    <script>
+    const params = new URLSearchParams(window.location.search);
+
+    const q = params.get('q');
+
+    const filterInput = document.querySelector('#filter-methods');
+
+    const methods = Array.from(document.querySelectorAll('[data-method-name]'));
+
+    const filterMethods = keyword => {
+        const keywordsPattern = RegExp(keyword.trim().split(/[^A-Za-z]+/).join('|'), 'i')
+
+        const matched = methods.filter(method => method.dataset.methodName.match(keywordsPattern));
+        const notMatched = methods.filter(method => !method.dataset.methodName.match(keywordsPattern));
+
+        matched.map(match => match.classList.remove('hidden'));
+        notMatched.map(match => match.classList.add('hidden'));
+    }
+
+    filterInput.addEventListener('keyup', e => filterMethods(e.target.value));
+    filterInput.addEventListener('search', e => filterMethods(e.target.value));
+
+    filterInput.value = q;
+
+    filterMethods(q);
+    </script>
   </body>
 </html>
 `;
