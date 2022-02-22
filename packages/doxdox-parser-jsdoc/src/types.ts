@@ -15,15 +15,15 @@ export interface JsdocMeta {
     path: string;
 }
 
-export interface JsdocTag {
-    title: string;
-    value: string;
-}
-
 export interface JsdocParam {
     name?: string;
     description: string;
     type?: {
         names: string[];
     };
+}
+
+export interface JsdocTag {
+    title: string;
+    value: string;
 }
