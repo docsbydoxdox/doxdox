@@ -1,7 +1,7 @@
 {
   "name": "doxdox-renderer-dash",
   "description": "Dash renderer for doxdox.",
-  "version": "4.0.0-preview.7",
+  "version": "4.0.0-preview.8",
   "exports": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "type": "module",
@@ -17,7 +17,7 @@
     "sqlite3": "5.0.2"
   },
   "peerDependencies": {
-    "doxdox-core": "4.0.0-preview.7"
+    "doxdox-core": "4.0.0-preview.8"
   },
   "peerDependenciesMeta": {
     "doxdox-core": {
