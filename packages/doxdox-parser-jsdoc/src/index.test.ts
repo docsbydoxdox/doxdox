@@ -1,9 +1,9 @@
-import { parseContents } from './index';
+import { parseString } from './index';
 
 describe('jsdoc parser', () => {
     it('parse example jsdoc header', async () => {
         await expect(
-            parseContents(
+            parseString(
                 'cache/',
                 'utils.js',
                 `/**
@@ -80,7 +80,7 @@ const getRootDirPath = (url) => {}`
         );
     });
     it('parse empty string', async () => {
-        await expect(parseContents('cache/', 'test.js', '')).resolves.toEqual(
+        await expect(parseString('cache/', 'test.js', '')).resolves.toEqual(
             expect.objectContaining({
                 path: 'test.js',
                 methods: []

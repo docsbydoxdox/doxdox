@@ -96,7 +96,7 @@ const parser = async (cwd: string, path: string): Promise<File> => {
     return { path, methods: [] };
 };
 
-export const parseContents = async (
+export const parseString = async (
     tempDir: string,
     path: string,
     content: string
