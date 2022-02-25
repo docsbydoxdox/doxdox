@@ -107,7 +107,7 @@ export const parseString = async (
 
     const tempDir = await temp.mkdir({ prefix: 'doxdox-', dir: cacheDir });
 
-    const tempPath = `${tempDir}/${path}`;
+    const tempPath = join(tempDir, path);
 
     await fs.mkdir(dirname(tempPath), { recursive: true });
 
