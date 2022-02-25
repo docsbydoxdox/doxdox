@@ -1,3 +1,5 @@
+import { promises as fs } from 'fs';
+
 import { platform } from 'os';
 
 import { dirname, join } from 'path';
@@ -10,7 +12,7 @@ import { File } from 'doxdox-core';
 
 import { Jsdoc } from './types';
 
-export default async (cwd: string, path: string): Promise<File> => {
+const parser = async (cwd: string, path: string): Promise<File> => {
     try {
         const nodeModulesDir = await findParentNodeModules(
             dirname(sanitizePath(import.meta.url))
@@ -93,3 +95,28 @@ export default async (cwd: string, path: string): Promise<File> => {
 
     return { path, methods: [] };
 };
+
+export const parseContents = async (
+    tempDir: string,
+    path: string,
+    content: string
+): Promise<File> => {
+    const tempPath = `${tempDir}/${path}`;
+
+    await fs.mkdir(dirname(tempPath), { recursive: true });
+
+    await fs.writeFile(tempPath, content);
+
+    const file = await parser(tempDir, path);
+
+    try {
+        await fs.unlink(tempPath);
+        await fs.rm(tempDir, { recursive: true });
+    } catch (error) {
+        console.log(error);
+    }
+
+    return file;
+};
+
+export default parser;
