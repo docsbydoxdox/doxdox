@@ -4,8 +4,7 @@ describe('jsdoc parser', () => {
     it('parse example jsdoc header', async () => {
         await expect(
             parseString(
-                'cache/',
-                'utils.js',
+                'lib/utils/index.js',
                 `/**
 * Finds file in path.
 *
@@ -33,7 +32,7 @@ const getRootDirPath = (url) => {}`
             )
         ).resolves.toEqual(
             expect.objectContaining({
-                path: 'utils.js',
+                path: 'lib/utils/index.js',
                 methods: expect.arrayContaining([
                     expect.objectContaining({
                         fullName: 'findFileInPath(input, fileName)',
@@ -55,7 +54,7 @@ const getRootDirPath = (url) => {}`
                                 types: ['Promise.<(string|null)>']
                             })
                         ]),
-                        slug: 'utils-js-findfileinpath'
+                        slug: 'lib-utils-index-js-findfileinpath'
                     }),
                     expect.objectContaining({
                         fullName: 'getRootDirPath(url)',
@@ -73,14 +72,14 @@ const getRootDirPath = (url) => {}`
                                 types: ['string']
                             })
                         ]),
-                        slug: 'utils-js-getrootdirpath'
+                        slug: 'lib-utils-index-js-getrootdirpath'
                     })
                 ])
             })
         );
     });
     it('parse empty string', async () => {
-        await expect(parseString('cache/', 'test.js', '')).resolves.toEqual(
+        await expect(parseString('test.js', '')).resolves.toEqual(
             expect.objectContaining({
                 path: 'test.js',
                 methods: []

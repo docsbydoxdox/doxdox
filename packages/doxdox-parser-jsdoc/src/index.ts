@@ -6,6 +6,8 @@ import { dirname, join } from 'path';
 
 import spawn from 'spawn-please';
 
+import temp from 'temp';
+
 import { findParentNodeModules, sanitizePath, slugify } from 'doxdox-core';
 
 import { File } from 'doxdox-core';
@@ -97,10 +99,14 @@ const parser = async (cwd: string, path: string): Promise<File> => {
 };
 
 export const parseString = async (
-    tempDir: string,
     path: string,
-    content: string
+    content: string,
+    cacheDir = './cache'
 ): Promise<File> => {
+    temp.track();
+
+    const tempDir = await temp.mkdir({ prefix: 'doxdox-', dir: cacheDir });
+
     const tempPath = `${tempDir}/${path}`;
 
     await fs.mkdir(dirname(tempPath), { recursive: true });
@@ -109,12 +115,7 @@ export const parseString = async (
 
     const file = await parser(tempDir, path);
 
-    try {
-        await fs.unlink(tempPath);
-        await fs.rm(tempDir, { recursive: true });
-    } catch (error) {
-        console.log(error);
-    }
+    await temp.cleanup();
 
     return file;
 };
