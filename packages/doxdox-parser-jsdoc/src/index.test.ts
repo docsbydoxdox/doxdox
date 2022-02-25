@@ -1,7 +1,7 @@
 import { parseString } from './index';
 
 describe('jsdoc parser', () => {
-    it('parse example jsdoc header', async () => {
+    it('parse example jsdoc headers', async () => {
         await expect(
             parseString(
                 'lib/utils/index.js',
