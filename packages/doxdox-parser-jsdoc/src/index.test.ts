@@ -6,17 +6,17 @@ describe('jsdoc parser', () => {
             parseString(
                 'lib/utils/index.js',
                 `/**
-* Finds file in path.
-*
-*     console.log(await findFileInPath('./', 'package.json'));
-*     console.log(await findFileInPath('../', 'package.json'));
-*     console.log(await findFileInPath('~/git/github/doxdox/', '.package.json'));
-*
-* @param {string} [input] Directory to check for file.
-* @param {string?} [fileName = 'package.json'] File name to check for.
-* @return {Promise<string | null>} Path to package.json file.
-* @public
-*/
+ * Finds file in path.
+ *
+ *     console.log(await findFileInPath('./', 'package.json'));
+ *     console.log(await findFileInPath('../', 'package.json'));
+ *     console.log(await findFileInPath('~/git/github/doxdox/', '.package.json'));
+ *
+ * @param {string} [input] Directory to check for file.
+ * @param {string?} [fileName = 'package.json'] File name to check for.
+ * @return {Promise<string | null>} Path to package.json file.
+ * @public
+ */
 
 const findFileInPath = async (input, fileName = 'package.json') => {};
 
@@ -28,7 +28,7 @@ const findFileInPath = async (input, fileName = 'package.json') => {};
  * @public
  */
 
-const getRootDirPath = (url) => {}`
+const getRootDirPath = (url) => {};`
             )
         ).resolves.toEqual(
             expect.objectContaining({
