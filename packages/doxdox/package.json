@@ -35,7 +35,8 @@
     },
     "transform": {
       "^.+\\.ts$": "ts-jest"
-    }
+    },
+    "testRegex": ".*.test.ts$"
   },
   "keywords": [
     "doxdox",
