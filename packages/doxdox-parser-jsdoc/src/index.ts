@@ -89,7 +89,7 @@ const parser = async (cwd: string, path: string): Promise<File> => {
             });
 
         return { path, methods };
-    } catch (err: any) {
+    } catch (err) {
         if (process.env.DEBUG) {
             console.error(err);
         }

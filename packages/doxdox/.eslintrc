@@ -1,0 +1,23 @@
+{
+  "env": {
+    "node": true
+  },
+  "parser": "@typescript-eslint/parser",
+  "plugins": ["@typescript-eslint"],
+  "extends": [
+    "eslint:recommended",
+    "plugin:@typescript-eslint/eslint-recommended",
+    "plugin:@typescript-eslint/recommended"
+  ],
+  "rules": {
+    "@typescript-eslint/no-explicit-any": "error",
+    "@typescript-eslint/no-unused-vars": "error",
+    "no-warning-comments": ["warn", { "terms": ["todo"], "location": "start" }],
+    "no-magic-numbers": [
+      "error",
+      {
+        "ignore": [-1, 0, 1]
+      }
+    ]
+  }
+}
