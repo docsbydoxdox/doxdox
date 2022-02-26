@@ -18,6 +18,7 @@
   "scripts": {
     "test": "DEBUG=true npm run test --workspaces --if-present",
     "build": "npm run build --workspaces --if-present",
+    "lint": "npm run lint --workspaces --if-present",
     "prettier-check": "npx prettier@2 --check \"packages/**/*.ts\"",
     "prettier-fix": "npx prettier@2 --write \"packages/**/*.ts\"",
     "ncu": "npm exec --workspaces -- npx npm-check-updates@12",
