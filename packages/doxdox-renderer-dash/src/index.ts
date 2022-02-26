@@ -1,10 +1,8 @@
 import { join } from 'path';
 
-import { promises as fs } from 'fs';
-
 import admzip from 'adm-zip';
 
-import sqlite3 from 'sqlite3';
+import sqlite3 from 'better-sqlite3';
 
 import temp from 'temp';
 
@@ -111,7 +109,7 @@ export default async (doc: Doc): Promise<string | Buffer> => {
 
     const zip = new admzip();
     const tempdb = temp.openSync('temp.sqlite');
-    const db = new sqlite3.Database(tempdb.path);
+    const db = new sqlite3(tempdb.path);
 
     zip.addFile(
         `${doc.name}.docset/Contents/Info.plist`,
@@ -144,55 +142,47 @@ export default async (doc: Doc): Promise<string | Buffer> => {
         `${doc.name}.docset/Contents/Resources/Documents/resources/`
     );
 
-    await new Promise(resolve => {
-        db.serialize(() => {
-            db.run(
-                'CREATE TABLE searchIndex(id INTEGER PRIMARY KEY, name TEXT, type TEXT, path TEXT);'
+    db.exec(
+        'CREATE TABLE searchIndex(id INTEGER PRIMARY KEY, name TEXT, type TEXT, path TEXT)'
+    );
+    db.exec('CREATE UNIQUE INDEX anchor ON searchIndex (name, type, path)');
+
+    doc.files.forEach(file => {
+        file.methods.forEach(method => {
+            zip.addFile(
+                `${doc.name}.docset/Contents/Resources/Documents/${method.slug}.html`,
+                Buffer.from(renderMethod(doc, method), 'utf8')
             );
-            db.run(
-                'CREATE UNIQUE INDEX anchor ON searchIndex (name, type, path);'
-            );
 
-            doc.files.forEach(file => {
-                file.methods.forEach(method => {
-                    zip.addFile(
-                        `${doc.name}.docset/Contents/Resources/Documents/${method.slug}.html`,
-                        Buffer.from(renderMethod(doc, method), 'utf8')
-                    );
-
-                    db.run(
-                        'INSERT OR IGNORE INTO searchIndex(name, type, path) VALUES ($name, $type, $path);',
-                        {
-                            $name: method.name,
-                            $path: `${method.slug}.html`,
-                            $type: 'Function'
-                        }
-                    );
-
-                    if (method.params) {
-                        method.params.forEach(param => {
-                            db.run(
-                                'INSERT OR IGNORE INTO searchIndex(name, type, path) VALUES ($name, $type, $path);',
-                                {
-                                    $name: `${method.name}.${param.name}`,
-                                    $path: `${method.slug}.html#//apple_ref/cpp/Property/${method.name}`,
-                                    $type: 'Property'
-                                }
-                            );
-                        });
-                    }
-                });
+            db.prepare(
+                'INSERT OR IGNORE INTO searchIndex(name, type, path) VALUES (@name, @type, @path)'
+            ).run({
+                name: method.name,
+                path: `${method.slug}.html`,
+                type: 'Function'
             });
-        });
 
-        resolve(null);
+            if (method.params) {
+                method.params.forEach(param => {
+                    db.prepare(
+                        'INSERT OR IGNORE INTO searchIndex(name, type, path) VALUES (@name, @type, @path)'
+                    ).run({
+                        name: `${method.name}.${param.name}`,
+                        path: `${method.slug}.html#//apple_ref/cpp/Property/${method.name}`,
+                        type: 'Property'
+                    });
+                });
+            }
+        });
     });
 
-    await new Promise(resolve => db.close(() => resolve(null)));
+    const buffer = db.serialize();
 
-    const contents = await fs.readFile(tempdb.path);
+    db.close();
 
-    zip.addFile(`${doc.name}.docset/Contents/Resources/docSet.dsidx`, contents);
+    zip.addFile(`${doc.name}.docset/Contents/Resources/docSet.dsidx`, buffer);
+
+    await temp.cleanup();
 
     return zip.toBuffer();
 };
