@@ -41,4 +41,5 @@ jobs:
         timeout-minutes: 5
         run: |
           npm run build
+          npm run lint
           npm test
