@@ -23,7 +23,7 @@ export const loadPluginFromPackagePath = async <T>(
         if (pkg.exports) {
             return await loadPluginFromFile(join(path, pkg.exports));
         }
-    } catch (err: any) {
+    } catch (err) {
         if (process.env.DEBUG) {
             console.error(err);
         }
@@ -49,7 +49,7 @@ export const loadPluginFromFile = async <T>(
 ): Promise<T | null> => {
     try {
         return (await import(pathToFileURL(resolve(path)).href)).default;
-    } catch (err: any) {
+    } catch (err) {
         if (process.env.DEBUG) {
             console.error(err);
         }
@@ -104,7 +104,7 @@ export const loadPlugin = async <T>(
                 join(directory, pathOrPackage.replace(prefixPattern, ''))
             );
         }
-    } catch (err: any) {
+    } catch (err) {
         if (process.env.DEBUG) {
             console.error(err);
         }

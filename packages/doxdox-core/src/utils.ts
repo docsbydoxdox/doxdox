@@ -23,7 +23,7 @@ import { Package } from './types';
 
 export const findFileInPath = async (
     input: string,
-    fileName: string = 'package.json'
+    fileName = 'package.json'
 ): Promise<string | null> => {
     try {
         const inputDirectory = (await fs.stat(input)).isFile()
@@ -37,7 +37,7 @@ export const findFileInPath = async (
         if (fileStat.isFile()) {
             return filePath;
         }
-    } catch (err: any) {
+    } catch (err) {
         if (process.env.DEBUG) {
             console.error(err);
         }
@@ -57,7 +57,8 @@ export const findFileInPath = async (
 
 export const findParentNodeModules = async (
     currentDirectory: string,
-    maxDepth: number = 5
+    // eslint-disable-next-line no-magic-numbers
+    maxDepth = 5
 ): Promise<string | null> => {
     if (maxDepth > 0) {
         try {

@@ -153,7 +153,7 @@ export default async (doc: Doc): Promise<Buffer> => {
         </html>
         `,
             { format: 'Letter' }
-        ).toBuffer((_: any, buffer: Buffer) => {
+        ).toBuffer((err, buffer: Buffer) => {
             resolve(buffer);
         });
     });
