@@ -1,8 +1,12 @@
+import { promises as fs } from 'fs';
+
 import { platform } from 'os';
 
 import { dirname, join } from 'path';
 
 import spawn from 'spawn-please';
+
+import temp from 'temp';
 
 import { findParentNodeModules, sanitizePath, slugify } from 'doxdox-core';
 
@@ -10,7 +14,7 @@ import { File } from 'doxdox-core';
 
 import { Jsdoc } from './types';
 
-export default async (cwd: string, path: string): Promise<File> => {
+const parser = async (cwd: string, path: string): Promise<File> => {
     try {
         const nodeModulesDir = await findParentNodeModules(
             dirname(sanitizePath(import.meta.url))
@@ -93,3 +97,27 @@ export default async (cwd: string, path: string): Promise<File> => {
 
     return { path, methods: [] };
 };
+
+export const parseString = async (
+    path: string,
+    content: string,
+    cacheDir = './cache'
+): Promise<File> => {
+    temp.track();
+
+    const tempDir = await temp.mkdir({ prefix: 'doxdox-', dir: cacheDir });
+
+    const tempPath = join(tempDir, path);
+
+    await fs.mkdir(dirname(tempPath), { recursive: true });
+
+    await fs.writeFile(tempPath, content);
+
+    const file = await parser(tempDir, path);
+
+    await temp.cleanup();
+
+    return file;
+};
+
+export default parser;
