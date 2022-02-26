@@ -4,6 +4,8 @@ src/
 
 .doxdoxignore
 
+.eslintrc
+
 .prettierignore
 .prettierrc
 
