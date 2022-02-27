@@ -4,7 +4,7 @@ import { join } from 'path';
 
 import { readFile, writeFile } from 'fs/promises';
 
-import { inc, parse } from 'semver';
+import semver from 'semver';
 
 import parseCmdArgs from 'parse-cmd-args';
 
@@ -26,9 +26,13 @@ const loadAndParsePackageFile = async path => {
                     join(workspace, './package.json')
                 );
 
-                const { prerelease } = parse(pkg.version);
+                const { prerelease } = semver.parse(pkg.version);
 
-                const nextVersion = inc(pkg.version, inputs[0], prerelease[0]);
+                const nextVersion = semver.inc(
+                    pkg.version,
+                    inputs[0],
+                    prerelease[0]
+                );
 
                 await writeFile(
                     join(workspace, './package.json'),
