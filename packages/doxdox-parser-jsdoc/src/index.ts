@@ -16,9 +16,9 @@ import { Jsdoc } from './types';
 
 const parser = async (cwd: string, path: string): Promise<File> => {
     try {
-        const nodeModulesDir = await findParentNodeModules(
-            dirname(sanitizePath(import.meta.url))
-        );
+        const parserDir = dirname(sanitizePath(import.meta.url));
+
+        const nodeModulesDir = await findParentNodeModules(parserDir);
 
         if (!nodeModulesDir) {
             throw new Error('node_modules directory was not found');
@@ -29,7 +29,12 @@ const parser = async (cwd: string, path: string): Promise<File> => {
                 nodeModulesDir,
                 `.bin/${platform() === 'win32' ? 'jsdoc.cmd' : 'jsdoc'}`
             ),
-            ['--explain', join(cwd, path)]
+            [
+                '--explain',
+                join(cwd, path),
+                '--configure',
+                join(parserDir, 'config.json')
+            ]
         );
 
         const docs = JSON.parse(output) as Jsdoc[];
@@ -100,12 +105,11 @@ const parser = async (cwd: string, path: string): Promise<File> => {
 
 export const parseString = async (
     path: string,
-    content: string,
-    cacheDir = './cache'
+    content: string
 ): Promise<File> => {
     temp.track();
 
-    const tempDir = await temp.mkdir({ prefix: 'doxdox-', dir: cacheDir });
+    const tempDir = await temp.mkdir({ prefix: 'doxdox-' });
 
     const tempPath = join(tempDir, path);
 
