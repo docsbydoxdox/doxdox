@@ -9,7 +9,7 @@
 ## Install
 
 ```bash
-$ npm install doxdox@v4.0.0-preview.1 doxdox-renderer-github-wiki@v4.0.0-preview.1 --save-dev
+$ npm install doxdox@v4.0.0-preview.10 doxdox-renderer-github-wiki@v4.0.0-preview.10 --save-dev
 ```
 
 ## Usage

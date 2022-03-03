@@ -1,7 +1,7 @@
 {
   "name": "doxdox-renderer-dash",
   "description": "Dash renderer for doxdox.",
-  "version": "4.0.0-preview.9",
+  "version": "4.0.0-preview.10",
   "exports": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "type": "module",
@@ -17,7 +17,7 @@
     "temp": "0.9.4"
   },
   "peerDependencies": {
-    "doxdox-core": "4.0.0-preview.9"
+    "doxdox-core": "4.0.0-preview.10"
   },
   "peerDependenciesMeta": {
     "doxdox-core": {
