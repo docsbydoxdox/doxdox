@@ -1,4 +1,5 @@
 name: Tests
+
 on:
   push:
     branches:
@@ -20,9 +21,9 @@ jobs:
 
     steps:
       - name: Check out repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
-      - uses: actions/setup-node@v2
+      - uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node }}
 
@@ -35,7 +36,7 @@ jobs:
           npm -v
 
       - name: Install dependencies for all packages
-        run: npm install
+        run: npm ci
 
       - name: Run tests on all packages
         timeout-minutes: 5
