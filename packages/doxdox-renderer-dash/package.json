@@ -41,6 +41,7 @@
   },
   "scripts": {
     "test": "NODE_OPTIONS=--experimental-vm-modules jest --runInBand --passWithNoTests",
+    "test-update": "NODE_OPTIONS=--experimental-vm-modules jest --runInBand --passWithNoTests --updateSnapshot",
     "build": "rimraf dist/ && tsc && copyfiles -u 1 src/resources/* dist/",
     "lint": "eslint 'src/**/*.ts'"
   },
