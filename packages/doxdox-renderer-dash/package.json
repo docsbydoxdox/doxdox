@@ -11,7 +11,7 @@
   "dependencies": {
     "adm-zip": "0.5.9",
     "better-sqlite3": "7.5.0",
-    "highlight.js": "11.4.0",
+    "highlight.js": "11.5.0",
     "markdown-it": "12.3.2",
     "markdown-table": "3.0.2",
     "temp": "0.9.4"
@@ -33,7 +33,7 @@
     "@typescript-eslint/eslint-plugin": "5.14.0",
     "@typescript-eslint/parser": "5.14.0",
     "copyfiles": "2.4.1",
-    "eslint": "8.10.0",
+    "eslint": "8.11.0",
     "jest": "27.5.1",
     "rimraf": "3.0.2",
     "ts-jest": "27.1.3",
