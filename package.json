@@ -22,7 +22,7 @@
     "prettier-check": "npx prettier@2 --check \"packages/**/*.ts\"",
     "prettier-fix": "npx prettier@2 --write \"packages/**/*.ts\"",
     "ncu": "npm exec --workspaces -- npx npm-check-updates@12",
-    "ncu-upgrade": "npm exec --workspaces -- npx npm-check-updates@12 -u",
+    "ncu-update": "npm exec --workspaces -- npx npm-check-updates@12 -u",
     "publish-prerelease": "./bin/version.js prerelease",
     "publish-patch": "./bin/version.js patch",
     "publish-minor": "./bin/version.js minor",
