@@ -18,7 +18,7 @@ doxdox also features support for extendibility via custom plugins for both parsi
 
 ### In
 
-```javacript
+```javascript
 /**
  * Finds package.json from either the directory the script was called from or a supplied path.
  *
