@@ -35,7 +35,7 @@ doxdox also features support for extendibility via custom plugins for both parsi
 
 ### Out
 
-![](screenshot.png)
+![](screenshot.jpg)
 
 ## Install
 
