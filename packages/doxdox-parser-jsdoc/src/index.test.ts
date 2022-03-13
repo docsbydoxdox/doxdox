@@ -50,7 +50,8 @@ const getRootDirPath = (url) => {};`
                         private: false,
                         returns: expect.arrayContaining([
                             expect.objectContaining({
-                                name: undefined,
+                                name: null,
+                                description: 'Path to package.json file.',
                                 types: ['Promise.<(string|null)>']
                             })
                         ]),
@@ -68,7 +69,8 @@ const getRootDirPath = (url) => {};`
                         private: false,
                         returns: expect.arrayContaining([
                             expect.objectContaining({
-                                name: undefined,
+                                name: null,
+                                description: 'Directory path.',
                                 types: ['string']
                             })
                         ]),

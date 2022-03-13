@@ -41,7 +41,7 @@ ${md
             ...method.params.map(({ name, types, description }) => [
                 name,
                 `<code>${types.join('</code>, <code>')}</code>`,
-                description
+                description || ''
             ])
         ])
     )
@@ -57,7 +57,7 @@ ${
 ${method.returns.map(
     param => `<p><code>${param.types.join('</code>, <code>')}</code></p>
 
-<p>${param.description}</p>`
+${param.description ? `<p>${param.description}</p>` : ''}`
 )}`
         : ''
 }

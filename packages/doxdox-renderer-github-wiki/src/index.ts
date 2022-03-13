@@ -19,7 +19,7 @@ ${markdownTable([
     ...method.params.map(({ name, types, description }) => [
         name,
         types.join(', '),
-        description
+        description || ''
     ])
 ])}`
         : ''
@@ -31,7 +31,7 @@ ${
 
 ${method.returns.map(
     param => `${param.types.join(', ')}
-${param.description}`
+${param.description || ''}`
 )}`
         : ''
 }

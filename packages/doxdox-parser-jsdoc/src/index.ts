@@ -46,7 +46,7 @@ const parser = async (cwd: string, path: string): Promise<File> => {
             )
             .map((jsdoc: Jsdoc) => {
                 const params = (jsdoc.params || []).map(
-                    ({ name, description = '', type = {} }) => ({
+                    ({ name = null, description = null, type = {} }) => ({
                         name,
                         description,
                         types: type.names || []
@@ -54,7 +54,7 @@ const parser = async (cwd: string, path: string): Promise<File> => {
                 );
 
                 const returns = (jsdoc.returns || []).map(
-                    ({ name, description = '', type = {} }) => ({
+                    ({ name = null, description = null, type = {} }) => ({
                         name,
                         description,
                         types: type.names || []
@@ -77,7 +77,7 @@ const parser = async (cwd: string, path: string): Promise<File> => {
                         .map(param => param.name)
                         .filter(name => name && !name.match(/\./))
                         .join(', ')})`,
-                    description: jsdoc.description || '',
+                    description: jsdoc.description || null,
                     params,
                     returns,
                     private: isPrivate

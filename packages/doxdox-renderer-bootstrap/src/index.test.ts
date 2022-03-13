@@ -37,6 +37,7 @@ describe('bootstrap', () => {
                                 ],
                                 returns: [
                                     {
+                                        name: null,
                                         description: 'Return description',
                                         types: ['void']
                                     }
