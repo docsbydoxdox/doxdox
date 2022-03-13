@@ -1,7 +1,7 @@
 {
   "name": "doxdox-renderer-bootstrap",
   "description": "Bootstrap renderer for doxdox.",
-  "version": "4.0.0-preview.10",
+  "version": "4.0.0-preview.11",
   "exports": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "type": "module",
@@ -14,7 +14,7 @@
     "markdown-table": "3.0.2"
   },
   "peerDependencies": {
-    "doxdox-core": "4.0.0-preview.10"
+    "doxdox-core": "4.0.0-preview.11"
   },
   "peerDependenciesMeta": {
     "doxdox-core": {
