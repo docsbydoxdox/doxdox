@@ -20,15 +20,16 @@ doxdox also features support for extendibility via custom plugins for both parsi
 
 ```javascript
 /**
- * Finds package.json from either the directory the script was called from or a supplied path.
+ * Request content from URL or array of URLs.
  *
- *     console.log(await findFileInPath('./'));
- *     console.log(await findFileInPath('./package.json'));
- *     console.log(await findFileInPath('~/git/github/doxdox/'));
- *
- * @param {string} [input] Directory to check for file.
- * @param {string?} [fileName = 'package.json'] File name to check for.
- * @return {Promise<string | null>} Path to package.json file.
+ * @example fetch('http://www.google.com/humans.txt').then(content => console.log(content));
+ * @example fetch(['http://www.google.com/humans.txt']).then(contents => console.log(content[0]));
+ * @param {String|String[]} urls A URL or an array of URL strings.
+ * @param {Object} [options] Options object.
+ * @param {String} [options.cacheDirectory] Directory to store cache. Default is `temp/cache/`.
+ * @param {Object} [options.requestOptions] Custom request options object. Default is `{}`.
+ * @param {Number} [options.ttl] TTL (Time to live) in seconds. Default is 1800
+ * @return {Promise<String[]>} Contents of request as an array.
  * @public
  */
 ```
