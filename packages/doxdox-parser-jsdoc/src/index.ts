@@ -10,7 +10,7 @@ import temp from 'temp';
 
 import { findParentNodeModules, sanitizePath, slugify } from 'doxdox-core';
 
-import { File } from 'doxdox-core';
+import { File, Method } from 'doxdox-core';
 
 import { Jsdoc } from './types';
 
@@ -81,7 +81,7 @@ const parser = async (cwd: string, path: string): Promise<File> => {
                     params,
                     returns,
                     private: isPrivate
-                };
+                } as Method;
             })
             .sort((a, b) => {
                 if (a.name.toLocaleLowerCase() < b.name.toLocaleLowerCase()) {
