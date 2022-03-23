@@ -15,6 +15,8 @@ const md = new MarkdownIt({
         }</div>`
 });
 
+const mdTypes = new MarkdownIt();
+
 const renderMethod = (method: Method) => `<div class="mb-5" data-method-name="${
     method.name
 }"><a name="${method.slug}" />
@@ -36,14 +38,19 @@ ${
 <div class="table-responsive">
 ${md
     .render(
-        markdownTable([
-            ['Name', 'Types', 'Description'],
-            ...method.params.map(({ name, types, description }) => [
-                name,
-                `<code>${types.join('</code>, <code>')}</code>`,
-                description || ''
-            ])
-        ])
+        markdownTable(
+            [
+                ['Name', 'Types', 'Description'],
+                ...method.params.map(({ name, types, description }) => [
+                    name,
+                    `<code>${types
+                        .map(type => mdTypes.renderInline(type))
+                        .join('</code>, <code>')}</code>`,
+                    description || ''
+                ])
+            ],
+            {}
+        )
     )
     .replace('<table>', '<table class="table">')}
 </div>`
@@ -55,7 +62,9 @@ ${
         ? `<h3>Returns</h3>
 
 ${method.returns.map(
-    param => `<p><code>${param.types.join('</code>, <code>')}</code></p>
+    param => `<p><code>${param.types
+        .map(type => mdTypes.renderInline(type))
+        .join('</code>, <code>')}</code></p>
 
 ${param.description ? `<p>${param.description}</p>` : ''}`
 )}`
