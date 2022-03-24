@@ -1,7 +1,7 @@
 {
   "name": "doxdox-parser-jsdoc",
   "description": "JSDoc parser for doxdox",
-  "version": "4.0.0-preview.11",
+  "version": "4.0.0-preview.12",
   "exports": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "type": "module",
@@ -14,7 +14,7 @@
     "temp": "0.9.4"
   },
   "peerDependencies": {
-    "doxdox-core": "4.0.0-preview.11"
+    "doxdox-core": "4.0.0-preview.12"
   },
   "peerDependenciesMeta": {
     "doxdox-core": {

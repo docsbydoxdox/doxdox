@@ -43,13 +43,13 @@ doxdox also features support for extendibility via custom plugins for both parsi
 ### Globally
 
 ```bash
-$ npm install doxdox-cli@v4.0.0-preview.11 -g
+$ npm install doxdox-cli@v4.0.0-preview.12 -g
 ```
 
 ### Locally
 
 ```bash
-$ npm install doxdox@v4.0.0-preview.11 --save-dev
+$ npm install doxdox@v4.0.0-preview.12 --save-dev
 ```
 
 ## Usage
@@ -160,13 +160,13 @@ Included Layouts:
 For more information on NPM run scripts visit <https://docs.npmjs.com/cli/v8/commands/npm-run-script>.
 
 ```bash
-$ npm install doxdox@v4.0.0-preview.11 --save-dev
+$ npm install doxdox@v4.0.0-preview.12 --save-dev
 ```
 
 ```json
 {
   "devDependencies": {
-    "doxdox": "4.0.0-preview.10"
+    "doxdox": "4.0.0-preview.12"
   },
   "scripts": {
     "docs": "doxdox 'lib/**/*.js' --renderer markdown --output DOCUMENTATION.md"
