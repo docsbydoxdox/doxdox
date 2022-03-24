@@ -266,6 +266,14 @@ doxdox -r renderer.js
 
 A template for creating your own parser [doxdox-parser-template](./packages/doxdox-parser-template/).
 
+#### Optional Parsers
+
+> The following parsers are not bundled with `doxdox` and must be installed separately.
+
+| Name                                               | Description            | Version                                                                                                                             |
+| -------------------------------------------------- | ---------------------- | ----------------------------------------------------------------------------------------------------------------------------------- |
+| [doxdox-parser-dox](./packages/doxdox-parser-dox/) | dox parser for doxdox. | [![NPM version](https://img.shields.io/npm/v/doxdox-parser-dox?style=flat-square)](https://www.npmjs.org/package/doxdox-parser-dox) |
+
 ### Renderers
 
 #### Default Renderers

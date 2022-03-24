@@ -3,6 +3,7 @@
   "type": "module",
   "workspaces": [
     "./packages/doxdox-core",
+    "./packages/doxdox-parser-dox",
     "./packages/doxdox-parser-jsdoc",
     "./packages/doxdox-parser-template",
     "./packages/doxdox-renderer-bootstrap",
