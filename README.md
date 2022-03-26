@@ -49,7 +49,7 @@ $ npm install doxdox-cli@v4.0.0-preview.12 -g
 ### Locally
 
 ```bash
-$ npm install doxdox@v4.0.0-preview.12 --save-dev
+$ npm install doxdox-cli@v4.0.0-preview.12 --save-dev
 ```
 
 ## Usage
@@ -160,7 +160,7 @@ Included Layouts:
 For more information on NPM run scripts visit <https://docs.npmjs.com/cli/v8/commands/npm-run-script>.
 
 ```bash
-$ npm install doxdox@v4.0.0-preview.12 --save-dev
+$ npm install doxdox-cli@v4.0.0-preview.12 --save-dev
 ```
 
 ```json
