@@ -2,6 +2,8 @@ import { markdownTable } from 'markdown-table';
 
 import { Doc, File, Method } from 'doxdox-core';
 
+import { CustomConfig } from './types';
+
 const renderMethod = (method: Method) => `## ${method.fullName}
 
 ${method.description}
@@ -49,6 +51,9 @@ ${doc.files
     .trim()}
 
 Documentation generated with [doxdox](https://github.com/docsbydoxdox/doxdox)
-
-Generated on ${new Date().toDateString()} ${new Date().toTimeString()}
-`;
+${
+    !doc.config ||
+    (doc.config as CustomConfig)['hideGeneratedTimestamp'] !== true
+        ? `\nGenerated on ${new Date().toDateString()} ${new Date().toTimeString()}\n`
+        : ''
+}`;

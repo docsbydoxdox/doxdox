@@ -18,6 +18,7 @@ import doxdox, {
     getProjectPackage,
     getRootDirPath,
     loadPlugin,
+    parseConfigFromCLI,
     parseIgnoreConfig,
     sanitizePath
 } from 'doxdox-core';
@@ -109,6 +110,8 @@ const overridePackage = String(
         }
     );
 
+    const cliConfig = parseConfigFromCLI(args.raw);
+
     const nodeModulesDir = await findParentNodeModules(
         dirname(sanitizePath(import.meta.url))
     );
@@ -141,7 +144,11 @@ const overridePackage = String(
         name: overrideName || pkg.name || 'Untitled Project',
         description: overrideDescription || pkg.description || '',
         version: pkg.version,
-        homepage: pkg.homepage
+        homepage: pkg.homepage,
+        config: {
+            ...pkg.doxdoxConfig,
+            ...cliConfig
+        }
     });
 
     if (overrideOutput) {

@@ -88,11 +88,17 @@ export const getProjectPackage = async (cwd: string): Promise<Package> => {
     const projectPackagePath = await findFileInPath(cwd);
 
     if (projectPackagePath) {
-        const { name, description, version, exports, homepage } = JSON.parse(
-            await fs.readFile(projectPackagePath, 'utf8')
-        );
+        const { name, description, version, exports, homepage, doxdoxConfig } =
+            JSON.parse(await fs.readFile(projectPackagePath, 'utf8'));
 
-        return { name, description, version, exports, homepage };
+        return {
+            name,
+            description,
+            version,
+            exports,
+            homepage,
+            doxdoxConfig
+        };
     }
 
     return {};
@@ -140,6 +146,33 @@ export const isFile = async (path: string): Promise<boolean> => {
         return false;
     }
 };
+
+/**
+ * Parse config key/value pairs from raw CLI flags.
+ *
+ *     console.log(await parseConfigFromCLI([['-c', 'key=value']]));
+ *
+ * @param {[string, string | boolean][]} rawFlags Raw flags from the CLI.
+ * @return {{ [key in string]: string | boolean }} Configs key/value pairs.
+ * @public
+ */
+
+export const parseConfigFromCLI = (
+    rawFlags: [string, string | boolean][]
+): {
+    [key in string]: string | boolean;
+} =>
+    rawFlags
+        .filter(([flag]) => ['-c', '--config'].includes(flag))
+        .reduce((all, [, config]) => {
+            const [key, value] = String(config).split('=');
+
+            if (['true', 'false'].includes(value)) {
+                return { ...all, [key]: value === 'true' ? true : false };
+            } else {
+                return { ...all, [key]: value };
+            }
+        }, {});
 
 /**
  * Parse contents of ignore file.

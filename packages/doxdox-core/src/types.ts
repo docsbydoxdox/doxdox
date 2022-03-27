@@ -1,9 +1,6 @@
-export interface Options {
-    name?: string;
-    description?: string;
-    version?: string;
-    homepage?: string;
-}
+export type Config = {
+    [key in string]?: string | boolean;
+};
 
 export interface Doc extends Options {
     files: File[];
@@ -24,8 +21,17 @@ export interface Method {
     private: boolean;
 }
 
-export interface Package extends Options {
+export interface Options extends Package {
+    config?: Config;
+}
+
+export interface Package {
     exports?: string;
+    name?: string;
+    description?: string;
+    version?: string;
+    homepage?: string;
+    doxdoxConfig?: Config;
 }
 
 export interface Param {
