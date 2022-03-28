@@ -1,7 +1,7 @@
 {
   "name": "doxdox-renderer-pdf",
   "description": "PDF renderer for doxdox.",
-  "version": "4.0.0-preview.12",
+  "version": "4.0.0-preview.13",
   "exports": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "type": "module",
@@ -15,7 +15,7 @@
     "markdown-table": "3.0.2"
   },
   "peerDependencies": {
-    "doxdox-core": "4.0.0-preview.12"
+    "doxdox-core": "4.0.0-preview.13"
   },
   "peerDependenciesMeta": {
     "doxdox-core": {

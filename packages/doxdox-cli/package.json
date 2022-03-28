@@ -1,7 +1,7 @@
 {
   "name": "doxdox-cli",
   "description": "CLI package for doxdox.",
-  "version": "4.0.0-preview.12",
+  "version": "4.0.0-preview.13",
   "bin": {
     "doxdox": "./dist/src/index.js"
   },
@@ -12,11 +12,11 @@
     "node": "^12.20.0 || ^14.13.1 || >=16.0.0"
   },
   "dependencies": {
-    "doxdox-core": "4.0.0-preview.12",
-    "doxdox-parser-jsdoc": "4.0.0-preview.12",
-    "doxdox-renderer-bootstrap": "4.0.0-preview.12",
-    "doxdox-renderer-json": "4.0.0-preview.12",
-    "doxdox-renderer-markdown": "4.0.0-preview.12",
+    "doxdox-core": "4.0.0-preview.13",
+    "doxdox-parser-jsdoc": "4.0.0-preview.13",
+    "doxdox-renderer-bootstrap": "4.0.0-preview.13",
+    "doxdox-renderer-json": "4.0.0-preview.13",
+    "doxdox-renderer-markdown": "4.0.0-preview.13",
     "globby": "13.1.1",
     "import-from": "4.0.0",
     "parse-cmd-args": "4.1.0",

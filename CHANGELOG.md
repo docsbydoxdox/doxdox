@@ -1,5 +1,23 @@
 # Changelog
 
+## [v4.0.0-preview.13](https://github.com/docsbydoxdox/doxdox/tree/v4.0.0-preview.13) - (2022-03-28)
+
+[Full Changelog](https://github.com/docsbydoxdox/doxdox/compare/v4.0.0-preview.12...v4.0.0-preview.13)
+
+- [feat] Added renderer config flags and package. [#168](https://github.com/docsbydoxdox/doxdox/pull/168)
+- [hotfix] Updated packages. [#167](https://github.com/docsbydoxdox/doxdox/pull/167)
+- [hotfix] Updated packages. [#166](https://github.com/docsbydoxdox/doxdox/pull/166)
+
+## [v4.0.0-preview.12](https://github.com/docsbydoxdox/doxdox/tree/v4.0.0-preview.12) - (2022-03-24)
+
+[Full Changelog](https://github.com/docsbydoxdox/doxdox/compare/v4.0.0-preview.11...v4.0.0-preview.12)
+
+- [feat] Added new "old" parser dox. [#162](https://github.com/docsbydoxdox/doxdox/pull/162)
+- [hotfix] Updated packages. [#165](https://github.com/docsbydoxdox/doxdox/pull/165)
+- [hotfix] Render types with markdown renderer. [#164](https://github.com/docsbydoxdox/doxdox/pull/164)
+- [hotfix] Added Method type to parser method. [#163](https://github.com/docsbydoxdox/doxdox/pull/163)
+- [hotfix] Updated packages. [#161](https://github.com/docsbydoxdox/doxdox/pull/161)
+
 ## [v4.0.0-preview.11](https://github.com/docsbydoxdox/doxdox/tree/v4.0.0-preview.11) - (2022-03-13)
 
 [Full Changelog](https://github.com/docsbydoxdox/doxdox/compare/v4.0.0-preview.10...v4.0.0-preview.11)
