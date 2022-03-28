@@ -9,6 +9,7 @@ import {
     getRootDirPath,
     isDirectory,
     isFile,
+    parseConfigFromCLI,
     parseIgnoreConfig,
     sanitizePath,
     slugify
@@ -95,6 +96,27 @@ describe('utils', () => {
         });
         it('return false with invalid input', async () => {
             expect(await isFile('./invalid.txt')).toBeFalsy();
+        });
+    });
+
+    describe('parseConfigFromCLI', () => {
+        it('parse config', () => {
+            expect(
+                parseConfigFromCLI([
+                    ['--version', true],
+                    ['-c', 'key1=value1'],
+                    ['-c', 'key2=value2'],
+                    ['--config', 'boolean1=true'],
+                    ['--config', 'boolean2=false']
+                ])
+            ).toEqual(
+                expect.objectContaining({
+                    key1: 'value1',
+                    key2: 'value2',
+                    boolean1: true,
+                    boolean2: false
+                })
+            );
         });
     });
 

@@ -16,6 +16,8 @@ import { getRootDirPath, slugify } from 'doxdox-core';
 
 import { Doc, Method } from 'doxdox-core';
 
+import { CustomConfig } from './types';
+
 const md = new MarkdownIt({
     html: true,
     linkify: true,
@@ -99,10 +101,15 @@ ${param.description ? `<p>${param.description}</p>` : ''}`
     Documentation generated with
     <a href="https://github.com/docsbydoxdox/doxdox">doxdox</a>.
   </p>
-  <p>
+  ${
+      !doc.config ||
+      (doc.config as CustomConfig)['hideGeneratedTimestamp'] !== true
+          ? `<p>
     Generated on
     ${new Date().toDateString()} ${new Date().toTimeString()}
-  </p>
+  </p>`
+          : ''
+  }
 </div>
 </footer>
 

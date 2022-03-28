@@ -4,9 +4,13 @@ import admzip from 'adm-zip';
 
 import { markdownTable } from 'markdown-table';
 
-import { Doc, Method } from 'doxdox-core';
+import { Config, Doc, Method } from 'doxdox-core';
 
-const renderMethod = (method: Method) => `## ${method.fullName}
+import { CustomConfig } from './types';
+
+const renderMethod = (method: Method, config: Config | undefined) => `## ${
+    method.fullName
+}
 
 ${method.description}
 
@@ -37,9 +41,11 @@ ${param.description || ''}`
 }
 
 Documentation generated with [doxdox](https://github.com/docsbydoxdox/doxdox)
-
-Generated on ${new Date().toDateString()} ${new Date().toTimeString()}
-`;
+${
+    !config || (config as CustomConfig)['hideGeneratedTimestamp'] !== true
+        ? `\nGenerated on ${new Date().toDateString()} ${new Date().toTimeString()}\n`
+        : ''
+}`;
 
 export default async (doc: Doc): Promise<string | Buffer> => {
     const zip = new admzip();
@@ -50,7 +56,7 @@ export default async (doc: Doc): Promise<string | Buffer> => {
                 file.methods.map(async method =>
                     zip.addFile(
                         join(file.path, `${method.name}.md`),
-                        Buffer.from(renderMethod(method), 'utf-8')
+                        Buffer.from(renderMethod(method, doc.config), 'utf-8')
                     )
                 )
             )

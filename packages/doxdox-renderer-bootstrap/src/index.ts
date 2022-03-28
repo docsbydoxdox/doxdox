@@ -6,6 +6,8 @@ import hljs from 'highlight.js';
 
 import { Doc, File, Method } from 'doxdox-core';
 
+import { CustomConfig } from './types';
+
 const md = new MarkdownIt({
     html: true,
     linkify: true,
@@ -205,10 +207,15 @@ export default async (doc: Doc): Promise<string> => `<!DOCTYPE html>
           Documentation generated with
           <a href="https://github.com/docsbydoxdox/doxdox">doxdox</a>.
         </p>
-        <p>
+        ${
+            !doc.config ||
+            (doc.config as CustomConfig)['hideGeneratedTimestamp'] !== true
+                ? `<p>
           Generated on
           ${new Date().toDateString()} ${new Date().toTimeString()}
-        </p>
+        </p>`
+                : ''
+        }
       </div>
     </footer>
     <script>
