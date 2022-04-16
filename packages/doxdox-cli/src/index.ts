@@ -6,6 +6,8 @@ import { promises as fs } from 'fs';
 
 import { dirname, join } from 'path';
 
+import { fileURLToPath } from 'url';
+
 import { globby } from 'globby';
 
 import updateNotifier from 'update-notifier';
@@ -19,8 +21,7 @@ import doxdox, {
     getRootDirPath,
     loadPlugin,
     parseConfigFromCLI,
-    parseIgnoreConfig,
-    sanitizePath
+    parseIgnoreConfig
 } from 'doxdox-core';
 
 import { Doc, File } from 'doxdox-core';
@@ -113,7 +114,7 @@ const overridePackage = String(
     const cliConfig = parseConfigFromCLI(args.raw);
 
     const nodeModulesDir = await findParentNodeModules(
-        dirname(sanitizePath(import.meta.url))
+        dirname(fileURLToPath(import.meta.url))
     );
 
     if (!nodeModulesDir) {
