@@ -192,16 +192,6 @@ export const parseIgnoreConfig = (contents: string): string[] =>
         .map(line => `!${line.trim().replace(/^!/, '')}`);
 
 /**
- * Sanitizes given path or url.
- *
- * @param {string} [url] Path or url.
- * @return {Promise<string>} Sanitized path.
- * @public
- */
-
-export const sanitizePath = (path: string): string => new URL(path).pathname;
-
-/**
  * Slugify a value for use as an anchor.
  *
  * @return {string} Contents to slugify.
