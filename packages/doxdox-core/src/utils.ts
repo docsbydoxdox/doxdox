@@ -1,5 +1,3 @@
-import { EOL } from 'os';
-
 import { promises as fs } from 'fs';
 
 import { resolve, dirname } from 'path';
@@ -187,7 +185,7 @@ export const parseConfigFromCLI = (
 export const parseIgnoreConfig = (contents: string): string[] =>
     contents
         .trim()
-        .split(EOL)
+        .split(/\r?\n/)
         .filter(line => line.trim())
         .map(line => `!${line.trim().replace(/^!/, '')}`);
 
