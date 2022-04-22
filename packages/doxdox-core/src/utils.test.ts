@@ -11,7 +11,6 @@ import {
     isFile,
     parseConfigFromCLI,
     parseIgnoreConfig,
-    sanitizePath,
     slugify
 } from './utils';
 
@@ -166,18 +165,6 @@ describe('utils', () => {
         });
         it('parse ignore config with empty contents', () => {
             expect(parseIgnoreConfig('')).toEqual([]);
-        });
-    });
-
-    describe('sanitizePath', () => {
-        it('sanitize path', () => {
-            expect(
-                sanitizePath(
-                    'file:///Users/scottdoxey/git/github/doxdox/packages/doxdox-cli/dist/src/index.js'
-                )
-            ).toEqual(
-                '/Users/scottdoxey/git/github/doxdox/packages/doxdox-cli/dist/src/index.js'
-            );
         });
     });
 
