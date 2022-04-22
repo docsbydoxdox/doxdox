@@ -1,0 +1,136 @@
+{
+  "path": "./tests/fixtures/commonjs-module.js",
+  "methods": [
+    {
+      "slug": "tests-fixtures-commonjs-module-js-blend",
+      "name": "blend",
+      "fullName": "blend(color1, color2)",
+      "description": "Blend two colors together.",
+      "params": [
+        {
+          "name": "color1",
+          "description": "- The first color, in hexadecimal format.",
+          "types": [
+            "string"
+          ]
+        },
+        {
+          "name": "color2",
+          "description": "- The second color, in hexadecimal format.",
+          "types": [
+            "string"
+          ]
+        }
+      ],
+      "returns": [
+        {
+          "name": null,
+          "description": "The blended color.",
+          "types": [
+            "string"
+          ]
+        }
+      ],
+      "private": false
+    },
+    {
+      "slug": "tests-fixtures-commonjs-module-js-blend",
+      "name": "blend",
+      "fullName": "blend(color1, color2)",
+      "description": "Blend two colors together.",
+      "params": [
+        {
+          "name": "color1",
+          "description": "- The first color, in hexadecimal format.",
+          "types": [
+            "string"
+          ]
+        },
+        {
+          "name": "color2",
+          "description": "- The second color, in hexadecimal format.",
+          "types": [
+            "string"
+          ]
+        }
+      ],
+      "returns": [
+        {
+          "name": null,
+          "description": "The blended color.",
+          "types": [
+            "string"
+          ]
+        }
+      ],
+      "private": false
+    },
+    {
+      "slug": "tests-fixtures-commonjs-module-js-blend",
+      "name": "blend",
+      "fullName": "blend(color1, color2)",
+      "description": "Blend two colors together.",
+      "params": [
+        {
+          "name": "color1",
+          "description": "- The first color, in hexadecimal format.",
+          "types": [
+            "string"
+          ]
+        },
+        {
+          "name": "color2",
+          "description": "- The second color, in hexadecimal format.",
+          "types": [
+            "string"
+          ]
+        }
+      ],
+      "returns": [
+        {
+          "name": null,
+          "description": "The blended color.",
+          "types": [
+            "string"
+          ]
+        }
+      ],
+      "private": false
+    },
+    {
+      "slug": "tests-fixtures-commonjs-module-js-book",
+      "name": "Book",
+      "fullName": "Book(title)",
+      "description": "Create a new Book.",
+      "params": [
+        {
+          "name": "title",
+          "description": "- The title of the book.",
+          "types": [
+            "string"
+          ]
+        }
+      ],
+      "returns": [],
+      "private": false
+    },
+    {
+      "slug": "tests-fixtures-commonjs-module-js-button",
+      "name": "button",
+      "fullName": "button()",
+      "description": "Button the shirt.",
+      "params": [],
+      "returns": [],
+      "private": false
+    },
+    {
+      "slug": "tests-fixtures-commonjs-module-js-title",
+      "name": "title",
+      "fullName": "title()",
+      "description": "The title of the book.",
+      "params": [],
+      "returns": [],
+      "private": false
+    }
+  ]
+}

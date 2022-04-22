@@ -1,0 +1,175 @@
+{
+  "path": "./tests/fixtures/params.js",
+  "methods": [
+    {
+      "slug": "tests-fixtures-params-js-sayhello",
+      "name": "sayHello",
+      "fullName": "sayHello(somebody)",
+      "description": "",
+      "params": [
+        {
+          "name": "somebody",
+          "description": "",
+          "types": [
+            ""
+          ]
+        }
+      ],
+      "returns": [],
+      "private": false
+    },
+    {
+      "slug": "tests-fixtures-params-js-sayhello",
+      "name": "sayHello",
+      "fullName": "sayHello(somebody)",
+      "description": "",
+      "params": [
+        {
+          "name": "somebody",
+          "description": "",
+          "types": [
+            "string"
+          ]
+        }
+      ],
+      "returns": [],
+      "private": false
+    },
+    {
+      "slug": "tests-fixtures-params-js-sayhello",
+      "name": "sayHello",
+      "fullName": "sayHello(somebody)",
+      "description": "",
+      "params": [
+        {
+          "name": "somebody",
+          "description": "Somebody's name.",
+          "types": [
+            "string"
+          ]
+        }
+      ],
+      "returns": [],
+      "private": false
+    },
+    {
+      "slug": "tests-fixtures-params-js-sayhello",
+      "name": "sayHello",
+      "fullName": "sayHello(somebody)",
+      "description": "",
+      "params": [
+        {
+          "name": "somebody",
+          "description": "- Somebody's name.",
+          "types": [
+            "string"
+          ]
+        }
+      ],
+      "returns": [],
+      "private": false
+    },
+    {
+      "slug": "tests-fixtures-params-js-sayhello",
+      "name": "sayHello",
+      "fullName": "sayHello(somebody)",
+      "description": "",
+      "params": [
+        {
+          "name": "somebody",
+          "description": "- Somebody's name.",
+          "types": [
+            "string"
+          ]
+        }
+      ],
+      "returns": [],
+      "private": false
+    },
+    {
+      "slug": "tests-fixtures-params-js-sayhello",
+      "name": "sayHello",
+      "fullName": "sayHello(somebody)",
+      "description": "",
+      "params": [
+        {
+          "name": "somebody",
+          "description": "- Somebody's name.",
+          "types": [
+            "string="
+          ]
+        }
+      ],
+      "returns": [],
+      "private": false
+    },
+    {
+      "slug": "tests-fixtures-params-js-sayhello",
+      "name": "sayHello",
+      "fullName": "sayHello(somebody)",
+      "description": "",
+      "params": [
+        {
+          "name": "somebody",
+          "description": "- Somebody's name.",
+          "types": [
+            "string"
+          ]
+        }
+      ],
+      "returns": [],
+      "private": false
+    },
+    {
+      "slug": "tests-fixtures-params-js-sayhello",
+      "name": "sayHello",
+      "fullName": "sayHello(somebody)",
+      "description": "",
+      "params": [
+        {
+          "name": "somebody",
+          "description": "- Somebody's name, or an array of names.",
+          "types": [
+            "(string|string[])"
+          ]
+        }
+      ],
+      "returns": [],
+      "private": false
+    },
+    {
+      "slug": "tests-fixtures-params-js-sayhello",
+      "name": "sayHello",
+      "fullName": "sayHello(somebody)",
+      "description": "",
+      "params": [
+        {
+          "name": "somebody",
+          "description": "- Whatever you want.",
+          "types": [
+            "*"
+          ]
+        }
+      ],
+      "returns": [],
+      "private": false
+    },
+    {
+      "slug": "tests-fixtures-params-js-sum",
+      "name": "sum",
+      "fullName": "sum(num)",
+      "description": "Returns the sum of all numbers passed to the function.",
+      "params": [
+        {
+          "name": "num",
+          "description": "- A positive or negative number.",
+          "types": [
+            "...number"
+          ]
+        }
+      ],
+      "returns": [],
+      "private": false
+    }
+  ]
+}

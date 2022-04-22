@@ -1,0 +1,72 @@
+{
+  "path": "./tests/fixtures/es2015-module.js",
+  "methods": [
+    {
+      "slug": "tests-fixtures-es-module-js-blend",
+      "name": "blend",
+      "fullName": "blend(color1, color2)",
+      "description": "Blend two colors together.",
+      "params": [
+        {
+          "name": "color1",
+          "description": "- The first color, in hexadecimal format.",
+          "types": [
+            "string"
+          ]
+        },
+        {
+          "name": "color2",
+          "description": "- The second color, in hexadecimal format.",
+          "types": [
+            "string"
+          ]
+        }
+      ],
+      "returns": [
+        {
+          "name": null,
+          "description": "The blended color.",
+          "types": [
+            "string"
+          ]
+        }
+      ],
+      "private": false
+    },
+    {
+      "slug": "tests-fixtures-es-module-js-lastcolor",
+      "name": "lastColor",
+      "fullName": "lastColor()",
+      "description": "The most recent blended color.",
+      "params": [],
+      "returns": [],
+      "private": false
+    },
+    {
+      "slug": "tests-fixtures-es-module-js-name",
+      "name": "name",
+      "fullName": "name()",
+      "description": "The name of the module.",
+      "params": [],
+      "returns": [],
+      "private": false
+    },
+    {
+      "slug": "tests-fixtures-es-module-js-torgb",
+      "name": "toRgb",
+      "fullName": "toRgb(color)",
+      "description": "Get the red, green, and blue values of a color.",
+      "params": [
+        {
+          "name": "color",
+          "description": "- A color, in hexadecimal format.",
+          "types": [
+            "string"
+          ]
+        }
+      ],
+      "returns": [],
+      "private": false
+    }
+  ]
+}
