@@ -1,5 +1,7 @@
 import { promises as fs } from 'fs';
 
+import { fileURLToPath } from 'url';
+
 import { platform } from 'os';
 
 import { dirname, join } from 'path';
@@ -8,7 +10,7 @@ import spawn from 'spawn-please';
 
 import temp from 'temp';
 
-import { findParentNodeModules, sanitizePath, slugify } from 'doxdox-core';
+import { findParentNodeModules, slugify } from 'doxdox-core';
 
 import { File, Method } from 'doxdox-core';
 
@@ -16,7 +18,7 @@ import { Jsdoc } from './types';
 
 const parser = async (cwd: string, path: string): Promise<File> => {
     try {
-        const parserDir = dirname(sanitizePath(import.meta.url));
+        const parserDir = dirname(fileURLToPath(import.meta.url));
 
         const nodeModulesDir = await findParentNodeModules(parserDir);
 
