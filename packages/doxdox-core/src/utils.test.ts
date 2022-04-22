@@ -10,7 +10,7 @@ import {
     isDirectory,
     isFile,
     parseConfigFromCLI,
-    parseIgnoreConfig
+    parseIgnoreConfig,
     slugify
 } from './utils';
 
