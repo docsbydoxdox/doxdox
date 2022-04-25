@@ -1,5 +1,21 @@
 # Changelog
 
+## [HEAD](https://github.com/docsbydoxdox/doxdox/tree/HEAD) - (2022-04-25)
+
+[Full Changelog](https://github.com/docsbydoxdox/doxdox/compare/v4.0.0-preview.13...HEAD)
+
+- [feat] Added parseString method to parser template. [#179](https://github.com/docsbydoxdox/doxdox/pull/179)
+- [feat] Load plugin from directory. [#178](https://github.com/docsbydoxdox/doxdox/pull/178)
+- [hotfix] Updated packages. [#177](https://github.com/docsbydoxdox/doxdox/pull/177)
+- [hotfix] Updated markdown-it package. [#176](https://github.com/docsbydoxdox/doxdox/pull/176)
+- Fix findParentNodeModules failing on paths with non-URI legal chars [#171](https://github.com/docsbydoxdox/doxdox/pull/171)
+- [hotfix] Replaced sanitizePath with fileURLToPath in JSDoc parser. [#175](https://github.com/docsbydoxdox/doxdox/pull/175)
+- [hotfix] Fixed issue with doxdoxignore from macOS on Windows. [#174](https://github.com/docsbydoxdox/doxdox/pull/174)
+- [hotfix] Updated packages. [#173](https://github.com/docsbydoxdox/doxdox/pull/173)
+- [hotfix] Added cross-env to test targets. [#172](https://github.com/docsbydoxdox/doxdox/pull/172)
+- [hotfix] Updated packages. [#170](https://github.com/docsbydoxdox/doxdox/pull/170)
+- [hotfix] Updated packages. [#169](https://github.com/docsbydoxdox/doxdox/pull/169)
+
 ## [v4.0.0-preview.13](https://github.com/docsbydoxdox/doxdox/tree/v4.0.0-preview.13) - (2022-03-28)
 
 [Full Changelog](https://github.com/docsbydoxdox/doxdox/compare/v4.0.0-preview.12...v4.0.0-preview.13)
