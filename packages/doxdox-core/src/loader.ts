@@ -81,6 +81,8 @@ export const loadPlugin = async <T>(
     try {
         if (await isFile(pathOrPackage)) {
             return await loadPluginFromFile(pathOrPackage);
+        } else if (await isDirectory(pathOrPackage)) {
+            return await loadPluginFromPackagePath(pathOrPackage);
         } else if (
             await isDirectory(
                 join(
@@ -94,14 +96,6 @@ export const loadPlugin = async <T>(
                     directory,
                     `${prefix}${pathOrPackage.replace(prefixPattern, '')}`
                 )
-            );
-        } else if (
-            await isDirectory(
-                join(directory, pathOrPackage.replace(prefixPattern, ''))
-            )
-        ) {
-            return await loadPluginFromPackagePath(
-                join(directory, pathOrPackage.replace(prefixPattern, ''))
             );
         }
     } catch (err) {
