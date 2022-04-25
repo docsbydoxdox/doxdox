@@ -64,7 +64,7 @@ export const loadPluginFromFile = async <T>(
  *     const plugin = await loadPlugin(process.cwd(), null, './renderer.js');
  *     const plugin = await loadPlugin('../node_modules', 'doxdox-renderer-', 'json');
  *
- * @param {string} [path] Root directory to load plugin from.
+ * @param {string} [directory] Root directory to load plugin from.
  * @param {string} [prefix] Optional prefix to attach to the pathOrPackage.
  * @param {string} [pathOrPackage] Path or package name.
  * @return {Promise<T | null>} Plugin default method.
