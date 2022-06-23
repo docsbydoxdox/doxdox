@@ -20,7 +20,7 @@
     "globby": "13.1.1",
     "import-from": "4.0.0",
     "parse-cmd-args": "4.1.0",
-    "update-notifier": "5.1.0"
+    "update-notifier": "6.0.0"
   },
   "devDependencies": {
     "@types/jest": "27.4.1",
