@@ -1,9 +1,13 @@
 # Changelog
 
-## [HEAD](https://github.com/docsbydoxdox/doxdox/tree/HEAD) - (2022-04-25)
+## [HEAD](https://github.com/docsbydoxdox/doxdox/tree/HEAD) - (2022-09-02)
 
 [Full Changelog](https://github.com/docsbydoxdox/doxdox/compare/v4.0.0-preview.13...HEAD)
 
+- [hotfix] Updated packages [#186](https://github.com/docsbydoxdox/doxdox/pull/186)
+- [hotfix] Updated packages. [#182](https://github.com/docsbydoxdox/doxdox/pull/182)
+- [hotfix] Updated packages. [#181](https://github.com/docsbydoxdox/doxdox/pull/181)
+- [hotfix] Added jest typescript path resolver. [#180](https://github.com/docsbydoxdox/doxdox/pull/180)
 - [feat] Added parseString method to parser template. [#179](https://github.com/docsbydoxdox/doxdox/pull/179)
 - [feat] Load plugin from directory. [#178](https://github.com/docsbydoxdox/doxdox/pull/178)
 - [hotfix] Updated packages. [#177](https://github.com/docsbydoxdox/doxdox/pull/177)
@@ -269,21 +273,26 @@
 
 [Full Changelog](https://github.com/docsbydoxdox/doxdox/compare/v0.1.7...v0.1.8)
 
+
 ## [v0.1.7](https://github.com/docsbydoxdox/doxdox/tree/v0.1.7) - (2015-05-31)
 
 [Full Changelog](https://github.com/docsbydoxdox/doxdox/compare/v0.1.6...v0.1.7)
+
 
 ## [v0.1.6](https://github.com/docsbydoxdox/doxdox/tree/v0.1.6) - (2015-04-12)
 
 [Full Changelog](https://github.com/docsbydoxdox/doxdox/compare/v0.1.5...v0.1.6)
 
+
 ## [v0.1.5](https://github.com/docsbydoxdox/doxdox/tree/v0.1.5) - (2015-04-05)
 
 [Full Changelog](https://github.com/docsbydoxdox/doxdox/compare/v0.1.4...v0.1.5)
 
+
 ## [v0.1.4](https://github.com/docsbydoxdox/doxdox/tree/v0.1.4) - (2015-02-19)
 
 [Full Changelog](https://github.com/docsbydoxdox/doxdox/compare/v0.1.3...v0.1.4)
+
 
 ## [v0.1.3](https://github.com/docsbydoxdox/doxdox/tree/v0.1.3) - (2015-01-26)
 
@@ -301,33 +310,41 @@
 
 [Full Changelog](https://github.com/docsbydoxdox/doxdox/compare/v0.1.0...v0.1.1)
 
+
 ## [v0.1.0](https://github.com/docsbydoxdox/doxdox/tree/v0.1.0) - (2014-12-24)
 
 [Full Changelog](https://github.com/docsbydoxdox/doxdox/compare/v0.0.18...v0.1.0)
+
 
 ## [v0.0.18](https://github.com/docsbydoxdox/doxdox/tree/v0.0.18) - (2014-12-12)
 
 [Full Changelog](https://github.com/docsbydoxdox/doxdox/compare/v0.0.17...v0.0.18)
 
+
 ## [v0.0.17](https://github.com/docsbydoxdox/doxdox/tree/v0.0.17) - (2014-12-07)
 
 [Full Changelog](https://github.com/docsbydoxdox/doxdox/compare/v0.0.16...v0.0.17)
+
 
 ## [v0.0.16](https://github.com/docsbydoxdox/doxdox/tree/v0.0.16) - (2014-12-06)
 
 [Full Changelog](https://github.com/docsbydoxdox/doxdox/compare/v0.0.15...v0.0.16)
 
+
 ## [v0.0.15](https://github.com/docsbydoxdox/doxdox/tree/v0.0.15) - (2014-12-05)
 
 [Full Changelog](https://github.com/docsbydoxdox/doxdox/compare/v0.0.14...v0.0.15)
+
 
 ## [v0.0.14](https://github.com/docsbydoxdox/doxdox/tree/v0.0.14) - (2014-12-05)
 
 [Full Changelog](https://github.com/docsbydoxdox/doxdox/compare/v0.0.13...v0.0.14)
 
+
 ## [v0.0.13](https://github.com/docsbydoxdox/doxdox/tree/v0.0.13) - (2014-10-16)
 
 [Full Changelog](https://github.com/docsbydoxdox/doxdox/compare/v0.0.12...v0.0.13)
+
 
 ## [v0.0.12](https://github.com/docsbydoxdox/doxdox/tree/v0.0.12) - (2014-10-02)
 
@@ -363,28 +380,35 @@
 
 [Full Changelog](https://github.com/docsbydoxdox/doxdox/compare/v0.0.6...v0.0.7)
 
+
 ## [v0.0.6](https://github.com/docsbydoxdox/doxdox/tree/v0.0.6) - (2014-08-17)
 
 [Full Changelog](https://github.com/docsbydoxdox/doxdox/compare/v0.0.5...v0.0.6)
+
 
 ## [v0.0.5](https://github.com/docsbydoxdox/doxdox/tree/v0.0.5) - (2014-08-17)
 
 [Full Changelog](https://github.com/docsbydoxdox/doxdox/compare/v0.0.4...v0.0.5)
 
+
 ## [v0.0.4](https://github.com/docsbydoxdox/doxdox/tree/v0.0.4) - (2014-08-10)
 
 [Full Changelog](https://github.com/docsbydoxdox/doxdox/compare/v0.0.3...v0.0.4)
+
 
 ## [v0.0.3](https://github.com/docsbydoxdox/doxdox/tree/v0.0.3) - (2014-08-10)
 
 [Full Changelog](https://github.com/docsbydoxdox/doxdox/compare/v0.0.2...v0.0.3)
 
+
 ## [v0.0.2](https://github.com/docsbydoxdox/doxdox/tree/v0.0.2) - (2014-08-07)
 
 [Full Changelog](https://github.com/docsbydoxdox/doxdox/compare/v0.0.1...v0.0.2)
 
+
 ## [v0.0.1](https://github.com/docsbydoxdox/doxdox/tree/v0.0.1) - (2014-08-03)
 
 - Initial release! 🎉
+
 
 _This changelog was generated with **[generate-local-changelog](https://github.com/neogeek/generate-local-changelog)**_
