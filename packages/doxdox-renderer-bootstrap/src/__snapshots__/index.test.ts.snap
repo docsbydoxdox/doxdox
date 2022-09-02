@@ -4,21 +4,21 @@ exports[`bootstrap render 1`] = `
 "<!DOCTYPE html>
 <html>
   <head>
-    <meta charset=\\"utf-8\\" />
-    <meta name=\\"viewport\\" content=\\"initial-scale=1\\" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1" />
     <title>doxdox-example - doxdox example description</title>
     <link
-      href=\\"https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css\\"
-      rel=\\"stylesheet\\"
-      integrity=\\"sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3\\"
-      crossorigin=\\"anonymous\\"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
     />
     <link
-      rel=\\"stylesheet\\"
-      href=\\"https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.0/styles/github.min.css\\"
-      integrity=\\"sha512-0aPQyyeZrWj9sCA46UlmWgKOP0mUipLQ6OZXu8l4IcAmD2u31EPEy9VcIMvl7SoAaKe8bLXZhYoMaE/in+gcgA==\\"
-      crossorigin=\\"anonymous\\"
-      referrerpolicy=\\"no-referrer\\"
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.0/styles/github.min.css"
+      integrity="sha512-0aPQyyeZrWj9sCA46UlmWgKOP0mUipLQ6OZXu8l4IcAmD2u31EPEy9VcIMvl7SoAaKe8bLXZhYoMaE/in+gcgA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
     />
     <style>
       .pkg-name {
@@ -65,36 +65,36 @@ exports[`bootstrap render 1`] = `
     </style>
   </head>
   <body>
-    <div class=\\"bg-dark text-white\\">
-      <div class=\\"container p-5\\">
-        <h1 class=\\"pkg-name\\">doxdox-example</h1>
+    <div class="bg-dark text-white">
+      <div class="container p-5">
+        <h1 class="pkg-name">doxdox-example</h1>
 
-        <p class=\\"pkg-description\\">doxdox example description</p>
+        <p class="pkg-description">doxdox example description</p>
       </div>
     </div>
 
-    <div class=\\"container\\">
-      <div class=\\"row\\">
-        <nav class=\\"p-5 col-md-3\\">
+    <div class="container">
+      <div class="row">
+        <nav class="p-5 col-md-3">
           <form>
-            <div class=\\"form-group mb-3\\">
-              <input type=\\"search\\" class=\\"form-control\\" id=\\"filter-methods\\" name=\\"q\\" placeholder=\\"Filter methods...\\"
-              autocomplete=\\"off\\">
+            <div class="form-group mb-3">
+              <input type="search" class="form-control" id="filter-methods" name="q" placeholder="Filter methods..."
+              autocomplete="off">
             </div>
           </form>
 
-          <p><a href=\\"#directory/index.js\\" class=\\"file-name\\"><b>directory/index.js</b></a></p>
-<ul class=\\"list-unstyled ml-0\\">
-<li class=\\"method-name\\" data-method-name=\\"methodName\\"><a href=\\"#index-js-methodname\\" class=\\"\\">methodName</a></li>
+          <p><a href="#directory/index.js" class="file-name"><b>directory/index.js</b></a></p>
+<ul class="list-unstyled ml-0">
+<li class="method-name" data-method-name="methodName"><a href="#index-js-methodname" class="">methodName</a></li>
 </ul>
         </nav>
 
-        <main class=\\"p-5 col-md-9\\">
-          <a name=\\"directory/index.js\\" />
-<div class=\\"mb-5\\" data-method-name=\\"methodName\\"><a name=\\"index-js-methodname\\" />
+        <main class="p-5 col-md-9">
+          <a name="directory/index.js" />
+<div class="mb-5" data-method-name="methodName"><a name="index-js-methodname" />
 
-<h2 class=\\"method-name\\">
-  <a href=\\"#index-js-methodname\\" class=\\"method-permalink\\" aria-label=\\"Permalink\\">#</a>
+<h2 class="method-name">
+  <a href="#index-js-methodname" class="method-permalink" aria-label="Permalink">#</a>
   methodName(param)
 </h2>
 
@@ -104,8 +104,8 @@ exports[`bootstrap render 1`] = `
 
 <h3>Parameters</h3>
 
-<div class=\\"table-responsive\\">
-<table class=\\"table\\">
+<div class="table-responsive">
+<table class="table">
 <thead>
 <tr>
 <th>Name</th>
@@ -137,10 +137,10 @@ exports[`bootstrap render 1`] = `
     </div>
 
     <footer>
-      <div class=\\"container p-5 text-center text-muted\\">
+      <div class="container p-5 text-center text-muted">
         <p>
           Documentation generated with
-          <a href=\\"https://github.com/docsbydoxdox/doxdox\\">doxdox</a>.
+          <a href="https://github.com/docsbydoxdox/doxdox">doxdox</a>.
         </p>
         <p>
           Generated on
