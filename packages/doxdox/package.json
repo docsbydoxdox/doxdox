@@ -33,13 +33,13 @@
     "extensionsToTreatAsEsm": [
       ".ts"
     ],
-    "globals": {
-      "ts-jest": {
-        "useESM": true
-      }
-    },
     "transform": {
-      "^.+\\.ts$": "ts-jest/legacy"
+      "^.+\\.ts$": [
+        "ts-jest",
+        {
+          "useESM": true
+        }
+      ]
     },
     "testRegex": ".*.test.ts$"
   },

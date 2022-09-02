@@ -42,13 +42,13 @@
     "extensionsToTreatAsEsm": [
       ".ts"
     ],
-    "globals": {
-      "ts-jest": {
-        "useESM": true
-      }
-    },
     "transform": {
-      "^.+\\.ts$": "ts-jest/legacy"
+      "^.+\\.ts$": [
+        "ts-jest",
+        {
+          "useESM": true
+        }
+      ]
     },
     "resolver": "ts-jest-resolver",
     "testRegex": ".*.test.ts$"
