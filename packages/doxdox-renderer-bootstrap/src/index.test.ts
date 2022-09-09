@@ -24,6 +24,7 @@ describe('bootstrap', () => {
                         path: 'directory/index.js',
                         methods: [
                             {
+                                type: 'declaration',
                                 slug: 'index-js-methodname',
                                 name: 'methodName',
                                 fullName: 'methodName(param)',

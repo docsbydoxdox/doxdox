@@ -43,6 +43,7 @@ export const parseString = async (
                 }));
 
             return {
+                type: method.ctx.type,
                 slug: `${slugify(path)}-${slugify(method.ctx.string)}`,
                 name: method.ctx.string,
                 fullName: `${method.ctx.string}(${params
