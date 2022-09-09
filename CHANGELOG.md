@@ -1,8 +1,15 @@
 # Changelog
 
-## [HEAD](https://github.com/docsbydoxdox/doxdox/tree/HEAD) - (2022-09-02)
+## [HEAD](https://github.com/docsbydoxdox/doxdox/tree/HEAD) - (2022-09-09)
 
-[Full Changelog](https://github.com/docsbydoxdox/doxdox/compare/v4.0.0-preview.13...HEAD)
+[Full Changelog](https://github.com/docsbydoxdox/doxdox/compare/v4.0.0-preview.14...HEAD)
+
+- [hotfix] Encode HTML tags in renderers. [#188](https://github.com/docsbydoxdox/doxdox/pull/188)
+- [hotfix] Update renderer template dependencies. [#187](https://github.com/docsbydoxdox/doxdox/pull/187)
+
+## [v4.0.0-preview.14](https://github.com/docsbydoxdox/doxdox/tree/v4.0.0-preview.14) - (2022-09-02)
+
+[Full Changelog](https://github.com/docsbydoxdox/doxdox/compare/v4.0.0-preview.13...v4.0.0-preview.14)
 
 - [hotfix] Updated packages [#186](https://github.com/docsbydoxdox/doxdox/pull/186)
 - [hotfix] Updated packages. [#182](https://github.com/docsbydoxdox/doxdox/pull/182)
