@@ -42,6 +42,7 @@ ${md
             ...method.params.map(({ name, types, description }) => [
                 name,
                 `<code>${types
+                    .map(type => type.replace(/</, '&lt;').replace(/>/, '&gt;'))
                     .map(type => mdTypes.renderInline(type))
                     .join('</code>, <code>')}</code>`,
                 description || ''
@@ -59,6 +60,7 @@ ${
 
 ${method.returns.map(
     param => `<p><code>${param.types
+        .map(type => type.replace(/</, '&lt;').replace(/>/, '&gt;'))
         .map(type => mdTypes.renderInline(type))
         .join('</code>, <code>')}</code></p>
 
