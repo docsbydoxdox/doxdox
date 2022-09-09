@@ -8,7 +8,7 @@ describe('dox parser', () => {
     });
     it('parse example jsdoc headers (function methods)', async () => {
         await expect(
-            parse(process.cwd(), './test/mocks/declaration.js')
+            parse(process.cwd(), './test/mocks/function.js')
         ).resolves.toMatchSnapshot();
     });
     it('parse empty string', async () => {
