@@ -20,12 +20,11 @@
     "globby": "13.1.2",
     "import-from": "4.0.0",
     "parse-cmd-args": "4.1.0",
-    "update-notifier": "6.0.2"
+    "simple-update-notifier": "1.0.7"
   },
   "devDependencies": {
     "@types/jest": "29.0.0",
     "@types/node": "18.7.14",
-    "@types/update-notifier": "6.0.1",
     "@typescript-eslint/eslint-plugin": "5.36.1",
     "@typescript-eslint/parser": "5.36.1",
     "eslint": "8.23.0",
