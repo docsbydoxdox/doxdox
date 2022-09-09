@@ -1,0 +1,186 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`dox parser parse empty string 1`] = `
+{
+  "methods": [],
+  "path": "./test/mocks/empty.js",
+}
+`;
+
+exports[`dox parser parse example jsdoc headers (declaration methods) 1`] = `
+{
+  "methods": [
+    {
+      "description": "Finds file in path.
+
+    console.log(await findFileInPath('./', 'package.json'));
+    console.log(await findFileInPath('../', 'package.json'));
+    console.log(await findFileInPath('~/git/github/doxdox/', '.package.json'));",
+      "fullName": "findFileInPath(input, fileName)",
+      "name": "findFileInPath",
+      "params": [
+        {
+          "description": "Directory to check for file.",
+          "name": "input",
+          "types": [
+            "string",
+          ],
+        },
+        {
+          "description": "= 'package.json'] File name to check for.",
+          "name": "fileName",
+          "types": [
+            "string",
+          ],
+        },
+      ],
+      "private": false,
+      "returns": [
+        {
+          "description": "Path to package.json file.",
+          "name": null,
+          "types": [
+            "Promise.<string|null>",
+          ],
+        },
+      ],
+      "slug": "test-mocks-declaration-js-findfileinpath",
+      "type": "declaration",
+    },
+    {
+      "description": "Get the current working directory.",
+      "fullName": "getCurrentWorkingDirectory()",
+      "name": "getCurrentWorkingDirectory",
+      "params": [],
+      "private": false,
+      "returns": [
+        {
+          "description": "Directory path.",
+          "name": null,
+          "types": [
+            "string",
+          ],
+        },
+      ],
+      "slug": "test-mocks-declaration-js-getcurrentworkingdirectory",
+      "type": "declaration",
+    },
+    {
+      "description": "Get the root directory of the package, supplied path or URL.",
+      "fullName": "getRootDirPath(url)",
+      "name": "getRootDirPath",
+      "params": [
+        {
+          "description": "Optional path or URL.",
+          "name": "url",
+          "types": [
+            "string",
+          ],
+        },
+      ],
+      "private": false,
+      "returns": [
+        {
+          "description": "Directory path.",
+          "name": null,
+          "types": [
+            "string",
+          ],
+        },
+      ],
+      "slug": "test-mocks-declaration-js-getrootdirpath",
+      "type": "declaration",
+    },
+  ],
+  "path": "./test/mocks/declaration.js",
+}
+`;
+
+exports[`dox parser parse example jsdoc headers (function methods) 1`] = `
+{
+  "methods": [
+    {
+      "description": "Finds file in path.
+
+    console.log(await findFileInPath('./', 'package.json'));
+    console.log(await findFileInPath('../', 'package.json'));
+    console.log(await findFileInPath('~/git/github/doxdox/', '.package.json'));",
+      "fullName": "findFileInPath(input, fileName)",
+      "name": "findFileInPath",
+      "params": [
+        {
+          "description": "Directory to check for file.",
+          "name": "input",
+          "types": [
+            "string",
+          ],
+        },
+        {
+          "description": "= 'package.json'] File name to check for.",
+          "name": "fileName",
+          "types": [
+            "string",
+          ],
+        },
+      ],
+      "private": false,
+      "returns": [
+        {
+          "description": "Path to package.json file.",
+          "name": null,
+          "types": [
+            "Promise.<string|null>",
+          ],
+        },
+      ],
+      "slug": "test-mocks-declaration-js-findfileinpath",
+      "type": "declaration",
+    },
+    {
+      "description": "Get the current working directory.",
+      "fullName": "getCurrentWorkingDirectory()",
+      "name": "getCurrentWorkingDirectory",
+      "params": [],
+      "private": false,
+      "returns": [
+        {
+          "description": "Directory path.",
+          "name": null,
+          "types": [
+            "string",
+          ],
+        },
+      ],
+      "slug": "test-mocks-declaration-js-getcurrentworkingdirectory",
+      "type": "declaration",
+    },
+    {
+      "description": "Get the root directory of the package, supplied path or URL.",
+      "fullName": "getRootDirPath(url)",
+      "name": "getRootDirPath",
+      "params": [
+        {
+          "description": "Optional path or URL.",
+          "name": "url",
+          "types": [
+            "string",
+          ],
+        },
+      ],
+      "private": false,
+      "returns": [
+        {
+          "description": "Directory path.",
+          "name": null,
+          "types": [
+            "string",
+          ],
+        },
+      ],
+      "slug": "test-mocks-declaration-js-getrootdirpath",
+      "type": "declaration",
+    },
+  ],
+  "path": "./test/mocks/declaration.js",
+}
+`;
