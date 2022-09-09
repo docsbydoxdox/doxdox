@@ -11,7 +11,7 @@ describe('dox parser', () => {
             parse(process.cwd(), './test/mocks/function.js')
         ).resolves.toMatchSnapshot();
     });
-    it('parse empty string', async () => {
+    it('parse empty file', async () => {
         await expect(
             parse(process.cwd(), './test/mocks/empty.js')
         ).resolves.toMatchSnapshot();
