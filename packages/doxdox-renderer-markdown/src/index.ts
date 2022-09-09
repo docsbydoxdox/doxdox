@@ -16,7 +16,9 @@ ${markdownTable([
     ['Name', 'Types', 'Description'],
     ...method.params.map(({ name, types, description }) => [
         name,
-        types.join(', '),
+        types
+            .map(type => type.replace(/</, '&lt;').replace(/>/, '&gt;'))
+            .join(', '),
         description || ''
     ])
 ])}`
@@ -28,7 +30,9 @@ ${
         ? `### Returns
 
 ${method.returns.map(
-    param => `${param.types.join(', ')}
+    param => `${param.types
+        .map(type => type.replace(/</, '&lt;').replace(/>/, '&gt;'))
+        .join(', ')}
 ${param.description || ''}`
 )}`
         : ''
