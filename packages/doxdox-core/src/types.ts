@@ -12,6 +12,7 @@ export interface File {
 }
 
 export interface Method {
+    type: string;
     slug: string;
     name: string;
     fullName: string;

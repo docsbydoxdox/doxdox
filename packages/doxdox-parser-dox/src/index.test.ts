@@ -35,6 +35,7 @@ const getRootDirPath = (url) => {};`
                 path: 'lib/utils/index.js',
                 methods: expect.arrayContaining([
                     expect.objectContaining({
+                        type: 'declaration',
                         fullName: 'findFileInPath(input, fileName)',
                         name: 'findFileInPath',
                         params: expect.arrayContaining([
@@ -58,6 +59,7 @@ const getRootDirPath = (url) => {};`
                         slug: 'lib-utils-index-js-findfileinpath'
                     }),
                     expect.objectContaining({
+                        type: 'declaration',
                         fullName: 'getRootDirPath(url)',
                         name: 'getRootDirPath',
                         params: expect.arrayContaining([
