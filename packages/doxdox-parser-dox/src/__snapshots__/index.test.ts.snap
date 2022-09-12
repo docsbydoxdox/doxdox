@@ -7,13 +7,6 @@ exports[`dox parser parse empty file 1`] = `
 }
 `;
 
-exports[`dox parser parse empty string 1`] = `
-{
-  "methods": [],
-  "path": "./test/mocks/empty.js",
-}
-`;
-
 exports[`dox parser parse example jsdoc headers (declaration methods) 1`] = `
 {
   "methods": [
