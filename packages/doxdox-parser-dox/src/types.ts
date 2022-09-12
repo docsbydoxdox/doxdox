@@ -15,8 +15,10 @@ export interface Jsdoc {
     code: string;
     ctx: {
         type: string;
+        constructor?: string;
+        cons?: string;
         name: string;
-        value: string;
+        value?: string;
         string: string;
     };
 }

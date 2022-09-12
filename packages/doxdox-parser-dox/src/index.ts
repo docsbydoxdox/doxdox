@@ -42,14 +42,31 @@ export const parseString = async (
                     types: types || []
                 }));
 
+            const isFunction =
+                params.length > 0 ||
+                method.ctx.type === 'constructor' ||
+                method.ctx.type === 'method' ||
+                method.ctx.type === 'function' ||
+                (method.ctx.type === 'declaration' &&
+                    (method.ctx.value?.match(/^(async )?\(/) ||
+                        method.ctx.string?.match(/\)$/)));
+
+            const name = method.ctx.cons
+                ? `${method.ctx.cons}.${method.ctx.name}`
+                : method.ctx.name;
+
+            const fullName = isFunction
+                ? `${name}(${params
+                      .map(param => param.name)
+                      .filter(name => name && !name.match(/\./))
+                      .join(', ')})`
+                : name;
+
             return {
                 type: method.ctx.type,
                 slug: `${slugify(path)}-${slugify(method.ctx.string)}`,
-                name: method.ctx.string,
-                fullName: `${method.ctx.string}(${params
-                    .map(param => param.name)
-                    .filter(name => name && !name.match(/\./))
-                    .join(', ')})`,
+                name,
+                fullName,
                 description: method.description.full || null,
                 params,
                 returns,
