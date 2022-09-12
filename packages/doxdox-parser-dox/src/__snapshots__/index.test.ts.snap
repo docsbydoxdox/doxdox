@@ -101,8 +101,8 @@ exports[`dox parser parse example jsdoc headers (function methods) 1`] = `
   "methods": [
     {
       "description": "Get the current working directory.",
-      "fullName": "getCurrentWorkingDirectory()()",
-      "name": "getCurrentWorkingDirectory()",
+      "fullName": "getCurrentWorkingDirectory()",
+      "name": "getCurrentWorkingDirectory",
       "params": [],
       "private": false,
       "returns": [
@@ -119,8 +119,8 @@ exports[`dox parser parse example jsdoc headers (function methods) 1`] = `
     },
     {
       "description": "Get the root directory of the package, supplied path or URL.",
-      "fullName": "getRootDirPath()(url)",
-      "name": "getRootDirPath()",
+      "fullName": "getRootDirPath(url)",
+      "name": "getRootDirPath",
       "params": [
         {
           "description": "Optional path or URL.",
