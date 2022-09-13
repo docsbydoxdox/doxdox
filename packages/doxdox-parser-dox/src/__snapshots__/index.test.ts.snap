@@ -40,7 +40,7 @@ exports[`dox parser parse example jsdoc headers (declaration methods) 1`] = `
           "description": "Path to package.json file.",
           "name": null,
           "types": [
-            "Promise.<string|null>",
+            "Promise<string|null>",
           ],
         },
       ],
