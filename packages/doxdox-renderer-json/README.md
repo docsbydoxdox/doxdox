@@ -9,7 +9,7 @@
 ## Install
 
 ```bash
-$ npm install doxdox-cli@v4.0.0-preview.14 doxdox-renderer-json@v4.0.0-preview.14 --save-dev
+$ npm install doxdox-cli@v4.0.0-preview.15 doxdox-renderer-json@v4.0.0-preview.15 --save-dev
 ```
 
 ## Usage

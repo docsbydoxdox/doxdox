@@ -9,5 +9,5 @@
 ## Install
 
 ```bash
-$ npm install doxdox-core@v4.0.0-preview.14 doxdox-parser-jsdoc@v4.0.0-preview.14 doxdox-renderer-markdown@v4.0.0-preview.14 --save-dev
+$ npm install doxdox-core@v4.0.0-preview.15 doxdox-parser-jsdoc@v4.0.0-preview.15 doxdox-renderer-markdown@v4.0.0-preview.15 --save-dev
 ```

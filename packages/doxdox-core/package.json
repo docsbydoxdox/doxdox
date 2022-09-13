@@ -1,7 +1,7 @@
 {
   "name": "doxdox-core",
   "description": "Core package for doxdox.",
-  "version": "4.0.0-preview.14",
+  "version": "4.0.0-preview.15",
   "exports": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "type": "module",
