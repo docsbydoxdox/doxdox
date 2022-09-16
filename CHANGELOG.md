@@ -1,5 +1,11 @@
 # Changelog
 
+## [HEAD](https://github.com/docsbydoxdox/doxdox/tree/HEAD) - (2022-09-15)
+
+[Full Changelog](https://github.com/docsbydoxdox/doxdox/compare/v4.0.0-preview.15...HEAD)
+
+- [hotfix] Updated packages. [#196](https://github.com/docsbydoxdox/doxdox/pull/196)
+
 ## [v4.0.0-preview.15](https://github.com/docsbydoxdox/doxdox/tree/v4.0.0-preview.15) - (2022-09-12)
 
 [Full Changelog](https://github.com/docsbydoxdox/doxdox/compare/v4.0.0-preview.14...v4.0.0-preview.15)
@@ -10,6 +16,9 @@
 - [hotfix] Swapped out update-notifier for simple-update-notifier. [#189](https://github.com/docsbydoxdox/doxdox/pull/189)
 - [hotfix] Encode HTML tags in renderers. [#188](https://github.com/docsbydoxdox/doxdox/pull/188)
 - [hotfix] Update renderer template dependencies. [#187](https://github.com/docsbydoxdox/doxdox/pull/187)
+- [hotfix] Update dox dependency (#195) [#195](https://github.com/docsbydoxdox/doxdox/pull/195)
+- Updated packages. (#194) [#194](https://github.com/docsbydoxdox/doxdox/pull/194)
+- [hotfix] Cleaned up return data from dox parser. (#192) [#192](https://github.com/docsbydoxdox/doxdox/pull/192)
 
 ## [v4.0.0-preview.14](https://github.com/docsbydoxdox/doxdox/tree/v4.0.0-preview.14) - (2022-09-02)
 
