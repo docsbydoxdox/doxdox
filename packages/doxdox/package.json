@@ -17,7 +17,7 @@
     "doxdox-renderer-markdown": "4.0.0-preview.15"
   },
   "devDependencies": {
-    "@types/node": "18.7.17",
+    "@types/node": "18.7.18",
     "@typescript-eslint/eslint-plugin": "5.37.0",
     "@typescript-eslint/parser": "5.37.0",
     "eslint": "8.23.1",
