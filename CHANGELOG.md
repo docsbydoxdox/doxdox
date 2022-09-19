@@ -1,9 +1,11 @@
 # Changelog
 
-## [HEAD](https://github.com/docsbydoxdox/doxdox/tree/HEAD) - (2022-09-15)
+## [v4.0.0-preview.16](https://github.com/docsbydoxdox/doxdox/tree/v4.0.0-preview.16) - (2022-09-19)
 
-[Full Changelog](https://github.com/docsbydoxdox/doxdox/compare/v4.0.0-preview.15...HEAD)
+[Full Changelog](https://github.com/docsbydoxdox/doxdox/compare/v4.0.0-preview.15...v4.0.0-preview.16)
 
+- [feat] Added new custom jsdoc template. [#198](https://github.com/docsbydoxdox/doxdox/pull/198)
+- [hotfix] Updated packages. [#197](https://github.com/docsbydoxdox/doxdox/pull/197)
 - [hotfix] Updated packages. [#196](https://github.com/docsbydoxdox/doxdox/pull/196)
 
 ## [v4.0.0-preview.15](https://github.com/docsbydoxdox/doxdox/tree/v4.0.0-preview.15) - (2022-09-12)

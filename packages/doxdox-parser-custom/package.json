@@ -1,7 +1,7 @@
 {
   "name": "doxdox-parser-custom",
   "description": "Custom parser for doxdox",
-  "version": "4.0.0-preview.15",
+  "version": "4.0.0-preview.16",
   "exports": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "type": "module",
@@ -12,7 +12,7 @@
     "comment-parser": "1.3.1"
   },
   "peerDependencies": {
-    "doxdox-core": "4.0.0-preview.15"
+    "doxdox-core": "4.0.0-preview.16"
   },
   "peerDependenciesMeta": {
     "doxdox-core": {

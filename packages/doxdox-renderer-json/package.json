@@ -1,7 +1,7 @@
 {
   "name": "doxdox-renderer-json",
   "description": "JSON renderer for doxdox.",
-  "version": "4.0.0-preview.15",
+  "version": "4.0.0-preview.16",
   "exports": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "type": "module",
@@ -9,7 +9,7 @@
     "node": "^14.15.0 || ^16.10.0 || >=18.0.0"
   },
   "peerDependencies": {
-    "doxdox-core": "4.0.0-preview.15"
+    "doxdox-core": "4.0.0-preview.16"
   },
   "peerDependenciesMeta": {
     "doxdox-core": {
