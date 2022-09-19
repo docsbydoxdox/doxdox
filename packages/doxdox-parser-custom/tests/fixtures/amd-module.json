@@ -1,0 +1,152 @@
+{
+  "path": "./tests/fixtures/amd-module.js",
+  "methods": [
+    {
+      "slug": "tests-fixtures-amd-module-js-color",
+      "name": "color",
+      "fullName": "color()",
+      "description": "The module's `color` property.",
+      "params": [],
+      "returns": [],
+      "private": false
+    },
+    {
+      "slug": "tests-fixtures-amd-module-js-color",
+      "name": "color",
+      "fullName": "color()",
+      "description": "Color.",
+      "params": [],
+      "returns": [],
+      "private": false
+    },
+    {
+      "slug": "tests-fixtures-amd-module-js-define",
+      "name": "define",
+      "fullName": "define()",
+      "description": "A module representing a jacket.",
+      "params": [],
+      "returns": [],
+      "private": false
+    },
+    {
+      "slug": "tests-fixtures-amd-module-js-getstyleproperty",
+      "name": "getStyleProperty",
+      "fullName": "getStyleProperty(element, propertyName)",
+      "description": "Get the value of a property on an element.",
+      "params": [
+        {
+          "name": "element",
+          "description": "- The element.",
+          "types": [
+            "HTMLElement"
+          ]
+        },
+        {
+          "name": "propertyName",
+          "description": "- The name of the property.",
+          "types": [
+            "string"
+          ]
+        }
+      ],
+      "returns": [
+        {
+          "name": null,
+          "description": "The value of the property.",
+          "types": [
+            "*"
+          ]
+        }
+      ],
+      "private": false
+    },
+    {
+      "slug": "tests-fixtures-amd-module-js-jacket",
+      "name": "Jacket",
+      "fullName": "Jacket()",
+      "description": "Create a new jacket.",
+      "params": [],
+      "returns": [],
+      "private": false
+    },
+    {
+      "slug": "tests-fixtures-amd-module-js-shirt",
+      "name": "shirt",
+      "fullName": "shirt()",
+      "description": "A module representing a shirt.",
+      "params": [],
+      "returns": [],
+      "private": false
+    },
+    {
+      "slug": "tests-fixtures-amd-module-js-size",
+      "name": "size",
+      "fullName": "size()",
+      "description": "The class's `size` property.",
+      "params": [],
+      "returns": [],
+      "private": false
+    },
+    {
+      "slug": "tests-fixtures-amd-module-js-size",
+      "name": "size",
+      "fullName": "size()",
+      "description": "Size.",
+      "params": [],
+      "returns": [],
+      "private": false
+    },
+    {
+      "slug": "tests-fixtures-amd-module-js-tag",
+      "name": "tag",
+      "fullName": "tag()",
+      "description": "",
+      "params": [],
+      "returns": [],
+      "private": false
+    },
+    {
+      "slug": "tests-fixtures-amd-module-js-tag",
+      "name": "Tag",
+      "fullName": "Tag(tagName)",
+      "description": "Create a new Tag.",
+      "params": [
+        {
+          "name": "tagName",
+          "description": "- The name of the tag.",
+          "types": [
+            "string"
+          ]
+        }
+      ],
+      "returns": [],
+      "private": false
+    },
+    {
+      "slug": "tests-fixtures-amd-module-js-turtleneck",
+      "name": "Turtleneck",
+      "fullName": "Turtleneck(size)",
+      "description": "Create a new Turtleneck.",
+      "params": [
+        {
+          "name": "size",
+          "description": "- The size (`XS`, `S`, `M`, `L`, `XL`, or `XXL`).",
+          "types": [
+            "string"
+          ]
+        }
+      ],
+      "returns": [],
+      "private": false
+    },
+    {
+      "slug": "tests-fixtures-amd-module-js-utils",
+      "name": "utils",
+      "fullName": "utils()",
+      "description": "Utility functions to ease working with DOM elements.",
+      "params": [],
+      "returns": [],
+      "private": false
+    }
+  ]
+}

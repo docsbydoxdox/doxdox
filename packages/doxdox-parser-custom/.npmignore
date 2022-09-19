@@ -1,0 +1,12 @@
+coverage/
+
+src/
+
+tests/
+
+.eslintrc
+
+.prettierignore
+.prettierrc
+
+tsconfig.json

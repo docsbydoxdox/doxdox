@@ -1,0 +1,14 @@
+{
+  "path": "./tests/fixtures/ignore.js",
+  "methods": [
+    {
+      "slug": "tests-fixtures-ignore-js-foo",
+      "name": "foo",
+      "fullName": "foo()",
+      "description": "This is a description of the foo function.",
+      "params": [],
+      "returns": [],
+      "private": false
+    }
+  ]
+}

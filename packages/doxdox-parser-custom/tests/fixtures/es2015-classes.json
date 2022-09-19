@@ -1,0 +1,138 @@
+{
+  "path": "./tests/fixtures/es2015-classes.js",
+  "methods": [
+    {
+      "slug": "tests-fixtures-es-classes-js-constructor",
+      "name": "constructor",
+      "fullName": "constructor(x, y)",
+      "description": "Create a point.",
+      "params": [
+        {
+          "name": "x",
+          "description": "- The x value.",
+          "types": [
+            "number"
+          ]
+        },
+        {
+          "name": "y",
+          "description": "- The y value.",
+          "types": [
+            "number"
+          ]
+        }
+      ],
+      "returns": [],
+      "private": false
+    },
+    {
+      "slug": "tests-fixtures-es-classes-js-constructor",
+      "name": "constructor",
+      "fullName": "constructor(x, y, width)",
+      "description": "Create a dot.",
+      "params": [
+        {
+          "name": "x",
+          "description": "- The x value.",
+          "types": [
+            "number"
+          ]
+        },
+        {
+          "name": "y",
+          "description": "- The y value.",
+          "types": [
+            "number"
+          ]
+        },
+        {
+          "name": "width",
+          "description": "- The width of the dot, in pixels.",
+          "types": [
+            "number"
+          ]
+        }
+      ],
+      "returns": [],
+      "private": false
+    },
+    {
+      "slug": "tests-fixtures-es-classes-js-getwidth",
+      "name": "getWidth",
+      "fullName": "getWidth()",
+      "description": "Get the dot's width.",
+      "params": [],
+      "returns": [
+        {
+          "name": null,
+          "description": "The dot's width, in pixels.",
+          "types": [
+            "number"
+          ]
+        }
+      ],
+      "private": false
+    },
+    {
+      "slug": "tests-fixtures-es-classes-js-getx",
+      "name": "getX",
+      "fullName": "getX()",
+      "description": "Get the x value.",
+      "params": [],
+      "returns": [
+        {
+          "name": null,
+          "description": "The x value.",
+          "types": [
+            "number"
+          ]
+        }
+      ],
+      "private": false
+    },
+    {
+      "slug": "tests-fixtures-es-classes-js-gety",
+      "name": "getY",
+      "fullName": "getY()",
+      "description": "Get the y value.",
+      "params": [],
+      "returns": [
+        {
+          "name": null,
+          "description": "The y value.",
+          "types": [
+            "number"
+          ]
+        }
+      ],
+      "private": false
+    },
+    {
+      "slug": "tests-fixtures-es-classes-js-point",
+      "name": "Point",
+      "fullName": "Point()",
+      "description": "Class representing a point.",
+      "params": [],
+      "returns": [],
+      "private": false
+    },
+    {
+      "slug": "tests-fixtures-es-classes-js-point",
+      "name": "Point",
+      "fullName": "Point()",
+      "description": "Class representing a point.",
+      "params": [],
+      "returns": [],
+      "private": false
+    },
+    {
+      "slug": "tests-fixtures-es-classes-js-s",
+      "name": "s",
+      "fullName": "s()",
+      "description": "Class representing a dot.",
+      "params": [],
+      "returns": [],
+      "private": false
+    }
+  ]
+}
