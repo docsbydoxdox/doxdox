@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`template parser parse empty file 1`] = `
+{
+  "methods": [],
+  "path": "./test/mocks/empty.js",
+}
+`;
+
+exports[`template parser parse example jsdoc headers (declaration methods) 1`] = `
+{
+  "methods": [],
+  "path": "./test/mocks/declaration.js",
+}
+`;
+
+exports[`template parser parse example jsdoc headers (function methods) 1`] = `
+{
+  "methods": [],
+  "path": "./test/mocks/function.js",
+}
+`;

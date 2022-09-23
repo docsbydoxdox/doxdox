@@ -2,7 +2,7 @@ coverage/
 
 src/
 
-tests/
+test/
 
 .eslintrc
 

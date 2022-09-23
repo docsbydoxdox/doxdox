@@ -9,5 +9,5 @@
     "strict": true
   },
   "include": ["./src", "./src/.d.ts"],
-  "exclude": ["./dist", "./tests/fixtures", "**/*.test.ts"]
+  "exclude": ["./dist", "./test/mocks", "**/*.test.ts"]
 }
