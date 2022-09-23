@@ -9,6 +9,7 @@ import {
     getRootDirPath,
     isDirectory,
     isFile,
+    multiLinePatternMatch,
     parseConfigFromCLI,
     parseIgnoreConfig,
     slugify
@@ -95,6 +96,36 @@ describe('utils', () => {
         });
         it('return false with invalid input', async () => {
             expect(await isFile('./invalid.txt')).toBeFalsy();
+        });
+    });
+
+    describe('multiLinePatternMatch', () => {
+        it('find pattern in content', async () => {
+            expect(
+                multiLinePatternMatch(
+                    `/**
+ * Get the current working directory.
+ *
+ * @return {string} Directory path.
+ * @public
+ */
+
+function getCurrentWorkingDirectory() {}`,
+                    `/**
+ * Get the current working directory.
+ *
+ * @return {string} Directory path.
+ * @public
+ */`
+                )
+            ).toEqual(
+                expect.objectContaining({ matched: true, start: 0, end: 6 })
+            );
+        });
+        it('fail to find pattern', async () => {
+            expect(multiLinePatternMatch('', '// @ts-ignore')).toEqual(
+                expect.objectContaining({ matched: false })
+            );
         });
     });
 
