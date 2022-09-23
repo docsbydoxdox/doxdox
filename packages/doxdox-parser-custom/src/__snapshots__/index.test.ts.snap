@@ -1,0 +1,901 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`custom parser parse amd-module 1`] = `
+{
+  "methods": [
+    {
+      "description": "The module's \`color\` property.",
+      "fullName": "color()",
+      "name": "color",
+      "params": [],
+      "private": false,
+      "returns": [],
+      "slug": "test-mocks-amd-module-js-color",
+    },
+    {
+      "description": "Color.",
+      "fullName": "color()",
+      "name": "color",
+      "params": [],
+      "private": false,
+      "returns": [],
+      "slug": "test-mocks-amd-module-js-color",
+    },
+    {
+      "description": "A module representing a jacket.",
+      "fullName": "define()",
+      "name": "define",
+      "params": [],
+      "private": false,
+      "returns": [],
+      "slug": "test-mocks-amd-module-js-define",
+    },
+    {
+      "description": "Get the value of a property on an element.",
+      "fullName": "getStyleProperty(element, propertyName)",
+      "name": "getStyleProperty",
+      "params": [
+        {
+          "description": "- The element.",
+          "name": "element",
+          "types": [
+            "HTMLElement",
+          ],
+        },
+        {
+          "description": "- The name of the property.",
+          "name": "propertyName",
+          "types": [
+            "string",
+          ],
+        },
+      ],
+      "private": false,
+      "returns": [
+        {
+          "description": "The value of the property.",
+          "name": null,
+          "types": [
+            "*",
+          ],
+        },
+      ],
+      "slug": "test-mocks-amd-module-js-getstyleproperty",
+    },
+    {
+      "description": "Create a new jacket.",
+      "fullName": "Jacket()",
+      "name": "Jacket",
+      "params": [],
+      "private": false,
+      "returns": [],
+      "slug": "test-mocks-amd-module-js-jacket",
+    },
+    {
+      "description": "A module representing a shirt.",
+      "fullName": "shirt()",
+      "name": "shirt",
+      "params": [],
+      "private": false,
+      "returns": [],
+      "slug": "test-mocks-amd-module-js-shirt",
+    },
+    {
+      "description": "The class's \`size\` property.",
+      "fullName": "size()",
+      "name": "size",
+      "params": [],
+      "private": false,
+      "returns": [],
+      "slug": "test-mocks-amd-module-js-size",
+    },
+    {
+      "description": "Size.",
+      "fullName": "size()",
+      "name": "size",
+      "params": [],
+      "private": false,
+      "returns": [],
+      "slug": "test-mocks-amd-module-js-size",
+    },
+    {
+      "description": "",
+      "fullName": "tag()",
+      "name": "tag",
+      "params": [],
+      "private": false,
+      "returns": [],
+      "slug": "test-mocks-amd-module-js-tag",
+    },
+    {
+      "description": "Create a new Tag.",
+      "fullName": "Tag(tagName)",
+      "name": "Tag",
+      "params": [
+        {
+          "description": "- The name of the tag.",
+          "name": "tagName",
+          "types": [
+            "string",
+          ],
+        },
+      ],
+      "private": false,
+      "returns": [],
+      "slug": "test-mocks-amd-module-js-tag",
+    },
+    {
+      "description": "Create a new Turtleneck.",
+      "fullName": "Turtleneck(size)",
+      "name": "Turtleneck",
+      "params": [
+        {
+          "description": "- The size (\`XS\`, \`S\`, \`M\`, \`L\`, \`XL\`, or \`XXL\`).",
+          "name": "size",
+          "types": [
+            "string",
+          ],
+        },
+      ],
+      "private": false,
+      "returns": [],
+      "slug": "test-mocks-amd-module-js-turtleneck",
+    },
+    {
+      "description": "Utility functions to ease working with DOM elements.",
+      "fullName": "utils()",
+      "name": "utils",
+      "params": [],
+      "private": false,
+      "returns": [],
+      "slug": "test-mocks-amd-module-js-utils",
+    },
+  ],
+  "path": "./test/mocks/amd-module.js",
+}
+`;
+
+exports[`custom parser parse comment-block 1`] = `
+{
+  "methods": [
+    {
+      "description": "Represents a book.",
+      "fullName": "Book(title, author)",
+      "name": "Book",
+      "params": [
+        {
+          "description": "- The title of the book.",
+          "name": "title",
+          "types": [
+            "string",
+          ],
+        },
+        {
+          "description": "- The author of the book.",
+          "name": "author",
+          "types": [
+            "string",
+          ],
+        },
+      ],
+      "private": false,
+      "returns": [],
+      "slug": "test-mocks-comment-block-js-book",
+    },
+  ],
+  "path": "./test/mocks/comment-block.js",
+}
+`;
+
+exports[`custom parser parse comment-inline 1`] = `
+{
+  "methods": [
+    {
+      "description": "This is a description of the foo function.",
+      "fullName": "foo()",
+      "name": "foo",
+      "params": [],
+      "private": false,
+      "returns": [],
+      "slug": "test-mocks-comment-inline-js-foo",
+    },
+  ],
+  "path": "./test/mocks/comment-inline.js",
+}
+`;
+
+exports[`custom parser parse commonjs-module 1`] = `
+{
+  "methods": [
+    {
+      "description": "Blend two colors together.",
+      "fullName": "blend(color1, color2)",
+      "name": "blend",
+      "params": [
+        {
+          "description": "- The first color, in hexadecimal format.",
+          "name": "color1",
+          "types": [
+            "string",
+          ],
+        },
+        {
+          "description": "- The second color, in hexadecimal format.",
+          "name": "color2",
+          "types": [
+            "string",
+          ],
+        },
+      ],
+      "private": false,
+      "returns": [
+        {
+          "description": "The blended color.",
+          "name": null,
+          "types": [
+            "string",
+          ],
+        },
+      ],
+      "slug": "test-mocks-commonjs-module-js-blend",
+    },
+    {
+      "description": "Blend two colors together.",
+      "fullName": "blend(color1, color2)",
+      "name": "blend",
+      "params": [
+        {
+          "description": "- The first color, in hexadecimal format.",
+          "name": "color1",
+          "types": [
+            "string",
+          ],
+        },
+        {
+          "description": "- The second color, in hexadecimal format.",
+          "name": "color2",
+          "types": [
+            "string",
+          ],
+        },
+      ],
+      "private": false,
+      "returns": [
+        {
+          "description": "The blended color.",
+          "name": null,
+          "types": [
+            "string",
+          ],
+        },
+      ],
+      "slug": "test-mocks-commonjs-module-js-blend",
+    },
+    {
+      "description": "Blend two colors together.",
+      "fullName": "blend(color1, color2)",
+      "name": "blend",
+      "params": [
+        {
+          "description": "- The first color, in hexadecimal format.",
+          "name": "color1",
+          "types": [
+            "string",
+          ],
+        },
+        {
+          "description": "- The second color, in hexadecimal format.",
+          "name": "color2",
+          "types": [
+            "string",
+          ],
+        },
+      ],
+      "private": false,
+      "returns": [
+        {
+          "description": "The blended color.",
+          "name": null,
+          "types": [
+            "string",
+          ],
+        },
+      ],
+      "slug": "test-mocks-commonjs-module-js-blend",
+    },
+    {
+      "description": "Create a new Book.",
+      "fullName": "Book(title)",
+      "name": "Book",
+      "params": [
+        {
+          "description": "- The title of the book.",
+          "name": "title",
+          "types": [
+            "string",
+          ],
+        },
+      ],
+      "private": false,
+      "returns": [],
+      "slug": "test-mocks-commonjs-module-js-book",
+    },
+    {
+      "description": "Button the shirt.",
+      "fullName": "button()",
+      "name": "button",
+      "params": [],
+      "private": false,
+      "returns": [],
+      "slug": "test-mocks-commonjs-module-js-button",
+    },
+    {
+      "description": "The title of the book.",
+      "fullName": "title()",
+      "name": "title",
+      "params": [],
+      "private": false,
+      "returns": [],
+      "slug": "test-mocks-commonjs-module-js-title",
+    },
+  ],
+  "path": "./test/mocks/commonjs-module.js",
+}
+`;
+
+exports[`custom parser parse empty file 1`] = `
+{
+  "methods": [],
+  "path": "./test/mocks/empty.js",
+}
+`;
+
+exports[`custom parser parse es2015-classes 1`] = `
+{
+  "methods": [
+    {
+      "description": "Create a point.",
+      "fullName": "constructor(x, y)",
+      "name": "constructor",
+      "params": [
+        {
+          "description": "- The x value.",
+          "name": "x",
+          "types": [
+            "number",
+          ],
+        },
+        {
+          "description": "- The y value.",
+          "name": "y",
+          "types": [
+            "number",
+          ],
+        },
+      ],
+      "private": false,
+      "returns": [],
+      "slug": "test-mocks-es-classes-js-constructor",
+    },
+    {
+      "description": "Create a dot.",
+      "fullName": "constructor(x, y, width)",
+      "name": "constructor",
+      "params": [
+        {
+          "description": "- The x value.",
+          "name": "x",
+          "types": [
+            "number",
+          ],
+        },
+        {
+          "description": "- The y value.",
+          "name": "y",
+          "types": [
+            "number",
+          ],
+        },
+        {
+          "description": "- The width of the dot, in pixels.",
+          "name": "width",
+          "types": [
+            "number",
+          ],
+        },
+      ],
+      "private": false,
+      "returns": [],
+      "slug": "test-mocks-es-classes-js-constructor",
+    },
+    {
+      "description": "Get the dot's width.",
+      "fullName": "getWidth()",
+      "name": "getWidth",
+      "params": [],
+      "private": false,
+      "returns": [
+        {
+          "description": "The dot's width, in pixels.",
+          "name": null,
+          "types": [
+            "number",
+          ],
+        },
+      ],
+      "slug": "test-mocks-es-classes-js-getwidth",
+    },
+    {
+      "description": "Get the x value.",
+      "fullName": "getX()",
+      "name": "getX",
+      "params": [],
+      "private": false,
+      "returns": [
+        {
+          "description": "The x value.",
+          "name": null,
+          "types": [
+            "number",
+          ],
+        },
+      ],
+      "slug": "test-mocks-es-classes-js-getx",
+    },
+    {
+      "description": "Get the y value.",
+      "fullName": "getY()",
+      "name": "getY",
+      "params": [],
+      "private": false,
+      "returns": [
+        {
+          "description": "The y value.",
+          "name": null,
+          "types": [
+            "number",
+          ],
+        },
+      ],
+      "slug": "test-mocks-es-classes-js-gety",
+    },
+    {
+      "description": "Class representing a point.",
+      "fullName": "Point()",
+      "name": "Point",
+      "params": [],
+      "private": false,
+      "returns": [],
+      "slug": "test-mocks-es-classes-js-point",
+    },
+    {
+      "description": "Class representing a point.",
+      "fullName": "Point()",
+      "name": "Point",
+      "params": [],
+      "private": false,
+      "returns": [],
+      "slug": "test-mocks-es-classes-js-point",
+    },
+    {
+      "description": "Class representing a dot.",
+      "fullName": "s()",
+      "name": "s",
+      "params": [],
+      "private": false,
+      "returns": [],
+      "slug": "test-mocks-es-classes-js-s",
+    },
+  ],
+  "path": "./test/mocks/es2015-classes.js",
+}
+`;
+
+exports[`custom parser parse es2015-module 1`] = `
+{
+  "methods": [
+    {
+      "description": "Blend two colors together.",
+      "fullName": "blend(color1, color2)",
+      "name": "blend",
+      "params": [
+        {
+          "description": "- The first color, in hexadecimal format.",
+          "name": "color1",
+          "types": [
+            "string",
+          ],
+        },
+        {
+          "description": "- The second color, in hexadecimal format.",
+          "name": "color2",
+          "types": [
+            "string",
+          ],
+        },
+      ],
+      "private": false,
+      "returns": [
+        {
+          "description": "The blended color.",
+          "name": null,
+          "types": [
+            "string",
+          ],
+        },
+      ],
+      "slug": "test-mocks-es-module-js-blend",
+    },
+    {
+      "description": "The most recent blended color.",
+      "fullName": "lastColor()",
+      "name": "lastColor",
+      "params": [],
+      "private": false,
+      "returns": [],
+      "slug": "test-mocks-es-module-js-lastcolor",
+    },
+    {
+      "description": "The name of the module.",
+      "fullName": "name()",
+      "name": "name",
+      "params": [],
+      "private": false,
+      "returns": [],
+      "slug": "test-mocks-es-module-js-name",
+    },
+    {
+      "description": "Get the red, green, and blue values of a color.",
+      "fullName": "toRgb(color)",
+      "name": "toRgb",
+      "params": [
+        {
+          "description": "- A color, in hexadecimal format.",
+          "name": "color",
+          "types": [
+            "string",
+          ],
+        },
+      ],
+      "private": false,
+      "returns": [],
+      "slug": "test-mocks-es-module-js-torgb",
+    },
+  ],
+  "path": "./test/mocks/es2015-module.js",
+}
+`;
+
+exports[`custom parser parse example jsdoc headers (declaration methods) 1`] = `
+{
+  "methods": [
+    {
+      "description": "Finds file in path. console.log(await findFileInPath('./', 'package.json')); console.log(await findFileInPath('../', 'package.json')); console.log(await findFileInPath('~/git/github/doxdox/', '.package.json'));",
+      "fullName": "findFileInPath(input, fileName)",
+      "name": "findFileInPath",
+      "params": [
+        {
+          "description": "Directory to check for file.",
+          "name": "input",
+          "types": [
+            "string",
+          ],
+        },
+        {
+          "description": "File name to check for.",
+          "name": "fileName",
+          "types": [
+            "string",
+          ],
+        },
+      ],
+      "private": false,
+      "returns": [
+        {
+          "description": "Path to package.json file.",
+          "name": null,
+          "types": [
+            "Promise<string | null>",
+          ],
+        },
+      ],
+      "slug": "test-mocks-declaration-js-findfileinpath",
+    },
+    {
+      "description": "Get the current working directory.",
+      "fullName": "getCurrentWorkingDirectory()",
+      "name": "getCurrentWorkingDirectory",
+      "params": [],
+      "private": false,
+      "returns": [
+        {
+          "description": "Directory path.",
+          "name": null,
+          "types": [
+            "string",
+          ],
+        },
+      ],
+      "slug": "test-mocks-declaration-js-getcurrentworkingdirectory",
+    },
+    {
+      "description": "Get the root directory of the package, supplied path or URL.",
+      "fullName": "getRootDirPath(url)",
+      "name": "getRootDirPath",
+      "params": [
+        {
+          "description": "Optional path or URL.",
+          "name": "url",
+          "types": [
+            "string",
+          ],
+        },
+      ],
+      "private": false,
+      "returns": [
+        {
+          "description": "Directory path.",
+          "name": null,
+          "types": [
+            "string",
+          ],
+        },
+      ],
+      "slug": "test-mocks-declaration-js-getrootdirpath",
+    },
+  ],
+  "path": "./test/mocks/declaration.js",
+}
+`;
+
+exports[`custom parser parse example jsdoc headers (function methods) 1`] = `
+{
+  "methods": [
+    {
+      "description": "Get the current working directory.",
+      "fullName": "getCurrentWorkingDirectory()",
+      "name": "getCurrentWorkingDirectory",
+      "params": [],
+      "private": false,
+      "returns": [
+        {
+          "description": "Directory path.",
+          "name": null,
+          "types": [
+            "string",
+          ],
+        },
+      ],
+      "slug": "test-mocks-function-js-getcurrentworkingdirectory",
+    },
+    {
+      "description": "Get the root directory of the package, supplied path or URL.",
+      "fullName": "getRootDirPath(url)",
+      "name": "getRootDirPath",
+      "params": [
+        {
+          "description": "Optional path or URL.",
+          "name": "url",
+          "types": [
+            "string",
+          ],
+        },
+      ],
+      "private": false,
+      "returns": [
+        {
+          "description": "Directory path.",
+          "name": null,
+          "types": [
+            "string",
+          ],
+        },
+      ],
+      "slug": "test-mocks-function-js-getrootdirpath",
+    },
+  ],
+  "path": "./test/mocks/function.js",
+}
+`;
+
+exports[`custom parser parse ignore 1`] = `
+{
+  "methods": [
+    {
+      "description": "This is a description of the foo function.",
+      "fullName": "foo()",
+      "name": "foo",
+      "params": [],
+      "private": false,
+      "returns": [],
+      "slug": "test-mocks-ignore-js-foo",
+    },
+  ],
+  "path": "./test/mocks/ignore.js",
+}
+`;
+
+exports[`custom parser parse no-comment 1`] = `
+{
+  "methods": [],
+  "path": "./test/mocks/no-comment.js",
+}
+`;
+
+exports[`custom parser parse params 1`] = `
+{
+  "methods": [
+    {
+      "description": "",
+      "fullName": "sayHello(somebody)",
+      "name": "sayHello",
+      "params": [
+        {
+          "description": "",
+          "name": "somebody",
+          "types": [
+            "",
+          ],
+        },
+      ],
+      "private": false,
+      "returns": [],
+      "slug": "test-mocks-params-js-sayhello",
+    },
+    {
+      "description": "",
+      "fullName": "sayHello(somebody)",
+      "name": "sayHello",
+      "params": [
+        {
+          "description": "",
+          "name": "somebody",
+          "types": [
+            "string",
+          ],
+        },
+      ],
+      "private": false,
+      "returns": [],
+      "slug": "test-mocks-params-js-sayhello",
+    },
+    {
+      "description": "",
+      "fullName": "sayHello(somebody)",
+      "name": "sayHello",
+      "params": [
+        {
+          "description": "Somebody's name.",
+          "name": "somebody",
+          "types": [
+            "string",
+          ],
+        },
+      ],
+      "private": false,
+      "returns": [],
+      "slug": "test-mocks-params-js-sayhello",
+    },
+    {
+      "description": "",
+      "fullName": "sayHello(somebody)",
+      "name": "sayHello",
+      "params": [
+        {
+          "description": "- Somebody's name.",
+          "name": "somebody",
+          "types": [
+            "string",
+          ],
+        },
+      ],
+      "private": false,
+      "returns": [],
+      "slug": "test-mocks-params-js-sayhello",
+    },
+    {
+      "description": "",
+      "fullName": "sayHello(somebody)",
+      "name": "sayHello",
+      "params": [
+        {
+          "description": "- Somebody's name.",
+          "name": "somebody",
+          "types": [
+            "string",
+          ],
+        },
+      ],
+      "private": false,
+      "returns": [],
+      "slug": "test-mocks-params-js-sayhello",
+    },
+    {
+      "description": "",
+      "fullName": "sayHello(somebody)",
+      "name": "sayHello",
+      "params": [
+        {
+          "description": "- Somebody's name.",
+          "name": "somebody",
+          "types": [
+            "string=",
+          ],
+        },
+      ],
+      "private": false,
+      "returns": [],
+      "slug": "test-mocks-params-js-sayhello",
+    },
+    {
+      "description": "",
+      "fullName": "sayHello(somebody)",
+      "name": "sayHello",
+      "params": [
+        {
+          "description": "- Somebody's name.",
+          "name": "somebody",
+          "types": [
+            "string",
+          ],
+        },
+      ],
+      "private": false,
+      "returns": [],
+      "slug": "test-mocks-params-js-sayhello",
+    },
+    {
+      "description": "",
+      "fullName": "sayHello(somebody)",
+      "name": "sayHello",
+      "params": [
+        {
+          "description": "- Somebody's name, or an array of names.",
+          "name": "somebody",
+          "types": [
+            "(string|string[])",
+          ],
+        },
+      ],
+      "private": false,
+      "returns": [],
+      "slug": "test-mocks-params-js-sayhello",
+    },
+    {
+      "description": "",
+      "fullName": "sayHello(somebody)",
+      "name": "sayHello",
+      "params": [
+        {
+          "description": "- Whatever you want.",
+          "name": "somebody",
+          "types": [
+            "*",
+          ],
+        },
+      ],
+      "private": false,
+      "returns": [],
+      "slug": "test-mocks-params-js-sayhello",
+    },
+    {
+      "description": "Returns the sum of all numbers passed to the function.",
+      "fullName": "sum(num)",
+      "name": "sum",
+      "params": [
+        {
+          "description": "- A positive or negative number.",
+          "name": "num",
+          "types": [
+            "...number",
+          ],
+        },
+      ],
+      "private": false,
+      "returns": [],
+      "slug": "test-mocks-params-js-sum",
+    },
+  ],
+  "path": "./test/mocks/params.js",
+}
+`;
