@@ -2,11 +2,9 @@ import { promises as fs } from 'fs';
 
 import { join } from 'path';
 
-import { File, Method, slugify } from 'doxdox-core';
+import { File, Method, multiLinePatternMatch, slugify } from 'doxdox-core';
 
 import { parse as commentParse } from 'comment-parser';
-
-import { multiLinePatternMatch } from './utils.js';
 
 const JSDOC_PATTERN = /[ \t]*\/\*\*\s*\n?([^*]*(\*[^/])?)*\*\//g;
 
