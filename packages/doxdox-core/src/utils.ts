@@ -65,7 +65,7 @@ export const findParentNodeModules = async (
             if (await fs.stat(nodeModulesPath)) {
                 return nodeModulesPath;
             }
-        } catch (_) {
+        } catch {
             const parentDirectory = resolve(currentDirectory, '..');
 
             return await findParentNodeModules(parentDirectory, --maxDepth);
@@ -124,7 +124,7 @@ export const getRootDirPath = (url?: string): string =>
 export const isDirectory = async (path: string): Promise<boolean> => {
     try {
         return (await fs.stat(path)).isDirectory();
-    } catch (_) {
+    } catch {
         return false;
     }
 };
@@ -140,7 +140,7 @@ export const isDirectory = async (path: string): Promise<boolean> => {
 export const isFile = async (path: string): Promise<boolean> => {
     try {
         return (await fs.stat(path)).isFile();
-    } catch (_) {
+    } catch {
         return false;
     }
 };
