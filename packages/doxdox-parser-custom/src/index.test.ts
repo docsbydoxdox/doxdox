@@ -1,4 +1,6 @@
-import parse from './index';
+import safe from 'safe-regex';
+
+import parse, { JSDOC_PATTERN, IDENTIFIER_PATTERNS } from './index';
 
 describe('custom parser', () => {
     describe('parse', () => {
@@ -32,6 +34,17 @@ describe('custom parser', () => {
             await expect(
                 parse(process.cwd(), './test/mocks/scope.js')
             ).resolves.toMatchSnapshot();
+        });
+    });
+
+    describe('check regular expressions', () => {
+        it('jsdoc pattern is safe', () => {
+            expect(safe(JSDOC_PATTERN)).toBeTruthy();
+        });
+        it('identifier patterns are safe', () => {
+            for (let i = 0; i < IDENTIFIER_PATTERNS.length; i += 1) {
+                expect(safe(IDENTIFIER_PATTERNS[i])).toBeTruthy();
+            }
         });
     });
 
