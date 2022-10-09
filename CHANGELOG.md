@@ -1,5 +1,18 @@
 # Changelog
 
+## [v4.0.0-preview.17](https://github.com/docsbydoxdox/doxdox/tree/v4.0.0-preview.17) - (2022-10-09)
+
+[Full Changelog](https://github.com/docsbydoxdox/doxdox/compare/v4.0.0-preview.16...v4.0.0-preview.17)
+
+- [hotfix] Prevent matching jsdoc syntax in the middle of a line. [#206](https://github.com/docsbydoxdox/doxdox/pull/206)
+- [feat] Switched to using super-regex for matching. [#205](https://github.com/docsbydoxdox/doxdox/pull/205)
+- [hotfix] Updated packages. [#204](https://github.com/docsbydoxdox/doxdox/pull/204)
+- [hotfix] Updated packages. [#203](https://github.com/docsbydoxdox/doxdox/pull/203)
+- [hotfix] Updated template package parser method to match other parsers. [#202](https://github.com/docsbydoxdox/doxdox/pull/202)
+- [hotfix] Updated packages. [#201](https://github.com/docsbydoxdox/doxdox/pull/201)
+- [hotfix] Switched test to use jest snapshots rather than hand written results. [#200](https://github.com/docsbydoxdox/doxdox/pull/200)
+- [hotfix] Move pattern match util to core [#199](https://github.com/docsbydoxdox/doxdox/pull/199)
+
 ## [v4.0.0-preview.16](https://github.com/docsbydoxdox/doxdox/tree/v4.0.0-preview.16) - (2022-09-19)
 
 [Full Changelog](https://github.com/docsbydoxdox/doxdox/compare/v4.0.0-preview.15...v4.0.0-preview.16)
