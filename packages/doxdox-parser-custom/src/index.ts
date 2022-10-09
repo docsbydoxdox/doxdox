@@ -10,7 +10,7 @@ import { firstMatch, matches } from 'super-regex';
 
 const REGEX_TIMEOUT = 1000;
 
-const JSDOC_PATTERN = /[ \t]*\/\*\*\s*\n?([^*]*(\*[^/])?)*\*\//g;
+const JSDOC_PATTERN = /(^|[ \t]+)\/\*\*\s*\n?(?:[^*]*(?:\*[^/])?)*\*\//gms;
 
 const IDENTIFIER_PATTERNS = [
     /^([a-z0-9]+):/i,
