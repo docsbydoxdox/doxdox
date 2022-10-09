@@ -6,6 +6,10 @@ import { File, Method, multiLinePatternMatch, slugify } from 'doxdox-core';
 
 import { parse as commentParse } from 'comment-parser';
 
+import { firstMatch, matches } from 'super-regex';
+
+const REGEX_TIMEOUT = 1000;
+
 const JSDOC_PATTERN = /[ \t]*\/\*\*\s*\n?([^*]*(\*[^/])?)*\*\//g;
 
 const IDENTIFIER_PATTERNS = [
@@ -36,8 +40,9 @@ export const parseString = async (
     path: string,
     content: string
 ): Promise<File> => {
-    const comments =
-        content.match(JSDOC_PATTERN) || ([] as unknown as string[]);
+    const comments = Array.from(
+        matches(JSDOC_PATTERN, content, { timeout: REGEX_TIMEOUT })
+    ).map(({ match }) => match);
 
     const methods = comments.map(comment => ({
         rawComment: comment,
@@ -71,10 +76,14 @@ export const parseString = async (
         const [firstLine] = method.code.trim().split(/\r?\n/);
 
         for (let i = 0; i < IDENTIFIER_PATTERNS.length; i += 1) {
-            const matches = firstLine.trim().match(IDENTIFIER_PATTERNS[i]);
+            const results = firstMatch(
+                IDENTIFIER_PATTERNS[i],
+                firstLine.trim(),
+                { timeout: REGEX_TIMEOUT }
+            );
 
-            if (matches) {
-                method.name = matches[1];
+            if (results) {
+                method.name = results.groups[0];
 
                 break;
             }
