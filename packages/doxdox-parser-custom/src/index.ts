@@ -19,7 +19,7 @@ const IDENTIFIER_PATTERNS = [
     /^(?:this|exports)\.([a-z0-9_]+)\s*=/i,
     /^(?:export\s+)?function\s+([a-z0-9_]+)\s*\(/i,
     /^class\s+([a-z0-9_]+)\s*{/i,
-    /^((?:[a-z0-9_]+)(\.prototype)?\.(?:[a-z0-9_]+))/i,
+    /^((?:[a-z0-9_.]+)(\.prototype)?\.(?:[a-z0-9_]+))/i,
     /^[a-z0-9_]+\s*as\s*([a-z0-9_]+)/i
 ];
 
