@@ -72,6 +72,32 @@ exports[`custom parser parse amd-module 1`] = `
       "slug": "test-mocks-amd-module-js-jacket",
     },
     {
+      "description": "Zip up the jacket.",
+      "fullName": "Jacket.zip()",
+      "name": "Jacket.zip",
+      "params": [],
+      "private": false,
+      "returns": [],
+      "slug": "test-mocks-amd-module-js-jacket-prototype-zip",
+    },
+    {
+      "description": "Zip up a jacket.",
+      "fullName": "module.zip(jacket)",
+      "name": "module.zip",
+      "params": [
+        {
+          "description": "- The jacket to zip up.",
+          "name": "jacket",
+          "types": [
+            "Jacket",
+          ],
+        },
+      ],
+      "private": false,
+      "returns": [],
+      "slug": "test-mocks-amd-module-js-module-zip",
+    },
+    {
       "description": "A module representing a shirt.",
       "fullName": "shirt()",
       "name": "shirt",
@@ -149,6 +175,31 @@ exports[`custom parser parse amd-module 1`] = `
       "private": false,
       "returns": [],
       "slug": "test-mocks-amd-module-js-utils",
+    },
+    {
+      "description": "Determine if an element is in the document head.",
+      "fullName": "utils.isInHead(element)",
+      "name": "utils.isInHead",
+      "params": [
+        {
+          "description": "- The element.",
+          "name": "element",
+          "types": [
+            "HTMLElement",
+          ],
+        },
+      ],
+      "private": false,
+      "returns": [
+        {
+          "description": "Set to \`true\` if the element is in the document head, \`false\` otherwise.",
+          "name": null,
+          "types": [
+            "boolean",
+          ],
+        },
+      ],
+      "slug": "test-mocks-amd-module-js-utils-isinhead",
     },
   ],
   "path": "./test/mocks/amd-module.js",
@@ -328,6 +379,60 @@ exports[`custom parser parse commonjs-module 1`] = `
       "private": false,
       "returns": [],
       "slug": "test-mocks-commonjs-module-js-button",
+    },
+    {
+      "description": "Color mixer.",
+      "fullName": "module.exports()",
+      "name": "module.exports",
+      "params": [],
+      "private": false,
+      "returns": [],
+      "slug": "test-mocks-commonjs-module-js-module-exports",
+    },
+    {
+      "description": "Color mixer.",
+      "fullName": "module.exports()",
+      "name": "module.exports",
+      "params": [],
+      "private": false,
+      "returns": [],
+      "slug": "test-mocks-commonjs-module-js-module-exports",
+    },
+    {
+      "description": "Color mixer.",
+      "fullName": "module.exports()",
+      "name": "module.exports",
+      "params": [],
+      "private": false,
+      "returns": [],
+      "slug": "test-mocks-commonjs-module-js-module-exports",
+    },
+    {
+      "description": "Color mixer.",
+      "fullName": "module.exports()",
+      "name": "module.exports",
+      "params": [],
+      "private": false,
+      "returns": [],
+      "slug": "test-mocks-commonjs-module-js-module-exports",
+    },
+    {
+      "description": "Create a color mixer.",
+      "fullName": "module.exports()",
+      "name": "module.exports",
+      "params": [],
+      "private": false,
+      "returns": [],
+      "slug": "test-mocks-commonjs-module-js-module-exports",
+    },
+    {
+      "description": "Module representing the word of the day.",
+      "fullName": "module.exports()",
+      "name": "module.exports",
+      "params": [],
+      "private": false,
+      "returns": [],
+      "slug": "test-mocks-commonjs-module-js-module-exports",
     },
     {
       "description": "The title of the book.",
@@ -726,6 +831,68 @@ exports[`custom parser parse params 1`] = `
 {
   "methods": [
     {
+      "description": "Assign the project to an employee.",
+      "fullName": "Project.assign(employee, employee.name, employee.department)",
+      "name": "Project.assign",
+      "params": [
+        {
+          "description": "- The employee who is responsible for the project.",
+          "name": "employee",
+          "types": [
+            "Object",
+          ],
+        },
+        {
+          "description": "- The name of the employee.",
+          "name": "employee.name",
+          "types": [
+            "string",
+          ],
+        },
+        {
+          "description": "- The employee's department.",
+          "name": "employee.department",
+          "types": [
+            "string",
+          ],
+        },
+      ],
+      "private": false,
+      "returns": [],
+      "slug": "test-mocks-params-js-project-prototype-assign",
+    },
+    {
+      "description": "Assign the project to a list of employees.",
+      "fullName": "Project.assign(employees, employees[].name, employees[].department)",
+      "name": "Project.assign",
+      "params": [
+        {
+          "description": "- The employees who are responsible for the project.",
+          "name": "employees",
+          "types": [
+            "Object[]",
+          ],
+        },
+        {
+          "description": "- The name of an employee.",
+          "name": "employees[].name",
+          "types": [
+            "string",
+          ],
+        },
+        {
+          "description": "- The employee's department.",
+          "name": "employees[].department",
+          "types": [
+            "string",
+          ],
+        },
+      ],
+      "private": false,
+      "returns": [],
+      "slug": "test-mocks-params-js-project-prototype-assign",
+    },
+    {
       "description": "",
       "fullName": "sayHello(somebody)",
       "name": "sayHello",
@@ -897,5 +1064,80 @@ exports[`custom parser parse params 1`] = `
     },
   ],
   "path": "./test/mocks/params.js",
+}
+`;
+
+exports[`custom parser prototype methods 1`] = `
+{
+  "methods": [
+    {
+      "description": "Create a point.",
+      "fullName": "constructor(x, y)",
+      "name": "constructor",
+      "params": [
+        {
+          "description": "- The x value.",
+          "name": "x",
+          "types": [
+            "number",
+          ],
+        },
+        {
+          "description": "- The y value.",
+          "name": "y",
+          "types": [
+            "number",
+          ],
+        },
+      ],
+      "private": false,
+      "returns": [],
+      "slug": "test-mocks-prototype-js-constructor",
+    },
+    {
+      "description": "Class representing a point.",
+      "fullName": "Point()",
+      "name": "Point",
+      "params": [],
+      "private": false,
+      "returns": [],
+      "slug": "test-mocks-prototype-js-point",
+    },
+    {
+      "description": "Get the x value.",
+      "fullName": "Point.getX()",
+      "name": "Point.getX",
+      "params": [],
+      "private": false,
+      "returns": [
+        {
+          "description": "The x value.",
+          "name": null,
+          "types": [
+            "number",
+          ],
+        },
+      ],
+      "slug": "test-mocks-prototype-js-point-prototype-getx",
+    },
+    {
+      "description": "Get the y value.",
+      "fullName": "Point.getY()",
+      "name": "Point.getY",
+      "params": [],
+      "private": false,
+      "returns": [
+        {
+          "description": "The y value.",
+          "name": null,
+          "types": [
+            "number",
+          ],
+        },
+      ],
+      "slug": "test-mocks-prototype-js-point-prototype-gety",
+    },
+  ],
+  "path": "./test/mocks/prototype.js",
 }
 `;

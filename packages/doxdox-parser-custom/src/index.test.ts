@@ -17,6 +17,12 @@ describe('custom parser', () => {
         ).resolves.toMatchSnapshot();
     });
 
+    it('prototype methods', async () => {
+        await expect(
+            parse(process.cwd(), './test/mocks/prototype.js')
+        ).resolves.toMatchSnapshot();
+    });
+
     // JSDoc Example from https://jsdoc.app/
     it('parse amd-module', async () => {
         await expect(
