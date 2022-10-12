@@ -13,14 +13,10 @@ const REGEX_TIMEOUT = 1000;
 const JSDOC_PATTERN = /(^|[ \t]+)\/\*\*\s*\n?(?:[^*]*(?:\*[^/])?)*\*\//gms;
 
 const IDENTIFIER_PATTERNS = [
-    /^([a-z0-9_]+):/i,
-    /^(?:static\s+)?([a-z0-9_]+)\s*\(/i,
-    /^(?:export\s+)?(?:var|let|const)\s+([a-z0-9_]+)\s*=/i,
-    /^(?:this|exports)\.([a-z0-9_]+)\s*=/i,
-    /^(?:export\s+)?function\s+([a-z0-9_]+)\s*\(/i,
-    /^class\s+([a-z0-9_]+)\s*{/i,
-    /^((?:[a-z0-9_.]+)(\.prototype)?\.(?:[a-z0-9_]+))/i,
-    /^[a-z0-9_]+\s*as\s*([a-z0-9_]+)/i
+    /(?:class|function|var|let|const)[ ]+([a-z0-9_]+)[ ]*(?:[={(])?/i,
+    /((?:[a-z0-9_.]+)(\.prototype)?\.(?:[a-z0-9_]+))/i,
+    /[a-z0-9_]+[ ]*as[ ]*([a-z0-9_]+)/i,
+    /([a-z0-9_]+)[ ]*[(:]/i
 ];
 
 const parser = async (cwd: string, path: string): Promise<File> => {

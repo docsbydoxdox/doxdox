@@ -107,15 +107,6 @@ exports[`custom parser parse amd-module 1`] = `
       "slug": "test-mocks-amd-module-js-shirt",
     },
     {
-      "description": "The class's \`size\` property.",
-      "fullName": "size()",
-      "name": "size",
-      "params": [],
-      "private": false,
-      "returns": [],
-      "slug": "test-mocks-amd-module-js-size",
-    },
-    {
       "description": "Size.",
       "fullName": "size()",
       "name": "size",
@@ -149,6 +140,15 @@ exports[`custom parser parse amd-module 1`] = `
       "private": false,
       "returns": [],
       "slug": "test-mocks-amd-module-js-tag",
+    },
+    {
+      "description": "The class's \`size\` property.",
+      "fullName": "this.size()",
+      "name": "this.size",
+      "params": [],
+      "private": false,
+      "returns": [],
+      "slug": "test-mocks-amd-module-js-this-size",
     },
     {
       "description": "Create a new Turtleneck.",
@@ -355,30 +355,31 @@ exports[`custom parser parse commonjs-module 1`] = `
       "slug": "test-mocks-commonjs-module-js-blend",
     },
     {
-      "description": "Create a new Book.",
-      "fullName": "Book(title)",
-      "name": "Book",
-      "params": [
-        {
-          "description": "- The title of the book.",
-          "name": "title",
-          "types": [
-            "string",
-          ],
-        },
-      ],
+      "description": "Create a color mixer.",
+      "fullName": "ColorMixer()",
+      "name": "ColorMixer",
+      "params": [],
       "private": false,
       "returns": [],
-      "slug": "test-mocks-commonjs-module-js-book",
+      "slug": "test-mocks-commonjs-module-js-colormixer",
     },
     {
       "description": "Button the shirt.",
-      "fullName": "button()",
-      "name": "button",
+      "fullName": "exports.button()",
+      "name": "exports.button",
       "params": [],
       "private": false,
       "returns": [],
-      "slug": "test-mocks-commonjs-module-js-button",
+      "slug": "test-mocks-commonjs-module-js-exports-button",
+    },
+    {
+      "description": "Wash the shirt.",
+      "fullName": "exports.wash()",
+      "name": "exports.wash",
+      "params": [],
+      "private": false,
+      "returns": [],
+      "slug": "test-mocks-commonjs-module-js-exports-wash",
     },
     {
       "description": "Color mixer.",
@@ -409,15 +410,6 @@ exports[`custom parser parse commonjs-module 1`] = `
     },
     {
       "description": "Color mixer.",
-      "fullName": "module.exports()",
-      "name": "module.exports",
-      "params": [],
-      "private": false,
-      "returns": [],
-      "slug": "test-mocks-commonjs-module-js-module-exports",
-    },
-    {
-      "description": "Create a color mixer.",
       "fullName": "module.exports()",
       "name": "module.exports",
       "params": [],
@@ -435,13 +427,30 @@ exports[`custom parser parse commonjs-module 1`] = `
       "slug": "test-mocks-commonjs-module-js-module-exports",
     },
     {
+      "description": "Create a new Book.",
+      "fullName": "this.Book(title)",
+      "name": "this.Book",
+      "params": [
+        {
+          "description": "- The title of the book.",
+          "name": "title",
+          "types": [
+            "string",
+          ],
+        },
+      ],
+      "private": false,
+      "returns": [],
+      "slug": "test-mocks-commonjs-module-js-this-book",
+    },
+    {
       "description": "The title of the book.",
-      "fullName": "title()",
-      "name": "title",
+      "fullName": "this.title()",
+      "name": "this.title",
       "params": [],
       "private": false,
       "returns": [],
-      "slug": "test-mocks-commonjs-module-js-title",
+      "slug": "test-mocks-commonjs-module-js-this-title",
     },
   ],
   "path": "./test/mocks/commonjs-module.js",
@@ -514,6 +523,15 @@ exports[`custom parser parse es2015-classes 1`] = `
       "slug": "test-mocks-es-classes-js-constructor",
     },
     {
+      "description": "Class representing a dot.",
+      "fullName": "Dot()",
+      "name": "Dot",
+      "params": [],
+      "private": false,
+      "returns": [],
+      "slug": "test-mocks-es-classes-js-dot",
+    },
+    {
       "description": "Get the dot's width.",
       "fullName": "getWidth()",
       "name": "getWidth",
@@ -581,15 +599,6 @@ exports[`custom parser parse es2015-classes 1`] = `
       "private": false,
       "returns": [],
       "slug": "test-mocks-es-classes-js-point",
-    },
-    {
-      "description": "Class representing a dot.",
-      "fullName": "s()",
-      "name": "s",
-      "params": [],
-      "private": false,
-      "returns": [],
-      "slug": "test-mocks-es-classes-js-s",
     },
   ],
   "path": "./test/mocks/es2015-classes.js",
@@ -756,6 +765,38 @@ exports[`custom parser parse example jsdoc headers (declaration methods) 1`] = `
 exports[`custom parser parse example jsdoc headers (function methods) 1`] = `
 {
   "methods": [
+    {
+      "description": "Finds file in path. console.log(await findFileInPath('./', 'package.json')); console.log(await findFileInPath('../', 'package.json')); console.log(await findFileInPath('~/git/github/doxdox/', '.package.json'));",
+      "fullName": "findFileInPath(input, fileName)",
+      "name": "findFileInPath",
+      "params": [
+        {
+          "description": "Directory to check for file.",
+          "name": "input",
+          "types": [
+            "string",
+          ],
+        },
+        {
+          "description": "File name to check for.",
+          "name": "fileName",
+          "types": [
+            "string",
+          ],
+        },
+      ],
+      "private": false,
+      "returns": [
+        {
+          "description": "Path to package.json file.",
+          "name": null,
+          "types": [
+            "Promise<string | null>",
+          ],
+        },
+      ],
+      "slug": "test-mocks-function-js-findfileinpath",
+    },
     {
       "description": "Get the current working directory.",
       "fullName": "getCurrentWorkingDirectory()",
