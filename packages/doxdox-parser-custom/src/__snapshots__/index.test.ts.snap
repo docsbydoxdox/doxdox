@@ -1,6 +1,81 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`custom parser parse amd-module 1`] = `
+exports[`custom parser identifier patterns tests prototype methods 1`] = `
+{
+  "methods": [
+    {
+      "description": "Create a point.",
+      "fullName": "constructor(x, y)",
+      "name": "constructor",
+      "params": [
+        {
+          "description": "- The x value.",
+          "name": "x",
+          "types": [
+            "number",
+          ],
+        },
+        {
+          "description": "- The y value.",
+          "name": "y",
+          "types": [
+            "number",
+          ],
+        },
+      ],
+      "private": false,
+      "returns": [],
+      "slug": "test-mocks-prototype-js-constructor",
+    },
+    {
+      "description": "Class representing a point.",
+      "fullName": "Point()",
+      "name": "Point",
+      "params": [],
+      "private": false,
+      "returns": [],
+      "slug": "test-mocks-prototype-js-point",
+    },
+    {
+      "description": "Get the x value.",
+      "fullName": "Point.getX()",
+      "name": "Point.getX",
+      "params": [],
+      "private": false,
+      "returns": [
+        {
+          "description": "The x value.",
+          "name": null,
+          "types": [
+            "number",
+          ],
+        },
+      ],
+      "slug": "test-mocks-prototype-js-point-prototype-getx",
+    },
+    {
+      "description": "Get the y value.",
+      "fullName": "Point.getY()",
+      "name": "Point.getY",
+      "params": [],
+      "private": false,
+      "returns": [
+        {
+          "description": "The y value.",
+          "name": null,
+          "types": [
+            "number",
+          ],
+        },
+      ],
+      "slug": "test-mocks-prototype-js-point-prototype-gety",
+    },
+  ],
+  "path": "./test/mocks/prototype.js",
+}
+`;
+
+exports[`custom parser parse example from JSDoc documentation https://jsdoc.app/ parse amd-module 1`] = `
 {
   "methods": [
     {
@@ -206,7 +281,7 @@ exports[`custom parser parse amd-module 1`] = `
 }
 `;
 
-exports[`custom parser parse comment-block 1`] = `
+exports[`custom parser parse example from JSDoc documentation https://jsdoc.app/ parse comment-block 1`] = `
 {
   "methods": [
     {
@@ -238,7 +313,7 @@ exports[`custom parser parse comment-block 1`] = `
 }
 `;
 
-exports[`custom parser parse comment-inline 1`] = `
+exports[`custom parser parse example from JSDoc documentation https://jsdoc.app/ parse comment-inline 1`] = `
 {
   "methods": [
     {
@@ -255,7 +330,7 @@ exports[`custom parser parse comment-inline 1`] = `
 }
 `;
 
-exports[`custom parser parse commonjs-module 1`] = `
+exports[`custom parser parse example from JSDoc documentation https://jsdoc.app/ parse commonjs-module 1`] = `
 {
   "methods": [
     {
@@ -457,14 +532,7 @@ exports[`custom parser parse commonjs-module 1`] = `
 }
 `;
 
-exports[`custom parser parse empty file 1`] = `
-{
-  "methods": [],
-  "path": "./test/mocks/empty.js",
-}
-`;
-
-exports[`custom parser parse es2015-classes 1`] = `
+exports[`custom parser parse example from JSDoc documentation https://jsdoc.app/ parse es2015-classes 1`] = `
 {
   "methods": [
     {
@@ -605,7 +673,7 @@ exports[`custom parser parse es2015-classes 1`] = `
 }
 `;
 
-exports[`custom parser parse es2015-module 1`] = `
+exports[`custom parser parse example from JSDoc documentation https://jsdoc.app/ parse es2015-module 1`] = `
 {
   "methods": [
     {
@@ -680,171 +748,7 @@ exports[`custom parser parse es2015-module 1`] = `
 }
 `;
 
-exports[`custom parser parse example jsdoc headers (declaration methods) 1`] = `
-{
-  "methods": [
-    {
-      "description": "Finds file in path. console.log(await findFileInPath('./', 'package.json')); console.log(await findFileInPath('../', 'package.json')); console.log(await findFileInPath('~/git/github/doxdox/', '.package.json'));",
-      "fullName": "findFileInPath(input, fileName)",
-      "name": "findFileInPath",
-      "params": [
-        {
-          "description": "Directory to check for file.",
-          "name": "input",
-          "types": [
-            "string",
-          ],
-        },
-        {
-          "description": "File name to check for.",
-          "name": "fileName",
-          "types": [
-            "string",
-          ],
-        },
-      ],
-      "private": false,
-      "returns": [
-        {
-          "description": "Path to package.json file.",
-          "name": null,
-          "types": [
-            "Promise<string | null>",
-          ],
-        },
-      ],
-      "slug": "test-mocks-declaration-js-findfileinpath",
-    },
-    {
-      "description": "Get the current working directory.",
-      "fullName": "getCurrentWorkingDirectory()",
-      "name": "getCurrentWorkingDirectory",
-      "params": [],
-      "private": false,
-      "returns": [
-        {
-          "description": "Directory path.",
-          "name": null,
-          "types": [
-            "string",
-          ],
-        },
-      ],
-      "slug": "test-mocks-declaration-js-getcurrentworkingdirectory",
-    },
-    {
-      "description": "Get the root directory of the package, supplied path or URL.",
-      "fullName": "getRootDirPath(url)",
-      "name": "getRootDirPath",
-      "params": [
-        {
-          "description": "Optional path or URL.",
-          "name": "url",
-          "types": [
-            "string",
-          ],
-        },
-      ],
-      "private": false,
-      "returns": [
-        {
-          "description": "Directory path.",
-          "name": null,
-          "types": [
-            "string",
-          ],
-        },
-      ],
-      "slug": "test-mocks-declaration-js-getrootdirpath",
-    },
-  ],
-  "path": "./test/mocks/declaration.js",
-}
-`;
-
-exports[`custom parser parse example jsdoc headers (function methods) 1`] = `
-{
-  "methods": [
-    {
-      "description": "Finds file in path. console.log(await findFileInPath('./', 'package.json')); console.log(await findFileInPath('../', 'package.json')); console.log(await findFileInPath('~/git/github/doxdox/', '.package.json'));",
-      "fullName": "findFileInPath(input, fileName)",
-      "name": "findFileInPath",
-      "params": [
-        {
-          "description": "Directory to check for file.",
-          "name": "input",
-          "types": [
-            "string",
-          ],
-        },
-        {
-          "description": "File name to check for.",
-          "name": "fileName",
-          "types": [
-            "string",
-          ],
-        },
-      ],
-      "private": false,
-      "returns": [
-        {
-          "description": "Path to package.json file.",
-          "name": null,
-          "types": [
-            "Promise<string | null>",
-          ],
-        },
-      ],
-      "slug": "test-mocks-function-js-findfileinpath",
-    },
-    {
-      "description": "Get the current working directory.",
-      "fullName": "getCurrentWorkingDirectory()",
-      "name": "getCurrentWorkingDirectory",
-      "params": [],
-      "private": false,
-      "returns": [
-        {
-          "description": "Directory path.",
-          "name": null,
-          "types": [
-            "string",
-          ],
-        },
-      ],
-      "slug": "test-mocks-function-js-getcurrentworkingdirectory",
-    },
-    {
-      "description": "Get the root directory of the package, supplied path or URL.",
-      "fullName": "getRootDirPath(url)",
-      "name": "getRootDirPath",
-      "params": [
-        {
-          "description": "Optional path or URL.",
-          "name": "url",
-          "types": [
-            "string",
-          ],
-        },
-      ],
-      "private": false,
-      "returns": [
-        {
-          "description": "Directory path.",
-          "name": null,
-          "types": [
-            "string",
-          ],
-        },
-      ],
-      "slug": "test-mocks-function-js-getrootdirpath",
-    },
-  ],
-  "path": "./test/mocks/function.js",
-}
-`;
-
-exports[`custom parser parse ignore 1`] = `
+exports[`custom parser parse example from JSDoc documentation https://jsdoc.app/ parse ignore 1`] = `
 {
   "methods": [
     {
@@ -861,14 +765,14 @@ exports[`custom parser parse ignore 1`] = `
 }
 `;
 
-exports[`custom parser parse no-comment 1`] = `
+exports[`custom parser parse example from JSDoc documentation https://jsdoc.app/ parse no-comment 1`] = `
 {
   "methods": [],
   "path": "./test/mocks/no-comment.js",
 }
 `;
 
-exports[`custom parser parse params 1`] = `
+exports[`custom parser parse example from JSDoc documentation https://jsdoc.app/ parse params 1`] = `
 {
   "methods": [
     {
@@ -1108,77 +1012,173 @@ exports[`custom parser parse params 1`] = `
 }
 `;
 
-exports[`custom parser prototype methods 1`] = `
+exports[`custom parser parse parse empty file 1`] = `
+{
+  "methods": [],
+  "path": "./test/mocks/empty.js",
+}
+`;
+
+exports[`custom parser parse parse example jsdoc headers (declaration methods) 1`] = `
 {
   "methods": [
     {
-      "description": "Create a point.",
-      "fullName": "constructor(x, y)",
-      "name": "constructor",
+      "description": "Finds file in path. console.log(await findFileInPath('./', 'package.json')); console.log(await findFileInPath('../', 'package.json')); console.log(await findFileInPath('~/git/github/doxdox/', '.package.json'));",
+      "fullName": "findFileInPath(input, fileName)",
+      "name": "findFileInPath",
       "params": [
         {
-          "description": "- The x value.",
-          "name": "x",
+          "description": "Directory to check for file.",
+          "name": "input",
           "types": [
-            "number",
+            "string",
           ],
         },
         {
-          "description": "- The y value.",
-          "name": "y",
+          "description": "File name to check for.",
+          "name": "fileName",
           "types": [
-            "number",
+            "string",
           ],
         },
       ],
       "private": false,
-      "returns": [],
-      "slug": "test-mocks-prototype-js-constructor",
+      "returns": [
+        {
+          "description": "Path to package.json file.",
+          "name": null,
+          "types": [
+            "Promise<string | null>",
+          ],
+        },
+      ],
+      "slug": "test-mocks-declaration-js-findfileinpath",
     },
     {
-      "description": "Class representing a point.",
-      "fullName": "Point()",
-      "name": "Point",
-      "params": [],
-      "private": false,
-      "returns": [],
-      "slug": "test-mocks-prototype-js-point",
-    },
-    {
-      "description": "Get the x value.",
-      "fullName": "Point.getX()",
-      "name": "Point.getX",
+      "description": "Get the current working directory.",
+      "fullName": "getCurrentWorkingDirectory()",
+      "name": "getCurrentWorkingDirectory",
       "params": [],
       "private": false,
       "returns": [
         {
-          "description": "The x value.",
+          "description": "Directory path.",
           "name": null,
           "types": [
-            "number",
+            "string",
           ],
         },
       ],
-      "slug": "test-mocks-prototype-js-point-prototype-getx",
+      "slug": "test-mocks-declaration-js-getcurrentworkingdirectory",
     },
     {
-      "description": "Get the y value.",
-      "fullName": "Point.getY()",
-      "name": "Point.getY",
-      "params": [],
+      "description": "Get the root directory of the package, supplied path or URL.",
+      "fullName": "getRootDirPath(url)",
+      "name": "getRootDirPath",
+      "params": [
+        {
+          "description": "Optional path or URL.",
+          "name": "url",
+          "types": [
+            "string",
+          ],
+        },
+      ],
       "private": false,
       "returns": [
         {
-          "description": "The y value.",
+          "description": "Directory path.",
           "name": null,
           "types": [
-            "number",
+            "string",
           ],
         },
       ],
-      "slug": "test-mocks-prototype-js-point-prototype-gety",
+      "slug": "test-mocks-declaration-js-getrootdirpath",
     },
   ],
-  "path": "./test/mocks/prototype.js",
+  "path": "./test/mocks/declaration.js",
+}
+`;
+
+exports[`custom parser parse parse example jsdoc headers (function methods) 1`] = `
+{
+  "methods": [
+    {
+      "description": "Finds file in path. console.log(await findFileInPath('./', 'package.json')); console.log(await findFileInPath('../', 'package.json')); console.log(await findFileInPath('~/git/github/doxdox/', '.package.json'));",
+      "fullName": "findFileInPath(input, fileName)",
+      "name": "findFileInPath",
+      "params": [
+        {
+          "description": "Directory to check for file.",
+          "name": "input",
+          "types": [
+            "string",
+          ],
+        },
+        {
+          "description": "File name to check for.",
+          "name": "fileName",
+          "types": [
+            "string",
+          ],
+        },
+      ],
+      "private": false,
+      "returns": [
+        {
+          "description": "Path to package.json file.",
+          "name": null,
+          "types": [
+            "Promise<string | null>",
+          ],
+        },
+      ],
+      "slug": "test-mocks-function-js-findfileinpath",
+    },
+    {
+      "description": "Get the current working directory.",
+      "fullName": "getCurrentWorkingDirectory()",
+      "name": "getCurrentWorkingDirectory",
+      "params": [],
+      "private": false,
+      "returns": [
+        {
+          "description": "Directory path.",
+          "name": null,
+          "types": [
+            "string",
+          ],
+        },
+      ],
+      "slug": "test-mocks-function-js-getcurrentworkingdirectory",
+    },
+    {
+      "description": "Get the root directory of the package, supplied path or URL.",
+      "fullName": "getRootDirPath(url)",
+      "name": "getRootDirPath",
+      "params": [
+        {
+          "description": "Optional path or URL.",
+          "name": "url",
+          "types": [
+            "string",
+          ],
+        },
+      ],
+      "private": false,
+      "returns": [
+        {
+          "description": "Directory path.",
+          "name": null,
+          "types": [
+            "string",
+          ],
+        },
+      ],
+      "slug": "test-mocks-function-js-getrootdirpath",
+    },
+  ],
+  "path": "./test/mocks/function.js",
 }
 `;
