@@ -1,5 +1,12 @@
 # Changelog
 
+## [v4.0.0-preview.18](https://github.com/docsbydoxdox/doxdox/tree/v4.0.0-preview.18) - (2022-10-13)
+
+[Full Changelog](https://github.com/docsbydoxdox/doxdox/compare/v4.0.0-preview.17...v4.0.0-preview.18)
+
+- [hotfix] Updated packages. [#209](https://github.com/docsbydoxdox/doxdox/pull/209)
+- [hotfix] Add prototype support custom parser [#207](https://github.com/docsbydoxdox/doxdox/pull/207)
+
 ## [v4.0.0-preview.17](https://github.com/docsbydoxdox/doxdox/tree/v4.0.0-preview.17) - (2022-10-09)
 
 [Full Changelog](https://github.com/docsbydoxdox/doxdox/compare/v4.0.0-preview.16...v4.0.0-preview.17)

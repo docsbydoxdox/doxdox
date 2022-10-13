@@ -1,7 +1,7 @@
 {
   "name": "doxdox-renderer-markdown",
   "description": "Markdown renderer for doxdox.",
-  "version": "4.0.0-preview.17",
+  "version": "4.0.0-preview.18",
   "exports": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "type": "module",
@@ -12,7 +12,7 @@
     "markdown-table": "3.0.2"
   },
   "peerDependencies": {
-    "doxdox-core": "4.0.0-preview.17"
+    "doxdox-core": "4.0.0-preview.18"
   },
   "peerDependenciesMeta": {
     "doxdox-core": {

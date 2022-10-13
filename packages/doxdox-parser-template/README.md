@@ -9,5 +9,5 @@
 ## Install
 
 ```bash
-$ npm install doxdox-cli@v4.0.0-preview.17 doxdox-parser-template@v4.0.0-preview.17 --save-dev
+$ npm install doxdox-cli@v4.0.0-preview.18 doxdox-parser-template@v4.0.0-preview.18 --save-dev
 ```
