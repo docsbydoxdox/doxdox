@@ -13,13 +13,10 @@ const REGEX_TIMEOUT = 1000;
 const JSDOC_PATTERN = /(^|[ \t]+)\/\*\*\s*\n?(?:[^*]*(?:\*[^/])?)*\*\//gms;
 
 const IDENTIFIER_PATTERNS = [
-    /^([a-z0-9]+):/i,
-    /^(?:static\s+)?([a-z0-9]+)\s*\(/i,
-    /^(?:export\s+)?(?:var|let|const)\s+([a-z0-9]+)\s*=/i,
-    /^(?:this|exports)\.([a-z0-9]+)\s*=/i,
-    /^(?:export\s+)?function\s+([a-z0-9]+)\s*\(/i,
-    /^class\s+([a-z0-9]+)\s*{/i,
-    /^[a-z0-9]+\s*as\s*([a-z0-9]+)/i
+    /(?:class|function|var|let|const)[ ]+([a-z0-9_]+)[ ]*(?:[={(])?/i,
+    /((?:[a-z0-9_.]+)(\.prototype)?\.(?:[a-z0-9_]+))/i,
+    /[a-z0-9_]+[ ]*as[ ]*([a-z0-9_]+)/i,
+    /([a-z0-9_]+)[ ]*[(:]/i
 ];
 
 const parser = async (cwd: string, path: string): Promise<File> => {
@@ -95,6 +92,8 @@ export const parseString = async (
         methods: methods
             .filter(method => method.name)
             .map(method => {
+                const methodName = method.name.replace(/\.prototype/i, '');
+
                 const paramTags = method.comment.tags.filter(({ tag }) =>
                     /param$/.test(tag)
                 );
@@ -120,8 +119,8 @@ export const parseString = async (
                 );
                 return {
                     slug: `${slugify(path)}-${slugify(method.name)}`,
-                    name: method.name,
-                    fullName: `${method.name}(${params
+                    name: methodName,
+                    fullName: `${methodName}(${params
                         .map(param => param.name)
                         .join(', ')})`,
                     description: method.comment.description,
