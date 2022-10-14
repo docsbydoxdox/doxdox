@@ -27,6 +27,14 @@ describe('custom parser', () => {
         });
     });
 
+    describe('tag tests', () => {
+        it('public/private scope', async () => {
+            await expect(
+                parse(process.cwd(), './test/mocks/scope.js')
+            ).resolves.toMatchSnapshot();
+        });
+    });
+
     describe('parse example from JSDoc documentation https://jsdoc.app/', () => {
         // JSDoc Example from https://jsdoc.app/
         it('parse amd-module', async () => {
