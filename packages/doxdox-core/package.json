@@ -8,9 +8,13 @@
   "engines": {
     "node": "^14.18.0 || ^16.10.0 || >=18.0.0"
   },
+  "dependencies": {
+    "normalize-package-data": "5.0.0"
+  },
   "devDependencies": {
     "@types/jest": "29.1.2",
     "@types/node": "18.8.5",
+    "@types/normalize-package-data": "2.4.1",
     "@typescript-eslint/eslint-plugin": "5.40.0",
     "@typescript-eslint/parser": "5.40.0",
     "eslint": "8.25.0",
