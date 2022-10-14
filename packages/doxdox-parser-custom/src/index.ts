@@ -100,8 +100,11 @@ export const parseString = async (
                 const returnTags = method.comment.tags.filter(({ tag }) =>
                     /return$/.test(tag)
                 );
-                const privateScopeTags = method.comment.tags.filter(({ tag }) =>
-                    /private$/.test(tag)
+
+                const privateScopeTags = method.comment.tags.filter(
+                    ({ tag, name }) =>
+                        /private$/.test(tag) ||
+                        (tag === 'api' && /private$/.test(name))
                 );
 
                 const params = paramTags.map(({ name, description, type }) => ({

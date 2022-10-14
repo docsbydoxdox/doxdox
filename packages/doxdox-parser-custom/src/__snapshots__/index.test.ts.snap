@@ -1182,3 +1182,47 @@ exports[`custom parser parse parse example jsdoc headers (function methods) 1`] 
   "path": "./test/mocks/function.js",
 }
 `;
+
+exports[`custom parser tag tests public/private scope 1`] = `
+{
+  "methods": [
+    {
+      "description": "",
+      "fullName": "privateMethod()",
+      "name": "privateMethod",
+      "params": [],
+      "private": true,
+      "returns": [],
+      "slug": "test-mocks-scope-js-privatemethod",
+    },
+    {
+      "description": "",
+      "fullName": "privateMethod()",
+      "name": "privateMethod",
+      "params": [],
+      "private": true,
+      "returns": [],
+      "slug": "test-mocks-scope-js-privatemethod",
+    },
+    {
+      "description": "",
+      "fullName": "publicMethod()",
+      "name": "publicMethod",
+      "params": [],
+      "private": false,
+      "returns": [],
+      "slug": "test-mocks-scope-js-publicmethod",
+    },
+    {
+      "description": "",
+      "fullName": "publicMethod()",
+      "name": "publicMethod",
+      "params": [],
+      "private": false,
+      "returns": [],
+      "slug": "test-mocks-scope-js-publicmethod",
+    },
+  ],
+  "path": "./test/mocks/scope.js",
+}
+`;
