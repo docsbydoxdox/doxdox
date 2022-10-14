@@ -4,6 +4,8 @@ import { resolve, dirname } from 'path';
 
 import { fileURLToPath } from 'url';
 
+import normalizeData from 'normalize-package-data';
+
 import { Package } from './types';
 
 /**
@@ -86,8 +88,13 @@ export const getProjectPackage = async (cwd: string): Promise<Package> => {
     const projectPackagePath = await findFileInPath(cwd);
 
     if (projectPackagePath) {
-        const { name, description, version, exports, homepage, doxdoxConfig } =
-            JSON.parse(await fs.readFile(projectPackagePath, 'utf8'));
+        const packageContents = await fs.readFile(projectPackagePath, 'utf8');
+
+        const { doxdoxConfig, ...packageData } = JSON.parse(packageContents);
+
+        normalizeData(packageData);
+
+        const { name, description, version, exports, homepage } = packageData;
 
         return {
             name,
