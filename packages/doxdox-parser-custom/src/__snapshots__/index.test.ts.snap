@@ -439,6 +439,38 @@ exports[`custom parser parse example from JSDoc documentation https://jsdoc.app/
       "slug": "test-mocks-commonjs-module-js-colormixer",
     },
     {
+      "description": "Darken a color by the given percentage.",
+      "fullName": "darken(color, percent)",
+      "name": "darken",
+      "params": [
+        {
+          "description": "- The color, in hexadecimal format.",
+          "name": "color",
+          "types": [
+            "string",
+          ],
+        },
+        {
+          "description": "- The percentage, ranging from 0 to 100.",
+          "name": "percent",
+          "types": [
+            "number",
+          ],
+        },
+      ],
+      "private": false,
+      "returns": [
+        {
+          "description": "The darkened color.",
+          "name": null,
+          "types": [
+            "string",
+          ],
+        },
+      ],
+      "slug": "test-mocks-commonjs-module-js-darken",
+    },
+    {
       "description": "Button the shirt.",
       "fullName": "exports.button()",
       "name": "exports.button",
@@ -446,6 +478,15 @@ exports[`custom parser parse example from JSDoc documentation https://jsdoc.app/
       "private": false,
       "returns": [],
       "slug": "test-mocks-commonjs-module-js-exports-button",
+    },
+    {
+      "description": "Unbutton the shirt.",
+      "fullName": "exports.unbutton()",
+      "name": "exports.unbutton",
+      "params": [],
+      "private": false,
+      "returns": [],
+      "slug": "test-mocks-commonjs-module-js-exports-unbutton",
     },
     {
       "description": "Wash the shirt.",
@@ -458,12 +499,12 @@ exports[`custom parser parse example from JSDoc documentation https://jsdoc.app/
     },
     {
       "description": "Color mixer.",
-      "fullName": "module.exports()",
-      "name": "module.exports",
+      "fullName": "mixer()",
+      "name": "mixer",
       "params": [],
       "private": false,
       "returns": [],
-      "slug": "test-mocks-commonjs-module-js-module-exports",
+      "slug": "test-mocks-commonjs-module-js-mixer",
     },
     {
       "description": "Color mixer.",
@@ -484,12 +525,35 @@ exports[`custom parser parse example from JSDoc documentation https://jsdoc.app/
       "slug": "test-mocks-commonjs-module-js-module-exports",
     },
     {
-      "description": "Color mixer.",
-      "fullName": "module.exports()",
+      "description": "Blend two colors together.",
+      "fullName": "module.exports(color1, color2)",
       "name": "module.exports",
-      "params": [],
+      "params": [
+        {
+          "description": "- The first color, in hexadecimal format.",
+          "name": "color1",
+          "types": [
+            "string",
+          ],
+        },
+        {
+          "description": "- The second color, in hexadecimal format.",
+          "name": "color2",
+          "types": [
+            "string",
+          ],
+        },
+      ],
       "private": false,
-      "returns": [],
+      "returns": [
+        {
+          "description": "The blended color.",
+          "name": null,
+          "types": [
+            "string",
+          ],
+        },
+      ],
       "slug": "test-mocks-commonjs-module-js-module-exports",
     },
     {
@@ -500,6 +564,38 @@ exports[`custom parser parse example from JSDoc documentation https://jsdoc.app/
       "private": false,
       "returns": [],
       "slug": "test-mocks-commonjs-module-js-module-exports",
+    },
+    {
+      "description": "Darken a color by the given percentage.",
+      "fullName": "module.exports.darken(color, percent)",
+      "name": "module.exports.darken",
+      "params": [
+        {
+          "description": "- The color, in hexadecimal format.",
+          "name": "color",
+          "types": [
+            "string",
+          ],
+        },
+        {
+          "description": "- The percentage, ranging from 0 to 100.",
+          "name": "percent",
+          "types": [
+            "number",
+          ],
+        },
+      ],
+      "private": false,
+      "returns": [
+        {
+          "description": "The darkened color.",
+          "name": null,
+          "types": [
+            "string",
+          ],
+        },
+      ],
+      "slug": "test-mocks-commonjs-module-js-module-exports-darken",
     },
     {
       "description": "Create a new Book.",
@@ -526,6 +622,33 @@ exports[`custom parser parse example from JSDoc documentation https://jsdoc.app/
       "private": false,
       "returns": [],
       "slug": "test-mocks-commonjs-module-js-this-title",
+    },
+    {
+      "description": "Wash the shirt.",
+      "fullName": "wash()",
+      "name": "wash",
+      "params": [],
+      "private": false,
+      "returns": [],
+      "slug": "test-mocks-commonjs-module-js-wash",
+    },
+    {
+      "description": "Wash the shirt.",
+      "fullName": "wash()",
+      "name": "wash",
+      "params": [],
+      "private": false,
+      "returns": [],
+      "slug": "test-mocks-commonjs-module-js-wash",
+    },
+    {
+      "description": "Shirt module.",
+      "fullName": "wash()",
+      "name": "wash",
+      "params": [],
+      "private": false,
+      "returns": [],
+      "slug": "test-mocks-commonjs-module-js-wash",
     },
   ],
   "path": "./test/mocks/commonjs-module.js",
@@ -598,6 +721,31 @@ exports[`custom parser parse example from JSDoc documentation https://jsdoc.app/
       "private": false,
       "returns": [],
       "slug": "test-mocks-es-classes-js-dot",
+    },
+    {
+      "description": "Convert a string containing two comma-separated numbers into a point.",
+      "fullName": "fromString(str)",
+      "name": "fromString",
+      "params": [
+        {
+          "description": "- The string containing two comma-separated numbers.",
+          "name": "str",
+          "types": [
+            "string",
+          ],
+        },
+      ],
+      "private": false,
+      "returns": [
+        {
+          "description": "A Point object.",
+          "name": null,
+          "types": [
+            "Point",
+          ],
+        },
+      ],
+      "slug": "test-mocks-es-classes-js-fromstring",
     },
     {
       "description": "Get the dot's width.",
@@ -775,6 +923,37 @@ exports[`custom parser parse example from JSDoc documentation https://jsdoc.app/
 exports[`custom parser parse example from JSDoc documentation https://jsdoc.app/ parse params 1`] = `
 {
   "methods": [
+    {
+      "description": "Assign the project to an employee.",
+      "fullName": "Project.assign(employee, employee.name, employee.department)",
+      "name": "Project.assign",
+      "params": [
+        {
+          "description": "- The employee who is responsible for the project.",
+          "name": "employee",
+          "types": [
+            "Object",
+          ],
+        },
+        {
+          "description": "- The name of the employee.",
+          "name": "employee.name",
+          "types": [
+            "string",
+          ],
+        },
+        {
+          "description": "- The employee's department.",
+          "name": "employee.department",
+          "types": [
+            "string",
+          ],
+        },
+      ],
+      "private": false,
+      "returns": [],
+      "slug": "test-mocks-params-js-project-prototype-assign",
+    },
     {
       "description": "Assign the project to an employee.",
       "fullName": "Project.assign(employee, employee.name, employee.department)",
