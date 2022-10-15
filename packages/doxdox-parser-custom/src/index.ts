@@ -4,7 +4,7 @@ import { join } from 'path';
 
 import { File, Method, multiLinePatternMatch, slugify } from 'doxdox-core';
 
-import { parse as commentParse } from 'comment-parser';
+import { Block, parse as commentParse } from 'comment-parser';
 
 import { firstMatch, matches } from 'super-regex';
 
@@ -41,13 +41,40 @@ export const parseString = async (
         matches(JSDOC_PATTERN, content, { timeout: REGEX_TIMEOUT })
     ).map(({ match }) => match);
 
-    const methods = comments.map(comment => ({
-        rawComment: comment,
-        comment: commentParse(comment)[0],
-        name: '',
-        code: '',
-        lines: multiLinePatternMatch(content, comment)
-    }));
+    const methods: {
+        rawComment: string;
+        comment: Block;
+        name: string;
+        code: string;
+        lines: {
+            start?: number | undefined;
+            end?: number | undefined;
+            matched: boolean;
+        };
+    }[] = [];
+
+    for (let i = 0; i < comments.length; i += 1) {
+        const previousComment = methods[i - 1];
+
+        const comment = comments[i];
+
+        const linePatternMatchOffset =
+            previousComment && previousComment.lines
+                ? previousComment.lines.end
+                : 0;
+
+        methods.push({
+            rawComment: comment,
+            comment: commentParse(comment)[0],
+            name: '',
+            code: '',
+            lines: multiLinePatternMatch(
+                content,
+                comment,
+                linePatternMatchOffset
+            )
+        });
+    }
 
     for (let i = 0; i < methods.length; i += 1) {
         if (methods[i].lines.matched && i === methods.length - 1) {
@@ -97,6 +124,7 @@ export const parseString = async (
                 const paramTags = method.comment.tags.filter(({ tag }) =>
                     /param$/.test(tag)
                 );
+
                 const returnTags = method.comment.tags.filter(({ tag }) =>
                     /return$/.test(tag)
                 );
