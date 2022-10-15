@@ -163,7 +163,8 @@ export const isFile = async (path: string): Promise<boolean> => {
 
 export const multiLinePatternMatch = (
     content: string,
-    pattern: string
+    pattern: string,
+    offset = 0
 ): { start?: number; end?: number; matched: boolean } => {
     const matched = content.includes(pattern);
 
@@ -174,7 +175,7 @@ export const multiLinePatternMatch = (
     const contentLines = content.split(/\r?\n/);
     const patternLines = pattern.split(/\r?\n/);
 
-    for (let i = 0; i < contentLines.length; i += 1) {
+    for (let i = offset; i < contentLines.length; i += 1) {
         if (contentLines[i] === patternLines[0]) {
             const contentGroup = contentLines
                 .slice(i, i + patternLines.length)
