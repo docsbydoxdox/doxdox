@@ -1,5 +1,14 @@
 # Changelog
 
+## [v4.0.0-preview.19](https://github.com/docsbydoxdox/doxdox/tree/v4.0.0-preview.19) - (2022-10-15)
+
+[Full Changelog](https://github.com/docsbydoxdox/doxdox/compare/v4.0.0-preview.18...v4.0.0-preview.19)
+
+- [hotfix] Fixed parsing that failed due to comment/code pattern matching. [#213](https://github.com/docsbydoxdox/doxdox/pull/213)
+- [feat] Normalize package json before extracting data. [#212](https://github.com/docsbydoxdox/doxdox/pull/212)
+- [hotfix] Updated packages. [#211](https://github.com/docsbydoxdox/doxdox/pull/211)
+- [hotfix] Added api scope tag support. [#210](https://github.com/docsbydoxdox/doxdox/pull/210)
+
 ## [v4.0.0-preview.18](https://github.com/docsbydoxdox/doxdox/tree/v4.0.0-preview.18) - (2022-10-13)
 
 [Full Changelog](https://github.com/docsbydoxdox/doxdox/compare/v4.0.0-preview.17...v4.0.0-preview.18)

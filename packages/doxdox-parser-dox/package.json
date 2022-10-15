@@ -1,7 +1,7 @@
 {
   "name": "doxdox-parser-dox",
   "description": "dox parser for doxdox",
-  "version": "4.0.0-preview.18",
+  "version": "4.0.0-preview.19",
   "exports": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "type": "module",
@@ -12,7 +12,7 @@
     "dox": "1.0.0"
   },
   "peerDependencies": {
-    "doxdox-core": "4.0.0-preview.18"
+    "doxdox-core": "4.0.0-preview.19"
   },
   "peerDependenciesMeta": {
     "doxdox-core": {
