@@ -9,5 +9,5 @@
 ## Install
 
 ```bash
-$ npm install doxdox@v4.0.0-preview.19 --save-dev
+$ npm install doxdox@v4.0.0-preview.20 --save-dev
 ```
