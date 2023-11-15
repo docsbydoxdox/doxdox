@@ -17,12 +17,12 @@
     "doxdox-renderer-markdown": "4.0.0-preview.19"
   },
   "devDependencies": {
-    "@types/node": "18.8.5",
-    "@typescript-eslint/eslint-plugin": "5.40.0",
-    "@typescript-eslint/parser": "5.40.0",
-    "eslint": "8.25.0",
-    "rimraf": "3.0.2",
-    "typescript": "4.8.4"
+    "@types/node": "20.9.0",
+    "@typescript-eslint/eslint-plugin": "6.11.0",
+    "@typescript-eslint/parser": "6.11.0",
+    "eslint": "8.53.0",
+    "rimraf": "5.0.5",
+    "typescript": "5.2.2"
   },
   "scripts": {
     "build": "rimraf dist/ && tsc",

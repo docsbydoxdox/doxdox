@@ -26,7 +26,7 @@ const parser = async (cwd: string, path: string): Promise<File> => {
             throw new Error('node_modules directory was not found');
         }
 
-        const output = await spawn(
+        const { stdout: output } = await spawn(
             join(
                 nodeModulesDir,
                 `.bin/${platform() === 'win32' ? 'jsdoc.cmd' : 'jsdoc'}`
