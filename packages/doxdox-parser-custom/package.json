@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "comment-parser": "1.4.1",
+    "safe-regex": "2.1.1",
     "super-regex": "1.0.0"
   },
   "peerDependencies": {
@@ -24,6 +25,7 @@
     "@eslint/js": "9.0.0",
     "@types/jest": "29.5.12",
     "@types/node": "20.12.7",
+    "@types/safe-regex": "1.1.6",
     "@typescript-eslint/eslint-plugin": "7.6.0",
     "@typescript-eslint/parser": "7.6.0",
     "eslint": "9.0.0",
