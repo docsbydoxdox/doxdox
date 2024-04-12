@@ -25,6 +25,7 @@
     }
   },
   "devDependencies": {
+    "@eslint/js": "9.0.0",
     "@types/better-sqlite3": "7.6.9",
     "@types/jest": "29.5.12",
     "@types/markdown-it": "14.0.0",
@@ -38,13 +39,14 @@
     "rimraf": "5.0.5",
     "ts-jest": "29.1.2",
     "ts-jest-resolver": "2.0.1",
-    "typescript": "5.4.5"
+    "typescript": "5.4.5",
+    "typescript-eslint": "7.6.0"
   },
   "scripts": {
     "test": "npx cross-env@7 NODE_OPTIONS=--experimental-vm-modules jest --runInBand --passWithNoTests",
     "test-update": "npx cross-env@7 NODE_OPTIONS=--experimental-vm-modules jest --runInBand --passWithNoTests --updateSnapshot",
     "build": "rimraf dist/ && tsc && copyfiles -u 1 src/resources/* dist/",
-    "lint": "eslint 'src/**/*.ts'"
+    "lint": "eslint"
   },
   "jest": {
     "collectCoverage": true,

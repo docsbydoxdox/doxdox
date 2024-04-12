@@ -21,6 +21,7 @@
     }
   },
   "devDependencies": {
+    "@eslint/js": "9.0.0",
     "@types/jest": "29.5.12",
     "@types/node": "20.12.7",
     "@typescript-eslint/eslint-plugin": "7.6.0",
@@ -30,13 +31,14 @@
     "rimraf": "5.0.5",
     "ts-jest": "29.1.2",
     "ts-jest-resolver": "2.0.1",
-    "typescript": "5.4.5"
+    "typescript": "5.4.5",
+    "typescript-eslint": "7.6.0"
   },
   "scripts": {
     "test": "npx cross-env@7 NODE_OPTIONS=--experimental-vm-modules jest --runInBand --passWithNoTests",
     "test-update": "npx cross-env@7 NODE_OPTIONS=--experimental-vm-modules jest --runInBand --passWithNoTests --updateSnapshot",
     "build": "rimraf dist/ && tsc",
-    "lint": "eslint 'src/**/*.ts'"
+    "lint": "eslint . --ignore-pattern test/mocks"
   },
   "jest": {
     "collectCoverage": true,
