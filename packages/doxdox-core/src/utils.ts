@@ -1,8 +1,8 @@
-import { promises as fs } from 'fs';
+import fs from 'node:fs/promises';
 
-import { resolve, dirname } from 'path';
+import { resolve, dirname } from 'node:path';
 
-import { fileURLToPath } from 'url';
+import { fileURLToPath } from 'node:url';
 
 import normalizeData from 'normalize-package-data';
 

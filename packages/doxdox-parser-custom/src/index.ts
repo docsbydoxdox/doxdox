@@ -1,6 +1,6 @@
-import { promises as fs } from 'fs';
+import fs from 'node:fs/promises';
 
-import { join } from 'path';
+import { join } from 'node:path';
 
 import { File, Method, multiLinePatternMatch, slugify } from 'doxdox-core';
 

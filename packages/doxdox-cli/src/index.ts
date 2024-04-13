@@ -1,14 +1,14 @@
 #!/usr/bin/env node
 
-import { EOL, homedir } from 'os';
+import { EOL, homedir } from 'node:os';
 
-import { promises as fs } from 'fs';
+import fs from 'node:fs/promises';
 
-import { dirname, join, resolve } from 'path';
+import { dirname, join, resolve } from 'node:path';
 
-import { execSync } from 'child_process';
+import { execSync } from 'node:child_process';
 
-import { fileURLToPath } from 'url';
+import { fileURLToPath } from 'node:url';
 
 import { globby } from 'globby';
 

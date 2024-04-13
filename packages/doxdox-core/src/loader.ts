@@ -1,6 +1,6 @@
-import { join, resolve } from 'path';
+import { join, resolve } from 'node:path';
 
-import { pathToFileURL } from 'url';
+import { pathToFileURL } from 'node:url';
 
 import { getProjectPackage, isDirectory, isFile } from './utils.js';
 
