@@ -9,7 +9,7 @@
   "types": "./dist/src/index.d.ts",
   "type": "module",
   "engines": {
-    "node": "^14.18.0 || ^16.10.0 || >=18.0.0"
+    "node": ">=20"
   },
   "dependencies": {
     "doxdox-core": "4.0.0-preview.20",
