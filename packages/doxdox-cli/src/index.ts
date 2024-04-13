@@ -4,7 +4,9 @@ import { EOL } from 'os';
 
 import { promises as fs } from 'fs';
 
-import { dirname, join } from 'path';
+import { dirname, join, resolve } from 'path';
+
+import { execSync } from 'child_process';
 
 import { fileURLToPath } from 'url';
 
@@ -111,20 +113,28 @@ const overridePackage = String(
 
     const cliConfig = parseConfigFromCLI(args.raw);
 
-    const nodeModulesDir = await findParentNodeModules(
+    const localNodeModulesDir = await findParentNodeModules(
         dirname(fileURLToPath(import.meta.url))
     );
 
-    if (!nodeModulesDir) {
+    const globalNodeModulesDir = resolve(
+        join(execSync('npm get prefix').toString().trim(), './lib/node_modules')
+    );
+
+    if (!localNodeModulesDir || !globalNodeModulesDir) {
         throw new Error('node_modules directory was not found');
     }
 
     const loadedParser = await loadPlugin<
         (cwd: string, path: string) => Promise<File>
-    >(nodeModulesDir, 'doxdox-parser-', overrideParser.toLowerCase());
+    >(
+        [localNodeModulesDir, globalNodeModulesDir].filter(Boolean),
+        'doxdox-parser-',
+        overrideParser.toLowerCase()
+    );
 
     const loadedRenderer = await loadPlugin<(doc: Doc) => Promise<string>>(
-        nodeModulesDir,
+        [localNodeModulesDir, globalNodeModulesDir].filter(Boolean),
         'doxdox-renderer-',
         overrideRenderer.toLowerCase()
     );
