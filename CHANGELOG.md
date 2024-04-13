@@ -1,5 +1,15 @@
 # Changelog
 
+## [v4.0.0-preview.21](https://github.com/docsbydoxdox/doxdox/tree/v4.0.0-preview.21) - (2024-04-13)
+
+[Full Changelog](https://github.com/docsbydoxdox/doxdox/compare/v4.0.0-preview.20...v4.0.0-preview.21)
+
+- [hotfix] Check both local and global node_modules for packages. [#220](https://github.com/docsbydoxdox/doxdox/pull/220)
+- [feat] Changed min node version to the current LTS 20.x [#219](https://github.com/docsbydoxdox/doxdox/pull/219)
+- [hotfix] Updated bootstrap and hightlight.js libraries. [#218](https://github.com/docsbydoxdox/doxdox/pull/218)
+- [feat] Replaced html-pdf package with custom logic. [#217](https://github.com/docsbydoxdox/doxdox/pull/217)
+- [hotfix] Updated packages. [#216](https://github.com/docsbydoxdox/doxdox/pull/216)
+
 ## [v4.0.0-preview.20](https://github.com/docsbydoxdox/doxdox/tree/v4.0.0-preview.20) - (2023-11-15)
 
 [Full Changelog](https://github.com/docsbydoxdox/doxdox/compare/v4.0.0-preview.19...v4.0.0-preview.20)
@@ -47,15 +57,15 @@
 
 [Full Changelog](https://github.com/docsbydoxdox/doxdox/compare/v4.0.0-preview.14...v4.0.0-preview.15)
 
-- [hotfix] Update dox dependency (#195) [#195](https://github.com/docsbydoxdox/doxdox/pull/195)
-- Updated packages. (#194) [#194](https://github.com/docsbydoxdox/doxdox/pull/194)
-- [hotfix] Cleaned up return data from dox parser. (#192) [#192](https://github.com/docsbydoxdox/doxdox/pull/192)
 - [hotfix] Switched to using snapshots in dox parser package. [#193](https://github.com/docsbydoxdox/doxdox/pull/193)
 - [hotfix] Added type to method interface. [#191](https://github.com/docsbydoxdox/doxdox/pull/191)
 - [hotfix] Updated dev packages. [#190](https://github.com/docsbydoxdox/doxdox/pull/190)
 - [hotfix] Swapped out update-notifier for simple-update-notifier. [#189](https://github.com/docsbydoxdox/doxdox/pull/189)
 - [hotfix] Encode HTML tags in renderers. [#188](https://github.com/docsbydoxdox/doxdox/pull/188)
 - [hotfix] Update renderer template dependencies. [#187](https://github.com/docsbydoxdox/doxdox/pull/187)
+- [hotfix] Update dox dependency (#195) [#195](https://github.com/docsbydoxdox/doxdox/pull/195)
+- Updated packages. (#194) [#194](https://github.com/docsbydoxdox/doxdox/pull/194)
+- [hotfix] Cleaned up return data from dox parser. (#192) [#192](https://github.com/docsbydoxdox/doxdox/pull/192)
 
 ## [v4.0.0-preview.14](https://github.com/docsbydoxdox/doxdox/tree/v4.0.0-preview.14) - (2022-09-02)
 
@@ -209,8 +219,6 @@
 - Update update-notifier to the latest version 🚀 [#54](https://github.com/docsbydoxdox/doxdox/pull/54)
 - Update codecov to the latest version 🚀 [#56](https://github.com/docsbydoxdox/doxdox/pull/56)
 - chore(package): update mocha to version 4.0.1 [#57](https://github.com/docsbydoxdox/doxdox/pull/57)
-- fix(package): update chalk to version 2.3.0 [#55](https://github.com/docsbydoxdox/doxdox/pull/55)
-- chore(package): update mocha to version 4.0.1 [#53](https://github.com/docsbydoxdox/doxdox/pull/53)
 - Update chalk to the latest version 🚀 [#51](https://github.com/docsbydoxdox/doxdox/pull/51)
 
 ## [v2.0.3](https://github.com/docsbydoxdox/doxdox/tree/v2.0.3) - (2017-05-30)
@@ -224,10 +232,8 @@
 - Update codecov to the latest version 🚀 [#34](https://github.com/docsbydoxdox/doxdox/pull/34)
 - Update @neogeek/eslint-config-standards to the latest version 🚀 [#32](https://github.com/docsbydoxdox/doxdox/pull/32)
 - chore(package): update eslint to version 3.17.1 [#33](https://github.com/docsbydoxdox/doxdox/pull/33)
-- chore(package): update eslint to version 3.17.1 [#31](https://github.com/docsbydoxdox/doxdox/pull/31)
 - chore(package): update eslint to version 3.16.1 [#30](https://github.com/docsbydoxdox/doxdox/pull/30)
 - Update @neogeek/eslint-config-standards to the latest version 🚀 [#29](https://github.com/docsbydoxdox/doxdox/pull/29)
-- chore(package): update eslint to version 3.16.1 [#28](https://github.com/docsbydoxdox/doxdox/pull/28)
 - Update update-notifier to the latest version 🚀 [#27](https://github.com/docsbydoxdox/doxdox/pull/27)
 - Add Greenkeeper badge 🌴 [#26](https://github.com/docsbydoxdox/doxdox/pull/26)
 
@@ -334,31 +340,21 @@
 
 [Full Changelog](https://github.com/docsbydoxdox/doxdox/compare/v0.1.7...v0.1.8)
 
-- No merges found
-
 ## [v0.1.7](https://github.com/docsbydoxdox/doxdox/tree/v0.1.7) - (2015-05-31)
 
 [Full Changelog](https://github.com/docsbydoxdox/doxdox/compare/v0.1.6...v0.1.7)
-
-- No merges found
 
 ## [v0.1.6](https://github.com/docsbydoxdox/doxdox/tree/v0.1.6) - (2015-04-12)
 
 [Full Changelog](https://github.com/docsbydoxdox/doxdox/compare/v0.1.5...v0.1.6)
 
-- No merges found
-
 ## [v0.1.5](https://github.com/docsbydoxdox/doxdox/tree/v0.1.5) - (2015-04-05)
 
 [Full Changelog](https://github.com/docsbydoxdox/doxdox/compare/v0.1.4...v0.1.5)
 
-- No merges found
-
 ## [v0.1.4](https://github.com/docsbydoxdox/doxdox/tree/v0.1.4) - (2015-02-19)
 
 [Full Changelog](https://github.com/docsbydoxdox/doxdox/compare/v0.1.3...v0.1.4)
-
-- No merges found
 
 ## [v0.1.3](https://github.com/docsbydoxdox/doxdox/tree/v0.1.3) - (2015-01-26)
 
@@ -376,55 +372,39 @@
 
 [Full Changelog](https://github.com/docsbydoxdox/doxdox/compare/v0.1.0...v0.1.1)
 
-- No merges found
-
 ## [v0.1.0](https://github.com/docsbydoxdox/doxdox/tree/v0.1.0) - (2014-12-24)
 
 [Full Changelog](https://github.com/docsbydoxdox/doxdox/compare/v0.0.18...v0.1.0)
-
-- No merges found
 
 ## [v0.0.18](https://github.com/docsbydoxdox/doxdox/tree/v0.0.18) - (2014-12-12)
 
 [Full Changelog](https://github.com/docsbydoxdox/doxdox/compare/v0.0.17...v0.0.18)
 
-- No merges found
-
 ## [v0.0.17](https://github.com/docsbydoxdox/doxdox/tree/v0.0.17) - (2014-12-07)
 
 [Full Changelog](https://github.com/docsbydoxdox/doxdox/compare/v0.0.16...v0.0.17)
-
-- No merges found
 
 ## [v0.0.16](https://github.com/docsbydoxdox/doxdox/tree/v0.0.16) - (2014-12-06)
 
 [Full Changelog](https://github.com/docsbydoxdox/doxdox/compare/v0.0.15...v0.0.16)
 
-- No merges found
-
 ## [v0.0.15](https://github.com/docsbydoxdox/doxdox/tree/v0.0.15) - (2014-12-05)
 
 [Full Changelog](https://github.com/docsbydoxdox/doxdox/compare/v0.0.14...v0.0.15)
-
-- No merges found
 
 ## [v0.0.14](https://github.com/docsbydoxdox/doxdox/tree/v0.0.14) - (2014-12-05)
 
 [Full Changelog](https://github.com/docsbydoxdox/doxdox/compare/v0.0.13...v0.0.14)
 
-- No merges found
-
 ## [v0.0.13](https://github.com/docsbydoxdox/doxdox/tree/v0.0.13) - (2014-10-16)
 
 [Full Changelog](https://github.com/docsbydoxdox/doxdox/compare/v0.0.12...v0.0.13)
-
-- No merges found
 
 ## [v0.0.12](https://github.com/docsbydoxdox/doxdox/tree/v0.0.12) - (2014-10-02)
 
 [Full Changelog](https://github.com/docsbydoxdox/doxdox/compare/v0.0.11...v0.0.12)
 
-- Added text overflow to methods (fixes #3). [#3](https://github.com/docsbydoxdox/doxdox/pull/3)
+- No merges found
 
 ## [v0.0.11](https://github.com/docsbydoxdox/doxdox/tree/v0.0.11) - (2014-09-11)
 
@@ -454,37 +434,25 @@
 
 [Full Changelog](https://github.com/docsbydoxdox/doxdox/compare/v0.0.6...v0.0.7)
 
-- No merges found
-
 ## [v0.0.6](https://github.com/docsbydoxdox/doxdox/tree/v0.0.6) - (2014-08-17)
 
 [Full Changelog](https://github.com/docsbydoxdox/doxdox/compare/v0.0.5...v0.0.6)
-
-- No merges found
 
 ## [v0.0.5](https://github.com/docsbydoxdox/doxdox/tree/v0.0.5) - (2014-08-17)
 
 [Full Changelog](https://github.com/docsbydoxdox/doxdox/compare/v0.0.4...v0.0.5)
 
-- No merges found
-
 ## [v0.0.4](https://github.com/docsbydoxdox/doxdox/tree/v0.0.4) - (2014-08-10)
 
 [Full Changelog](https://github.com/docsbydoxdox/doxdox/compare/v0.0.3...v0.0.4)
-
-- No merges found
 
 ## [v0.0.3](https://github.com/docsbydoxdox/doxdox/tree/v0.0.3) - (2014-08-10)
 
 [Full Changelog](https://github.com/docsbydoxdox/doxdox/compare/v0.0.2...v0.0.3)
 
-- No merges found
-
 ## [v0.0.2](https://github.com/docsbydoxdox/doxdox/tree/v0.0.2) - (2014-08-07)
 
 [Full Changelog](https://github.com/docsbydoxdox/doxdox/compare/v0.0.1...v0.0.2)
-
-- No merges found
 
 ## [v0.0.1](https://github.com/docsbydoxdox/doxdox/tree/v0.0.1) - (2014-08-03)
 
