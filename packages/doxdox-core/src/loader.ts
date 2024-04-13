@@ -61,10 +61,10 @@ export const loadPluginFromFile = async <T>(
 /**
  * Load plugin from file or directory.
  *
- *     const plugin = await loadPlugin(process.cwd(), null, './renderer.js');
- *     const plugin = await loadPlugin('../node_modules', 'doxdox-renderer-', 'json');
+ *     const plugin = await loadPlugin([process.cwd()], null, './renderer.js');
+ *     const plugin = await loadPlugin(['../node_modules'], 'doxdox-renderer-', 'json');
  *
- * @param {string} [directory] Root directory to load plugin from.
+ * @param {string[]} [directories] Root directories to load plugin from.
  * @param {string} [prefix] Optional prefix to attach to the pathOrPackage.
  * @param {string} [pathOrPackage] Path or package name.
  * @return {Promise<T | null>} Plugin default method.
@@ -72,7 +72,7 @@ export const loadPluginFromFile = async <T>(
  */
 
 export const loadPlugin = async <T>(
-    directory: string,
+    directories: string[],
     prefix: string | null,
     pathOrPackage: string
 ): Promise<T | null> => {
@@ -83,20 +83,17 @@ export const loadPlugin = async <T>(
             return await loadPluginFromFile(pathOrPackage);
         } else if (await isDirectory(pathOrPackage)) {
             return await loadPluginFromPackagePath(pathOrPackage);
-        } else if (
-            await isDirectory(
-                join(
-                    directory,
+        } else {
+            for (let i = 0; i < directories?.length; i += 1) {
+                const path = join(
+                    directories[i],
                     `${prefix}${pathOrPackage.replace(prefixPattern, '')}`
-                )
-            )
-        ) {
-            return await loadPluginFromPackagePath(
-                join(
-                    directory,
-                    `${prefix}${pathOrPackage.replace(prefixPattern, '')}`
-                )
-            );
+                );
+
+                if (await isDirectory(path)) {
+                    return await loadPluginFromPackagePath(path);
+                }
+            }
         }
     } catch (err) {
         if (process.env.DEBUG) {
