@@ -1,10 +1,16 @@
+import { tmpdir } from 'node:os';
+
+import { writeFile } from 'node:fs/promises';
+
+import { join } from 'node:path';
+
 import { markdownTable } from 'markdown-table';
 
 import MarkdownIt from 'markdown-it';
 
 import hljs from 'highlight.js';
 
-import { create } from 'html-pdf';
+import puppeteer from 'puppeteer';
 
 import { Doc, File, Method } from 'doxdox-core';
 
@@ -76,100 +82,116 @@ const renderFile = (file: File) =>
     `${file.methods.map(method => renderMethod(method)).join('')}`;
 
 export default async (doc: Doc): Promise<Buffer> => {
-    return new Promise(resolve => {
-        create(
-            `<!DOCTYPE html>
-        <html>
-          <head>
-            <meta charset="utf-8" />
-            <meta name="viewport" content="initial-scale=1" />
-            <title>${doc.name}${
-                doc.description ? ` - ${doc.description}` : ''
-            }</title>
-            <link
-              href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css"
-              rel="stylesheet"
-              integrity="sha256-7ZWbZUAi97rkirk4DcEp4GWDPkWpRMcNaEyXGsNXjLg="
-              crossorigin="anonymous"
-            />
-            <link
-              rel="stylesheet"
-              href="https://cdn.jsdelivr.net/npm/highlight.js@11.6.0/styles/github.css"
-              integrity="sha256-Oppd74ucMR5a5Dq96FxjEzGF7tTw2fZ/6ksAqDCM8GY="
-              crossorigin="anonymous"
-            />
-            <style>
-              body {
-                zoom: 0.65;
-              }
+    const html = `<!DOCTYPE html>
+    <html>
+      <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="initial-scale=1" />
+        <title>${doc.name}${
+        doc.description ? ` - ${doc.description}` : ''
+    }</title>
+        <link
+          href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css"
+          rel="stylesheet"
+          integrity="sha256-7ZWbZUAi97rkirk4DcEp4GWDPkWpRMcNaEyXGsNXjLg="
+          crossorigin="anonymous"
+        />
+        <link
+          rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/highlight.js@11.6.0/styles/github.css"
+          integrity="sha256-Oppd74ucMR5a5Dq96FxjEzGF7tTw2fZ/6ksAqDCM8GY="
+          crossorigin="anonymous"
+        />
+        <style>
+          @page
+          {
+            size: A4 portrait;
+            margin: 2rem;
+          }
 
-              .pkg-name {
-                font-size: 3.5rem;
-              }
+          body {
+            zoom: 0.65;
+          }
 
-              .pkg-description {
-                font-size: 1.5rem;
-                font-weight: 200;
-              }
+          .pkg-name {
+            font-size: 3.5rem;
+          }
 
-              .method-name {
-                position: relative;
-              }
+          .pkg-description {
+            font-size: 1.5rem;
+            font-weight: 200;
+          }
 
-              .method-scope {
-                font-size: 1.5rem;
-                color: #999;
-              }
-            </style>
-          </head>
-          <body>
-            <div class="bg-dark text-white">
-              <div class="container p-5">
-                ${
-                    doc.homepage
-                        ? `<h1 class="pkg-name"><a href="${doc.homepage}">${doc.name}</a></h1>`
-                        : `<h1 class="pkg-name">${doc.name}</h1>`
-                }
+          .method-name {
+            position: relative;
+          }
 
-                ${
-                    doc.description
-                        ? `<p class="pkg-description">${doc.description}</p>`
-                        : ''
-                }
-              </div>
-            </div>
+          .method-scope {
+            font-size: 1.5rem;
+            color: #999;
+          }
+        </style>
+      </head>
+      <body>
+        <div>
+          <div>
+            ${
+                doc.homepage
+                    ? `<h1 class="pkg-name"><a href="${doc.homepage}">${doc.name}</a></h1>`
+                    : `<h1 class="pkg-name">${doc.name}</h1>`
+            }
 
-            <div class="container p-5">
-            ${doc.files
-                .filter(file => file.methods.length)
-                .map(file => renderFile(file))
-                .join('')}
-            </div>
+            ${
+                doc.description
+                    ? `<p class="pkg-description">${doc.description}</p>`
+                    : ''
+            }
+          </div>
+        </div>
 
-            <footer>
-              <div class="container p-5 text-center text-muted">
-                <p>
-                  Documentation generated with
-                  <a href="https://github.com/docsbydoxdox/doxdox">doxdox</a>.
-                </p>
-                ${
-                    !doc.config ||
-                    (doc.config as CustomConfig)['hideGeneratedTimestamp'] !==
-                        true
-                        ? `<p>
-                  Generated on
-                  ${new Date().toDateString()} ${new Date().toTimeString()}
-                </p>`
-                        : ''
-                }
-              </div>
-            </footer>
-          </body>
-        </html>
-        `,
-            { format: 'Letter' }
-        ).toBuffer((err, buffer: Buffer) => {
-            resolve(buffer);
-        });
+        <div class="py-5">
+        ${doc.files
+            .filter(file => file.methods.length)
+            .map(file => renderFile(file))
+            .join('')}
+        </div>
+
+        <footer>
+          <div class="py-5 text-center text-muted">
+            <p>
+              Documentation generated with
+              <a href="https://github.com/docsbydoxdox/doxdox">doxdox</a>.
+            </p>
+            ${
+                !doc.config ||
+                (doc.config as CustomConfig)['hideGeneratedTimestamp'] !== true
+                    ? `<p>
+              Generated on
+              ${new Date().toDateString()} ${new Date().toTimeString()}
+            </p>`
+                    : ''
+            }
+          </div>
+        </footer>
+      </body>
+    </html>
+    `;
+
+    const tempPath = join(tmpdir(), 'temp.html');
+
+    await writeFile(tempPath, html);
+
+    const browser = await puppeteer.launch({ headless: true });
+
+    const page = await browser.newPage();
+
+    await page.goto(`file://${tempPath}`, {
+        waitUntil: 'networkidle0'
     });
+
+    const pdf = await page.pdf({ format: 'A4' });
+
+    await browser.close();
+
+    return pdf;
 };
