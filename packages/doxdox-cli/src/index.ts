@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-import { EOL } from 'os';
+import { EOL, homedir } from 'os';
 
 import { promises as fs } from 'fs';
 
@@ -118,7 +118,10 @@ const overridePackage = String(
     );
 
     const globalNodeModulesDir = resolve(
-        join(execSync('npm get prefix').toString().trim(), './lib/node_modules')
+        join(
+            execSync('npm get prefix', { cwd: homedir() }).toString().trim(),
+            './lib/node_modules'
+        )
     );
 
     if (!localNodeModulesDir || !globalNodeModulesDir) {
