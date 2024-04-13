@@ -1,5 +1,13 @@
 # Changelog
 
+## [v4.0.0-preview.22](https://github.com/docsbydoxdox/doxdox/tree/v4.0.0-preview.22) - (2024-04-13)
+
+[Full Changelog](https://github.com/docsbydoxdox/doxdox/compare/v4.0.0-preview.21...v4.0.0-preview.22)
+
+- [hotfix] Updated packages. [#223](https://github.com/docsbydoxdox/doxdox/pull/223)
+- [hotfix] Added node namespace to node packages. [#222](https://github.com/docsbydoxdox/doxdox/pull/222)
+- [hotfix] Fixed issue resolving global packages on windows. [#221](https://github.com/docsbydoxdox/doxdox/pull/221)
+
 ## [v4.0.0-preview.21](https://github.com/docsbydoxdox/doxdox/tree/v4.0.0-preview.21) - (2024-04-13)
 
 [Full Changelog](https://github.com/docsbydoxdox/doxdox/compare/v4.0.0-preview.20...v4.0.0-preview.21)
