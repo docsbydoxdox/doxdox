@@ -120,7 +120,7 @@ const overridePackage = String(
     const globalNodeModulesDir = resolve(
         join(
             execSync('npm get prefix', { cwd: homedir() }).toString().trim(),
-            './lib/node_modules'
+            process.platform === 'win32' ? 'node_modules' : 'lib/node_modules'
         )
     );
 
