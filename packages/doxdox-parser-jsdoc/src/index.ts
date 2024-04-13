@@ -1,10 +1,10 @@
-import { promises as fs } from 'fs';
+import { promises as fs } from 'node:fs';
 
-import { fileURLToPath } from 'url';
+import { fileURLToPath } from 'node:url';
 
-import { platform } from 'os';
+import { platform } from 'node:os';
 
-import { dirname, join } from 'path';
+import { dirname, join } from 'node:path';
 
 import spawn from 'spawn-please';
 

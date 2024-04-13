@@ -1,8 +1,8 @@
 #!/usr/bin/env node
 
-import { join } from 'path';
+import { join } from 'node:path';
 
-import { readFile, writeFile } from 'fs/promises';
+import { readFile, writeFile } from 'node:fs/promises';
 
 import semver from 'semver';
 

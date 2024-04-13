@@ -1,8 +1,8 @@
-import { promises as fs } from 'fs';
+import { promises as fs } from 'node:fs';
 
-import { promisify } from 'util';
+import { promisify } from 'node:util';
 
-import { exec } from 'child_process';
+import { exec } from 'node:child_process';
 
 const execAsync = promisify(exec);
 
