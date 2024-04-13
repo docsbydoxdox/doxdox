@@ -89,7 +89,7 @@ describe('cli', () => {
 
         await fs.unlink('./temp.md');
     });
-    it('set output (inside exisiting directory)', async () => {
+    it('set output (inside existing directory)', async () => {
         const { stdout } = await execAsync(
             `./dist/src/index.js -o src/temp.md`
         );
@@ -104,7 +104,7 @@ describe('cli', () => {
 
         await fs.unlink('./src/temp.md');
     });
-    it('set output (inside non-exisiting directory)', async () => {
+    it('set output (inside non-existing directory)', async () => {
         const { stdout } = await execAsync(
             `./dist/src/index.js -o temp/temp.md`
         );
