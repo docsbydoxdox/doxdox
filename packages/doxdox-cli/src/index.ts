@@ -2,7 +2,7 @@
 
 import { EOL, homedir } from 'node:os';
 
-import { promises as fs } from 'node:fs';
+import fs from 'node:fs/promises';
 
 import { dirname, join, resolve } from 'node:path';
 
