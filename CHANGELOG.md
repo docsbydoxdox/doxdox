@@ -1,5 +1,12 @@
 # Changelog
 
+## [v4.0.0-preview.23](https://github.com/docsbydoxdox/doxdox/tree/v4.0.0-preview.23) - (2024-04-13)
+
+[Full Changelog](https://github.com/docsbydoxdox/doxdox/compare/v4.0.0-preview.22...v4.0.0-preview.23)
+
+- [hotfix] Simplify pdf renderer. [#225](https://github.com/docsbydoxdox/doxdox/pull/225)
+- [hotfix] Updated bootstrap and highlight.js link tags. [#224](https://github.com/docsbydoxdox/doxdox/pull/224)
+
 ## [v4.0.0-preview.22](https://github.com/docsbydoxdox/doxdox/tree/v4.0.0-preview.22) - (2024-04-13)
 
 [Full Changelog](https://github.com/docsbydoxdox/doxdox/compare/v4.0.0-preview.21...v4.0.0-preview.22)
