@@ -109,14 +109,10 @@ export default async (doc: Doc): Promise<string> => `<!DOCTYPE html>
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
       rel="stylesheet"
-      integrity="sha256-7ZWbZUAi97rkirk4DcEp4GWDPkWpRMcNaEyXGsNXjLg="
-      crossorigin="anonymous"
     />
     <link
-      rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/highlight.js@11.9.0/styles/github.css"
-      integrity="sha256-Oppd74ucMR5a5Dq96FxjEzGF7tTw2fZ/6ksAqDCM8GY="
-      crossorigin="anonymous"
+      rel="stylesheet"
     />
     <style>
       .pkg-name {
