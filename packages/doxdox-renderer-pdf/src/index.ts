@@ -1,9 +1,3 @@
-import { tmpdir } from 'node:os';
-
-import { writeFile } from 'node:fs/promises';
-
-import { join } from 'node:path';
-
 import { markdownTable } from 'markdown-table';
 
 import MarkdownIt from 'markdown-it';
@@ -173,15 +167,11 @@ export default async (doc: Doc): Promise<Buffer> => {
     </html>
     `;
 
-    const tempPath = join(tmpdir(), 'temp.html');
-
-    await writeFile(tempPath, html);
-
     const browser = await puppeteer.launch({ headless: true });
 
     const page = await browser.newPage();
 
-    await page.goto(`file://${tempPath}`, {
+    await page.setContent(html, {
         waitUntil: 'networkidle0'
     });
 
