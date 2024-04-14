@@ -15,5 +15,11 @@ $ npm install doxdox-cli@v4.0.0-preview.22 doxdox-renderer-template@v4.0.0-previ
 ## Usage
 
 ```bash
+$ doxdox -r template > docs.txt
+```
+
+or
+
+```bash
 $ doxdox -r template -o docs.txt
 ```

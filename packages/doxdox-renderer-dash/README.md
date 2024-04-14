@@ -14,6 +14,15 @@ $ npm install doxdox-cli@v4.0.0-preview.22 doxdox-renderer-dash@v4.0.0-preview.2
 
 ## Usage
 
+> [!WARNING]
+> The `-o`/`--output` flag is required when using this renderer on Windows PowerShell.
+
+```bash
+$ doxdox -r dash > docs.zip
+```
+
+or
+
 ```bash
 $ doxdox -r dash -o docs.zip
 ```

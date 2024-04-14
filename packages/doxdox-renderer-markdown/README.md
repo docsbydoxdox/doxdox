@@ -15,5 +15,11 @@ $ npm install doxdox-cli@v4.0.0-preview.22 doxdox-renderer-markdown@v4.0.0-previ
 ## Usage
 
 ```bash
+$ doxdox -r markdown > docs.md
+```
+
+or
+
+```bash
 $ doxdox -r markdown -o docs.md
 ```

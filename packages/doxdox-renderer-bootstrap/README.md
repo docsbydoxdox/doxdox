@@ -15,5 +15,11 @@ $ npm install doxdox-cli@v4.0.0-preview.22 doxdox-renderer-bootstrap@v4.0.0-prev
 ## Usage
 
 ```bash
+$ doxdox -r bootstrap > docs.html
+```
+
+or
+
+```bash
 $ doxdox -r bootstrap -o docs.html
 ```

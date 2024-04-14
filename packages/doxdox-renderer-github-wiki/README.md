@@ -14,6 +14,15 @@ $ npm install doxdox-cli@v4.0.0-preview.22 doxdox-renderer-github-wiki@v4.0.0-pr
 
 ## Usage
 
+> [!WARNING]
+> The `-o`/`--output` flag is required when using this renderer on Windows PowerShell.
+
+```bash
+$ doxdox -r github-wiki > docs.zip
+```
+
+or
+
 ```bash
 $ doxdox -r github-wiki -o docs.zip
 ```

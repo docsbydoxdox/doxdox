@@ -15,5 +15,11 @@ $ npm install doxdox-cli@v4.0.0-preview.22 doxdox-renderer-json@v4.0.0-preview.2
 ## Usage
 
 ```bash
+$ doxdox -r json > docs.json
+```
+
+or
+
+```bash
 $ doxdox -r json -o docs.json
 ```

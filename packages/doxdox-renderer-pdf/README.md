@@ -14,6 +14,15 @@ $ npm install doxdox-cli@v4.0.0-preview.22 doxdox-renderer-pdf@v4.0.0-preview.22
 
 ## Usage
 
+> [!WARNING]
+> The `-o`/`--output` flag is required when using this renderer on Windows PowerShell.
+
+```bash
+$ doxdox -r pdf > docs.pdf
+```
+
+or
+
 ```bash
 $ doxdox -r pdf -o docs.pdf
 ```
