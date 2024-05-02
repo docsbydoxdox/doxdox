@@ -19,23 +19,23 @@
     "doxdox-renderer-markdown": "4.0.0-preview.23",
     "globby": "14.0.1",
     "import-from": "4.0.0",
-    "parse-cmd-args": "4.1.0",
+    "parse-cmd-args": "5.0.1",
     "simple-update-notifier": "2.0.0"
   },
   "devDependencies": {
-    "@eslint/js": "9.0.0",
+    "@eslint/js": "9.1.1",
     "@types/jest": "29.5.12",
-    "@types/node": "20.12.7",
-    "@typescript-eslint/eslint-plugin": "7.6.0",
-    "@typescript-eslint/parser": "7.6.0",
-    "eslint": "9.0.0",
+    "@types/node": "20.12.8",
+    "@typescript-eslint/eslint-plugin": "7.8.0",
+    "@typescript-eslint/parser": "7.8.0",
+    "eslint": "9.1.1",
     "jest": "29.7.0",
     "nodemon": "3.1.0",
     "rimraf": "5.0.5",
     "ts-jest": "29.1.2",
     "ts-jest-resolver": "2.0.1",
     "typescript": "5.4.5",
-    "typescript-eslint": "7.6.0"
+    "typescript-eslint": "7.8.0"
   },
   "scripts": {
     "test": "npx cross-env@7 NODE_OPTIONS=--experimental-vm-modules jest --runInBand --passWithNoTests",
