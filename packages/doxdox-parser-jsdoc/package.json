@@ -9,7 +9,7 @@
     "node": ">=20"
   },
   "dependencies": {
-    "jsdoc": "4.0.2",
+    "jsdoc": "4.0.3",
     "spawn-please": "3.0.0",
     "temp": "0.9.4"
   },
