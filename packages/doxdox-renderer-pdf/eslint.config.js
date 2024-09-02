@@ -11,7 +11,10 @@ export default [
     {
         files: ['**/*.ts', '**/*.js'],
         languageOptions: {
-            parser: typescriptParser
+            parser: typescriptParser,
+            globals: {
+                Buffer: 'readonly'
+            }
         },
         plugins: {
             typescriptPlugin: typescriptPlugin
