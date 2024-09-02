@@ -179,5 +179,5 @@ export default async (doc: Doc): Promise<Buffer> => {
 
     await browser.close();
 
-    return pdf;
+    return Buffer.from(pdf.buffer);
 };
