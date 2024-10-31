@@ -10,10 +10,10 @@
   },
   "dependencies": {
     "adm-zip": "0.5.16",
-    "better-sqlite3": "11.4.0",
+    "better-sqlite3": "11.5.0",
     "highlight.js": "11.10.0",
     "markdown-it": "14.1.0",
-    "markdown-table": "3.0.3",
+    "markdown-table": "3.0.4",
     "temp": "0.9.4"
   },
   "peerDependencies": {
@@ -27,12 +27,12 @@
   "devDependencies": {
     "@eslint/js": "9.13.0",
     "@types/better-sqlite3": "7.6.11",
-    "@types/jest": "29.5.13",
+    "@types/jest": "29.5.14",
     "@types/markdown-it": "14.1.2",
-    "@types/node": "22.7.7",
+    "@types/node": "22.8.5",
     "@types/temp": "0.9.4",
-    "@typescript-eslint/eslint-plugin": "8.10.0",
-    "@typescript-eslint/parser": "8.10.0",
+    "@typescript-eslint/eslint-plugin": "8.12.2",
+    "@typescript-eslint/parser": "8.12.2",
     "copyfiles": "2.4.1",
     "eslint": "9.13.0",
     "jest": "29.7.0",
@@ -40,7 +40,7 @@
     "ts-jest": "29.2.5",
     "ts-jest-resolver": "2.0.1",
     "typescript": "5.6.3",
-    "typescript-eslint": "8.10.0"
+    "typescript-eslint": "8.12.2"
   },
   "scripts": {
     "test": "npx cross-env@7 NODE_OPTIONS=--experimental-vm-modules jest --runInBand --passWithNoTests",
