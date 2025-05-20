@@ -4,10 +4,18 @@ on:
   push:
     branches:
       - main
+    paths:
+      - packages/**
+      - package-lock.json
+      - package.json
   pull_request:
     types: [opened, synchronize, reopened, ready_for_review]
     branches:
       - main
+    paths:
+      - packages/**
+      - package-lock.json
+      - package.json
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}

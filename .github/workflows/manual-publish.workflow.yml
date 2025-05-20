@@ -1,12 +1,16 @@
-name: Publish
+name: Manual Publish
 
 on:
-  push:
-    tags:
-      - 'v*.*.*'
+  workflow_call:
+    inputs:
+      tag:
+        description: 'Tagged version to release on NPM'
+        default: ''
+        required: false
+        type: string
 
 jobs:
-  publish:
+  manual-publish:
     runs-on: ubuntu-latest
 
     steps:
@@ -43,8 +47,8 @@ jobs:
 
       - name: Publish package
         run: |
-          if [[ "${GITHUB_REF#refs/tags/}" =~ "preview" ]]; then
-            npm publish --workspaces --tag $(echo "${GITHUB_REF#refs/tags/}" | sed 's/^v//')
+          if [ "${{ inputs.tag }}" != "" ]; then
+            npm publish --workspaces --tag $(echo "${{ inputs.tag }}" | sed 's/^v//')
           else
             npm publish --workspaces
           fi
