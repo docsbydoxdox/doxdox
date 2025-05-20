@@ -4,10 +4,10 @@ on:
   workflow_call:
     inputs:
       tag:
-        description: 'Tagged version to release on NPM'
-        default: ''
+        description: 'Publish as prerelease'
+        default: false
         required: false
-        type: string
+        type: boolean
 
 jobs:
   manual-publish:
@@ -47,8 +47,8 @@ jobs:
 
       - name: Publish package
         run: |
-          if [ "${{ inputs.tag }}" != "" ]; then
-            npm publish --workspaces --tag $(echo "${{ inputs.tag }}" | sed 's/^v//')
+          if [ "${{ inputs.next }}" == true ]; then
+            npm publish --workspaces --tag next
           else
             npm publish --workspaces
           fi

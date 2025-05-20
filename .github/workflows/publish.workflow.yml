@@ -44,7 +44,7 @@ jobs:
       - name: Publish package
         run: |
           if [[ "${GITHUB_REF#refs/tags/}" =~ "preview" ]]; then
-            npm publish --workspaces --tag $(echo "${GITHUB_REF#refs/tags/}" | sed 's/^v//')
+            npm publish --workspaces --tag next
           else
             npm publish --workspaces
           fi
