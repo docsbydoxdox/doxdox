@@ -1,7 +1,7 @@
 {
   "name": "doxdox",
   "description": "Main package for doxdox.",
-  "version": "4.0.0-preview.24",
+  "version": "4.0.0-preview.25",
   "exports": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "type": "module",
@@ -9,12 +9,12 @@
     "node": ">=20"
   },
   "dependencies": {
-    "doxdox-cli": "4.0.0-preview.24",
-    "doxdox-core": "4.0.0-preview.24",
-    "doxdox-parser-jsdoc": "4.0.0-preview.24",
-    "doxdox-renderer-bootstrap": "4.0.0-preview.24",
-    "doxdox-renderer-json": "4.0.0-preview.24",
-    "doxdox-renderer-markdown": "4.0.0-preview.24"
+    "doxdox-cli": "4.0.0-preview.25",
+    "doxdox-core": "4.0.0-preview.25",
+    "doxdox-parser-jsdoc": "4.0.0-preview.25",
+    "doxdox-renderer-bootstrap": "4.0.0-preview.25",
+    "doxdox-renderer-json": "4.0.0-preview.25",
+    "doxdox-renderer-markdown": "4.0.0-preview.25"
   },
   "devDependencies": {
     "@eslint/js": "9.27.0",

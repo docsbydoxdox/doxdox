@@ -1,7 +1,7 @@
 {
   "name": "doxdox-renderer-github-wiki",
   "description": "GitHub Wiki renderer for doxdox.",
-  "version": "4.0.0-preview.24",
+  "version": "4.0.0-preview.25",
   "exports": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "type": "module",
@@ -13,7 +13,7 @@
     "markdown-table": "3.0.4"
   },
   "peerDependencies": {
-    "doxdox-core": "4.0.0-preview.24"
+    "doxdox-core": "4.0.0-preview.25"
   },
   "peerDependenciesMeta": {
     "doxdox-core": {

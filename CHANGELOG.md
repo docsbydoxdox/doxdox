@@ -1,5 +1,13 @@
 # Changelog
 
+## [v4.0.0-preview.25](https://github.com/docsbydoxdox/doxdox/tree/v4.0.0-preview.25) - (2025-05-19)
+
+[Full Changelog](https://github.com/docsbydoxdox/doxdox/compare/v4.0.0-preview.24...v4.0.0-preview.25)
+
+- [hotfix] Updated packages. [#231](https://github.com/docsbydoxdox/doxdox/pull/231)
+- [hotfix] Updated packages. [#230](https://github.com/docsbydoxdox/doxdox/pull/230)
+- [hotfix] Updated packages. [#229](https://github.com/docsbydoxdox/doxdox/pull/229)
+
 ## [v4.0.0-preview.24](https://github.com/docsbydoxdox/doxdox/tree/v4.0.0-preview.24) - (2024-09-02)
 
 [Full Changelog](https://github.com/docsbydoxdox/doxdox/compare/v4.0.0-preview.23...v4.0.0-preview.24)
