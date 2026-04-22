@@ -3,7 +3,7 @@ name: Manual Publish
 on:
   workflow_call:
     inputs:
-      tag:
+      prerelease:
         description: 'Publish as prerelease'
         default: false
         required: false
@@ -15,12 +15,12 @@ jobs:
 
     steps:
       - name: Check out repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
 
       - name: Install Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e # v6.4.0
         with:
-          node-version: 20
+          node-version: 24
           registry-url: 'https://registry.npmjs.org'
 
       - name: Update NPM to latest
@@ -32,23 +32,15 @@ jobs:
           npm -v
 
       - name: Install dependencies
-        run: npm ci
+        run: npm ci --ignore-scripts
 
       - name: Build package
         run: npm run build
 
-      - name: Create .npmrc
-        run: |
-          echo "registry=https://registry.npmjs.org/" > .npmrc
-          echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_AUTH_TOKEN }}" >> .npmrc
-
-      - name: NPM whoami
-        run: npm whoami
-
       - name: Publish package
         run: |
-          if [ "${{ inputs.next }}" == true ]; then
-            npm publish --workspaces --tag next
+          if [ "${{ inputs.prerelease }}" == true ]; then
+            npm publish --provenance --access public --workspaces --tag next
           else
-            npm publish --workspaces
+            npm publish --provenance --access public --workspaces
           fi

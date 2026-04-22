@@ -25,15 +25,16 @@ jobs:
   tests:
     runs-on: ubuntu-latest
     if: github.event.pull_request.draft == false
+    timeout-minutes: 30
 
     steps:
       - name: Check out repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
 
       - name: Install Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e # v6.4.0
         with:
-          node-version: 20
+          node-version: 24
 
       - name: Update NPM to latest
         run: npm install npm@latest -g
@@ -44,7 +45,7 @@ jobs:
           npm -v
 
       - name: Install dependencies for all packages
-        run: npm ci
+        run: npm ci --ignore-scripts
 
       - name: Run tests on all packages
         timeout-minutes: 5
