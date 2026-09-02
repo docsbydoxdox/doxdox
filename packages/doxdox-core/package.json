@@ -9,7 +9,7 @@
     "node": ">=20"
   },
   "dependencies": {
-    "normalize-package-data": "7.0.0"
+    "normalize-package-data": "9.0.0"
   },
   "devDependencies": {
     "@eslint/js": "9.27.0",

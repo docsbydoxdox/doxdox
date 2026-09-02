@@ -9,7 +9,7 @@
     "node": ">=20"
   },
   "dependencies": {
-    "adm-zip": "0.5.16",
+    "adm-zip": "0.6.0",
     "markdown-table": "3.0.4"
   },
   "peerDependencies": {
@@ -22,7 +22,7 @@
   },
   "devDependencies": {
     "@eslint/js": "9.27.0",
-    "@types/adm-zip": "0.5.7",
+    "@types/adm-zip": "0.5.8",
     "@types/jest": "29.5.14",
     "@types/node": "22.15.19",
     "@typescript-eslint/eslint-plugin": "8.68.0",
