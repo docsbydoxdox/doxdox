@@ -17,7 +17,7 @@
     "doxdox-renderer-bootstrap": "4.0.0-preview.25",
     "doxdox-renderer-json": "4.0.0-preview.25",
     "doxdox-renderer-markdown": "4.0.0-preview.25",
-    "globby": "14.1.0",
+    "globby": "16.2.4",
     "import-from": "4.0.0",
     "parse-cmd-args": "5.0.2",
     "simple-update-notifier": "2.0.0"
