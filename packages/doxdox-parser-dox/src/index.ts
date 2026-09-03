@@ -6,7 +6,7 @@ import { File, Method } from 'doxdox-core';
 
 import dox from 'dox';
 
-import { Jsdoc } from './types';
+import { Jsdoc } from './types.js';
 
 const formatParameter = (param: string | null): string | null =>
     param ? param.toString().replace(/\[|\]/gu, '') : null;

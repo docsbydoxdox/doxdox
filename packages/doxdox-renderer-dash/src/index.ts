@@ -16,7 +16,7 @@ import { getRootDirPath, slugify } from 'doxdox-core';
 
 import { Doc, Method } from 'doxdox-core';
 
-import { CustomConfig } from './types';
+import { CustomConfig } from './types.js';
 
 const md = new MarkdownIt({
     html: true,

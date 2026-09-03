@@ -14,7 +14,7 @@ import { findParentNodeModules, slugify } from 'doxdox-core';
 
 import { File, Method } from 'doxdox-core';
 
-import { Jsdoc } from './types';
+import { Jsdoc } from './types.js';
 
 const parser = async (cwd: string, path: string): Promise<File> => {
     try {

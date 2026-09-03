@@ -1,4 +1,4 @@
-import renderer from './index';
+import renderer from './index.js';
 
 describe('bootstrap', () => {
     beforeAll(() => {

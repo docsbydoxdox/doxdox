@@ -1,4 +1,4 @@
-import parse from './index';
+import parse from './index.js';
 
 describe('custom parser', () => {
     describe('parse', () => {

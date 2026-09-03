@@ -1,13 +1,9 @@
 {
+  "extends": "../../tsconfig.json",
   "compilerOptions": {
-    "target": "esnext",
-    "module": "es2020",
-    "esModuleInterop": true,
-    "moduleResolution": "node",
     "resolveJsonModule": true,
-    "declaration": true,
     "outDir": "./dist",
-    "strict": true
+    "rootDir": "./"
   },
   "include": ["./src", "./src/.d.ts", "./package.json"],
   "exclude": ["./dist", "**/*.test.ts"]
