@@ -13,7 +13,7 @@ import {
     parseConfigFromCLI,
     parseIgnoreConfig,
     slugify
-} from './utils';
+} from './utils.js';
 
 describe('utils', () => {
     describe('findFileInPath', () => {
