@@ -4,8 +4,6 @@ src/
 
 test/
 
-.eslintrc
-
 .prettierignore
 .prettierrc
 
