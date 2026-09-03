@@ -45,7 +45,9 @@ export default [
                 {
                     ignore: [-1, 0, 1]
                 }
-            ]
+            ],
+            'preserve-caught-error': 'warn',
+            'no-useless-assignment': 'warn'
         }
     }
 ];
