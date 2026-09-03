@@ -1,5 +1,16 @@
 # Changelog
 
+## [HEAD](https://github.com/docsbydoxdox/doxdox/tree/HEAD) - (2026-09-03)
+
+[Full Changelog](https://github.com/docsbydoxdox/doxdox/compare/v4.0.0-preview.25...HEAD)
+
+- [hotfix] Updated markdown-it package. [#237](https://github.com/docsbydoxdox/doxdox/pull/237)
+- [hotfix] Updated packages. [#236](https://github.com/docsbydoxdox/doxdox/pull/236)
+- [hotfix] Updated tsconfig and eslint config. [#235](https://github.com/docsbydoxdox/doxdox/pull/235)
+- [hotfix] Switched update notify packages. [#234](https://github.com/docsbydoxdox/doxdox/pull/234)
+- [hotfix] Updated packages. [#233](https://github.com/docsbydoxdox/doxdox/pull/233)
+- [hotfix] Updated packages. [#232](https://github.com/docsbydoxdox/doxdox/pull/232)
+
 ## [v4.0.0-preview.25](https://github.com/docsbydoxdox/doxdox/tree/v4.0.0-preview.25) - (2025-05-19)
 
 [Full Changelog](https://github.com/docsbydoxdox/doxdox/compare/v4.0.0-preview.24...v4.0.0-preview.25)
