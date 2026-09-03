@@ -12,7 +12,7 @@ import { fileURLToPath } from 'node:url';
 
 import { globby } from 'globby';
 
-import updateNotifier from 'simple-update-notifier';
+import updateNotifier from 'update-notifier';
 
 import parseCmdArgs from 'parse-cmd-args';
 
@@ -91,7 +91,7 @@ const overridePackage = String(
     if (pkgPath) {
         const pkg = JSON.parse(await fs.readFile(pkgPath, 'utf8'));
 
-        updateNotifier({ pkg });
+        updateNotifier({ pkg }).notify();
 
         if (showVersion) {
             process.stdout.write(`${pkg.version}${EOL}`);
