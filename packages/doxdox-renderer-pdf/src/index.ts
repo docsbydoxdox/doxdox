@@ -8,7 +8,7 @@ import puppeteer from 'puppeteer';
 
 import { Doc, File, Method } from 'doxdox-core';
 
-import { CustomConfig } from './types';
+import { CustomConfig } from './types.js';
 
 const md = new MarkdownIt({
     html: true,
@@ -82,8 +82,8 @@ export default async (doc: Doc): Promise<Buffer> => {
         <meta charset="utf-8" />
         <meta name="viewport" content="initial-scale=1" />
         <title>${doc.name}${
-        doc.description ? ` - ${doc.description}` : ''
-    }</title>
+            doc.description ? ` - ${doc.description}` : ''
+        }</title>
         <link
           href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
           rel="stylesheet"

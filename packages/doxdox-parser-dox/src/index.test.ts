@@ -1,4 +1,4 @@
-import parse from './index';
+import parse from './index.js';
 
 describe('dox parser', () => {
     it('parse example jsdoc headers (declaration methods)', async () => {

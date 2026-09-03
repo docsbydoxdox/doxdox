@@ -2,8 +2,6 @@ coverage/
 
 src/
 
-.eslintrc
-
 .prettierignore
 .prettierrc
 

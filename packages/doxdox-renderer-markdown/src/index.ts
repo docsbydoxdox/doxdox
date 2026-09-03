@@ -2,7 +2,7 @@ import { markdownTable } from 'markdown-table';
 
 import { Doc, File, Method } from 'doxdox-core';
 
-import { CustomConfig } from './types';
+import { CustomConfig } from './types.js';
 
 const renderMethod = (method: Method) => `## ${method.fullName}
 

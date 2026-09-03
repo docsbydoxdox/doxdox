@@ -6,7 +6,7 @@ import { fileURLToPath } from 'node:url';
 
 import normalizeData from 'normalize-package-data';
 
-import { Package } from './types';
+import { Package } from './types.js';
 
 /**
  * Finds file in path.
