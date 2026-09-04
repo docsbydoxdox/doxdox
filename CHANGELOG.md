@@ -1,5 +1,11 @@
 # Changelog
 
+## [v4.0.0-preview.27](https://github.com/docsbydoxdox/doxdox/tree/v4.0.0-preview.27) - (2026-09-03)
+
+[Full Changelog](https://github.com/docsbydoxdox/doxdox/compare/v4.0.0-preview.26...v4.0.0-preview.27)
+
+- No merges found
+
 ## [v4.0.0-preview.26](https://github.com/docsbydoxdox/doxdox/tree/v4.0.0-preview.26) - (2026-09-03)
 
 [Full Changelog](https://github.com/docsbydoxdox/doxdox/compare/v4.0.0-preview.25...v4.0.0-preview.26)
