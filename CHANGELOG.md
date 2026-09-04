@@ -1,8 +1,8 @@
 # Changelog
 
-## [HEAD](https://github.com/docsbydoxdox/doxdox/tree/HEAD) - (2026-09-03)
+## [v4.0.0-preview.26](https://github.com/docsbydoxdox/doxdox/tree/v4.0.0-preview.26) - (2026-09-03)
 
-[Full Changelog](https://github.com/docsbydoxdox/doxdox/compare/v4.0.0-preview.25...HEAD)
+[Full Changelog](https://github.com/docsbydoxdox/doxdox/compare/v4.0.0-preview.25...v4.0.0-preview.26)
 
 - [hotfix] Updated markdown-it package. [#237](https://github.com/docsbydoxdox/doxdox/pull/237)
 - [hotfix] Updated packages. [#236](https://github.com/docsbydoxdox/doxdox/pull/236)
