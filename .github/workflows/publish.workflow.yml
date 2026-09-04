@@ -5,6 +5,12 @@ on:
     tags:
       - 'v*.*.*'
   workflow_dispatch:
+    inputs:
+      prerelease:
+        description: 'Publish as prerelease'
+        default: false
+        required: false
+        type: boolean
 
 permissions:
   contents: read
@@ -42,7 +48,7 @@ jobs:
       - name: Publish package
         run: |
           TAG="latest"
-          if [[ "${GITHUB_REF#refs/tags/}" =~ "preview" ]]; then
+          if [[ "${GITHUB_REF#refs/tags/}" =~ "preview" || "${{ inputs.prerelease }}" == "true" ]]; then
             TAG="next"
           fi
 
