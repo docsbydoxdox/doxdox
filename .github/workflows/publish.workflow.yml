@@ -41,8 +41,23 @@ jobs:
 
       - name: Publish package
         run: |
+          TAG="latest"
           if [[ "${GITHUB_REF#refs/tags/}" =~ "preview" ]]; then
-            npm publish --provenance --access public --workspaces --tag next
-          else
-            npm publish --provenance --access public --workspaces
+            TAG="next"
           fi
+
+          WORKSPACES=$(npm query ".workspace" | jq -r '.[].location')
+
+          for WORKSPACE in ${WORKSPACES}; do
+            NAME=$(jq -r '.name' "${WORKSPACE}/package.json")
+            VERSION=$(jq -r '.version' "${WORKSPACE}/package.json")
+
+            EXISTS=$(npm view "${NAME}@${VERSION}" version --json 2>/dev/null | jq -r 'if type == "object" and has("error") then "false" else "true" end')
+
+            if [[ "${EXISTS}" == "true" ]]; then
+              echo "Skipping ${NAME}@${VERSION} (already published)"
+            else
+              echo "Publishing ${NAME}@${VERSION}"
+              npm publish --workspace="${WORKSPACE}" --provenance --access public --tag "${TAG}"
+            fi
+          done

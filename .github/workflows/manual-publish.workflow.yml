@@ -1,7 +1,7 @@
 name: Manual Publish
 
 on:
-  workflow_call:
+  workflow_dispatch:
     inputs:
       prerelease:
         description: 'Publish as prerelease'
@@ -9,9 +9,14 @@ on:
         required: false
         type: boolean
 
+permissions:
+  contents: read
+  id-token: write
+
 jobs:
   manual-publish:
     runs-on: ubuntu-latest
+    timeout-minutes: 30
 
     steps:
       - name: Check out repository
@@ -39,8 +44,23 @@ jobs:
 
       - name: Publish package
         run: |
-          if [ "${{ inputs.prerelease }}" == true ]; then
-            npm publish --provenance --access public --workspaces --tag next
-          else
-            npm publish --provenance --access public --workspaces
+          TAG="latest"
+          if [[ "${{ inputs.prerelease }}" == "true" ]]; then
+            TAG="next"
           fi
+
+          WORKSPACES=$(npm query ".workspace" | jq -r '.[].location')
+
+          for WORKSPACE in ${WORKSPACES}; do
+            NAME=$(jq -r '.name' "${WORKSPACE}/package.json")
+            VERSION=$(jq -r '.version' "${WORKSPACE}/package.json")
+
+            EXISTS=$(npm view "${NAME}@${VERSION}" version --json 2>/dev/null | jq -r 'if type == "object" and has("error") then "false" else "true" end')
+
+            if [[ "${EXISTS}" == "true" ]]; then
+              echo "Skipping ${NAME}@${VERSION} (already published)"
+            else
+              echo "Publishing ${NAME}@${VERSION}"
+              npm publish --workspace="${WORKSPACE}" --provenance --access public --tag "${TAG}"
+            fi
+          done
